@@ -92,7 +92,7 @@ Central release coordinates:
 </dependency>
 ```
 
-Publishing to Central is automated by
+Version `0.1.0` is published to Maven Central. Future releases are automated by
 [`.github/workflows/publish.yml`](.github/workflows/publish.yml) when a `v*`
 tag is pushed. The workflow needs these repository secrets:
 
@@ -101,7 +101,7 @@ tag is pushed. The workflow needs these repository secrets:
 * `MAVEN_GPG_PRIVATE_KEY`
 * `MAVEN_GPG_PASSPHRASE`
 
-Until the Central workflow completes, use JitPack or the attached JAR.
+Both Maven Central and JitPack are available for `0.1.0`.
 
 ## Console setup
 
