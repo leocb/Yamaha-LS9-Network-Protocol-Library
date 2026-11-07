@@ -298,8 +298,7 @@ Two deliberate boundaries:
   `Ls9SnapshotIO` is a documented, portable replacement for backup/restore.
 
 Automatic MAC discovery is also not implemented; supply the console MAC if the
-handshake challenges. Server mode and hardware validation are out of scope by
-request.
+handshake challenges.
 
 ## Bring-up checklist
 
@@ -320,14 +319,6 @@ changes: enable **PARAMETER CHANGE Tx** in MIDI SETUP.
 If faders move but pans are one step off, see the pan encoding note in
 `PROTOCOL.md`; use `setPanRaw` to calibrate.
 
-## Android StageMix client
-
-A faithful Android tablet/phone remote built on this library lives in
-[`../ls9-stagemix-android`](../ls9-stagemix-android). It exposes the mixer,
-layers, long faders, sends on faders, HA gain, PEQ/GEQ/dynamics editors, effect
-rack, scenes, outports, utility and setup screens, and includes an offline demo
-mode. See its README for build and connection instructions.
-
 ## Protocol documentation
 
 See [`PROTOCOL.md`](PROTOCOL.md) for:
@@ -347,5 +338,5 @@ MIT. See [`LICENSE`](LICENSE).
 This is an independent interoperability implementation. It was produced by
 inspecting shipped software and published Yamaha protocol documents. No Yamaha
 code, firmware or confidential material is included. "Yamaha" and "LS9" are
-trademarks of Yamaha Corporation. Use at your own risk, especially on a live
-show.
+trademarks of Yamaha Corporation and we're not afiliated with them in any way.
+This is experimental software. Use at your own risk, especially on a live show.
