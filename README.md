@@ -45,7 +45,44 @@ javac --release 17 -cp out -d out \
 java -cp out io.github.leocb.ls9.examples.Example 192.168.0.128
 ```
 
-With Maven:
+## Install
+
+### JitPack
+
+Tagged releases are built by JitPack.
+
+Gradle:
+
+```kotlin
+repositories {
+    maven { url = uri("https://jitpack.io") }
+}
+
+dependencies {
+    implementation("com.github.leocb:Yamaha-LS9-Network-Protocol-Library:v0.1.0")
+}
+```
+
+Maven:
+
+```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+
+<dependency>
+  <groupId>com.github.leocb</groupId>
+  <artifactId>Yamaha-LS9-Network-Protocol-Library</artifactId>
+  <version>v0.1.0</version>
+</dependency>
+```
+
+### Maven Central
+
+Central release coordinates:
 
 ```xml
 <dependency>
@@ -54,6 +91,17 @@ With Maven:
   <version>0.1.0</version>
 </dependency>
 ```
+
+Publishing to Central is automated by
+[`.github/workflows/publish.yml`](.github/workflows/publish.yml) when a `v*`
+tag is pushed. The workflow needs these repository secrets:
+
+* `MAVEN_CENTRAL_USERNAME`
+* `MAVEN_CENTRAL_TOKEN`
+* `MAVEN_GPG_PRIVATE_KEY`
+* `MAVEN_GPG_PASSPHRASE`
+
+Until the Central workflow completes, use JitPack or the attached JAR.
 
 ## Console setup
 
@@ -328,6 +376,22 @@ See [`PROTOCOL.md`](PROTOCOL.md) for:
 * the MAC challenge CRC,
 * the LS9 SysEx format and function calls,
 * the assumptions that still need hardware confirmation.
+
+## Releasing
+
+```bash
+mvn test
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+Pushing the tag triggers GitHub Actions for Maven Central and makes the same
+tag available to JitPack. Manual Central deployment is also possible with a
+configured `~/.m2/settings.xml` (`central` server id) and GPG key:
+
+```bash
+mvn -Pcentral deploy
+```
 
 ## License
 
