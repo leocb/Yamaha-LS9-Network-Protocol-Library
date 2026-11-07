@@ -338,6 +338,10 @@ See [`PROTOCOL.md`](PROTOCOL.md) for:
 * the LS9 SysEx format and function calls,
 * the assumptions that still need hardware confirmation.
 
+## License
+
+MIT. See [`LICENSE`](LICENSE).
+
 ## Legal / interoperability note
 
 This is an independent interoperability implementation. It was produced by
