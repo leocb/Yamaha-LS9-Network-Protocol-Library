@@ -1,0 +1,5626 @@
+table_id,table_name,value,display
+1,Surround Mode,0,STEREO
+1,Surround Mode,1,3-1
+1,Surround Mode,2,5.1
+1,Surround Mode,3,6.1
+1,Surround Mode,4,7.1
+2,Pan,-63,L63
+2,Pan,-41,L41
+2,Pan,-19,L19
+2,Pan,3,R3
+2,Pan,25,R25
+2,Pan,47,R47
+2,Pan,-62,L62
+2,Pan,-40,L40
+2,Pan,-18,L18
+2,Pan,4,R4
+2,Pan,26,R26
+2,Pan,48,R48
+2,Pan,-61,L61
+2,Pan,-39,L39
+2,Pan,-17,L17
+2,Pan,5,R5
+2,Pan,27,R27
+2,Pan,49,R49
+2,Pan,-60,L60
+2,Pan,-38,L38
+2,Pan,-16,L16
+2,Pan,6,R6
+2,Pan,28,R28
+2,Pan,50,R50
+2,Pan,-59,L59
+2,Pan,-37,L37
+2,Pan,-15,L15
+2,Pan,7,R7
+2,Pan,29,R29
+2,Pan,51,R51
+2,Pan,-58,L58
+2,Pan,-36,L36
+2,Pan,-14,L14
+2,Pan,8,R8
+2,Pan,30,R30
+2,Pan,52,R52
+2,Pan,-57,L57
+2,Pan,-35,L35
+2,Pan,-13,L13
+2,Pan,9,R9
+2,Pan,31,R31
+2,Pan,53,R53
+2,Pan,-56,L56
+2,Pan,-34,L34
+2,Pan,-12,L12
+2,Pan,10,R10
+2,Pan,32,R32
+2,Pan,54,R54
+2,Pan,-55,L55
+2,Pan,-33,L33
+2,Pan,-11,L11
+2,Pan,11,R11
+2,Pan,33,R33
+2,Pan,55,R55
+2,Pan,-54,L54
+2,Pan,-32,L32
+2,Pan,-10,L10
+2,Pan,12,R12
+2,Pan,34,R34
+2,Pan,56,R56
+2,Pan,-53,L53
+2,Pan,-31,L31
+2,Pan,-9,L9
+2,Pan,13,R13
+2,Pan,35,R35
+2,Pan,57,R57
+2,Pan,-52,L52
+2,Pan,-30,L30
+2,Pan,-8,L8
+2,Pan,14,R14
+2,Pan,36,R36
+2,Pan,58,R58
+2,Pan,-51,L51
+2,Pan,-29,L29
+2,Pan,-7,L7
+2,Pan,15,R15
+2,Pan,37,R37
+2,Pan,59,R59
+2,Pan,-50,L50
+2,Pan,-28,L28
+2,Pan,-6,L6
+2,Pan,16,R16
+2,Pan,38,R38
+2,Pan,60,R60
+2,Pan,-49,L49
+2,Pan,-27,L27
+2,Pan,-5,L5
+2,Pan,17,R17
+2,Pan,39,R39
+2,Pan,61,R61
+2,Pan,-48,L48
+2,Pan,-26,L26
+2,Pan,-4,L4
+2,Pan,18,R18
+2,Pan,40,R40
+2,Pan,62,R62
+2,Pan,-47,L47
+2,Pan,-25,L25
+2,Pan,-3,L3
+2,Pan,19,R19
+2,Pan,41,R41
+2,Pan,63,R63
+2,Pan,-46,L46
+2,Pan,-24,L24
+2,Pan,-2,L2
+2,Pan,20,R20
+2,Pan,42,R42
+2,Pan,-45,L45
+2,Pan,-23,L23
+2,Pan,-1,L1
+2,Pan,21,R21
+2,Pan,43,R43
+2,Pan,-44,L44
+2,Pan,-22,L22
+2,Pan,0,Center
+2,Pan,22,R22
+2,Pan,44,R44
+2,Pan,-43,L43
+2,Pan,-21,L21
+2,Pan,1,R1
+2,Pan,23,R23
+2,Pan,45,R45
+2,Pan,-42,L42
+2,Pan,-20,L20
+2,Pan,2,R2
+2,Pan,24,R24
+2,Pan,46,R46
+3,Fader,0,-InfdB
+3,Fader,128,-59.00dB
+3,Fader,256,-36.70dB
+3,Fader,384,-23.90dB
+3,Fader,512,-15.55dB
+3,Fader,640,-9.15dB
+3,Fader,768,-2.75dB
+3,Fader,896,3.65dB
+3,Fader,1,-138.00dB
+3,Fader,129,-58.80dB
+3,Fader,257,-36.60dB
+3,Fader,385,-23.80dB
+3,Fader,513,-15.50dB
+3,Fader,641,-9.10dB
+3,Fader,769,-2.70dB
+3,Fader,897,3.70dB
+3,Fader,2,-135.00dB
+3,Fader,130,-58.60dB
+3,Fader,258,-36.50dB
+3,Fader,386,-23.70dB
+3,Fader,514,-15.45dB
+3,Fader,642,-9.05dB
+3,Fader,770,-2.65dB
+3,Fader,898,3.75dB
+3,Fader,3,-132.00dB
+3,Fader,131,-58.40dB
+3,Fader,259,-36.40dB
+3,Fader,387,-23.60dB
+3,Fader,515,-15.40dB
+3,Fader,643,-9.00dB
+3,Fader,771,-2.60dB
+3,Fader,899,3.80dB
+3,Fader,4,-129.00dB
+3,Fader,132,-58.20dB
+3,Fader,260,-36.30dB
+3,Fader,388,-23.50dB
+3,Fader,516,-15.35dB
+3,Fader,644,-8.95dB
+3,Fader,772,-2.55dB
+3,Fader,900,3.85dB
+3,Fader,5,-126.00dB
+3,Fader,133,-58.00dB
+3,Fader,261,-36.20dB
+3,Fader,389,-23.40dB
+3,Fader,517,-15.30dB
+3,Fader,645,-8.90dB
+3,Fader,773,-2.50dB
+3,Fader,901,3.90dB
+3,Fader,6,-123.00dB
+3,Fader,134,-57.80dB
+3,Fader,262,-36.10dB
+3,Fader,390,-23.30dB
+3,Fader,518,-15.25dB
+3,Fader,646,-8.85dB
+3,Fader,774,-2.45dB
+3,Fader,902,3.95dB
+3,Fader,7,-120.00dB
+3,Fader,135,-57.60dB
+3,Fader,263,-36.00dB
+3,Fader,391,-23.20dB
+3,Fader,519,-15.20dB
+3,Fader,647,-8.80dB
+3,Fader,775,-2.40dB
+3,Fader,903,4.00dB
+3,Fader,8,-117.00dB
+3,Fader,136,-57.40dB
+3,Fader,264,-35.90dB
+3,Fader,392,-23.10dB
+3,Fader,520,-15.15dB
+3,Fader,648,-8.75dB
+3,Fader,776,-2.35dB
+3,Fader,904,4.05dB
+3,Fader,9,-114.00dB
+3,Fader,137,-57.20dB
+3,Fader,265,-35.80dB
+3,Fader,393,-23.00dB
+3,Fader,521,-15.10dB
+3,Fader,649,-8.70dB
+3,Fader,777,-2.30dB
+3,Fader,905,4.10dB
+3,Fader,10,-111.00dB
+3,Fader,138,-57.00dB
+3,Fader,266,-35.70dB
+3,Fader,394,-22.90dB
+3,Fader,522,-15.05dB
+3,Fader,650,-8.65dB
+3,Fader,778,-2.25dB
+3,Fader,906,4.15dB
+3,Fader,11,-108.00dB
+3,Fader,139,-56.80dB
+3,Fader,267,-35.60dB
+3,Fader,395,-22.80dB
+3,Fader,523,-15.00dB
+3,Fader,651,-8.60dB
+3,Fader,779,-2.20dB
+3,Fader,907,4.20dB
+3,Fader,12,-105.00dB
+3,Fader,140,-56.60dB
+3,Fader,268,-35.50dB
+3,Fader,396,-22.70dB
+3,Fader,524,-14.95dB
+3,Fader,652,-8.55dB
+3,Fader,780,-2.15dB
+3,Fader,908,4.25dB
+3,Fader,13,-102.00dB
+3,Fader,141,-56.40dB
+3,Fader,269,-35.40dB
+3,Fader,397,-22.60dB
+3,Fader,525,-14.90dB
+3,Fader,653,-8.50dB
+3,Fader,781,-2.10dB
+3,Fader,909,4.30dB
+3,Fader,14,-99.00dB
+3,Fader,142,-56.20dB
+3,Fader,270,-35.30dB
+3,Fader,398,-22.50dB
+3,Fader,526,-14.85dB
+3,Fader,654,-8.45dB
+3,Fader,782,-2.05dB
+3,Fader,910,4.35dB
+3,Fader,15,-96.00dB
+3,Fader,143,-56.00dB
+3,Fader,271,-35.20dB
+3,Fader,399,-22.40dB
+3,Fader,527,-14.80dB
+3,Fader,655,-8.40dB
+3,Fader,783,-2.00dB
+3,Fader,911,4.40dB
+3,Fader,16,-95.00dB
+3,Fader,144,-55.80dB
+3,Fader,272,-35.10dB
+3,Fader,400,-22.30dB
+3,Fader,528,-14.75dB
+3,Fader,656,-8.35dB
+3,Fader,784,-1.95dB
+3,Fader,912,4.45dB
+3,Fader,17,-94.00dB
+3,Fader,145,-55.60dB
+3,Fader,273,-35.00dB
+3,Fader,401,-22.20dB
+3,Fader,529,-14.70dB
+3,Fader,657,-8.30dB
+3,Fader,785,-1.90dB
+3,Fader,913,4.50dB
+3,Fader,18,-93.00dB
+3,Fader,146,-55.40dB
+3,Fader,274,-34.90dB
+3,Fader,402,-22.10dB
+3,Fader,530,-14.65dB
+3,Fader,658,-8.25dB
+3,Fader,786,-1.85dB
+3,Fader,914,4.55dB
+3,Fader,19,-92.00dB
+3,Fader,147,-55.20dB
+3,Fader,275,-34.80dB
+3,Fader,403,-22.00dB
+3,Fader,531,-14.60dB
+3,Fader,659,-8.20dB
+3,Fader,787,-1.80dB
+3,Fader,915,4.60dB
+3,Fader,20,-91.00dB
+3,Fader,148,-55.00dB
+3,Fader,276,-34.70dB
+3,Fader,404,-21.90dB
+3,Fader,532,-14.55dB
+3,Fader,660,-8.15dB
+3,Fader,788,-1.75dB
+3,Fader,916,4.65dB
+3,Fader,21,-90.00dB
+3,Fader,149,-54.80dB
+3,Fader,277,-34.60dB
+3,Fader,405,-21.80dB
+3,Fader,533,-14.50dB
+3,Fader,661,-8.10dB
+3,Fader,789,-1.70dB
+3,Fader,917,4.70dB
+3,Fader,22,-89.00dB
+3,Fader,150,-54.60dB
+3,Fader,278,-34.50dB
+3,Fader,406,-21.70dB
+3,Fader,534,-14.45dB
+3,Fader,662,-8.05dB
+3,Fader,790,-1.65dB
+3,Fader,918,4.75dB
+3,Fader,23,-88.00dB
+3,Fader,151,-54.40dB
+3,Fader,279,-34.40dB
+3,Fader,407,-21.60dB
+3,Fader,535,-14.40dB
+3,Fader,663,-8.00dB
+3,Fader,791,-1.60dB
+3,Fader,919,4.80dB
+3,Fader,24,-87.00dB
+3,Fader,152,-54.20dB
+3,Fader,280,-34.30dB
+3,Fader,408,-21.50dB
+3,Fader,536,-14.35dB
+3,Fader,664,-7.95dB
+3,Fader,792,-1.55dB
+3,Fader,920,4.85dB
+3,Fader,25,-86.00dB
+3,Fader,153,-54.00dB
+3,Fader,281,-34.20dB
+3,Fader,409,-21.40dB
+3,Fader,537,-14.30dB
+3,Fader,665,-7.90dB
+3,Fader,793,-1.50dB
+3,Fader,921,4.90dB
+3,Fader,26,-85.00dB
+3,Fader,154,-53.80dB
+3,Fader,282,-34.10dB
+3,Fader,410,-21.30dB
+3,Fader,538,-14.25dB
+3,Fader,666,-7.85dB
+3,Fader,794,-1.45dB
+3,Fader,922,4.95dB
+3,Fader,27,-84.00dB
+3,Fader,155,-53.60dB
+3,Fader,283,-34.00dB
+3,Fader,411,-21.20dB
+3,Fader,539,-14.20dB
+3,Fader,667,-7.80dB
+3,Fader,795,-1.40dB
+3,Fader,923,5.00dB
+3,Fader,28,-83.00dB
+3,Fader,156,-53.40dB
+3,Fader,284,-33.90dB
+3,Fader,412,-21.10dB
+3,Fader,540,-14.15dB
+3,Fader,668,-7.75dB
+3,Fader,796,-1.35dB
+3,Fader,924,5.05dB
+3,Fader,29,-82.00dB
+3,Fader,157,-53.20dB
+3,Fader,285,-33.80dB
+3,Fader,413,-21.00dB
+3,Fader,541,-14.10dB
+3,Fader,669,-7.70dB
+3,Fader,797,-1.30dB
+3,Fader,925,5.10dB
+3,Fader,30,-81.00dB
+3,Fader,158,-53.00dB
+3,Fader,286,-33.70dB
+3,Fader,414,-20.90dB
+3,Fader,542,-14.05dB
+3,Fader,670,-7.65dB
+3,Fader,798,-1.25dB
+3,Fader,926,5.15dB
+3,Fader,31,-80.00dB
+3,Fader,159,-52.80dB
+3,Fader,287,-33.60dB
+3,Fader,415,-20.80dB
+3,Fader,543,-14.00dB
+3,Fader,671,-7.60dB
+3,Fader,799,-1.20dB
+3,Fader,927,5.20dB
+3,Fader,32,-79.00dB
+3,Fader,160,-52.60dB
+3,Fader,288,-33.50dB
+3,Fader,416,-20.70dB
+3,Fader,544,-13.95dB
+3,Fader,672,-7.55dB
+3,Fader,800,-1.15dB
+3,Fader,928,5.25dB
+3,Fader,33,-78.00dB
+3,Fader,161,-52.40dB
+3,Fader,289,-33.40dB
+3,Fader,417,-20.60dB
+3,Fader,545,-13.90dB
+3,Fader,673,-7.50dB
+3,Fader,801,-1.10dB
+3,Fader,929,5.30dB
+3,Fader,34,-77.80dB
+3,Fader,162,-52.20dB
+3,Fader,290,-33.30dB
+3,Fader,418,-20.50dB
+3,Fader,546,-13.85dB
+3,Fader,674,-7.45dB
+3,Fader,802,-1.05dB
+3,Fader,930,5.35dB
+3,Fader,35,-77.60dB
+3,Fader,163,-52.00dB
+3,Fader,291,-33.20dB
+3,Fader,419,-20.40dB
+3,Fader,547,-13.80dB
+3,Fader,675,-7.40dB
+3,Fader,803,-1.00dB
+3,Fader,931,5.40dB
+3,Fader,36,-77.40dB
+3,Fader,164,-51.80dB
+3,Fader,292,-33.10dB
+3,Fader,420,-20.30dB
+3,Fader,548,-13.75dB
+3,Fader,676,-7.35dB
+3,Fader,804,-0.95dB
+3,Fader,932,5.45dB
+3,Fader,37,-77.20dB
+3,Fader,165,-51.60dB
+3,Fader,293,-33.00dB
+3,Fader,421,-20.20dB
+3,Fader,549,-13.70dB
+3,Fader,677,-7.30dB
+3,Fader,805,-0.90dB
+3,Fader,933,5.50dB
+3,Fader,38,-77.00dB
+3,Fader,166,-51.40dB
+3,Fader,294,-32.90dB
+3,Fader,422,-20.10dB
+3,Fader,550,-13.65dB
+3,Fader,678,-7.25dB
+3,Fader,806,-0.85dB
+3,Fader,934,5.55dB
+3,Fader,39,-76.80dB
+3,Fader,167,-51.20dB
+3,Fader,295,-32.80dB
+3,Fader,423,-20.00dB
+3,Fader,551,-13.60dB
+3,Fader,679,-7.20dB
+3,Fader,807,-0.80dB
+3,Fader,935,5.60dB
+3,Fader,40,-76.60dB
+3,Fader,168,-51.00dB
+3,Fader,296,-32.70dB
+3,Fader,424,-19.95dB
+3,Fader,552,-13.55dB
+3,Fader,680,-7.15dB
+3,Fader,808,-0.75dB
+3,Fader,936,5.65dB
+3,Fader,41,-76.40dB
+3,Fader,169,-50.80dB
+3,Fader,297,-32.60dB
+3,Fader,425,-19.90dB
+3,Fader,553,-13.50dB
+3,Fader,681,-7.10dB
+3,Fader,809,-0.70dB
+3,Fader,937,5.70dB
+3,Fader,42,-76.20dB
+3,Fader,170,-50.60dB
+3,Fader,298,-32.50dB
+3,Fader,426,-19.85dB
+3,Fader,554,-13.45dB
+3,Fader,682,-7.05dB
+3,Fader,810,-0.65dB
+3,Fader,938,5.75dB
+3,Fader,43,-76.00dB
+3,Fader,171,-50.40dB
+3,Fader,299,-32.40dB
+3,Fader,427,-19.80dB
+3,Fader,555,-13.40dB
+3,Fader,683,-7.00dB
+3,Fader,811,-0.60dB
+3,Fader,939,5.80dB
+3,Fader,44,-75.80dB
+3,Fader,172,-50.20dB
+3,Fader,300,-32.30dB
+3,Fader,428,-19.75dB
+3,Fader,556,-13.35dB
+3,Fader,684,-6.95dB
+3,Fader,812,-0.55dB
+3,Fader,940,5.85dB
+3,Fader,45,-75.60dB
+3,Fader,173,-50.00dB
+3,Fader,301,-32.20dB
+3,Fader,429,-19.70dB
+3,Fader,557,-13.30dB
+3,Fader,685,-6.90dB
+3,Fader,813,-0.50dB
+3,Fader,941,5.90dB
+3,Fader,46,-75.40dB
+3,Fader,174,-49.80dB
+3,Fader,302,-32.10dB
+3,Fader,430,-19.65dB
+3,Fader,558,-13.25dB
+3,Fader,686,-6.85dB
+3,Fader,814,-0.45dB
+3,Fader,942,5.95dB
+3,Fader,47,-75.20dB
+3,Fader,175,-49.60dB
+3,Fader,303,-32.00dB
+3,Fader,431,-19.60dB
+3,Fader,559,-13.20dB
+3,Fader,687,-6.80dB
+3,Fader,815,-0.40dB
+3,Fader,943,6.00dB
+3,Fader,48,-75.00dB
+3,Fader,176,-49.40dB
+3,Fader,304,-31.90dB
+3,Fader,432,-19.55dB
+3,Fader,560,-13.15dB
+3,Fader,688,-6.75dB
+3,Fader,816,-0.35dB
+3,Fader,944,6.05dB
+3,Fader,49,-74.80dB
+3,Fader,177,-49.20dB
+3,Fader,305,-31.80dB
+3,Fader,433,-19.50dB
+3,Fader,561,-13.10dB
+3,Fader,689,-6.70dB
+3,Fader,817,-0.30dB
+3,Fader,945,6.10dB
+3,Fader,50,-74.60dB
+3,Fader,178,-49.00dB
+3,Fader,306,-31.70dB
+3,Fader,434,-19.45dB
+3,Fader,562,-13.05dB
+3,Fader,690,-6.65dB
+3,Fader,818,-0.25dB
+3,Fader,946,6.15dB
+3,Fader,51,-74.40dB
+3,Fader,179,-48.80dB
+3,Fader,307,-31.60dB
+3,Fader,435,-19.40dB
+3,Fader,563,-13.00dB
+3,Fader,691,-6.60dB
+3,Fader,819,-0.20dB
+3,Fader,947,6.20dB
+3,Fader,52,-74.20dB
+3,Fader,180,-48.60dB
+3,Fader,308,-31.50dB
+3,Fader,436,-19.35dB
+3,Fader,564,-12.95dB
+3,Fader,692,-6.55dB
+3,Fader,820,-0.15dB
+3,Fader,948,6.25dB
+3,Fader,53,-74.00dB
+3,Fader,181,-48.40dB
+3,Fader,309,-31.40dB
+3,Fader,437,-19.30dB
+3,Fader,565,-12.90dB
+3,Fader,693,-6.50dB
+3,Fader,821,-0.10dB
+3,Fader,949,6.30dB
+3,Fader,54,-73.80dB
+3,Fader,182,-48.20dB
+3,Fader,310,-31.30dB
+3,Fader,438,-19.25dB
+3,Fader,566,-12.85dB
+3,Fader,694,-6.45dB
+3,Fader,822,-0.05dB
+3,Fader,950,6.35dB
+3,Fader,55,-73.60dB
+3,Fader,183,-48.00dB
+3,Fader,311,-31.20dB
+3,Fader,439,-19.20dB
+3,Fader,567,-12.80dB
+3,Fader,695,-6.40dB
+3,Fader,823,0.00dB
+3,Fader,951,6.40dB
+3,Fader,56,-73.40dB
+3,Fader,184,-47.80dB
+3,Fader,312,-31.10dB
+3,Fader,440,-19.15dB
+3,Fader,568,-12.75dB
+3,Fader,696,-6.35dB
+3,Fader,824,0.05dB
+3,Fader,952,6.45dB
+3,Fader,57,-73.20dB
+3,Fader,185,-47.60dB
+3,Fader,313,-31.00dB
+3,Fader,441,-19.10dB
+3,Fader,569,-12.70dB
+3,Fader,697,-6.30dB
+3,Fader,825,0.10dB
+3,Fader,953,6.50dB
+3,Fader,58,-73.00dB
+3,Fader,186,-47.40dB
+3,Fader,314,-30.90dB
+3,Fader,442,-19.05dB
+3,Fader,570,-12.65dB
+3,Fader,698,-6.25dB
+3,Fader,826,0.15dB
+3,Fader,954,6.55dB
+3,Fader,59,-72.80dB
+3,Fader,187,-47.20dB
+3,Fader,315,-30.80dB
+3,Fader,443,-19.00dB
+3,Fader,571,-12.60dB
+3,Fader,699,-6.20dB
+3,Fader,827,0.20dB
+3,Fader,955,6.60dB
+3,Fader,60,-72.60dB
+3,Fader,188,-47.00dB
+3,Fader,316,-30.70dB
+3,Fader,444,-18.95dB
+3,Fader,572,-12.55dB
+3,Fader,700,-6.15dB
+3,Fader,828,0.25dB
+3,Fader,956,6.65dB
+3,Fader,61,-72.40dB
+3,Fader,189,-46.80dB
+3,Fader,317,-30.60dB
+3,Fader,445,-18.90dB
+3,Fader,573,-12.50dB
+3,Fader,701,-6.10dB
+3,Fader,829,0.30dB
+3,Fader,957,6.70dB
+3,Fader,62,-72.20dB
+3,Fader,190,-46.60dB
+3,Fader,318,-30.50dB
+3,Fader,446,-18.85dB
+3,Fader,574,-12.45dB
+3,Fader,702,-6.05dB
+3,Fader,830,0.35dB
+3,Fader,958,6.75dB
+3,Fader,63,-72.00dB
+3,Fader,191,-46.40dB
+3,Fader,319,-30.40dB
+3,Fader,447,-18.80dB
+3,Fader,575,-12.40dB
+3,Fader,703,-6.00dB
+3,Fader,831,0.40dB
+3,Fader,959,6.80dB
+3,Fader,64,-71.80dB
+3,Fader,192,-46.20dB
+3,Fader,320,-30.30dB
+3,Fader,448,-18.75dB
+3,Fader,576,-12.35dB
+3,Fader,704,-5.95dB
+3,Fader,832,0.45dB
+3,Fader,960,6.85dB
+3,Fader,65,-71.60dB
+3,Fader,193,-46.00dB
+3,Fader,321,-30.20dB
+3,Fader,449,-18.70dB
+3,Fader,577,-12.30dB
+3,Fader,705,-5.90dB
+3,Fader,833,0.50dB
+3,Fader,961,6.90dB
+3,Fader,66,-71.40dB
+3,Fader,194,-45.80dB
+3,Fader,322,-30.10dB
+3,Fader,450,-18.65dB
+3,Fader,578,-12.25dB
+3,Fader,706,-5.85dB
+3,Fader,834,0.55dB
+3,Fader,962,6.95dB
+3,Fader,67,-71.20dB
+3,Fader,195,-45.60dB
+3,Fader,323,-30.00dB
+3,Fader,451,-18.60dB
+3,Fader,579,-12.20dB
+3,Fader,707,-5.80dB
+3,Fader,835,0.60dB
+3,Fader,963,7.00dB
+3,Fader,68,-71.00dB
+3,Fader,196,-45.40dB
+3,Fader,324,-29.90dB
+3,Fader,452,-18.55dB
+3,Fader,580,-12.15dB
+3,Fader,708,-5.75dB
+3,Fader,836,0.65dB
+3,Fader,964,7.05dB
+3,Fader,69,-70.80dB
+3,Fader,197,-45.20dB
+3,Fader,325,-29.80dB
+3,Fader,453,-18.50dB
+3,Fader,581,-12.10dB
+3,Fader,709,-5.70dB
+3,Fader,837,0.70dB
+3,Fader,965,7.10dB
+3,Fader,70,-70.60dB
+3,Fader,198,-45.00dB
+3,Fader,326,-29.70dB
+3,Fader,454,-18.45dB
+3,Fader,582,-12.05dB
+3,Fader,710,-5.65dB
+3,Fader,838,0.75dB
+3,Fader,966,7.15dB
+3,Fader,71,-70.40dB
+3,Fader,199,-44.80dB
+3,Fader,327,-29.60dB
+3,Fader,455,-18.40dB
+3,Fader,583,-12.00dB
+3,Fader,711,-5.60dB
+3,Fader,839,0.80dB
+3,Fader,967,7.20dB
+3,Fader,72,-70.20dB
+3,Fader,200,-44.60dB
+3,Fader,328,-29.50dB
+3,Fader,456,-18.35dB
+3,Fader,584,-11.95dB
+3,Fader,712,-5.55dB
+3,Fader,840,0.85dB
+3,Fader,968,7.25dB
+3,Fader,73,-70.00dB
+3,Fader,201,-44.40dB
+3,Fader,329,-29.40dB
+3,Fader,457,-18.30dB
+3,Fader,585,-11.90dB
+3,Fader,713,-5.50dB
+3,Fader,841,0.90dB
+3,Fader,969,7.30dB
+3,Fader,74,-69.80dB
+3,Fader,202,-44.20dB
+3,Fader,330,-29.30dB
+3,Fader,458,-18.25dB
+3,Fader,586,-11.85dB
+3,Fader,714,-5.45dB
+3,Fader,842,0.95dB
+3,Fader,970,7.35dB
+3,Fader,75,-69.60dB
+3,Fader,203,-44.00dB
+3,Fader,331,-29.20dB
+3,Fader,459,-18.20dB
+3,Fader,587,-11.80dB
+3,Fader,715,-5.40dB
+3,Fader,843,1.00dB
+3,Fader,971,7.40dB
+3,Fader,76,-69.40dB
+3,Fader,204,-43.80dB
+3,Fader,332,-29.10dB
+3,Fader,460,-18.15dB
+3,Fader,588,-11.75dB
+3,Fader,716,-5.35dB
+3,Fader,844,1.05dB
+3,Fader,972,7.45dB
+3,Fader,77,-69.20dB
+3,Fader,205,-43.60dB
+3,Fader,333,-29.00dB
+3,Fader,461,-18.10dB
+3,Fader,589,-11.70dB
+3,Fader,717,-5.30dB
+3,Fader,845,1.10dB
+3,Fader,973,7.50dB
+3,Fader,78,-69.00dB
+3,Fader,206,-43.40dB
+3,Fader,334,-28.90dB
+3,Fader,462,-18.05dB
+3,Fader,590,-11.65dB
+3,Fader,718,-5.25dB
+3,Fader,846,1.15dB
+3,Fader,974,7.55dB
+3,Fader,79,-68.80dB
+3,Fader,207,-43.20dB
+3,Fader,335,-28.80dB
+3,Fader,463,-18.00dB
+3,Fader,591,-11.60dB
+3,Fader,719,-5.20dB
+3,Fader,847,1.20dB
+3,Fader,975,7.60dB
+3,Fader,80,-68.60dB
+3,Fader,208,-43.00dB
+3,Fader,336,-28.70dB
+3,Fader,464,-17.95dB
+3,Fader,592,-11.55dB
+3,Fader,720,-5.15dB
+3,Fader,848,1.25dB
+3,Fader,976,7.65dB
+3,Fader,81,-68.40dB
+3,Fader,209,-42.80dB
+3,Fader,337,-28.60dB
+3,Fader,465,-17.90dB
+3,Fader,593,-11.50dB
+3,Fader,721,-5.10dB
+3,Fader,849,1.30dB
+3,Fader,977,7.70dB
+3,Fader,82,-68.20dB
+3,Fader,210,-42.60dB
+3,Fader,338,-28.50dB
+3,Fader,466,-17.85dB
+3,Fader,594,-11.45dB
+3,Fader,722,-5.05dB
+3,Fader,850,1.35dB
+3,Fader,978,7.75dB
+3,Fader,83,-68.00dB
+3,Fader,211,-42.40dB
+3,Fader,339,-28.40dB
+3,Fader,467,-17.80dB
+3,Fader,595,-11.40dB
+3,Fader,723,-5.00dB
+3,Fader,851,1.40dB
+3,Fader,979,7.80dB
+3,Fader,84,-67.80dB
+3,Fader,212,-42.20dB
+3,Fader,340,-28.30dB
+3,Fader,468,-17.75dB
+3,Fader,596,-11.35dB
+3,Fader,724,-4.95dB
+3,Fader,852,1.45dB
+3,Fader,980,7.85dB
+3,Fader,85,-67.60dB
+3,Fader,213,-42.00dB
+3,Fader,341,-28.20dB
+3,Fader,469,-17.70dB
+3,Fader,597,-11.30dB
+3,Fader,725,-4.90dB
+3,Fader,853,1.50dB
+3,Fader,981,7.90dB
+3,Fader,86,-67.40dB
+3,Fader,214,-41.80dB
+3,Fader,342,-28.10dB
+3,Fader,470,-17.65dB
+3,Fader,598,-11.25dB
+3,Fader,726,-4.85dB
+3,Fader,854,1.55dB
+3,Fader,982,7.95dB
+3,Fader,87,-67.20dB
+3,Fader,215,-41.60dB
+3,Fader,343,-28.00dB
+3,Fader,471,-17.60dB
+3,Fader,599,-11.20dB
+3,Fader,727,-4.80dB
+3,Fader,855,1.60dB
+3,Fader,983,8.00dB
+3,Fader,88,-67.00dB
+3,Fader,216,-41.40dB
+3,Fader,344,-27.90dB
+3,Fader,472,-17.55dB
+3,Fader,600,-11.15dB
+3,Fader,728,-4.75dB
+3,Fader,856,1.65dB
+3,Fader,984,8.05dB
+3,Fader,89,-66.80dB
+3,Fader,217,-41.20dB
+3,Fader,345,-27.80dB
+3,Fader,473,-17.50dB
+3,Fader,601,-11.10dB
+3,Fader,729,-4.70dB
+3,Fader,857,1.70dB
+3,Fader,985,8.10dB
+3,Fader,90,-66.60dB
+3,Fader,218,-41.00dB
+3,Fader,346,-27.70dB
+3,Fader,474,-17.45dB
+3,Fader,602,-11.05dB
+3,Fader,730,-4.65dB
+3,Fader,858,1.75dB
+3,Fader,986,8.15dB
+3,Fader,91,-66.40dB
+3,Fader,219,-40.80dB
+3,Fader,347,-27.60dB
+3,Fader,475,-17.40dB
+3,Fader,603,-11.00dB
+3,Fader,731,-4.60dB
+3,Fader,859,1.80dB
+3,Fader,987,8.20dB
+3,Fader,92,-66.20dB
+3,Fader,220,-40.60dB
+3,Fader,348,-27.50dB
+3,Fader,476,-17.35dB
+3,Fader,604,-10.95dB
+3,Fader,732,-4.55dB
+3,Fader,860,1.85dB
+3,Fader,988,8.25dB
+3,Fader,93,-66.00dB
+3,Fader,221,-40.40dB
+3,Fader,349,-27.40dB
+3,Fader,477,-17.30dB
+3,Fader,605,-10.90dB
+3,Fader,733,-4.50dB
+3,Fader,861,1.90dB
+3,Fader,989,8.30dB
+3,Fader,94,-65.80dB
+3,Fader,222,-40.20dB
+3,Fader,350,-27.30dB
+3,Fader,478,-17.25dB
+3,Fader,606,-10.85dB
+3,Fader,734,-4.45dB
+3,Fader,862,1.95dB
+3,Fader,990,8.35dB
+3,Fader,95,-65.60dB
+3,Fader,223,-40.00dB
+3,Fader,351,-27.20dB
+3,Fader,479,-17.20dB
+3,Fader,607,-10.80dB
+3,Fader,735,-4.40dB
+3,Fader,863,2.00dB
+3,Fader,991,8.40dB
+3,Fader,96,-65.40dB
+3,Fader,224,-39.90dB
+3,Fader,352,-27.10dB
+3,Fader,480,-17.15dB
+3,Fader,608,-10.75dB
+3,Fader,736,-4.35dB
+3,Fader,864,2.05dB
+3,Fader,992,8.45dB
+3,Fader,97,-65.20dB
+3,Fader,225,-39.80dB
+3,Fader,353,-27.00dB
+3,Fader,481,-17.10dB
+3,Fader,609,-10.70dB
+3,Fader,737,-4.30dB
+3,Fader,865,2.10dB
+3,Fader,993,8.50dB
+3,Fader,98,-65.00dB
+3,Fader,226,-39.70dB
+3,Fader,354,-26.90dB
+3,Fader,482,-17.05dB
+3,Fader,610,-10.65dB
+3,Fader,738,-4.25dB
+3,Fader,866,2.15dB
+3,Fader,994,8.55dB
+3,Fader,99,-64.80dB
+3,Fader,227,-39.60dB
+3,Fader,355,-26.80dB
+3,Fader,483,-17.00dB
+3,Fader,611,-10.60dB
+3,Fader,739,-4.20dB
+3,Fader,867,2.20dB
+3,Fader,995,8.60dB
+3,Fader,100,-64.60dB
+3,Fader,228,-39.50dB
+3,Fader,356,-26.70dB
+3,Fader,484,-16.95dB
+3,Fader,612,-10.55dB
+3,Fader,740,-4.15dB
+3,Fader,868,2.25dB
+3,Fader,996,8.65dB
+3,Fader,101,-64.40dB
+3,Fader,229,-39.40dB
+3,Fader,357,-26.60dB
+3,Fader,485,-16.90dB
+3,Fader,613,-10.50dB
+3,Fader,741,-4.10dB
+3,Fader,869,2.30dB
+3,Fader,997,8.70dB
+3,Fader,102,-64.20dB
+3,Fader,230,-39.30dB
+3,Fader,358,-26.50dB
+3,Fader,486,-16.85dB
+3,Fader,614,-10.45dB
+3,Fader,742,-4.05dB
+3,Fader,870,2.35dB
+3,Fader,998,8.75dB
+3,Fader,103,-64.00dB
+3,Fader,231,-39.20dB
+3,Fader,359,-26.40dB
+3,Fader,487,-16.80dB
+3,Fader,615,-10.40dB
+3,Fader,743,-4.00dB
+3,Fader,871,2.40dB
+3,Fader,999,8.80dB
+3,Fader,104,-63.80dB
+3,Fader,232,-39.10dB
+3,Fader,360,-26.30dB
+3,Fader,488,-16.75dB
+3,Fader,616,-10.35dB
+3,Fader,744,-3.95dB
+3,Fader,872,2.45dB
+3,Fader,1000,8.85dB
+3,Fader,105,-63.60dB
+3,Fader,233,-39.00dB
+3,Fader,361,-26.20dB
+3,Fader,489,-16.70dB
+3,Fader,617,-10.30dB
+3,Fader,745,-3.90dB
+3,Fader,873,2.50dB
+3,Fader,1001,8.90dB
+3,Fader,106,-63.40dB
+3,Fader,234,-38.90dB
+3,Fader,362,-26.10dB
+3,Fader,490,-16.65dB
+3,Fader,618,-10.25dB
+3,Fader,746,-3.85dB
+3,Fader,874,2.55dB
+3,Fader,1002,8.95dB
+3,Fader,107,-63.20dB
+3,Fader,235,-38.80dB
+3,Fader,363,-26.00dB
+3,Fader,491,-16.60dB
+3,Fader,619,-10.20dB
+3,Fader,747,-3.80dB
+3,Fader,875,2.60dB
+3,Fader,1003,9.00dB
+3,Fader,108,-63.00dB
+3,Fader,236,-38.70dB
+3,Fader,364,-25.90dB
+3,Fader,492,-16.55dB
+3,Fader,620,-10.15dB
+3,Fader,748,-3.75dB
+3,Fader,876,2.65dB
+3,Fader,1004,9.05dB
+3,Fader,109,-62.80dB
+3,Fader,237,-38.60dB
+3,Fader,365,-25.80dB
+3,Fader,493,-16.50dB
+3,Fader,621,-10.10dB
+3,Fader,749,-3.70dB
+3,Fader,877,2.70dB
+3,Fader,1005,9.10dB
+3,Fader,110,-62.60dB
+3,Fader,238,-38.50dB
+3,Fader,366,-25.70dB
+3,Fader,494,-16.45dB
+3,Fader,622,-10.05dB
+3,Fader,750,-3.65dB
+3,Fader,878,2.75dB
+3,Fader,1006,9.15dB
+3,Fader,111,-62.40dB
+3,Fader,239,-38.40dB
+3,Fader,367,-25.60dB
+3,Fader,495,-16.40dB
+3,Fader,623,-10.00dB
+3,Fader,751,-3.60dB
+3,Fader,879,2.80dB
+3,Fader,1007,9.20dB
+3,Fader,112,-62.20dB
+3,Fader,240,-38.30dB
+3,Fader,368,-25.50dB
+3,Fader,496,-16.35dB
+3,Fader,624,-9.95dB
+3,Fader,752,-3.55dB
+3,Fader,880,2.85dB
+3,Fader,1008,9.25dB
+3,Fader,113,-62.00dB
+3,Fader,241,-38.20dB
+3,Fader,369,-25.40dB
+3,Fader,497,-16.30dB
+3,Fader,625,-9.90dB
+3,Fader,753,-3.50dB
+3,Fader,881,2.90dB
+3,Fader,1009,9.30dB
+3,Fader,114,-61.80dB
+3,Fader,242,-38.10dB
+3,Fader,370,-25.30dB
+3,Fader,498,-16.25dB
+3,Fader,626,-9.85dB
+3,Fader,754,-3.45dB
+3,Fader,882,2.95dB
+3,Fader,1010,9.35dB
+3,Fader,115,-61.60dB
+3,Fader,243,-38.00dB
+3,Fader,371,-25.20dB
+3,Fader,499,-16.20dB
+3,Fader,627,-9.80dB
+3,Fader,755,-3.40dB
+3,Fader,883,3.00dB
+3,Fader,1011,9.40dB
+3,Fader,116,-61.40dB
+3,Fader,244,-37.90dB
+3,Fader,372,-25.10dB
+3,Fader,500,-16.15dB
+3,Fader,628,-9.75dB
+3,Fader,756,-3.35dB
+3,Fader,884,3.05dB
+3,Fader,1012,9.45dB
+3,Fader,117,-61.20dB
+3,Fader,245,-37.80dB
+3,Fader,373,-25.00dB
+3,Fader,501,-16.10dB
+3,Fader,629,-9.70dB
+3,Fader,757,-3.30dB
+3,Fader,885,3.10dB
+3,Fader,1013,9.50dB
+3,Fader,118,-61.00dB
+3,Fader,246,-37.70dB
+3,Fader,374,-24.90dB
+3,Fader,502,-16.05dB
+3,Fader,630,-9.65dB
+3,Fader,758,-3.25dB
+3,Fader,886,3.15dB
+3,Fader,1014,9.55dB
+3,Fader,119,-60.80dB
+3,Fader,247,-37.60dB
+3,Fader,375,-24.80dB
+3,Fader,503,-16.00dB
+3,Fader,631,-9.60dB
+3,Fader,759,-3.20dB
+3,Fader,887,3.20dB
+3,Fader,1015,9.60dB
+3,Fader,120,-60.60dB
+3,Fader,248,-37.50dB
+3,Fader,376,-24.70dB
+3,Fader,504,-15.95dB
+3,Fader,632,-9.55dB
+3,Fader,760,-3.15dB
+3,Fader,888,3.25dB
+3,Fader,1016,9.65dB
+3,Fader,121,-60.40dB
+3,Fader,249,-37.40dB
+3,Fader,377,-24.60dB
+3,Fader,505,-15.90dB
+3,Fader,633,-9.50dB
+3,Fader,761,-3.10dB
+3,Fader,889,3.30dB
+3,Fader,1017,9.70dB
+3,Fader,122,-60.20dB
+3,Fader,250,-37.30dB
+3,Fader,378,-24.50dB
+3,Fader,506,-15.85dB
+3,Fader,634,-9.45dB
+3,Fader,762,-3.05dB
+3,Fader,890,3.35dB
+3,Fader,1018,9.75dB
+3,Fader,123,-60.00dB
+3,Fader,251,-37.20dB
+3,Fader,379,-24.40dB
+3,Fader,507,-15.80dB
+3,Fader,635,-9.40dB
+3,Fader,763,-3.00dB
+3,Fader,891,3.40dB
+3,Fader,1019,9.80dB
+3,Fader,124,-59.80dB
+3,Fader,252,-37.10dB
+3,Fader,380,-24.30dB
+3,Fader,508,-15.75dB
+3,Fader,636,-9.35dB
+3,Fader,764,-2.95dB
+3,Fader,892,3.45dB
+3,Fader,1020,9.85dB
+3,Fader,125,-59.60dB
+3,Fader,253,-37.00dB
+3,Fader,381,-24.20dB
+3,Fader,509,-15.70dB
+3,Fader,637,-9.30dB
+3,Fader,765,-2.90dB
+3,Fader,893,3.50dB
+3,Fader,1021,9.90dB
+3,Fader,126,-59.40dB
+3,Fader,254,-36.90dB
+3,Fader,382,-24.10dB
+3,Fader,510,-15.65dB
+3,Fader,638,-9.25dB
+3,Fader,766,-2.85dB
+3,Fader,894,3.55dB
+3,Fader,1022,9.95dB
+3,Fader,127,-59.20dB
+3,Fader,255,-36.80dB
+3,Fader,383,-24.00dB
+3,Fader,511,-15.60dB
+3,Fader,639,-9.20dB
+3,Fader,767,-2.80dB
+3,Fader,895,3.60dB
+3,Fader,1023,10.00dB
+4,Hold Time,0,0.02m s
+4,Hold Time,36,0.93m s
+4,Hold Time,72,4.38m s
+4,Hold Time,108,20.3m s
+4,Hold Time,144,92.9m s
+4,Hold Time,180,464m s
+4,Hold Time,1,0.05m s
+4,Hold Time,37,0.98m s
+4,Hold Time,73,4.56m s
+4,Hold Time,109,21.0m s
+4,Hold Time,145,98.7m s
+4,Hold Time,181,487m s
+4,Hold Time,2,0.07m s
+4,Hold Time,38,1.02m s
+4,Hold Time,74,4.74m s
+4,Hold Time,110,21.7m s
+4,Hold Time,146,104m s
+4,Hold Time,182,510m s
+4,Hold Time,3,0.09m s
+4,Hold Time,39,1.07m s
+4,Hold Time,75,4.92m s
+4,Hold Time,111,22.5m s
+4,Hold Time,147,110m s
+4,Hold Time,183,534m s
+4,Hold Time,4,0.11m s
+4,Hold Time,40,1.11m s
+4,Hold Time,76,5.10m s
+4,Hold Time,112,23.2m s
+4,Hold Time,148,116m s
+4,Hold Time,184,557m s
+4,Hold Time,5,0.14m s
+4,Hold Time,41,1.16m s
+4,Hold Time,77,5.28m s
+4,Hold Time,113,24.6m s
+4,Hold Time,149,121m s
+4,Hold Time,185,580m s
+4,Hold Time,6,0.16m s
+4,Hold Time,42,1.20m s
+4,Hold Time,78,5.46m s
+4,Hold Time,114,26.1m s
+4,Hold Time,150,127m s
+4,Hold Time,186,603m s
+4,Hold Time,7,0.18m s
+4,Hold Time,43,1.25m s
+4,Hold Time,79,5.65m s
+4,Hold Time,115,27.6m s
+4,Hold Time,151,133m s
+4,Hold Time,187,626m s
+4,Hold Time,8,0.20m s
+4,Hold Time,44,1.29m s
+4,Hold Time,80,5.83m s
+4,Hold Time,116,29.0m s
+4,Hold Time,152,139m s
+4,Hold Time,188,650m s
+4,Hold Time,9,0.23m s
+4,Hold Time,45,1.34m s
+4,Hold Time,81,6.19m s
+4,Hold Time,117,30.5m s
+4,Hold Time,153,145m s
+4,Hold Time,189,673m s
+4,Hold Time,10,0.25m s
+4,Hold Time,46,1.38m s
+4,Hold Time,82,6.55m s
+4,Hold Time,118,31.9m s
+4,Hold Time,154,150m s
+4,Hold Time,190,696m s
+4,Hold Time,11,0.27m s
+4,Hold Time,47,1.43m s
+4,Hold Time,83,6.92m s
+4,Hold Time,119,33.4m s
+4,Hold Time,155,156m s
+4,Hold Time,181,719m s
+4,Hold Time,12,0.29m s
+4,Hold Time,48,1.47m s
+4,Hold Time,84,7.28m s
+4,Hold Time,120,34.8m s
+4,Hold Time,156,162m s
+4,Hold Time,192,743m s
+4,Hold Time,13,0.32m s
+4,Hold Time,49,1.56m s
+4,Hold Time,85,7.64m s
+4,Hold Time,121,36.3m s
+4,Hold Time,157,168m s
+4,Hold Time,193,789m s
+4,Hold Time,14,0.34m s
+4,Hold Time,50,1.66m s
+4,Hold Time,86,8.00m s
+4,Hold Time,122,37.7m s
+4,Hold Time,158,174m s
+4,Hold Time,194,835m s
+4,Hold Time,15,0.36m s
+4,Hold Time,51,1.75m s
+4,Hold Time,87,8.37m s
+4,Hold Time,123,39.2m s
+4,Hold Time,159,179m s
+4,Hold Time,195,882m s
+4,Hold Time,16,0.39m s
+4,Hold Time,52,1.84m s
+4,Hold Time,88,8.73m s
+4,Hold Time,124,40.6m s
+4,Hold Time,160,185m s
+4,Hold Time,196,928m s
+4,Hold Time,17,0.41m s
+4,Hold Time,53,1.93m s
+4,Hold Time,89,9.09m s
+4,Hold Time,125,42.1m s
+4,Hold Time,161,197m s
+4,Hold Time,197,975m s
+4,Hold Time,18,0.43m s
+4,Hold Time,54,2.02m s
+4,Hold Time,90,9.46m s
+4,Hold Time,126,43.5m s
+4,Hold Time,162,209m s
+4,Hold Time,198,1.02 s
+4,Hold Time,19,0.45m s
+4,Hold Time,55,2.11m s
+4,Hold Time,91,9.82m s
+4,Hold Time,127,45.0m s
+4,Hold Time,163,220m s
+4,Hold Time,199,1.06 s
+4,Hold Time,20,0.48m s
+4,Hold Time,56,2.20m s
+4,Hold Time,92,10.1m s
+4,Hold Time,128,46.4m s
+4,Hold Time,164,232m s
+4,Hold Time,200,1.11 s
+4,Hold Time,21,0.50m s
+4,Hold Time,57,2.29m s
+4,Hold Time,93,10.5m s
+4,Hold Time,129,49.3m s
+4,Hold Time,165,243m s
+4,Hold Time,201,1.16 s
+4,Hold Time,22,0.52m s
+4,Hold Time,58,2.38m s
+4,Hold Time,94,10.9m s
+4,Hold Time,130,52.2m s
+4,Hold Time,166,255m s
+4,Hold Time,202,1.20 s
+4,Hold Time,23,0.54m s
+4,Hold Time,59,2.47m s
+4,Hold Time,95,11.2m s
+4,Hold Time,131,55.1m s
+4,Hold Time,167,267m s
+4,Hold Time,203,1.25 s
+4,Hold Time,24,0.57m s
+4,Hold Time,60,2.56m s
+4,Hold Time,96,11.6m s
+4,Hold Time,132,58.0m s
+4,Hold Time,168,278m s
+4,Hold Time,204,1.30 s
+4,Hold Time,25,0.59m s
+4,Hold Time,61,2.65m s
+4,Hold Time,97,12.3m s
+4,Hold Time,133,60.9m s
+4,Hold Time,169,290m s
+4,Hold Time,205,1.34 s
+4,Hold Time,26,0.61m s
+4,Hold Time,62,2.74m s
+4,Hold Time,98,13.0m s
+4,Hold Time,134,63.8m s
+4,Hold Time,170,301m s
+4,Hold Time,206,1.39 s
+4,Hold Time,27,0.63m s
+4,Hold Time,63,2.83m s
+4,Hold Time,59,13.8m s
+4,Hold Time,135,66.7m s
+4,Hold Time,171,313m s
+4,Hold Time,207,1.43 s
+4,Hold Time,28,0.66m s
+4,Hold Time,64,2.93m s
+4,Hold Time,100,14.5m s
+4,Hold Time,136,69.6m s
+4,Hold Time,172,325m s
+4,Hold Time,208,1.48 s
+4,Hold Time,29,0.68m s
+4,Hold Time,65,3.11m s
+4,Hold Time,101,15.2m s
+4,Hold Time,137,72.5m s
+4,Hold Time,173,336m s
+4,Hold Time,209,1.57 s
+4,Hold Time,30,0.70m s
+4,Hold Time,66,3.29m s
+4,Hold Time,102,15.9m s
+4,Hold Time,138,75.4m s
+4,Hold Time,174,348m s
+4,Hold Time,210,1.67 s
+4,Hold Time,31,0.73m s
+4,Hold Time,67,3.47m s
+4,Hold Time,103,16.7m s
+4,Hold Time,139,78.3m s
+4,Hold Time,175,359m s
+4,Hold Time,211,1.76 s
+4,Hold Time,32,0.75m s
+4,Hold Time,68,3.65m s
+4,Hold Time,104,17.4m s
+4,Hold Time,140,81.2m s
+4,Hold Time,176,371m s
+4,Hold Time,212,1.85 s
+4,Hold Time,33,0.79m s
+4,Hold Time,69,3.83m s
+4,Hold Time,105,18.1m s
+4,Hold Time,141,84.2m s
+4,Hold Time,177,394m s
+4,Hold Time,213,1.95 s
+4,Hold Time,34,0.84m s
+4,Hold Time,70,4.01m s
+4,Hold Time,106,18.8m s
+4,Hold Time,142,87.1m s
+4,Hold Time,178,417m s
+4,Hold Time,214,2.04 s
+4,Hold Time,35,0.88m s
+4,Hold Time,71,4.20m s
+4,Hold Time,107,19.6m s
+4,Hold Time,143,90.0m s
+4,Hold Time,179,441m s
+4,Hold Time,215,2.13 s
+4,Hold Time,0,0.02m s
+4,Hold Time,36,0.85m s
+4,Hold Time,72,4.02m s
+4,Hold Time,108,18.6m s
+4,Hold Time,144,85.3m s
+4,Hold Time,180,426m s
+4,Hold Time,1,0.04m s
+4,Hold Time,37,0.90m s
+4,Hold Time,73,4.19m s
+4,Hold Time,109,19.3m s
+4,Hold Time,145,90.6m s
+4,Hold Time,181,448m s
+4,Hold Time,2,0.06m s
+4,Hold Time,38,0.94m s
+4,Hold Time,74,4.35m s
+4,Hold Time,110,20.0m s
+4,Hold Time,146,96.0m s
+4,Hold Time,182,469m s
+4,Hold Time,3,0.08m s
+4,Hold Time,39,0.98m s
+4,Hold Time,75,4.52m s
+4,Hold Time,111,20.6m s
+4,Hold Time,147,101m s
+4,Hold Time,183,490m s
+4,Hold Time,4,0.10m s
+4,Hold Time,40,1.02m s
+4,Hold Time,76,4.69m s
+4,Hold Time,112,21.3m s
+4,Hold Time,148,106m s
+4,Hold Time,184,512m s
+4,Hold Time,5,0.13m s
+4,Hold Time,41,1.06m s
+4,Hold Time,77,4.85m s
+4,Hold Time,113,22.6m s
+4,Hold Time,149,112m s
+4,Hold Time,185,533m s
+4,Hold Time,6,0.15m s
+4,Hold Time,42,1.10m s
+4,Hold Time,78,5.02m s
+4,Hold Time,114,24.0m s
+4,Hold Time,150,117m s
+4,Hold Time,186,554m s
+4,Hold Time,7,0.17m s
+4,Hold Time,43,1.15m s
+4,Hold Time,79,5.19m s
+4,Hold Time,115,25.3m s
+4,Hold Time,151,122m s
+4,Hold Time,187,576m s
+4,Hold Time,8,0.19m s
+4,Hold Time,44,1.19m s
+4,Hold Time,80,5.35m s
+4,Hold Time,116,26.6m s
+4,Hold Time,152,128m s
+4,Hold Time,188,597m s
+4,Hold Time,9,0.21m s
+4,Hold Time,45,1.23m s
+4,Hold Time,81,5.69m s
+4,Hold Time,117,28.0m s
+4,Hold Time,153,133m s
+4,Hold Time,189,618m s
+4,Hold Time,10,0.23m s
+4,Hold Time,46,1.27m s
+4,Hold Time,82,6.02m s
+4,Hold Time,118,29.3m s
+4,Hold Time,154,138m s
+4,Hold Time,190,640m s
+4,Hold Time,11,0.25m s
+4,Hold Time,47,1.31m s
+4,Hold Time,83,6.35m s
+4,Hold Time,119,30.6m s
+4,Hold Time,155,144m s
+4,Hold Time,191,661m s
+4,Hold Time,12,0.27m s
+4,Hold Time,48,1.35m s
+4,Hold Time,84,6.69m s
+4,Hold Time,120,32.0m s
+4,Hold Time,156,149m s
+4,Hold Time,192,682m s
+4,Hold Time,13,0.29m s
+4,Hold Time,49,1.44m s
+4,Hold Time,85,7.02m s
+4,Hold Time,121,33.3m s
+4,Hold Time,157,154m s
+4,Hold Time,193,725m s
+4,Hold Time,14,0.31m s
+4,Hold Time,50,1.52m s
+4,Hold Time,86,7.35m s
+4,Hold Time,122,34.6m s
+4,Hold Time,158,160m s
+4,Hold Time,194,768m s
+4,Hold Time,15,0.33m s
+4,Hold Time,51,1.60m s
+4,Hold Time,87,7.69m s
+4,Hold Time,123,36.0m s
+4,Hold Time,159,165m s
+4,Hold Time,195,810m s
+4,Hold Time,16,0.35m s
+4,Hold Time,52,1.69m s
+4,Hold Time,88,8.02m s
+4,Hold Time,124,37.3m s
+4,Hold Time,160,170m s
+4,Hold Time,196,853m s
+4,Hold Time,17,0.38m s
+4,Hold Time,53,1.77m s
+4,Hold Time,89,8.35m s
+4,Hold Time,125,38.6m s
+4,Hold Time,161,181m s
+4,Hold Time,197,896m s
+4,Hold Time,18,0.40m s
+4,Hold Time,54,1.85m s
+4,Hold Time,90,8.69m s
+4,Hold Time,126,40.0m s
+4,Hold Time,162,192m s
+4,Hold Time,198,938m s
+4,Hold Time,19,0.42m s
+4,Hold Time,55,1.94m s
+4,Hold Time,91,9.02m s
+4,Hold Time,127,41.3m s
+4,Hold Time,163,202m s
+4,Hold Time,199,981m s
+4,Hold Time,20,0.44m s
+4,Hold Time,56,2.02m s
+4,Hold Time,92,9.35m s
+4,Hold Time,128,42.6m s
+4,Hold Time,164,213m s
+4,Hold Time,200,1.02 s
+4,Hold Time,21,0.46m s
+4,Hold Time,57,2.10m s
+4,Hold Time,93,9.69m s
+4,Hold Time,129,45.3m s
+4,Hold Time,165,224m s
+4,Hold Time,201,1.06 s
+4,Hold Time,22,0.48m s
+4,Hold Time,58,2.19m s
+4,Hold Time,94,10.0m s
+4,Hold Time,130,48.0m s
+4,Hold Time,166,234m s
+4,Hold Time,202,1.10 s
+4,Hold Time,23,0.50m s
+4,Hold Time,59,2.27m s
+4,Hold Time,95,10.3m s
+4,Hold Time,131,50.6m s
+4,Hold Time,167,245m s
+4,Hold Time,203,1.15 s
+4,Hold Time,24,0.52m s
+4,Hold Time,60,2.35m s
+4,Hold Time,96,10.6m s
+4,Hold Time,132,53.3m s
+4,Hold Time,168,256m s
+4,Hold Time,204,1.19 s
+4,Hold Time,25,0.54m s
+4,Hold Time,61,2.44m s
+4,Hold Time,97,11.3m s
+4,Hold Time,133,56.0m s
+4,Hold Time,169,266m s
+4,Hold Time,205,1.23 s
+4,Hold Time,26,0.56m s
+4,Hold Time,62,2.52m s
+4,Hold Time,98,12.0m s
+4,Hold Time,134,58.6m s
+4,Hold Time,170,277m s
+4,Hold Time,206,1.28 s
+4,Hold Time,27,0.58m s
+4,Hold Time,63,2.60m s
+4,Hold Time,59,12.6m s
+4,Hold Time,135,61.3m s
+4,Hold Time,171,288m s
+4,Hold Time,207,1.32 s
+4,Hold Time,28,0.60m s
+4,Hold Time,64,2.69m s
+4,Hold Time,100,13.3m s
+4,Hold Time,136,64.0m s
+4,Hold Time,172,298m s
+4,Hold Time,208,1.36 s
+4,Hold Time,29,0.63m s
+4,Hold Time,65,2.85m s
+4,Hold Time,101,14.0m s
+4,Hold Time,137,66.6m s
+4,Hold Time,173,309m s
+4,Hold Time,209,1.45 s
+4,Hold Time,30,0.65m s
+4,Hold Time,66,3.02m s
+4,Hold Time,102,14.6m s
+4,Hold Time,138,69.3m s
+4,Hold Time,174,320m s
+4,Hold Time,210,1.53 s
+4,Hold Time,31,0.67m s
+4,Hold Time,67,3.19m s
+4,Hold Time,103,15.3m s
+4,Hold Time,139,72.0m s
+4,Hold Time,175,330m s
+4,Hold Time,211,1.62 s
+4,Hold Time,32,0.69m s
+4,Hold Time,68,3.35m s
+4,Hold Time,104,16.0m s
+4,Hold Time,140,74.6m s
+4,Hold Time,176,341m s
+4,Hold Time,212,1.70 s
+4,Hold Time,33,0.73m s
+4,Hold Time,69,3.52m s
+4,Hold Time,105,16.6m s
+4,Hold Time,141,77.3m s
+4,Hold Time,177,362m s
+4,Hold Time,213,1.79 s
+4,Hold Time,34,0.77m s
+4,Hold Time,70,3.69m s
+4,Hold Time,106,17.3m s
+4,Hold Time,142,80.0m s
+4,Hold Time,178,384m s
+4,Hold Time,214,1.87 s
+4,Hold Time,35,0.81m s
+4,Hold Time,71,3.85m s
+4,Hold Time,107,18.0m s
+4,Hold Time,143,82.6m s
+4,Hold Time,179,405m s
+4,Hold Time,215,1.96 s
+5,Decay/Release,0,6m s
+5,Decay/Release,27,163m s
+5,Decay/Release,54,517m s
+5,Decay/Release,81,1.58 s
+5,Decay/Release,108,5.20 s
+5,Decay/Release,135,17.0 s
+5,Decay/Release,1,12m s
+5,Decay/Release,28,168m s
+5,Decay/Release,55,540m s
+5,Decay/Release,82,1.67 s
+5,Decay/Release,109,5.39 s
+5,Decay/Release,136,17.8 s
+5,Decay/Release,2,17m s
+5,Decay/Release,29,174m s
+5,Decay/Release,56,563m s
+5,Decay/Release,83,1.77 s
+5,Decay/Release,110,5.57 s
+5,Decay/Release,137,18.5 s
+5,Decay/Release,3,23m s
+5,Decay/Release,30,180m s
+5,Decay/Release,57,586m s
+5,Decay/Release,84,1.86 s
+5,Decay/Release,111,5.76 s
+5,Decay/Release,138,19.3 s
+5,Decay/Release,4,29m s
+5,Decay/Release,31,186m s
+5,Decay/Release,58,609m s
+5,Decay/Release,85,1.95 s
+5,Decay/Release,112,5.94 s
+5,Decay/Release,139,20.0 s
+5,Decay/Release,5,35m s
+5,Decay/Release,32,192m s
+5,Decay/Release,59,633m s
+5,Decay/Release,86,2.04 s
+5,Decay/Release,113,6.32 s
+5,Decay/Release,140,20.8 s
+5,Decay/Release,6,41m s
+5,Decay/Release,33,203m s
+5,Decay/Release,60,656m s
+5,Decay/Release,87,2.14 s
+5,Decay/Release,114,6.69 s
+5,Decay/Release,141,21.5 s
+5,Decay/Release,7,46m s
+5,Decay/Release,34,215m s
+5,Decay/Release,61,679m s
+5,Decay/Release,88,2.23 s
+5,Decay/Release,115,7.06 s
+5,Decay/Release,142,22.2 s
+5,Decay/Release,8,52m s
+5,Decay/Release,35,226m s
+5,Decay/Release,62,702m s
+5,Decay/Release,89,2.32 s
+5,Decay/Release,116,7.43 s
+5,Decay/Release,143,23.0 s
+5,Decay/Release,9,58m s
+5,Decay/Release,36,238m s
+5,Decay/Release,63,725m s
+5,Decay/Release,90,2.42 s
+5,Decay/Release,117,7.80 s
+5,Decay/Release,144,23.7 s
+5,Decay/Release,10,64m s
+5,Decay/Release,37,250m s
+5,Decay/Release,64,749m s
+5,Decay/Release,91,2.51 s
+5,Decay/Release,118,8.17 s
+5,Decay/Release,145,25.2 s
+5,Decay/Release,11,70m s
+5,Decay/Release,38,261m s
+5,Decay/Release,65,795m s
+5,Decay/Release,92,2.60 s
+5,Decay/Release,119,8.54 s
+5,Decay/Release,146,26.7 s
+5,Decay/Release,12,75m s
+5,Decay/Release,39,273m s
+5,Decay/Release,66,842m s
+5,Decay/Release,93,2.69 s
+5,Decay/Release,120,8.92 s
+5,Decay/Release,147,28.2 s
+5,Decay/Release,13,81m s
+5,Decay/Release,40,284m s
+5,Decay/Release,67,888m s
+5,Decay/Release,94,2.79 s
+5,Decay/Release,121,9.29 s
+5,Decay/Release,148,29.7 s
+5,Decay/Release,14,87m s
+5,Decay/Release,41,296m s
+5,Decay/Release,68,934m s
+5,Decay/Release,95,2.88 s
+5,Decay/Release,122,9.66 s
+5,Decay/Release,149,31.2 s
+5,Decay/Release,15,93m s
+5,Decay/Release,42,308m s
+5,Decay/Release,69,981m s
+5,Decay/Release,96,2.97 s
+5,Decay/Release,123,10.0 s
+5,Decay/Release,150,32.6 s
+5,Decay/Release,16,99m s
+5,Decay/Release,43,319m s
+5,Decay/Release,70,1.02 s
+5,Decay/Release,97,3.16 s
+5,Decay/Release,124,10.4 s
+5,Decay/Release,151,34.1 s
+5,Decay/Release,17,104m s
+5,Decay/Release,44,331m s
+5,Decay/Release,71,1.07 s
+5,Decay/Release,98,3.34 s
+5,Decay/Release,125,10.7 s
+5,Decay/Release,152,35.6 s
+5,Decay/Release,18,110m s
+5,Decay/Release,45,342m s
+5,Decay/Release,72,1.12 s
+5,Decay/Release,99,3.53 s
+5,Decay/Release,126,11.1 s
+5,Decay/Release,153,37.1 s
+5,Decay/Release,19,116m s
+5,Decay/Release,46,354m s
+5,Decay/Release,73,1.16 s
+5,Decay/Release,100,3.72 s
+5,Decay/Release,127,11.5 s
+5,Decay/Release,154,38.6 s
+5,Decay/Release,20,122m s
+5,Decay/Release,47,366m s
+5,Decay/Release,74,1.21 s
+5,Decay/Release,101,3.90 s
+5,Decay/Release,128,11.8 s
+5,Decay/Release,155,40.1 s
+5,Decay/Release,21,128m s
+5,Decay/Release,48,377m s
+5,Decay/Release,75,1.25 s
+5,Decay/Release,102,4.09 s
+5,Decay/Release,129,12.6 s
+5,Decay/Release,156,41.6 s
+5,Decay/Release,22,133m s
+5,Decay/Release,49,400m s
+5,Decay/Release,76,1.30 s
+5,Decay/Release,103,4.27 s
+5,Decay/Release,130,13.3 s
+5,Decay/Release,157,43.0 s
+5,Decay/Release,23,139m s
+5,Decay/Release,50,424m s
+5,Decay/Release,77,1.35 s
+5,Decay/Release,104,4.46 s
+5,Decay/Release,131,14.1 s
+5,Decay/Release,158,44.5 s
+5,Decay/Release,24,145m s
+5,Decay/Release,51,447m s
+5,Decay/Release,78,1.39 s
+5,Decay/Release,105,4.64 s
+5,Decay/Release,132,14.8 s
+5,Decay/Release,159,46.0 s
+5,Decay/Release,25,151m s
+5,Decay/Release,52,470m s
+5,Decay/Release,79,1.44 s
+5,Decay/Release,106,4.83 s
+5,Decay/Release,133,15.6 s
+5,Decay/Release,26,157m s
+5,Decay/Release,53,493m s
+5,Decay/Release,80,1.49 s
+5,Decay/Release,107,5.02 s
+5,Decay/Release,134,16.3 s
+5,Decay/Release,0,5m s
+5,Decay/Release,27,149m s
+5,Decay/Release,54,475m s
+5,Decay/Release,81,1.45 s
+5,Decay/Release,108,4.78 s
+5,Decay/Release,135,15.7 s
+5,Decay/Release,1,11m s
+5,Decay/Release,28,155m s
+5,Decay/Release,55,496m s
+5,Decay/Release,82,1.54 s
+5,Decay/Release,109,4.95 s
+5,Decay/Release,136,16.3 s
+5,Decay/Release,2,16m s
+5,Decay/Release,29,160m s
+5,Decay/Release,56,517m s
+5,Decay/Release,83,1.62 s
+5,Decay/Release,110,5.12 s
+5,Decay/Release,137,17.0 s
+5,Decay/Release,3,21m s
+5,Decay/Release,30,165m s
+5,Decay/Release,57,539m s
+5,Decay/Release,84,1.71 s
+5,Decay/Release,111,5.29 s
+5,Decay/Release,138,17.7 s
+5,Decay/Release,4,27m s
+5,Decay/Release,31,171m s
+5,Decay/Release,58,560m s
+5,Decay/Release,85,1.79 s
+5,Decay/Release,112,5.46 s
+5,Decay/Release,139,18.4 s
+5,Decay/Release,5,32m s
+5,Decay/Release,32,176m s
+5,Decay/Release,59,581m s
+5,Decay/Release,86,1.88 s
+5,Decay/Release,113,5.80 s
+5,Decay/Release,140,19.1 s
+5,Decay/Release,6,37m s
+5,Decay/Release,33,187m s
+5,Decay/Release,60,603m s
+5,Decay/Release,87,1.96 s
+5,Decay/Release,114,6.14 s
+5,Decay/Release,141,19.7 s
+5,Decay/Release,7,43m s
+5,Decay/Release,34,197m s
+5,Decay/Release,61,624m s
+5,Decay/Release,88,2.05 s
+5,Decay/Release,115,6.48 s
+5,Decay/Release,142,20.4 s
+5,Decay/Release,8,48m s
+5,Decay/Release,35,208m s
+5,Decay/Release,62,645m s
+5,Decay/Release,89,2.13 s
+5,Decay/Release,116,6.83 s
+5,Decay/Release,143,21.1 s
+5,Decay/Release,9,53m s
+5,Decay/Release,36,219m s
+5,Decay/Release,63,667m s
+5,Decay/Release,90,2.22 s
+5,Decay/Release,117,7.17 s
+5,Decay/Release,144,21.8 s
+5,Decay/Release,10,59m s
+5,Decay/Release,37,229m s
+5,Decay/Release,64,688m s
+5,Decay/Release,91,2.30 s
+5,Decay/Release,118,7.51 s
+5,Decay/Release,145,23.2 s
+5,Decay/Release,11,64m s
+5,Decay/Release,38,240m s
+5,Decay/Release,65,730m s
+5,Decay/Release,92,2.39 s
+5,Decay/Release,119,7.85 s
+5,Decay/Release,146,24.5 s
+5,Decay/Release,12,69m s
+5,Decay/Release,39,251m s
+5,Decay/Release,66,773m s
+5,Decay/Release,93,2.47 s
+5,Decay/Release,120,8.19 s
+5,Decay/Release,147,25.9 s
+5,Decay/Release,13,75m s
+5,Decay/Release,40,261m s
+5,Decay/Release,67,816m s
+5,Decay/Release,94,2.56 s
+5,Decay/Release,121,8.53 s
+5,Decay/Release,148,27.3 s
+5,Decay/Release,14,80m s
+5,Decay/Release,41,272m s
+5,Decay/Release,68,858m s
+5,Decay/Release,95,2.65 s
+5,Decay/Release,122,8.87 s
+5,Decay/Release,149,28.6 s
+5,Decay/Release,15,85m s
+5,Decay/Release,42,283m s
+5,Decay/Release,69,901m s
+5,Decay/Release,96,2.73 s
+5,Decay/Release,123,9.21 s
+5,Decay/Release,150,30.0 s
+5,Decay/Release,16,91m s
+5,Decay/Release,43,293m s
+5,Decay/Release,70,944m s
+5,Decay/Release,97,2.90 s
+5,Decay/Release,124,9.56 s
+5,Decay/Release,151,31.4 s
+5,Decay/Release,17,96m s
+5,Decay/Release,44,304m s
+5,Decay/Release,71,986m s
+5,Decay/Release,98,3.07 s
+5,Decay/Release,125,9.90 s
+5,Decay/Release,152,32.7 s
+5,Decay/Release,18,101m s
+5,Decay/Release,45,315m s
+5,Decay/Release,72,1.02 s
+5,Decay/Release,99,3.24 s
+5,Decay/Release,126,10.2 s
+5,Decay/Release,153,34.1 s
+5,Decay/Release,19,107m s
+5,Decay/Release,46,325m s
+5,Decay/Release,73,1.07 s
+5,Decay/Release,100,3.41 s
+5,Decay/Release,127,10.5 s
+5,Decay/Release,154,35.4 s
+5,Decay/Release,20,112m s
+5,Decay/Release,47,336m s
+5,Decay/Release,74,1.11 s
+5,Decay/Release,101,3.58 s
+5,Decay/Release,128,10.9 s
+5,Decay/Release,155,36.8 s
+5,Decay/Release,21,117m s
+5,Decay/Release,48,347m s
+5,Decay/Release,75,1.15 s
+5,Decay/Release,102,3.75 s
+5,Decay/Release,129,11.6 s
+5,Decay/Release,156,38.2 s
+5,Decay/Release,22,123m s
+5,Decay/Release,49,368m s
+5,Decay/Release,76,1.20 s
+5,Decay/Release,103,3.93 s
+5,Decay/Release,130,12.2 s
+5,Decay/Release,157,39.5 s
+5,Decay/Release,23,128m s
+5,Decay/Release,50,389m s
+5,Decay/Release,77,1.24 s
+5,Decay/Release,104,4.10 s
+5,Decay/Release,131,12.9 s
+5,Decay/Release,158,40.9 s
+5,Decay/Release,24,133m s
+5,Decay/Release,51,411m s
+5,Decay/Release,78,1.28 s
+5,Decay/Release,105,4.27 s
+5,Decay/Release,132,13.6 s
+5,Decay/Release,159,42.3 s
+5,Decay/Release,25,139m s
+5,Decay/Release,52,432m s
+5,Decay/Release,79,1.32 s
+5,Decay/Release,106,4.44 s
+5,Decay/Release,133,14.3 s
+5,Decay/Release,26,144m s
+5,Decay/Release,53,453m s
+5,Decay/Release,80,1.37 s
+5,Decay/Release,107,4.61 s
+5,Decay/Release,134,15.0 s
+6,Ratio,0,1:1
+6,Ratio,1,1.1:1
+6,Ratio,2,1.3:1
+6,Ratio,3,1.5:1
+6,Ratio,4,1.7:1
+6,Ratio,5,2:1
+6,Ratio,6,2.5:1
+6,Ratio,7,3:1
+6,Ratio,8,3.5:1
+6,Ratio,9,4:1
+6,Ratio,10,5:1
+6,Ratio,11,6:1
+6,Ratio,12,8:1
+6,Ratio,13,10:1
+6,Ratio,14,20:1
+6,Ratio,15,Inf:1
+7,Gain,0,0.0dB
+7,Gain,31,3.1dB
+7,Gain,62,6.2dB
+7,Gain,93,9.3dB
+7,Gain,124,12.4dB
+7,Gain,155,15.5dB
+7,Gain,1,0.1dB
+7,Gain,32,3.2dB
+7,Gain,63,6.3dB
+7,Gain,94,9.4dB
+7,Gain,125,12.5dB
+7,Gain,156,15.6dB
+7,Gain,2,0.2dB
+7,Gain,33,3.3dB
+7,Gain,64,6.4dB
+7,Gain,95,9.5dB
+7,Gain,126,12.6dB
+7,Gain,157,15.7dB
+7,Gain,3,0.3dB
+7,Gain,34,3.4dB
+7,Gain,65,6.5dB
+7,Gain,96,9.6dB
+7,Gain,127,12.7dB
+7,Gain,158,15.8dB
+7,Gain,4,0.4dB
+7,Gain,35,3.5dB
+7,Gain,66,6.6dB
+7,Gain,97,9.7dB
+7,Gain,128,12.8dB
+7,Gain,159,15.9dB
+7,Gain,5,0.5dB
+7,Gain,36,3.6dB
+7,Gain,67,6.7dB
+7,Gain,98,9.8dB
+7,Gain,129,12.9dB
+7,Gain,160,16.0dB
+7,Gain,6,0.6dB
+7,Gain,37,3.7dB
+7,Gain,68,6.8dB
+7,Gain,99,9.9dB
+7,Gain,130,13.0dB
+7,Gain,161,16.1dB
+7,Gain,7,0.7dB
+7,Gain,38,3.8dB
+7,Gain,69,6.9dB
+7,Gain,100,10.0dB
+7,Gain,131,13.1dB
+7,Gain,162,16.2dB
+7,Gain,8,0.8dB
+7,Gain,39,3.9dB
+7,Gain,70,7.0dB
+7,Gain,101,10.1dB
+7,Gain,132,13.2dB
+7,Gain,163,16.3dB
+7,Gain,9,0.9dB
+7,Gain,40,4.0dB
+7,Gain,71,7.1dB
+7,Gain,102,10.2dB
+7,Gain,133,13.3dB
+7,Gain,164,16.4dB
+7,Gain,10,1.0dB
+7,Gain,41,4.1dB
+7,Gain,72,7.2dB
+7,Gain,103,10.3dB
+7,Gain,134,13.4dB
+7,Gain,165,16.5dB
+7,Gain,11,1.1dB
+7,Gain,42,4.2dB
+7,Gain,73,7.3dB
+7,Gain,104,10.4dB
+7,Gain,135,13.5dB
+7,Gain,166,16.6dB
+7,Gain,12,1.2dB
+7,Gain,43,4.3dB
+7,Gain,74,7.4dB
+7,Gain,105,10.5dB
+7,Gain,136,13.6dB
+7,Gain,167,16.7dB
+7,Gain,13,1.3dB
+7,Gain,44,4.4dB
+7,Gain,75,7.5dB
+7,Gain,106,10.6dB
+7,Gain,137,13.7dB
+7,Gain,168,16.8dB
+7,Gain,14,1.4dB
+7,Gain,45,4.5dB
+7,Gain,76,7.6dB
+7,Gain,107,10.7dB
+7,Gain,138,13.8dB
+7,Gain,169,16.9dB
+7,Gain,15,1.5dB
+7,Gain,46,4.6dB
+7,Gain,77,7.7dB
+7,Gain,108,10.8dB
+7,Gain,139,13.9dB
+7,Gain,170,17.0dB
+7,Gain,16,1.6dB
+7,Gain,47,4.7dB
+7,Gain,78,7.8dB
+7,Gain,109,10.9dB
+7,Gain,140,14.0dB
+7,Gain,171,17.1dB
+7,Gain,17,1.7dB
+7,Gain,48,4.8dB
+7,Gain,79,7.9dB
+7,Gain,110,11.0dB
+7,Gain,141,14.1dB
+7,Gain,172,17.2dB
+7,Gain,18,1.8dB
+7,Gain,49,4.9dB
+7,Gain,80,8.0dB
+7,Gain,111,11.1dB
+7,Gain,142,14.2dB
+7,Gain,173,17.3dB
+7,Gain,19,1.9dB
+7,Gain,50,5.0dB
+7,Gain,81,8.1dB
+7,Gain,112,11.2dB
+7,Gain,143,14.3dB
+7,Gain,174,17.4dB
+7,Gain,20,2.0dB
+7,Gain,51,5.1dB
+7,Gain,82,8.2dB
+7,Gain,113,11.3dB
+7,Gain,144,14.4dB
+7,Gain,175,17.5dB
+7,Gain,21,2.1dB
+7,Gain,52,5.2dB
+7,Gain,83,8.3dB
+7,Gain,114,11.4dB
+7,Gain,145,14.5dB
+7,Gain,176,17.6dB
+7,Gain,22,2.2dB
+7,Gain,53,5.3dB
+7,Gain,84,8.4dB
+7,Gain,115,11.5dB
+7,Gain,146,14.6dB
+7,Gain,177,17.7dB
+7,Gain,23,2.3dB
+7,Gain,54,5.4dB
+7,Gain,85,8.5dB
+7,Gain,116,11.6dB
+7,Gain,147,14.7dB
+7,Gain,178,17.8dB
+7,Gain,24,2.4dB
+7,Gain,55,5.5dB
+7,Gain,86,8.6dB
+7,Gain,117,11.7dB
+7,Gain,148,14.8dB
+7,Gain,179,17.9dB
+7,Gain,25,2.5dB
+7,Gain,56,5.6dB
+7,Gain,87,8.7dB
+7,Gain,118,11.8dB
+7,Gain,149,14.9dB
+7,Gain,180,18.0dB
+7,Gain,26,2.6dB
+7,Gain,57,5.7dB
+7,Gain,88,8.8dB
+7,Gain,119,11.9dB
+7,Gain,150,15.0dB
+7,Gain,27,2.7dB
+7,Gain,58,5.8dB
+7,Gain,89,8.9dB
+7,Gain,120,12.0dB
+7,Gain,151,15.1dB
+7,Gain,28,2.8dB
+7,Gain,59,5.9dB
+7,Gain,90,9.0dB
+7,Gain,121,12.1dB
+7,Gain,152,15.2dB
+7,Gain,29,2.9dB
+7,Gain,60,6.0dB
+7,Gain,91,9.1dB
+7,Gain,122,12.2dB
+7,Gain,153,15.3dB
+7,Gain,30,3.0dB
+7,Gain,61,6.1dB
+7,Gain,92,9.2dB
+7,Gain,123,12.3dB
+7,Gain,154,15.4dB
+7,Gain,0,-18.0dB
+7,Gain,31,-14.9dB
+7,Gain,62,-11.8dB
+7,Gain,93,-8.7dB
+7,Gain,124,-5.6dB
+7,Gain,155,-2.5dB
+7,Gain,1,-17.9dB
+7,Gain,32,-14.8dB
+7,Gain,63,-11.7dB
+7,Gain,94,-8.6dB
+7,Gain,125,-5.5dB
+7,Gain,156,-2.4dB
+7,Gain,2,-17.8dB
+7,Gain,33,-14.7dB
+7,Gain,64,-11.6dB
+7,Gain,95,-8.5dB
+7,Gain,126,-5.4dB
+7,Gain,157,-2.3dB
+7,Gain,3,-17.7dB
+7,Gain,34,-14.6dB
+7,Gain,65,-11.5dB
+7,Gain,96,-8.4dB
+7,Gain,127,-5.3dB
+7,Gain,158,-2.2dB
+7,Gain,4,-17.6dB
+7,Gain,35,-14.5dB
+7,Gain,66,-11.4dB
+7,Gain,97,-8.3dB
+7,Gain,128,-5.2dB
+7,Gain,159,-2.1dB
+7,Gain,5,-17.5dB
+7,Gain,36,-14.4dB
+7,Gain,67,-11.3dB
+7,Gain,98,-8.2dB
+7,Gain,129,-5.1dB
+7,Gain,160,-2.0dB
+7,Gain,6,-17.4dB
+7,Gain,37,-14.3dB
+7,Gain,68,-11.2dB
+7,Gain,99,-8.1dB
+7,Gain,130,-5.0dB
+7,Gain,161,-1.9dB
+7,Gain,7,-17.3dB
+7,Gain,38,-14.2dB
+7,Gain,69,-11.1dB
+7,Gain,100,-8.0dB
+7,Gain,131,-4.9dB
+7,Gain,162,-1.8dB
+7,Gain,8,-17.2dB
+7,Gain,39,-14.1dB
+7,Gain,70,-11.0dB
+7,Gain,101,-7.9dB
+7,Gain,132,-4.8dB
+7,Gain,163,-1.7dB
+7,Gain,9,-17.1dB
+7,Gain,40,-14.0dB
+7,Gain,71,-10.9dB
+7,Gain,102,-7.8dB
+7,Gain,133,-4.7dB
+7,Gain,164,-1.6dB
+7,Gain,10,-17.0dB
+7,Gain,41,-13.9dB
+7,Gain,72,-10.8dB
+7,Gain,103,-7.7dB
+7,Gain,134,-4.6dB
+7,Gain,165,-1.5dB
+7,Gain,11,-16.9dB
+7,Gain,42,-13.8dB
+7,Gain,73,-10.7dB
+7,Gain,104,-7.6dB
+7,Gain,135,-4.5dB
+7,Gain,166,-1.4dB
+7,Gain,12,-16.8dB
+7,Gain,43,-13.7dB
+7,Gain,74,-10.6dB
+7,Gain,105,-7.5dB
+7,Gain,136,-4.4dB
+7,Gain,167,-1.3dB
+7,Gain,13,-16.7dB
+7,Gain,44,-13.6dB
+7,Gain,75,-10.5dB
+7,Gain,106,-7.4dB
+7,Gain,137,-4.3dB
+7,Gain,168,-1.2dB
+7,Gain,14,-16.6dB
+7,Gain,45,-13.5dB
+7,Gain,76,-10.4dB
+7,Gain,107,-7.3dB
+7,Gain,138,-4.2dB
+7,Gain,169,-1.1dB
+7,Gain,15,-16.5dB
+7,Gain,46,-13.4dB
+7,Gain,77,-10.3dB
+7,Gain,108,-7.2dB
+7,Gain,139,-4.1dB
+7,Gain,170,-1.0dB
+7,Gain,16,-16.4dB
+7,Gain,47,-13.3dB
+7,Gain,78,-10.2dB
+7,Gain,109,-7.1dB
+7,Gain,140,-4.0dB
+7,Gain,171,-0.9dB
+7,Gain,17,-16.3dB
+7,Gain,48,-13.2dB
+7,Gain,79,-10.1dB
+7,Gain,110,-7.0dB
+7,Gain,141,-3.9dB
+7,Gain,172,-0.8dB
+7,Gain,18,-16.2dB
+7,Gain,49,-13.1dB
+7,Gain,80,-10.0dB
+7,Gain,111,-6.9dB
+7,Gain,142,-3.8dB
+7,Gain,173,-0.7dB
+7,Gain,19,-16.1dB
+7,Gain,50,-13.0dB
+7,Gain,81,-9.9dB
+7,Gain,112,-6.8dB
+7,Gain,143,-3.7dB
+7,Gain,174,-0.6dB
+7,Gain,20,-16.0dB
+7,Gain,51,-12.9dB
+7,Gain,82,-9.8dB
+7,Gain,113,-6.7dB
+7,Gain,144,-3.6dB
+7,Gain,175,-0.5dB
+7,Gain,21,-15.9dB
+7,Gain,52,-12.8dB
+7,Gain,83,-9.7dB
+7,Gain,114,-6.6dB
+7,Gain,145,-3.5dB
+7,Gain,176,-0.4dB
+7,Gain,22,-15.8dB
+7,Gain,53,-12.7dB
+7,Gain,84,-9.6dB
+7,Gain,115,-6.5dB
+7,Gain,146,-3.4dB
+7,Gain,177,-0.3dB
+7,Gain,23,-15.7dB
+7,Gain,54,-12.6dB
+7,Gain,85,-9.5dB
+7,Gain,116,-6.4dB
+7,Gain,147,-3.3dB
+7,Gain,178,-0.2dB
+7,Gain,24,-15.6dB
+7,Gain,55,-12.5dB
+7,Gain,86,-9.4dB
+7,Gain,117,-6.3dB
+7,Gain,148,-3.2dB
+7,Gain,179,-0.1dB
+7,Gain,25,-15.5dB
+7,Gain,56,-12.4dB
+7,Gain,87,-9.3dB
+7,Gain,118,-6.2dB
+7,Gain,149,-3.1dB
+7,Gain,180,0.0dB
+7,Gain,26,-15.4dB
+7,Gain,57,-12.3dB
+7,Gain,88,-9.2dB
+7,Gain,119,-6.1dB
+7,Gain,150,-3.0dB
+7,Gain,27,-15.3dB
+7,Gain,58,-12.2dB
+7,Gain,89,-9.1dB
+7,Gain,120,-6.0dB
+7,Gain,151,-2.9dB
+7,Gain,28,-15.2dB
+7,Gain,59,-12.1dB
+7,Gain,90,-9.0dB
+7,Gain,121,-5.9dB
+7,Gain,152,-2.8dB
+7,Gain,29,-15.1dB
+7,Gain,60,-12.0dB
+7,Gain,91,-8.9dB
+7,Gain,122,-5.8dB
+7,Gain,153,-2.7dB
+7,Gain,30,-15.0dB
+7,Gain,61,-11.9dB
+7,Gain,92,-8.8dB
+7,Gain,123,-5.7dB
+7,Gain,154,-2.6dB
+8,Knee/Width,0,HARD
+8,Knee/Width,1,1.0
+8,Knee/Width,2,2.0
+8,Knee/Width,3,3.0
+8,Knee/Width,4,4.0
+8,Knee/Width,5,5.0
+8,Knee/Width,0,1dB
+8,Knee/Width,15,16dB
+8,Knee/Width,30,31dB
+8,Knee/Width,45,46dB
+8,Knee/Width,60,61dB
+8,Knee/Width,75,76dB
+8,Knee/Width,1,2dB
+8,Knee/Width,16,17dB
+8,Knee/Width,31,32dB
+8,Knee/Width,46,47dB
+8,Knee/Width,61,62dB
+8,Knee/Width,76,77dB
+8,Knee/Width,2,3dB
+8,Knee/Width,17,18dB
+8,Knee/Width,32,33dB
+8,Knee/Width,47,48dB
+8,Knee/Width,62,63dB
+8,Knee/Width,77,78dB
+8,Knee/Width,3,4dB
+8,Knee/Width,18,19dB
+8,Knee/Width,33,34dB
+8,Knee/Width,48,49dB
+8,Knee/Width,63,64dB
+8,Knee/Width,78,79dB
+8,Knee/Width,4,5dB
+8,Knee/Width,19,20dB
+8,Knee/Width,34,35dB
+8,Knee/Width,49,50dB
+8,Knee/Width,64,65dB
+8,Knee/Width,79,80dB
+8,Knee/Width,5,6dB
+8,Knee/Width,20,21dB
+8,Knee/Width,35,36dB
+8,Knee/Width,50,51dB
+8,Knee/Width,65,66dB
+8,Knee/Width,80,81dB
+8,Knee/Width,6,7dB
+8,Knee/Width,21,22dB
+8,Knee/Width,36,37dB
+8,Knee/Width,51,52dB
+8,Knee/Width,66,67dB
+8,Knee/Width,81,82dB
+8,Knee/Width,7,8dB
+8,Knee/Width,22,23dB
+8,Knee/Width,37,38dB
+8,Knee/Width,52,53dB
+8,Knee/Width,67,68dB
+8,Knee/Width,82,83dB
+8,Knee/Width,8,9dB
+8,Knee/Width,23,24dB
+8,Knee/Width,38,39dB
+8,Knee/Width,53,54dB
+8,Knee/Width,68,69dB
+8,Knee/Width,83,84dB
+8,Knee/Width,9,10dB
+8,Knee/Width,24,25dB
+8,Knee/Width,39,40dB
+8,Knee/Width,54,55dB
+8,Knee/Width,69,70dB
+8,Knee/Width,84,85dB
+8,Knee/Width,10,11dB
+8,Knee/Width,25,26dB
+8,Knee/Width,40,41dB
+8,Knee/Width,55,56dB
+8,Knee/Width,70,71dB
+8,Knee/Width,85,86dB
+8,Knee/Width,11,12dB
+8,Knee/Width,26,27dB
+8,Knee/Width,41,42dB
+8,Knee/Width,56,57dB
+8,Knee/Width,71,72dB
+8,Knee/Width,86,87dB
+8,Knee/Width,12,13dB
+8,Knee/Width,27,28dB
+8,Knee/Width,42,43dB
+8,Knee/Width,57,58dB
+8,Knee/Width,72,73dB
+8,Knee/Width,87,88dB
+8,Knee/Width,13,14dB
+8,Knee/Width,28,29dB
+8,Knee/Width,43,44dB
+8,Knee/Width,58,59dB
+8,Knee/Width,73,74dB
+8,Knee/Width,88,89dB
+8,Knee/Width,14,15dB
+8,Knee/Width,29,30dB
+8,Knee/Width,44,45dB
+8,Knee/Width,59,60dB
+8,Knee/Width,74,75dB
+8,Knee/Width,89,90dB
+9,EQ Q,0,10.0
+9,EQ Q,8,4.0
+9,EQ Q,16,1.6
+9,EQ Q,24,0.63
+9,EQ Q,32,0.25
+9,EQ Q,40,0.10
+9,EQ Q,1,9.0
+9,EQ Q,9,3.5
+9,EQ Q,17,1.4
+9,EQ Q,25,0.56
+9,EQ Q,33,0.22
+9,EQ Q,41,Low Shelving
+9,EQ Q,2,8.0
+9,EQ Q,10,3.2
+9,EQ Q,18,1.2
+9,EQ Q,26,0.50
+9,EQ Q,34,0.20
+9,EQ Q,42,High Shelving
+9,EQ Q,3,7.0
+9,EQ Q,11,2.8
+9,EQ Q,19,1.1
+9,EQ Q,27,0.45
+9,EQ Q,35,0.18
+9,EQ Q,43,LPF
+9,EQ Q,4,6.3
+9,EQ Q,12,2.5
+9,EQ Q,20,1.0
+9,EQ Q,28,0.40
+9,EQ Q,36,0.16
+9,EQ Q,44,HPF
+9,EQ Q,5,5.6
+9,EQ Q,13,2.2
+9,EQ Q,21,0.90
+9,EQ Q,29,0.35
+9,EQ Q,37,0.14
+9,EQ Q,6,5.0
+9,EQ Q,14,2.0
+9,EQ Q,22,0.80
+9,EQ Q,30,0.32
+9,EQ Q,38,0.12
+9,EQ Q,7,4.5
+9,EQ Q,15,1.8
+9,EQ Q,23,0.70
+9,EQ Q,31,0.28
+9,EQ Q,39,0.11
+10,EQ-F,0,16.0Hz
+10,EQ-F,22,56.0Hz
+10,EQ-F,44,200Hz
+10,EQ-F,66,710Hz
+10,EQ-F,88,2.50kHz
+10,EQ-F,110,9.00kHz
+10,EQ-F,1,17.0Hz
+10,EQ-F,23,60.0Hz
+10,EQ-F,45,212Hz
+10,EQ-F,67,750Hz
+10,EQ-F,89,2.65kHz
+10,EQ-F,111,9.50kHz
+10,EQ-F,2,18.0Hz
+10,EQ-F,24,63.0Hz
+10,EQ-F,46,224Hz
+10,EQ-F,68,800Hz
+10,EQ-F,90,2.80kHz
+10,EQ-F,112,10.0kHz
+10,EQ-F,3,19.0Hz
+10,EQ-F,25,67.0Hz
+10,EQ-F,47,236Hz
+10,EQ-F,69,850Hz
+10,EQ-F,91,3.00kHz
+10,EQ-F,113,10.6kHz
+10,EQ-F,4,20.0Hz
+10,EQ-F,26,71.0Hz
+10,EQ-F,48,250Hz
+10,EQ-F,70,900Hz
+10,EQ-F,92,3.15kHz
+10,EQ-F,114,11.2kHz
+10,EQ-F,5,21.2Hz
+10,EQ-F,27,75.0Hz
+10,EQ-F,49,265Hz
+10,EQ-F,71,950Hz
+10,EQ-F,93,3.35kHz
+10,EQ-F,115,11.8kHz
+10,EQ-F,6,22.4Hz
+10,EQ-F,28,80.0Hz
+10,EQ-F,50,280Hz
+10,EQ-F,72,1.00kHz
+10,EQ-F,94,3.55kHz
+10,EQ-F,116,12.5kHz
+10,EQ-F,7,23.6Hz
+10,EQ-F,29,85.0Hz
+10,EQ-F,51,300Hz
+10,EQ-F,73,1.06kHz
+10,EQ-F,95,3.75kHz
+10,EQ-F,117,13.2kHz
+10,EQ-F,8,25.0Hz
+10,EQ-F,30,90.0Hz
+10,EQ-F,52,315Hz
+10,EQ-F,74,1.12kHz
+10,EQ-F,96,4.00kHz
+10,EQ-F,118,14.0kHz
+10,EQ-F,9,26.5Hz
+10,EQ-F,31,95.0Hz
+10,EQ-F,53,335Hz
+10,EQ-F,75,1.18kHz
+10,EQ-F,97,4.25kHz
+10,EQ-F,119,15.0kHz
+10,EQ-F,10,28.0Hz
+10,EQ-F,32,100Hz
+10,EQ-F,54,355Hz
+10,EQ-F,76,1.25kHz
+10,EQ-F,98,4.50kHz
+10,EQ-F,120,16.0kHz
+10,EQ-F,11,30.0Hz
+10,EQ-F,33,106Hz
+10,EQ-F,55,375Hz
+10,EQ-F,77,1.32kHz
+10,EQ-F,99,4.75kHz
+10,EQ-F,121,17.0kHz
+10,EQ-F,12,31.5Hz
+10,EQ-F,34,112Hz
+10,EQ-F,56,400Hz
+10,EQ-F,78,1.40kHz
+10,EQ-F,100,5.00kHz
+10,EQ-F,122,18.0kHz
+10,EQ-F,13,33.5Hz
+10,EQ-F,35,118Hz
+10,EQ-F,57,425Hz
+10,EQ-F,79,1.50kHz
+10,EQ-F,101,5.30kHz
+10,EQ-F,123,19.0kHz
+10,EQ-F,14,35.5Hz
+10,EQ-F,36,125Hz
+10,EQ-F,58,450Hz
+10,EQ-F,80,1.60kHz
+10,EQ-F,102,5.60kHz
+10,EQ-F,124,20.0kHz
+10,EQ-F,15,37.5Hz
+10,EQ-F,37,132Hz
+10,EQ-F,59,475Hz
+10,EQ-F,81,1.70kHz
+10,EQ-F,103,6.00kHz
+10,EQ-F,125,21.2kHz
+10,EQ-F,16,40.0Hz
+10,EQ-F,38,140Hz
+10,EQ-F,60,500Hz
+10,EQ-F,82,1.80kHz
+10,EQ-F,104,6.30kHz
+10,EQ-F,126,22.4kHz
+10,EQ-F,17,42.5Hz
+10,EQ-F,39,150Hz
+10,EQ-F,61,530Hz
+10,EQ-F,83,1.90kHz
+10,EQ-F,105,6.70kHz
+10,EQ-F,127,23.6kHz
+10,EQ-F,18,45.0Hz
+10,EQ-F,40,160Hz
+10,EQ-F,62,560Hz
+10,EQ-F,84,2.00kHz
+10,EQ-F,106,7.10kHz
+10,EQ-F,19,47.5Hz
+10,EQ-F,41,170Hz
+10,EQ-F,63,600Hz
+10,EQ-F,85,2.12kHz
+10,EQ-F,107,7.50kHz
+10,EQ-F,20,50.0Hz
+10,EQ-F,42,180Hz
+10,EQ-F,64,630Hz
+10,EQ-F,86,2.24kHz
+10,EQ-F,108,8.00kHz
+10,EQ-F,21,53.0Hz
+10,EQ-F,43,190Hz
+10,EQ-F,65,670Hz
+10,EQ-F,87,2.36kHz
+10,EQ-F,109,8.50kHz
+11,Surround Pan(Vertical),-63,F63
+11,Surround Pan(Vertical),-41,F41
+11,Surround Pan(Vertical),-19,F19
+11,Surround Pan(Vertical),3,R3
+11,Surround Pan(Vertical),25,R25
+11,Surround Pan(Vertical),47,R47
+11,Surround Pan(Vertical),-62,F62
+11,Surround Pan(Vertical),-40,F40
+11,Surround Pan(Vertical),-18,F18
+11,Surround Pan(Vertical),4,R4
+11,Surround Pan(Vertical),26,R26
+11,Surround Pan(Vertical),48,R48
+11,Surround Pan(Vertical),-61,F61
+11,Surround Pan(Vertical),-39,F39
+11,Surround Pan(Vertical),-17,F17
+11,Surround Pan(Vertical),5,R5
+11,Surround Pan(Vertical),27,R27
+11,Surround Pan(Vertical),49,R49
+11,Surround Pan(Vertical),-60,F60
+11,Surround Pan(Vertical),-38,F38
+11,Surround Pan(Vertical),-16,F16
+11,Surround Pan(Vertical),6,R6
+11,Surround Pan(Vertical),28,R28
+11,Surround Pan(Vertical),50,R50
+11,Surround Pan(Vertical),-59,F59
+11,Surround Pan(Vertical),-37,F37
+11,Surround Pan(Vertical),-15,F15
+11,Surround Pan(Vertical),7,R7
+11,Surround Pan(Vertical),29,R29
+11,Surround Pan(Vertical),51,R51
+11,Surround Pan(Vertical),-58,F58
+11,Surround Pan(Vertical),-36,F36
+11,Surround Pan(Vertical),-14,F14
+11,Surround Pan(Vertical),8,R8
+11,Surround Pan(Vertical),30,R30
+11,Surround Pan(Vertical),52,R52
+11,Surround Pan(Vertical),-57,F57
+11,Surround Pan(Vertical),-35,F35
+11,Surround Pan(Vertical),-13,F13
+11,Surround Pan(Vertical),9,R9
+11,Surround Pan(Vertical),31,R31
+11,Surround Pan(Vertical),53,R53
+11,Surround Pan(Vertical),-56,F56
+11,Surround Pan(Vertical),-34,F34
+11,Surround Pan(Vertical),-12,F12
+11,Surround Pan(Vertical),10,R10
+11,Surround Pan(Vertical),32,R32
+11,Surround Pan(Vertical),54,R54
+11,Surround Pan(Vertical),-55,F55
+11,Surround Pan(Vertical),-33,F33
+11,Surround Pan(Vertical),-11,F11
+11,Surround Pan(Vertical),11,R11
+11,Surround Pan(Vertical),33,R33
+11,Surround Pan(Vertical),55,R55
+11,Surround Pan(Vertical),-54,F54
+11,Surround Pan(Vertical),-32,F32
+11,Surround Pan(Vertical),-10,F10
+11,Surround Pan(Vertical),12,R12
+11,Surround Pan(Vertical),34,R34
+11,Surround Pan(Vertical),56,R56
+11,Surround Pan(Vertical),-53,F53
+11,Surround Pan(Vertical),-31,F31
+11,Surround Pan(Vertical),-9,F9
+11,Surround Pan(Vertical),13,R13
+11,Surround Pan(Vertical),35,R35
+11,Surround Pan(Vertical),57,R57
+11,Surround Pan(Vertical),-52,F52
+11,Surround Pan(Vertical),-30,F30
+11,Surround Pan(Vertical),-8,F8
+11,Surround Pan(Vertical),14,R14
+11,Surround Pan(Vertical),36,R36
+11,Surround Pan(Vertical),58,R58
+11,Surround Pan(Vertical),-51,F51
+11,Surround Pan(Vertical),-29,F29
+11,Surround Pan(Vertical),-7,F7
+11,Surround Pan(Vertical),15,R15
+11,Surround Pan(Vertical),37,R37
+11,Surround Pan(Vertical),59,R59
+11,Surround Pan(Vertical),-50,F50
+11,Surround Pan(Vertical),-28,F28
+11,Surround Pan(Vertical),-6,F6
+11,Surround Pan(Vertical),16,R16
+11,Surround Pan(Vertical),38,R38
+11,Surround Pan(Vertical),60,R60
+11,Surround Pan(Vertical),-49,F49
+11,Surround Pan(Vertical),-27,F27
+11,Surround Pan(Vertical),-5,F5
+11,Surround Pan(Vertical),17,R17
+11,Surround Pan(Vertical),39,R39
+11,Surround Pan(Vertical),61,R61
+11,Surround Pan(Vertical),-48,F48
+11,Surround Pan(Vertical),-26,F26
+11,Surround Pan(Vertical),-4,F4
+11,Surround Pan(Vertical),18,R18
+11,Surround Pan(Vertical),40,R40
+11,Surround Pan(Vertical),62,R62
+11,Surround Pan(Vertical),-47,F47
+11,Surround Pan(Vertical),-25,F25
+11,Surround Pan(Vertical),-3,F3
+11,Surround Pan(Vertical),19,R19
+11,Surround Pan(Vertical),41,R41
+11,Surround Pan(Vertical),63,R63
+11,Surround Pan(Vertical),-46,F46
+11,Surround Pan(Vertical),-24,F24
+11,Surround Pan(Vertical),-2,F2
+11,Surround Pan(Vertical),20,R20
+11,Surround Pan(Vertical),42,R42
+11,Surround Pan(Vertical),-45,F45
+11,Surround Pan(Vertical),-23,F23
+11,Surround Pan(Vertical),-1,F1
+11,Surround Pan(Vertical),21,R21
+11,Surround Pan(Vertical),43,R43
+11,Surround Pan(Vertical),-44,F44
+11,Surround Pan(Vertical),-22,F22
+11,Surround Pan(Vertical),0,Center
+11,Surround Pan(Vertical),22,R22
+11,Surround Pan(Vertical),44,R44
+11,Surround Pan(Vertical),-43,F43
+11,Surround Pan(Vertical),-21,F21
+11,Surround Pan(Vertical),1,R1
+11,Surround Pan(Vertical),23,R23
+11,Surround Pan(Vertical),45,R45
+11,Surround Pan(Vertical),-42,F42
+11,Surround Pan(Vertical),-20,F20
+11,Surround Pan(Vertical),2,R2
+11,Surround Pan(Vertical),24,R24
+11,Surround Pan(Vertical),46,R46
+12,Surround Direction,0,HORIZONTAL
+12,Surround Direction,1,VERTICAL
+12,Surround Direction,2,RL<->FR
+12,Surround Direction,3,FL<->RR
+12,Surround Direction,4,HOLIZONTAL-HALF-CIRCLE
+12,Surround Direction,5,VIRTICAL-HALF-CIRCLE
+12,Surround Direction,6,CIRCLE
+13,Bus Fader 10bit,0,-InfdB
+13,Bus Fader 10bit,128,-69.00dB
+13,Bus Fader 10bit,256,-46.70dB
+13,Bus Fader 10bit,384,-33.90dB
+13,Bus Fader 10bit,512,-25.55dB
+13,Bus Fader 10bit,640,-19.15dB
+13,Bus Fader 10bit,768,-12.75dB
+13,Bus Fader 10bit,896,-6.35dB
+13,Bus Fader 10bit,1,-138.00dB
+13,Bus Fader 10bit,129,-68.80dB
+13,Bus Fader 10bit,257,-46.60dB
+13,Bus Fader 10bit,385,-33.80dB
+13,Bus Fader 10bit,513,-25.50dB
+13,Bus Fader 10bit,641,-19.10dB
+13,Bus Fader 10bit,769,-12.70dB
+13,Bus Fader 10bit,897,-6.30dB
+13,Bus Fader 10bit,2,-136.00dB
+13,Bus Fader 10bit,130,-68.60dB
+13,Bus Fader 10bit,258,-46.50dB
+13,Bus Fader 10bit,386,-33.70dB
+13,Bus Fader 10bit,514,-25.45dB
+13,Bus Fader 10bit,642,-19.05dB
+13,Bus Fader 10bit,770,-12.65dB
+13,Bus Fader 10bit,898,-6.25dB
+13,Bus Fader 10bit,3,-134.00dB
+13,Bus Fader 10bit,131,-68.40dB
+13,Bus Fader 10bit,259,-46.40dB
+13,Bus Fader 10bit,387,-33.60dB
+13,Bus Fader 10bit,515,-25.40dB
+13,Bus Fader 10bit,643,-19.00dB
+13,Bus Fader 10bit,771,-12.60dB
+13,Bus Fader 10bit,899,-6.20dB
+13,Bus Fader 10bit,4,-133.00dB
+13,Bus Fader 10bit,132,-68.20dB
+13,Bus Fader 10bit,260,-46.30dB
+13,Bus Fader 10bit,388,-33.50dB
+13,Bus Fader 10bit,516,-25.35dB
+13,Bus Fader 10bit,644,-18.95dB
+13,Bus Fader 10bit,772,-12.55dB
+13,Bus Fader 10bit,900,-6.15dB
+13,Bus Fader 10bit,5,-132.00dB
+13,Bus Fader 10bit,133,-68.00dB
+13,Bus Fader 10bit,261,-46.20dB
+13,Bus Fader 10bit,389,-33.40dB
+13,Bus Fader 10bit,517,-25.30dB
+13,Bus Fader 10bit,645,-18.90dB
+13,Bus Fader 10bit,773,-12.50dB
+13,Bus Fader 10bit,901,-6.10dB
+13,Bus Fader 10bit,6,-131.00dB
+13,Bus Fader 10bit,134,-67.80dB
+13,Bus Fader 10bit,262,-46.10dB
+13,Bus Fader 10bit,390,-33.30dB
+13,Bus Fader 10bit,518,-25.25dB
+13,Bus Fader 10bit,646,-18.85dB
+13,Bus Fader 10bit,774,-12.45dB
+13,Bus Fader 10bit,902,-6.05dB
+13,Bus Fader 10bit,7,-130.00dB
+13,Bus Fader 10bit,135,-67.60dB
+13,Bus Fader 10bit,263,-46.00dB
+13,Bus Fader 10bit,391,-33.20dB
+13,Bus Fader 10bit,519,-25.20dB
+13,Bus Fader 10bit,647,-18.80dB
+13,Bus Fader 10bit,775,-12.40dB
+13,Bus Fader 10bit,903,-6.00dB
+13,Bus Fader 10bit,8,-129.00dB
+13,Bus Fader 10bit,136,-67.40dB
+13,Bus Fader 10bit,264,-45.90dB
+13,Bus Fader 10bit,392,-33.10dB
+13,Bus Fader 10bit,520,-25.15dB
+13,Bus Fader 10bit,648,-18.75dB
+13,Bus Fader 10bit,776,-12.35dB
+13,Bus Fader 10bit,904,-5.95dB
+13,Bus Fader 10bit,9,-128.00dB
+13,Bus Fader 10bit,137,-67.20dB
+13,Bus Fader 10bit,265,-45.80dB
+13,Bus Fader 10bit,393,-33.00dB
+13,Bus Fader 10bit,521,-25.10dB
+13,Bus Fader 10bit,649,-18.70dB
+13,Bus Fader 10bit,777,-12.30dB
+13,Bus Fader 10bit,905,-5.90dB
+13,Bus Fader 10bit,10,-127.00dB
+13,Bus Fader 10bit,138,-67.00dB
+13,Bus Fader 10bit,266,-45.70dB
+13,Bus Fader 10bit,394,-32.90dB
+13,Bus Fader 10bit,522,-25.05dB
+13,Bus Fader 10bit,650,-18.65dB
+13,Bus Fader 10bit,778,-12.25dB
+13,Bus Fader 10bit,906,-5.85dB
+13,Bus Fader 10bit,11,-126.00dB
+13,Bus Fader 10bit,139,-66.80dB
+13,Bus Fader 10bit,267,-45.60dB
+13,Bus Fader 10bit,395,-32.80dB
+13,Bus Fader 10bit,523,-25.00dB
+13,Bus Fader 10bit,651,-18.60dB
+13,Bus Fader 10bit,779,-12.20dB
+13,Bus Fader 10bit,907,-5.80dB
+13,Bus Fader 10bit,12,-125.00dB
+13,Bus Fader 10bit,140,-66.60dB
+13,Bus Fader 10bit,268,-45.50dB
+13,Bus Fader 10bit,396,-32.70dB
+13,Bus Fader 10bit,524,-24.95dB
+13,Bus Fader 10bit,652,-18.55dB
+13,Bus Fader 10bit,780,-12.15dB
+13,Bus Fader 10bit,908,-5.75dB
+13,Bus Fader 10bit,13,-124.00dB
+13,Bus Fader 10bit,141,-66.40dB
+13,Bus Fader 10bit,269,-45.40dB
+13,Bus Fader 10bit,397,-32.60dB
+13,Bus Fader 10bit,525,-24.90dB
+13,Bus Fader 10bit,653,-18.50dB
+13,Bus Fader 10bit,781,-12.10dB
+13,Bus Fader 10bit,909,-5.70dB
+13,Bus Fader 10bit,14,-123.00dB
+13,Bus Fader 10bit,142,-66.20dB
+13,Bus Fader 10bit,270,-45.30dB
+13,Bus Fader 10bit,398,-32.50dB
+13,Bus Fader 10bit,526,-24.85dB
+13,Bus Fader 10bit,654,-18.45dB
+13,Bus Fader 10bit,782,-12.05dB
+13,Bus Fader 10bit,910,-5.65dB
+13,Bus Fader 10bit,15,-122.00dB
+13,Bus Fader 10bit,143,-66.00dB
+13,Bus Fader 10bit,271,-45.20dB
+13,Bus Fader 10bit,399,-32.40dB
+13,Bus Fader 10bit,527,-24.80dB
+13,Bus Fader 10bit,655,-18.40dB
+13,Bus Fader 10bit,783,-12.00dB
+13,Bus Fader 10bit,911,-5.60dB
+13,Bus Fader 10bit,16,-121.00dB
+13,Bus Fader 10bit,144,-65.80dB
+13,Bus Fader 10bit,272,-45.10dB
+13,Bus Fader 10bit,400,-32.30dB
+13,Bus Fader 10bit,528,-24.75dB
+13,Bus Fader 10bit,656,-18.35dB
+13,Bus Fader 10bit,784,-11.95dB
+13,Bus Fader 10bit,912,-5.55dB
+13,Bus Fader 10bit,17,-120.00dB
+13,Bus Fader 10bit,145,-65.60dB
+13,Bus Fader 10bit,273,-45.00dB
+13,Bus Fader 10bit,401,-32.20dB
+13,Bus Fader 10bit,529,-24.70dB
+13,Bus Fader 10bit,657,-18.30dB
+13,Bus Fader 10bit,785,-11.90dB
+13,Bus Fader 10bit,913,-5.50dB
+13,Bus Fader 10bit,18,-119.00dB
+13,Bus Fader 10bit,146,-65.40dB
+13,Bus Fader 10bit,274,-44.90dB
+13,Bus Fader 10bit,402,-32.10dB
+13,Bus Fader 10bit,530,-24.65dB
+13,Bus Fader 10bit,658,-18.25dB
+13,Bus Fader 10bit,786,-11.85dB
+13,Bus Fader 10bit,914,-5.45dB
+13,Bus Fader 10bit,19,-118.00dB
+13,Bus Fader 10bit,147,-65.20dB
+13,Bus Fader 10bit,275,-44.80dB
+13,Bus Fader 10bit,403,-32.00dB
+13,Bus Fader 10bit,531,-24.60dB
+13,Bus Fader 10bit,659,-18.20dB
+13,Bus Fader 10bit,787,-11.80dB
+13,Bus Fader 10bit,915,-5.40dB
+13,Bus Fader 10bit,20,-117.00dB
+13,Bus Fader 10bit,148,-65.00dB
+13,Bus Fader 10bit,276,-44.70dB
+13,Bus Fader 10bit,404,-31.90dB
+13,Bus Fader 10bit,532,-24.55dB
+13,Bus Fader 10bit,660,-18.15dB
+13,Bus Fader 10bit,788,-11.75dB
+13,Bus Fader 10bit,916,-5.35dB
+13,Bus Fader 10bit,21,-116.00dB
+13,Bus Fader 10bit,149,-64.80dB
+13,Bus Fader 10bit,277,-44.60dB
+13,Bus Fader 10bit,405,-31.80dB
+13,Bus Fader 10bit,533,-24.50dB
+13,Bus Fader 10bit,661,-18.10dB
+13,Bus Fader 10bit,789,-11.70dB
+13,Bus Fader 10bit,917,-5.30dB
+13,Bus Fader 10bit,22,-115.00dB
+13,Bus Fader 10bit,150,-64.60dB
+13,Bus Fader 10bit,278,-44.50dB
+13,Bus Fader 10bit,406,-31.70dB
+13,Bus Fader 10bit,534,-24.45dB
+13,Bus Fader 10bit,662,-18.05dB
+13,Bus Fader 10bit,790,-11.65dB
+13,Bus Fader 10bit,918,-5.25dB
+13,Bus Fader 10bit,23,-114.00dB
+13,Bus Fader 10bit,151,-64.40dB
+13,Bus Fader 10bit,279,-44.40dB
+13,Bus Fader 10bit,407,-31.60dB
+13,Bus Fader 10bit,535,-24.40dB
+13,Bus Fader 10bit,663,-18.00dB
+13,Bus Fader 10bit,791,-11.60dB
+13,Bus Fader 10bit,919,-5.20dB
+13,Bus Fader 10bit,24,-113.00dB
+13,Bus Fader 10bit,152,-64.20dB
+13,Bus Fader 10bit,280,-44.30dB
+13,Bus Fader 10bit,408,-31.50dB
+13,Bus Fader 10bit,536,-24.35dB
+13,Bus Fader 10bit,664,-17.95dB
+13,Bus Fader 10bit,792,-11.55dB
+13,Bus Fader 10bit,920,-5.15dB
+13,Bus Fader 10bit,25,-112.00dB
+13,Bus Fader 10bit,153,-64.00dB
+13,Bus Fader 10bit,281,-44.20dB
+13,Bus Fader 10bit,409,-31.40dB
+13,Bus Fader 10bit,537,-24.30dB
+13,Bus Fader 10bit,665,-17.90dB
+13,Bus Fader 10bit,793,-11.50dB
+13,Bus Fader 10bit,921,-5.10dB
+13,Bus Fader 10bit,26,-111.00dB
+13,Bus Fader 10bit,154,-63.80dB
+13,Bus Fader 10bit,282,-44.10dB
+13,Bus Fader 10bit,410,-31.30dB
+13,Bus Fader 10bit,538,-24.25dB
+13,Bus Fader 10bit,666,-17.85dB
+13,Bus Fader 10bit,794,-11.45dB
+13,Bus Fader 10bit,922,-5.05dB
+13,Bus Fader 10bit,27,-110.00dB
+13,Bus Fader 10bit,155,-63.60dB
+13,Bus Fader 10bit,283,-44.00dB
+13,Bus Fader 10bit,411,-31.20dB
+13,Bus Fader 10bit,539,-24.20dB
+13,Bus Fader 10bit,667,-17.80dB
+13,Bus Fader 10bit,795,-11.40dB
+13,Bus Fader 10bit,923,-5.00dB
+13,Bus Fader 10bit,28,-109.00dB
+13,Bus Fader 10bit,156,-63.40dB
+13,Bus Fader 10bit,284,-43.90dB
+13,Bus Fader 10bit,412,-31.10dB
+13,Bus Fader 10bit,540,-24.15dB
+13,Bus Fader 10bit,668,-17.75dB
+13,Bus Fader 10bit,796,-11.35dB
+13,Bus Fader 10bit,924,-4.95dB
+13,Bus Fader 10bit,29,-108.00dB
+13,Bus Fader 10bit,157,-63.20dB
+13,Bus Fader 10bit,285,-43.80dB
+13,Bus Fader 10bit,413,-31.00dB
+13,Bus Fader 10bit,541,-24.10dB
+13,Bus Fader 10bit,669,-17.70dB
+13,Bus Fader 10bit,797,-11.30dB
+13,Bus Fader 10bit,925,-4.90dB
+13,Bus Fader 10bit,30,-107.00dB
+13,Bus Fader 10bit,158,-63.00dB
+13,Bus Fader 10bit,286,-43.70dB
+13,Bus Fader 10bit,414,-30.90dB
+13,Bus Fader 10bit,542,-24.05dB
+13,Bus Fader 10bit,670,-17.65dB
+13,Bus Fader 10bit,798,-11.25dB
+13,Bus Fader 10bit,926,-4.85dB
+13,Bus Fader 10bit,31,-106.00dB
+13,Bus Fader 10bit,159,-62.80dB
+13,Bus Fader 10bit,287,-43.60dB
+13,Bus Fader 10bit,415,-30.80dB
+13,Bus Fader 10bit,543,-24.00dB
+13,Bus Fader 10bit,671,-17.60dB
+13,Bus Fader 10bit,799,-11.20dB
+13,Bus Fader 10bit,927,-4.80dB
+13,Bus Fader 10bit,32,-105.00dB
+13,Bus Fader 10bit,160,-62.60dB
+13,Bus Fader 10bit,288,-43.50dB
+13,Bus Fader 10bit,416,-30.70dB
+13,Bus Fader 10bit,544,-23.95dB
+13,Bus Fader 10bit,672,-17.55dB
+13,Bus Fader 10bit,800,-11.15dB
+13,Bus Fader 10bit,928,-4.75dB
+13,Bus Fader 10bit,33,-104.00dB
+13,Bus Fader 10bit,161,-62.40dB
+13,Bus Fader 10bit,289,-43.40dB
+13,Bus Fader 10bit,417,-30.60dB
+13,Bus Fader 10bit,545,-23.90dB
+13,Bus Fader 10bit,673,-17.50dB
+13,Bus Fader 10bit,801,-11.10dB
+13,Bus Fader 10bit,929,-4.70dB
+13,Bus Fader 10bit,34,-103.00dB
+13,Bus Fader 10bit,162,-62.20dB
+13,Bus Fader 10bit,290,-43.30dB
+13,Bus Fader 10bit,418,-30.50dB
+13,Bus Fader 10bit,546,-23.85dB
+13,Bus Fader 10bit,674,-17.45dB
+13,Bus Fader 10bit,802,-11.05dB
+13,Bus Fader 10bit,930,-4.65dB
+13,Bus Fader 10bit,35,-102.00dB
+13,Bus Fader 10bit,163,-62.00dB
+13,Bus Fader 10bit,291,-43.20dB
+13,Bus Fader 10bit,419,-30.40dB
+13,Bus Fader 10bit,547,-23.80dB
+13,Bus Fader 10bit,675,-17.40dB
+13,Bus Fader 10bit,803,-11.00dB
+13,Bus Fader 10bit,931,-4.60dB
+13,Bus Fader 10bit,36,-101.50dB
+13,Bus Fader 10bit,164,-61.80dB
+13,Bus Fader 10bit,292,-43.10dB
+13,Bus Fader 10bit,420,-30.30dB
+13,Bus Fader 10bit,548,-23.75dB
+13,Bus Fader 10bit,676,-17.35dB
+13,Bus Fader 10bit,804,-10.95dB
+13,Bus Fader 10bit,932,-4.55dB
+13,Bus Fader 10bit,37,-101.00dB
+13,Bus Fader 10bit,165,-61.60dB
+13,Bus Fader 10bit,293,-43.00dB
+13,Bus Fader 10bit,421,-30.20dB
+13,Bus Fader 10bit,549,-23.70dB
+13,Bus Fader 10bit,677,-17.30dB
+13,Bus Fader 10bit,805,-10.90dB
+13,Bus Fader 10bit,933,-4.50dB
+13,Bus Fader 10bit,38,-100.50dB
+13,Bus Fader 10bit,166,-61.40dB
+13,Bus Fader 10bit,294,-42.90dB
+13,Bus Fader 10bit,422,-30.10dB
+13,Bus Fader 10bit,550,-23.65dB
+13,Bus Fader 10bit,678,-17.25dB
+13,Bus Fader 10bit,806,-10.85dB
+13,Bus Fader 10bit,934,-4.45dB
+13,Bus Fader 10bit,39,-100.00dB
+13,Bus Fader 10bit,167,-61.20dB
+13,Bus Fader 10bit,295,-42.80dB
+13,Bus Fader 10bit,423,-30.00dB
+13,Bus Fader 10bit,551,-23.60dB
+13,Bus Fader 10bit,679,-17.20dB
+13,Bus Fader 10bit,807,-10.80dB
+13,Bus Fader 10bit,935,-4.40dB
+13,Bus Fader 10bit,40,-99.50dB
+13,Bus Fader 10bit,168,-61.00dB
+13,Bus Fader 10bit,296,-42.70dB
+13,Bus Fader 10bit,424,-29.95dB
+13,Bus Fader 10bit,552,-23.55dB
+13,Bus Fader 10bit,680,-17.15dB
+13,Bus Fader 10bit,808,-10.75dB
+13,Bus Fader 10bit,936,-4.35dB
+13,Bus Fader 10bit,41,-99.00dB
+13,Bus Fader 10bit,169,-60.80dB
+13,Bus Fader 10bit,297,-42.60dB
+13,Bus Fader 10bit,425,-29.90dB
+13,Bus Fader 10bit,553,-23.50dB
+13,Bus Fader 10bit,681,-17.10dB
+13,Bus Fader 10bit,809,-10.70dB
+13,Bus Fader 10bit,937,-4.30dB
+13,Bus Fader 10bit,42,-98.50dB
+13,Bus Fader 10bit,170,-60.60dB
+13,Bus Fader 10bit,298,-42.50dB
+13,Bus Fader 10bit,426,-29.85dB
+13,Bus Fader 10bit,554,-23.45dB
+13,Bus Fader 10bit,682,-17.05dB
+13,Bus Fader 10bit,810,-10.65dB
+13,Bus Fader 10bit,938,-4.25dB
+13,Bus Fader 10bit,43,-98.00dB
+13,Bus Fader 10bit,171,-60.40dB
+13,Bus Fader 10bit,299,-42.40dB
+13,Bus Fader 10bit,427,-29.80dB
+13,Bus Fader 10bit,555,-23.40dB
+13,Bus Fader 10bit,683,-17.00dB
+13,Bus Fader 10bit,811,-10.60dB
+13,Bus Fader 10bit,939,-4.20dB
+13,Bus Fader 10bit,44,-97.50dB
+13,Bus Fader 10bit,172,-60.20dB
+13,Bus Fader 10bit,300,-42.30dB
+13,Bus Fader 10bit,428,-29.75dB
+13,Bus Fader 10bit,556,-23.35dB
+13,Bus Fader 10bit,684,-16.95dB
+13,Bus Fader 10bit,812,-10.55dB
+13,Bus Fader 10bit,940,-4.15dB
+13,Bus Fader 10bit,45,-97.00dB
+13,Bus Fader 10bit,173,-60.00dB
+13,Bus Fader 10bit,301,-42.20dB
+13,Bus Fader 10bit,429,-29.70dB
+13,Bus Fader 10bit,557,-23.30dB
+13,Bus Fader 10bit,685,-16.90dB
+13,Bus Fader 10bit,813,-10.50dB
+13,Bus Fader 10bit,941,-4.10dB
+13,Bus Fader 10bit,46,-96.50dB
+13,Bus Fader 10bit,174,-59.80dB
+13,Bus Fader 10bit,302,-42.10dB
+13,Bus Fader 10bit,430,-29.65dB
+13,Bus Fader 10bit,558,-23.25dB
+13,Bus Fader 10bit,686,-16.85dB
+13,Bus Fader 10bit,814,-10.45dB
+13,Bus Fader 10bit,942,-4.05dB
+13,Bus Fader 10bit,47,-96.00dB
+13,Bus Fader 10bit,175,-59.60dB
+13,Bus Fader 10bit,303,-42.00dB
+13,Bus Fader 10bit,431,-29.60dB
+13,Bus Fader 10bit,559,-23.20dB
+13,Bus Fader 10bit,687,-16.80dB
+13,Bus Fader 10bit,815,-10.40dB
+13,Bus Fader 10bit,943,-4.00dB
+13,Bus Fader 10bit,48,-95.50dB
+13,Bus Fader 10bit,176,-59.40dB
+13,Bus Fader 10bit,304,-41.90dB
+13,Bus Fader 10bit,432,-29.55dB
+13,Bus Fader 10bit,560,-23.15dB
+13,Bus Fader 10bit,688,-16.75dB
+13,Bus Fader 10bit,816,-10.35dB
+13,Bus Fader 10bit,944,-3.95dB
+13,Bus Fader 10bit,49,-95.00dB
+13,Bus Fader 10bit,177,-59.20dB
+13,Bus Fader 10bit,305,-41.80dB
+13,Bus Fader 10bit,433,-29.50dB
+13,Bus Fader 10bit,561,-23.10dB
+13,Bus Fader 10bit,689,-16.70dB
+13,Bus Fader 10bit,817,-10.30dB
+13,Bus Fader 10bit,945,-3.90dB
+13,Bus Fader 10bit,50,-94.50dB
+13,Bus Fader 10bit,178,-59.00dB
+13,Bus Fader 10bit,306,-41.70dB
+13,Bus Fader 10bit,434,-29.45dB
+13,Bus Fader 10bit,562,-23.05dB
+13,Bus Fader 10bit,690,-16.65dB
+13,Bus Fader 10bit,818,-10.25dB
+13,Bus Fader 10bit,946,-3.85dB
+13,Bus Fader 10bit,51,-94.00dB
+13,Bus Fader 10bit,179,-58.80dB
+13,Bus Fader 10bit,307,-41.60dB
+13,Bus Fader 10bit,435,-29.40dB
+13,Bus Fader 10bit,563,-23.00dB
+13,Bus Fader 10bit,691,-16.60dB
+13,Bus Fader 10bit,819,-10.20dB
+13,Bus Fader 10bit,947,-3.80dB
+13,Bus Fader 10bit,52,-93.50dB
+13,Bus Fader 10bit,180,-58.60dB
+13,Bus Fader 10bit,308,-41.50dB
+13,Bus Fader 10bit,436,-29.35dB
+13,Bus Fader 10bit,564,-22.95dB
+13,Bus Fader 10bit,692,-16.55dB
+13,Bus Fader 10bit,820,-10.15dB
+13,Bus Fader 10bit,948,-3.75dB
+13,Bus Fader 10bit,53,-93.00dB
+13,Bus Fader 10bit,181,-58.40dB
+13,Bus Fader 10bit,309,-41.40dB
+13,Bus Fader 10bit,437,-29.30dB
+13,Bus Fader 10bit,565,-22.90dB
+13,Bus Fader 10bit,693,-16.50dB
+13,Bus Fader 10bit,821,-10.10dB
+13,Bus Fader 10bit,949,-3.70dB
+13,Bus Fader 10bit,54,-92.50dB
+13,Bus Fader 10bit,182,-58.20dB
+13,Bus Fader 10bit,310,-41.30dB
+13,Bus Fader 10bit,438,-29.25dB
+13,Bus Fader 10bit,566,-22.85dB
+13,Bus Fader 10bit,694,-16.45dB
+13,Bus Fader 10bit,822,-10.05dB
+13,Bus Fader 10bit,950,-3.65dB
+13,Bus Fader 10bit,55,-92.00dB
+13,Bus Fader 10bit,183,-58.00dB
+13,Bus Fader 10bit,311,-41.20dB
+13,Bus Fader 10bit,439,-29.20dB
+13,Bus Fader 10bit,567,-22.80dB
+13,Bus Fader 10bit,695,-16.40dB
+13,Bus Fader 10bit,823,-10.00dB
+13,Bus Fader 10bit,951,-3.60dB
+13,Bus Fader 10bit,56,-91.50dB
+13,Bus Fader 10bit,184,-57.80dB
+13,Bus Fader 10bit,312,-41.10dB
+13,Bus Fader 10bit,440,-29.15dB
+13,Bus Fader 10bit,568,-22.75dB
+13,Bus Fader 10bit,696,-16.35dB
+13,Bus Fader 10bit,824,-9.95dB
+13,Bus Fader 10bit,952,-3.55dB
+13,Bus Fader 10bit,57,-91.00dB
+13,Bus Fader 10bit,185,-57.60dB
+13,Bus Fader 10bit,313,-41.00dB
+13,Bus Fader 10bit,441,-29.10dB
+13,Bus Fader 10bit,569,-22.70dB
+13,Bus Fader 10bit,697,-16.30dB
+13,Bus Fader 10bit,825,-9.90dB
+13,Bus Fader 10bit,953,-3.50dB
+13,Bus Fader 10bit,58,-90.50dB
+13,Bus Fader 10bit,186,-57.40dB
+13,Bus Fader 10bit,314,-40.90dB
+13,Bus Fader 10bit,442,-29.05dB
+13,Bus Fader 10bit,570,-22.65dB
+13,Bus Fader 10bit,698,-16.25dB
+13,Bus Fader 10bit,826,-9.85dB
+13,Bus Fader 10bit,954,-3.45dB
+13,Bus Fader 10bit,59,-90.00dB
+13,Bus Fader 10bit,187,-57.20dB
+13,Bus Fader 10bit,315,-40.80dB
+13,Bus Fader 10bit,443,-29.00dB
+13,Bus Fader 10bit,571,-22.60dB
+13,Bus Fader 10bit,699,-16.20dB
+13,Bus Fader 10bit,827,-9.80dB
+13,Bus Fader 10bit,955,-3.40dB
+13,Bus Fader 10bit,60,-89.50dB
+13,Bus Fader 10bit,188,-57.00dB
+13,Bus Fader 10bit,316,-40.70dB
+13,Bus Fader 10bit,444,-28.95dB
+13,Bus Fader 10bit,572,-22.55dB
+13,Bus Fader 10bit,700,-16.15dB
+13,Bus Fader 10bit,828,-9.75dB
+13,Bus Fader 10bit,956,-3.35dB
+13,Bus Fader 10bit,61,-89.00dB
+13,Bus Fader 10bit,189,-56.80dB
+13,Bus Fader 10bit,317,-40.60dB
+13,Bus Fader 10bit,445,-28.90dB
+13,Bus Fader 10bit,573,-22.50dB
+13,Bus Fader 10bit,701,-16.10dB
+13,Bus Fader 10bit,829,-9.70dB
+13,Bus Fader 10bit,957,-3.30dB
+13,Bus Fader 10bit,62,-88.50dB
+13,Bus Fader 10bit,190,-56.60dB
+13,Bus Fader 10bit,318,-40.50dB
+13,Bus Fader 10bit,446,-28.85dB
+13,Bus Fader 10bit,574,-22.45dB
+13,Bus Fader 10bit,702,-16.05dB
+13,Bus Fader 10bit,830,-9.65dB
+13,Bus Fader 10bit,958,-3.25dB
+13,Bus Fader 10bit,63,-88.00dB
+13,Bus Fader 10bit,191,-56.40dB
+13,Bus Fader 10bit,319,-40.40dB
+13,Bus Fader 10bit,447,-28.80dB
+13,Bus Fader 10bit,575,-22.40dB
+13,Bus Fader 10bit,703,-16.00dB
+13,Bus Fader 10bit,831,-9.60dB
+13,Bus Fader 10bit,959,-3.20dB
+13,Bus Fader 10bit,64,-87.50dB
+13,Bus Fader 10bit,192,-56.20dB
+13,Bus Fader 10bit,320,-40.30dB
+13,Bus Fader 10bit,448,-28.75dB
+13,Bus Fader 10bit,576,-22.35dB
+13,Bus Fader 10bit,704,-15.95dB
+13,Bus Fader 10bit,832,-9.55dB
+13,Bus Fader 10bit,960,-3.15dB
+13,Bus Fader 10bit,65,-87.00dB
+13,Bus Fader 10bit,193,-56.00dB
+13,Bus Fader 10bit,321,-40.20dB
+13,Bus Fader 10bit,449,-28.70dB
+13,Bus Fader 10bit,577,-22.30dB
+13,Bus Fader 10bit,705,-15.90dB
+13,Bus Fader 10bit,833,-9.50dB
+13,Bus Fader 10bit,961,-3.10dB
+13,Bus Fader 10bit,66,-86.50dB
+13,Bus Fader 10bit,194,-55.80dB
+13,Bus Fader 10bit,322,-40.10dB
+13,Bus Fader 10bit,450,-28.65dB
+13,Bus Fader 10bit,578,-22.25dB
+13,Bus Fader 10bit,706,-15.85dB
+13,Bus Fader 10bit,834,-9.45dB
+13,Bus Fader 10bit,962,-3.05dB
+13,Bus Fader 10bit,67,-86.00dB
+13,Bus Fader 10bit,195,-55.60dB
+13,Bus Fader 10bit,323,-40.00dB
+13,Bus Fader 10bit,451,-28.60dB
+13,Bus Fader 10bit,579,-22.20dB
+13,Bus Fader 10bit,707,-15.80dB
+13,Bus Fader 10bit,835,-9.40dB
+13,Bus Fader 10bit,963,-3.00dB
+13,Bus Fader 10bit,68,-85.50dB
+13,Bus Fader 10bit,196,-55.40dB
+13,Bus Fader 10bit,324,-39.90dB
+13,Bus Fader 10bit,452,-28.55dB
+13,Bus Fader 10bit,580,-22.15dB
+13,Bus Fader 10bit,708,-15.75dB
+13,Bus Fader 10bit,836,-9.35dB
+13,Bus Fader 10bit,964,-2.95dB
+13,Bus Fader 10bit,69,-85.00dB
+13,Bus Fader 10bit,197,-55.20dB
+13,Bus Fader 10bit,325,-39.80dB
+13,Bus Fader 10bit,453,-28.50dB
+13,Bus Fader 10bit,581,-22.10dB
+13,Bus Fader 10bit,709,-15.70dB
+13,Bus Fader 10bit,837,-9.30dB
+13,Bus Fader 10bit,965,-2.90dB
+13,Bus Fader 10bit,70,-84.50dB
+13,Bus Fader 10bit,198,-55.00dB
+13,Bus Fader 10bit,326,-39.70dB
+13,Bus Fader 10bit,454,-28.45dB
+13,Bus Fader 10bit,582,-22.05dB
+13,Bus Fader 10bit,710,-15.65dB
+13,Bus Fader 10bit,838,-9.25dB
+13,Bus Fader 10bit,966,-2.85dB
+13,Bus Fader 10bit,71,-84.00dB
+13,Bus Fader 10bit,199,-54.80dB
+13,Bus Fader 10bit,327,-39.60dB
+13,Bus Fader 10bit,455,-28.40dB
+13,Bus Fader 10bit,583,-22.00dB
+13,Bus Fader 10bit,711,-15.60dB
+13,Bus Fader 10bit,839,-9.20dB
+13,Bus Fader 10bit,967,-2.80dB
+13,Bus Fader 10bit,72,-83.50dB
+13,Bus Fader 10bit,200,-54.60dB
+13,Bus Fader 10bit,328,-39.50dB
+13,Bus Fader 10bit,456,-28.35dB
+13,Bus Fader 10bit,584,-21.95dB
+13,Bus Fader 10bit,712,-15.55dB
+13,Bus Fader 10bit,840,-9.15dB
+13,Bus Fader 10bit,968,-2.75dB
+13,Bus Fader 10bit,73,-83.00dB
+13,Bus Fader 10bit,201,-54.40dB
+13,Bus Fader 10bit,329,-39.40dB
+13,Bus Fader 10bit,457,-28.30dB
+13,Bus Fader 10bit,585,-21.90dB
+13,Bus Fader 10bit,713,-15.50dB
+13,Bus Fader 10bit,841,-9.10dB
+13,Bus Fader 10bit,969,-2.70dB
+13,Bus Fader 10bit,74,-82.50dB
+13,Bus Fader 10bit,202,-54.20dB
+13,Bus Fader 10bit,330,-39.30dB
+13,Bus Fader 10bit,458,-28.25dB
+13,Bus Fader 10bit,586,-21.85dB
+13,Bus Fader 10bit,714,-15.45dB
+13,Bus Fader 10bit,842,-9.05dB
+13,Bus Fader 10bit,970,-2.65dB
+13,Bus Fader 10bit,75,-82.00dB
+13,Bus Fader 10bit,203,-54.00dB
+13,Bus Fader 10bit,331,-39.20dB
+13,Bus Fader 10bit,459,-28.20dB
+13,Bus Fader 10bit,587,-21.80dB
+13,Bus Fader 10bit,715,-15.40dB
+13,Bus Fader 10bit,843,-9.00dB
+13,Bus Fader 10bit,971,-2.60dB
+13,Bus Fader 10bit,76,-81.50dB
+13,Bus Fader 10bit,204,-53.80dB
+13,Bus Fader 10bit,332,-39.10dB
+13,Bus Fader 10bit,460,-28.15dB
+13,Bus Fader 10bit,588,-21.75dB
+13,Bus Fader 10bit,716,-15.35dB
+13,Bus Fader 10bit,844,-8.95dB
+13,Bus Fader 10bit,972,-2.55dB
+13,Bus Fader 10bit,77,-81.00dB
+13,Bus Fader 10bit,205,-53.60dB
+13,Bus Fader 10bit,333,-39.00dB
+13,Bus Fader 10bit,461,-28.10dB
+13,Bus Fader 10bit,589,-21.70dB
+13,Bus Fader 10bit,717,-15.30dB
+13,Bus Fader 10bit,845,-8.90dB
+13,Bus Fader 10bit,973,-2.50dB
+13,Bus Fader 10bit,78,-80.50dB
+13,Bus Fader 10bit,206,-53.40dB
+13,Bus Fader 10bit,334,-38.90dB
+13,Bus Fader 10bit,462,-28.05dB
+13,Bus Fader 10bit,590,-21.65dB
+13,Bus Fader 10bit,718,-15.25dB
+13,Bus Fader 10bit,846,-8.85dB
+13,Bus Fader 10bit,974,-2.45dB
+13,Bus Fader 10bit,79,-80.00dB
+13,Bus Fader 10bit,207,-53.20dB
+13,Bus Fader 10bit,335,-38.80dB
+13,Bus Fader 10bit,463,-28.00dB
+13,Bus Fader 10bit,591,-21.60dB
+13,Bus Fader 10bit,719,-15.20dB
+13,Bus Fader 10bit,847,-8.80dB
+13,Bus Fader 10bit,975,-2.40dB
+13,Bus Fader 10bit,80,-79.50dB
+13,Bus Fader 10bit,208,-53.00dB
+13,Bus Fader 10bit,336,-38.70dB
+13,Bus Fader 10bit,464,-27.95dB
+13,Bus Fader 10bit,592,-21.55dB
+13,Bus Fader 10bit,720,-15.15dB
+13,Bus Fader 10bit,848,-8.75dB
+13,Bus Fader 10bit,976,-2.35dB
+13,Bus Fader 10bit,81,-79.00dB
+13,Bus Fader 10bit,209,-52.80dB
+13,Bus Fader 10bit,337,-38.60dB
+13,Bus Fader 10bit,465,-27.90dB
+13,Bus Fader 10bit,593,-21.50dB
+13,Bus Fader 10bit,721,-15.10dB
+13,Bus Fader 10bit,849,-8.70dB
+13,Bus Fader 10bit,977,-2.30dB
+13,Bus Fader 10bit,82,-78.50dB
+13,Bus Fader 10bit,210,-52.60dB
+13,Bus Fader 10bit,338,-38.50dB
+13,Bus Fader 10bit,466,-27.85dB
+13,Bus Fader 10bit,594,-21.45dB
+13,Bus Fader 10bit,722,-15.05dB
+13,Bus Fader 10bit,850,-8.65dB
+13,Bus Fader 10bit,978,-2.25dB
+13,Bus Fader 10bit,83,-78.00dB
+13,Bus Fader 10bit,211,-52.40dB
+13,Bus Fader 10bit,339,-38.40dB
+13,Bus Fader 10bit,467,-27.80dB
+13,Bus Fader 10bit,595,-21.40dB
+13,Bus Fader 10bit,723,-15.00dB
+13,Bus Fader 10bit,851,-8.60dB
+13,Bus Fader 10bit,979,-2.20dB
+13,Bus Fader 10bit,84,-77.80dB
+13,Bus Fader 10bit,212,-52.20dB
+13,Bus Fader 10bit,340,-38.30dB
+13,Bus Fader 10bit,468,-27.75dB
+13,Bus Fader 10bit,596,-21.35dB
+13,Bus Fader 10bit,724,-14.95dB
+13,Bus Fader 10bit,852,-8.55dB
+13,Bus Fader 10bit,980,-2.15dB
+13,Bus Fader 10bit,85,-77.60dB
+13,Bus Fader 10bit,213,-52.00dB
+13,Bus Fader 10bit,341,-38.20dB
+13,Bus Fader 10bit,469,-27.70dB
+13,Bus Fader 10bit,597,-21.30dB
+13,Bus Fader 10bit,725,-14.90dB
+13,Bus Fader 10bit,853,-8.50dB
+13,Bus Fader 10bit,981,-2.10dB
+13,Bus Fader 10bit,86,-77.40dB
+13,Bus Fader 10bit,214,-51.80dB
+13,Bus Fader 10bit,342,-38.10dB
+13,Bus Fader 10bit,470,-27.65dB
+13,Bus Fader 10bit,598,-21.25dB
+13,Bus Fader 10bit,726,-14.85dB
+13,Bus Fader 10bit,854,-8.45dB
+13,Bus Fader 10bit,982,-2.05dB
+13,Bus Fader 10bit,87,-77.20dB
+13,Bus Fader 10bit,215,-51.60dB
+13,Bus Fader 10bit,343,-38.00dB
+13,Bus Fader 10bit,471,-27.60dB
+13,Bus Fader 10bit,599,-21.20dB
+13,Bus Fader 10bit,727,-14.80dB
+13,Bus Fader 10bit,855,-8.40dB
+13,Bus Fader 10bit,983,-2.00dB
+13,Bus Fader 10bit,88,-77.00dB
+13,Bus Fader 10bit,216,-51.40dB
+13,Bus Fader 10bit,344,-37.90dB
+13,Bus Fader 10bit,472,-27.55dB
+13,Bus Fader 10bit,600,-21.15dB
+13,Bus Fader 10bit,728,-14.75dB
+13,Bus Fader 10bit,856,-8.35dB
+13,Bus Fader 10bit,984,-1.95dB
+13,Bus Fader 10bit,89,-76.80dB
+13,Bus Fader 10bit,217,-51.20dB
+13,Bus Fader 10bit,345,-37.80dB
+13,Bus Fader 10bit,473,-27.50dB
+13,Bus Fader 10bit,601,-21.10dB
+13,Bus Fader 10bit,729,-14.70dB
+13,Bus Fader 10bit,857,-8.30dB
+13,Bus Fader 10bit,985,-1.90dB
+13,Bus Fader 10bit,90,-76.60dB
+13,Bus Fader 10bit,218,-51.00dB
+13,Bus Fader 10bit,346,-37.70dB
+13,Bus Fader 10bit,474,-27.45dB
+13,Bus Fader 10bit,602,-21.05dB
+13,Bus Fader 10bit,730,-14.65dB
+13,Bus Fader 10bit,858,-8.25dB
+13,Bus Fader 10bit,986,-1.85dB
+13,Bus Fader 10bit,91,-76.40dB
+13,Bus Fader 10bit,219,-50.80dB
+13,Bus Fader 10bit,347,-37.60dB
+13,Bus Fader 10bit,475,-27.40dB
+13,Bus Fader 10bit,603,-21.00dB
+13,Bus Fader 10bit,731,-14.60dB
+13,Bus Fader 10bit,859,-8.20dB
+13,Bus Fader 10bit,987,-1.80dB
+13,Bus Fader 10bit,92,-76.20dB
+13,Bus Fader 10bit,220,-50.60dB
+13,Bus Fader 10bit,348,-37.50dB
+13,Bus Fader 10bit,476,-27.35dB
+13,Bus Fader 10bit,604,-20.95dB
+13,Bus Fader 10bit,732,-14.55dB
+13,Bus Fader 10bit,860,-8.15dB
+13,Bus Fader 10bit,988,-1.75dB
+13,Bus Fader 10bit,93,-76.00dB
+13,Bus Fader 10bit,221,-50.40dB
+13,Bus Fader 10bit,349,-37.40dB
+13,Bus Fader 10bit,477,-27.30dB
+13,Bus Fader 10bit,605,-20.90dB
+13,Bus Fader 10bit,733,-14.50dB
+13,Bus Fader 10bit,861,-8.10dB
+13,Bus Fader 10bit,989,-1.70dB
+13,Bus Fader 10bit,94,-75.80dB
+13,Bus Fader 10bit,222,-50.20dB
+13,Bus Fader 10bit,350,-37.30dB
+13,Bus Fader 10bit,478,-27.25dB
+13,Bus Fader 10bit,606,-20.85dB
+13,Bus Fader 10bit,734,-14.45dB
+13,Bus Fader 10bit,862,-8.05dB
+13,Bus Fader 10bit,990,-1.65dB
+13,Bus Fader 10bit,95,-75.60dB
+13,Bus Fader 10bit,223,-50.00dB
+13,Bus Fader 10bit,351,-37.20dB
+13,Bus Fader 10bit,479,-27.20dB
+13,Bus Fader 10bit,607,-20.80dB
+13,Bus Fader 10bit,735,-14.40dB
+13,Bus Fader 10bit,863,-8.00dB
+13,Bus Fader 10bit,991,-1.60dB
+13,Bus Fader 10bit,96,-75.40dB
+13,Bus Fader 10bit,224,-49.90dB
+13,Bus Fader 10bit,352,-37.10dB
+13,Bus Fader 10bit,480,-27.15dB
+13,Bus Fader 10bit,608,-20.75dB
+13,Bus Fader 10bit,736,-14.35dB
+13,Bus Fader 10bit,864,-7.95dB
+13,Bus Fader 10bit,992,-1.55dB
+13,Bus Fader 10bit,97,-75.20dB
+13,Bus Fader 10bit,225,-49.80dB
+13,Bus Fader 10bit,353,-37.00dB
+13,Bus Fader 10bit,481,-27.10dB
+13,Bus Fader 10bit,609,-20.70dB
+13,Bus Fader 10bit,737,-14.30dB
+13,Bus Fader 10bit,865,-7.90dB
+13,Bus Fader 10bit,993,-1.50dB
+13,Bus Fader 10bit,98,-75.00dB
+13,Bus Fader 10bit,226,-49.70dB
+13,Bus Fader 10bit,354,-36.90dB
+13,Bus Fader 10bit,482,-27.05dB
+13,Bus Fader 10bit,610,-20.65dB
+13,Bus Fader 10bit,738,-14.25dB
+13,Bus Fader 10bit,866,-7.85dB
+13,Bus Fader 10bit,994,-1.45dB
+13,Bus Fader 10bit,99,-74.80dB
+13,Bus Fader 10bit,227,-49.60dB
+13,Bus Fader 10bit,355,-36.80dB
+13,Bus Fader 10bit,483,-27.00dB
+13,Bus Fader 10bit,611,-20.60dB
+13,Bus Fader 10bit,739,-14.20dB
+13,Bus Fader 10bit,867,-7.80dB
+13,Bus Fader 10bit,995,-1.40dB
+13,Bus Fader 10bit,100,-74.60dB
+13,Bus Fader 10bit,228,-49.50dB
+13,Bus Fader 10bit,356,-36.70dB
+13,Bus Fader 10bit,484,-26.95dB
+13,Bus Fader 10bit,612,-20.55dB
+13,Bus Fader 10bit,740,-14.15dB
+13,Bus Fader 10bit,868,-7.75dB
+13,Bus Fader 10bit,996,-1.35dB
+13,Bus Fader 10bit,101,-74.40dB
+13,Bus Fader 10bit,229,-49.40dB
+13,Bus Fader 10bit,357,-36.60dB
+13,Bus Fader 10bit,485,-26.90dB
+13,Bus Fader 10bit,613,-20.50dB
+13,Bus Fader 10bit,741,-14.10dB
+13,Bus Fader 10bit,869,-7.70dB
+13,Bus Fader 10bit,997,-1.30dB
+13,Bus Fader 10bit,102,-74.20dB
+13,Bus Fader 10bit,230,-49.30dB
+13,Bus Fader 10bit,358,-36.50dB
+13,Bus Fader 10bit,486,-26.85dB
+13,Bus Fader 10bit,614,-20.45dB
+13,Bus Fader 10bit,742,-14.05dB
+13,Bus Fader 10bit,870,-7.65dB
+13,Bus Fader 10bit,998,-1.25dB
+13,Bus Fader 10bit,103,-74.00dB
+13,Bus Fader 10bit,231,-49.20dB
+13,Bus Fader 10bit,359,-36.40dB
+13,Bus Fader 10bit,487,-26.80dB
+13,Bus Fader 10bit,615,-20.40dB
+13,Bus Fader 10bit,743,-14.00dB
+13,Bus Fader 10bit,871,-7.60dB
+13,Bus Fader 10bit,999,-1.20dB
+13,Bus Fader 10bit,104,-73.80dB
+13,Bus Fader 10bit,232,-49.10dB
+13,Bus Fader 10bit,360,-36.30dB
+13,Bus Fader 10bit,488,-26.75dB
+13,Bus Fader 10bit,616,-20.35dB
+13,Bus Fader 10bit,744,-13.95dB
+13,Bus Fader 10bit,872,-7.55dB
+13,Bus Fader 10bit,1000,-1.15dB
+13,Bus Fader 10bit,105,-73.60dB
+13,Bus Fader 10bit,233,-49.00dB
+13,Bus Fader 10bit,361,-36.20dB
+13,Bus Fader 10bit,489,-26.70dB
+13,Bus Fader 10bit,617,-20.30dB
+13,Bus Fader 10bit,745,-13.90dB
+13,Bus Fader 10bit,873,-7.50dB
+13,Bus Fader 10bit,1001,-1.10dB
+13,Bus Fader 10bit,106,-73.40dB
+13,Bus Fader 10bit,234,-48.90dB
+13,Bus Fader 10bit,362,-36.10dB
+13,Bus Fader 10bit,490,-26.65dB
+13,Bus Fader 10bit,618,-20.25dB
+13,Bus Fader 10bit,746,-13.85dB
+13,Bus Fader 10bit,874,-7.45dB
+13,Bus Fader 10bit,1002,-1.05dB
+13,Bus Fader 10bit,107,-73.20dB
+13,Bus Fader 10bit,235,-48.80dB
+13,Bus Fader 10bit,363,-36.00dB
+13,Bus Fader 10bit,491,-26.60dB
+13,Bus Fader 10bit,619,-20.20dB
+13,Bus Fader 10bit,747,-13.80dB
+13,Bus Fader 10bit,875,-7.40dB
+13,Bus Fader 10bit,1003,-1.00dB
+13,Bus Fader 10bit,108,-73.00dB
+13,Bus Fader 10bit,236,-48.70dB
+13,Bus Fader 10bit,364,-35.90dB
+13,Bus Fader 10bit,492,-26.55dB
+13,Bus Fader 10bit,620,-20.15dB
+13,Bus Fader 10bit,748,-13.75dB
+13,Bus Fader 10bit,876,-7.35dB
+13,Bus Fader 10bit,1004,-0.95dB
+13,Bus Fader 10bit,109,-72.80dB
+13,Bus Fader 10bit,237,-48.60dB
+13,Bus Fader 10bit,365,-35.80dB
+13,Bus Fader 10bit,493,-26.50dB
+13,Bus Fader 10bit,621,-20.10dB
+13,Bus Fader 10bit,749,-13.70dB
+13,Bus Fader 10bit,877,-7.30dB
+13,Bus Fader 10bit,1005,-0.90dB
+13,Bus Fader 10bit,110,-72.60dB
+13,Bus Fader 10bit,238,-48.50dB
+13,Bus Fader 10bit,366,-35.70dB
+13,Bus Fader 10bit,494,-26.45dB
+13,Bus Fader 10bit,622,-20.05dB
+13,Bus Fader 10bit,750,-13.65dB
+13,Bus Fader 10bit,878,-7.25dB
+13,Bus Fader 10bit,1006,-0.85dB
+13,Bus Fader 10bit,111,-72.40dB
+13,Bus Fader 10bit,239,-48.40dB
+13,Bus Fader 10bit,367,-35.60dB
+13,Bus Fader 10bit,495,-26.40dB
+13,Bus Fader 10bit,623,-20.00dB
+13,Bus Fader 10bit,751,-13.60dB
+13,Bus Fader 10bit,879,-7.20dB
+13,Bus Fader 10bit,1007,-0.80dB
+13,Bus Fader 10bit,112,-72.20dB
+13,Bus Fader 10bit,240,-48.30dB
+13,Bus Fader 10bit,368,-35.50dB
+13,Bus Fader 10bit,496,-26.35dB
+13,Bus Fader 10bit,624,-19.95dB
+13,Bus Fader 10bit,752,-13.55dB
+13,Bus Fader 10bit,880,-7.15dB
+13,Bus Fader 10bit,1008,-0.75dB
+13,Bus Fader 10bit,113,-72.00dB
+13,Bus Fader 10bit,241,-48.20dB
+13,Bus Fader 10bit,369,-35.40dB
+13,Bus Fader 10bit,497,-26.30dB
+13,Bus Fader 10bit,625,-19.90dB
+13,Bus Fader 10bit,753,-13.50dB
+13,Bus Fader 10bit,881,-7.10dB
+13,Bus Fader 10bit,1009,-0.70dB
+13,Bus Fader 10bit,114,-71.80dB
+13,Bus Fader 10bit,242,-48.10dB
+13,Bus Fader 10bit,370,-35.30dB
+13,Bus Fader 10bit,498,-26.25dB
+13,Bus Fader 10bit,626,-19.85dB
+13,Bus Fader 10bit,754,-13.45dB
+13,Bus Fader 10bit,882,-7.05dB
+13,Bus Fader 10bit,1010,-0.65dB
+13,Bus Fader 10bit,115,-71.60dB
+13,Bus Fader 10bit,243,-48.00dB
+13,Bus Fader 10bit,371,-35.20dB
+13,Bus Fader 10bit,499,-26.20dB
+13,Bus Fader 10bit,627,-19.80dB
+13,Bus Fader 10bit,755,-13.40dB
+13,Bus Fader 10bit,883,-7.00dB
+13,Bus Fader 10bit,1011,-0.60dB
+13,Bus Fader 10bit,116,-71.40dB
+13,Bus Fader 10bit,244,-47.90dB
+13,Bus Fader 10bit,372,-35.10dB
+13,Bus Fader 10bit,500,-26.15dB
+13,Bus Fader 10bit,628,-19.75dB
+13,Bus Fader 10bit,756,-13.35dB
+13,Bus Fader 10bit,884,-6.95dB
+13,Bus Fader 10bit,1012,-0.55dB
+13,Bus Fader 10bit,117,-71.20dB
+13,Bus Fader 10bit,245,-47.80dB
+13,Bus Fader 10bit,373,-35.00dB
+13,Bus Fader 10bit,501,-26.10dB
+13,Bus Fader 10bit,629,-19.70dB
+13,Bus Fader 10bit,757,-13.30dB
+13,Bus Fader 10bit,885,-6.90dB
+13,Bus Fader 10bit,1013,-0.50dB
+13,Bus Fader 10bit,118,-71.00dB
+13,Bus Fader 10bit,246,-47.70dB
+13,Bus Fader 10bit,374,-34.90dB
+13,Bus Fader 10bit,502,-26.05dB
+13,Bus Fader 10bit,630,-19.65dB
+13,Bus Fader 10bit,758,-13.25dB
+13,Bus Fader 10bit,886,-6.85dB
+13,Bus Fader 10bit,1014,-0.45dB
+13,Bus Fader 10bit,119,-70.80dB
+13,Bus Fader 10bit,247,-47.60dB
+13,Bus Fader 10bit,375,-34.80dB
+13,Bus Fader 10bit,503,-26.00dB
+13,Bus Fader 10bit,631,-19.60dB
+13,Bus Fader 10bit,759,-13.20dB
+13,Bus Fader 10bit,887,-6.80dB
+13,Bus Fader 10bit,1015,-0.40dB
+13,Bus Fader 10bit,120,-70.60dB
+13,Bus Fader 10bit,248,-47.50dB
+13,Bus Fader 10bit,376,-34.70dB
+13,Bus Fader 10bit,504,-25.95dB
+13,Bus Fader 10bit,632,-19.55dB
+13,Bus Fader 10bit,760,-13.15dB
+13,Bus Fader 10bit,888,-6.75dB
+13,Bus Fader 10bit,1016,-0.35dB
+13,Bus Fader 10bit,121,-70.40dB
+13,Bus Fader 10bit,249,-47.40dB
+13,Bus Fader 10bit,377,-34.60dB
+13,Bus Fader 10bit,505,-25.90dB
+13,Bus Fader 10bit,633,-19.50dB
+13,Bus Fader 10bit,761,-13.10dB
+13,Bus Fader 10bit,889,-6.70dB
+13,Bus Fader 10bit,1017,-0.30dB
+13,Bus Fader 10bit,122,-70.20dB
+13,Bus Fader 10bit,250,-47.30dB
+13,Bus Fader 10bit,378,-34.50dB
+13,Bus Fader 10bit,506,-25.85dB
+13,Bus Fader 10bit,634,-19.45dB
+13,Bus Fader 10bit,762,-13.05dB
+13,Bus Fader 10bit,890,-6.65dB
+13,Bus Fader 10bit,1018,-0.25dB
+13,Bus Fader 10bit,123,-70.00dB
+13,Bus Fader 10bit,251,-47.20dB
+13,Bus Fader 10bit,379,-34.40dB
+13,Bus Fader 10bit,507,-25.80dB
+13,Bus Fader 10bit,635,-19.40dB
+13,Bus Fader 10bit,763,-13.00dB
+13,Bus Fader 10bit,891,-6.60dB
+13,Bus Fader 10bit,1019,-0.20dB
+13,Bus Fader 10bit,124,-69.80dB
+13,Bus Fader 10bit,252,-47.10dB
+13,Bus Fader 10bit,380,-34.30dB
+13,Bus Fader 10bit,508,-25.75dB
+13,Bus Fader 10bit,636,-19.35dB
+13,Bus Fader 10bit,764,-12.95dB
+13,Bus Fader 10bit,892,-6.55dB
+13,Bus Fader 10bit,1020,-0.15dB
+13,Bus Fader 10bit,125,-69.60dB
+13,Bus Fader 10bit,253,-47.00dB
+13,Bus Fader 10bit,381,-34.20dB
+13,Bus Fader 10bit,509,-25.70dB
+13,Bus Fader 10bit,637,-19.30dB
+13,Bus Fader 10bit,765,-12.90dB
+13,Bus Fader 10bit,893,-6.50dB
+13,Bus Fader 10bit,1021,-0.10dB
+13,Bus Fader 10bit,126,-69.40dB
+13,Bus Fader 10bit,254,-46.90dB
+13,Bus Fader 10bit,382,-34.10dB
+13,Bus Fader 10bit,510,-25.65dB
+13,Bus Fader 10bit,638,-19.25dB
+13,Bus Fader 10bit,766,-12.85dB
+13,Bus Fader 10bit,894,-6.45dB
+13,Bus Fader 10bit,1022,-0.05dB
+13,Bus Fader 10bit,127,-69.20dB
+13,Bus Fader 10bit,255,-46.80dB
+13,Bus Fader 10bit,383,-34.00dB
+13,Bus Fader 10bit,511,-25.60dB
+13,Bus Fader 10bit,639,-19.20dB
+13,Bus Fader 10bit,767,-12.80dB
+13,Bus Fader 10bit,895,-6.40dB
+13,Bus Fader 10bit,1023,0.00dB
+14,AD824 Port,0,-
+14,AD824 Port,1,SLOT1-1/8
+14,AD824 Port,2,SLOT1-9-16
+14,AD824 Port,3,SLOT2-1/8
+14,AD824 Port,4,SLOT2-9-16
+15,Input Patch List,0,NONE
+15,Input Patch List,17,AD17
+15,Input Patch List,34,S1-2
+15,Input Patch List,51,S2-3
+15,Input Patch List,68,RACK2-2
+15,Input Patch List,1,AD1
+15,Input Patch List,18,AD18
+15,Input Patch List,35,S1-3
+15,Input Patch List,52,S2-4
+15,Input Patch List,69,RACK3-1
+15,Input Patch List,2,AD2
+15,Input Patch List,19,AD19
+15,Input Patch List,36,S1-4
+15,Input Patch List,53,S2-5
+15,Input Patch List,70,RACK3-2
+15,Input Patch List,3,AD3
+15,Input Patch List,20,AD20
+15,Input Patch List,37,S1-5
+15,Input Patch List,54,S2-6
+15,Input Patch List,71,RACK4-1
+15,Input Patch List,4,AD4
+15,Input Patch List,21,AD21
+15,Input Patch List,38,S1-6
+15,Input Patch List,55,S2-7
+15,Input Patch List,72,RACK4-2
+15,Input Patch List,5,AD5
+15,Input Patch List,22,AD22
+15,Input Patch List,39,S1-7
+15,Input Patch List,56,S2-8
+15,Input Patch List,73,RACK5-1
+15,Input Patch List,6,AD6
+15,Input Patch List,23,AD23
+15,Input Patch List,40,S1-8
+15,Input Patch List,57,S2-9
+15,Input Patch List,74,RACK5-2
+15,Input Patch List,7,AD7
+15,Input Patch List,24,AD24
+15,Input Patch List,41,S1-9
+15,Input Patch List,58,S2-10
+15,Input Patch List,75,RACK6-1
+15,Input Patch List,8,AD8
+15,Input Patch List,25,AD25
+15,Input Patch List,42,S1-10
+15,Input Patch List,59,S2-11
+15,Input Patch List,76,RACK6-2
+15,Input Patch List,9,AD9
+15,Input Patch List,26,AD26
+15,Input Patch List,43,S1-11
+15,Input Patch List,60,S2-12
+15,Input Patch List,77,RACK7-1
+15,Input Patch List,10,AD10
+15,Input Patch List,27,AD27
+15,Input Patch List,44,S1-12
+15,Input Patch List,61,S2-13
+15,Input Patch List,78,RACK7-2
+15,Input Patch List,11,AD11
+15,Input Patch List,28,AD28
+15,Input Patch List,45,S1-13
+15,Input Patch List,62,S2-14
+15,Input Patch List,79,RACK8-1
+15,Input Patch List,12,AD12
+15,Input Patch List,29,AD29
+15,Input Patch List,46,S1-14
+15,Input Patch List,63,S2-15
+15,Input Patch List,80,RACK8-2
+15,Input Patch List,13,AD13
+15,Input Patch List,30,AD30
+15,Input Patch List,47,S1-15
+15,Input Patch List,64,S2-16
+15,Input Patch List,81,2TR IN L
+15,Input Patch List,14,AD14
+15,Input Patch List,31,AD31
+15,Input Patch List,48,S1-16
+15,Input Patch List,65,RACK1-1
+15,Input Patch List,82,2TR IN R
+15,Input Patch List,15,AD15
+15,Input Patch List,32,AD32
+15,Input Patch List,49,S2-1
+15,Input Patch List,66,RACK1-2
+15,Input Patch List,83,MP3 PB L
+15,Input Patch List,16,AD16
+15,Input Patch List,33,S1-1
+15,Input Patch List,50,S2-2
+15,Input Patch List,67,RACK2-1
+15,Input Patch List,84,MP3 PB R
+16,Output Patch List,0,NONE
+16,Output Patch List,37,DIRECT7
+16,Output Patch List,74,DIRECT44
+16,Output Patch List,111,INSIN17
+16,Output Patch List,148,INSMTX6
+16,Output Patch List,1,MIX1
+16,Output Patch List,38,DIRECT8
+16,Output Patch List,75,DIRECT45
+16,Output Patch List,112,INSIN18
+16,Output Patch List,149,INSMTX7
+16,Output Patch List,2,MIX2
+16,Output Patch List,39,DIRECT9
+16,Output Patch List,76,DIRECT46
+16,Output Patch List,113,INSIN19
+16,Output Patch List,150,INSMTX8
+16,Output Patch List,3,MIX3
+16,Output Patch List,40,DIRECT10
+16,Output Patch List,77,DIRECT47
+16,Output Patch List,114,INSIN20
+16,Output Patch List,151,INSSTL
+16,Output Patch List,4,MIX4
+16,Output Patch List,41,DIRECT11
+16,Output Patch List,78,DIRECT48
+16,Output Patch List,115,INSIN21
+16,Output Patch List,152,INSSTR
+16,Output Patch List,5,MIX5
+16,Output Patch List,42,DIRECT12
+16,Output Patch List,79,DIRECT49
+16,Output Patch List,116,INSIN22
+16,Output Patch List,153,INSSTC
+16,Output Patch List,6,MIX6
+16,Output Patch List,43,DIRECT13
+16,Output Patch List,80,DIRECT50
+16,Output Patch List,117,INSIN23
+16,Output Patch List,154,CASMIX1
+16,Output Patch List,7,MIX7
+16,Output Patch List,44,DIRECT14
+16,Output Patch List,81,DIRECT51
+16,Output Patch List,118,INSIN24
+16,Output Patch List,155,CASMIX2
+16,Output Patch List,8,MIX8
+16,Output Patch List,45,DIRECT15
+16,Output Patch List,82,DIRECT52
+16,Output Patch List,119,INSIN25
+16,Output Patch List,156,CASMIX3
+16,Output Patch List,9,MIX9
+16,Output Patch List,46,DIRECT16
+16,Output Patch List,83,DIRECT53
+16,Output Patch List,120,INSIN26
+16,Output Patch List,157,CASMIX4
+16,Output Patch List,10,MIX10
+16,Output Patch List,47,DIRECT17
+16,Output Patch List,84,DIRECT54
+16,Output Patch List,121,INSIN27
+16,Output Patch List,158,CASMIX5
+16,Output Patch List,11,MIX11
+16,Output Patch List,48,DIRECT18
+16,Output Patch List,85,DIRECT55
+16,Output Patch List,122,INSIN28
+16,Output Patch List,159,CASMIX6
+16,Output Patch List,12,MIX12
+16,Output Patch List,49,DIRECT19
+16,Output Patch List,86,DIRECT56
+16,Output Patch List,123,INSIN29
+16,Output Patch List,160,CASMIX7
+16,Output Patch List,13,MIX13
+16,Output Patch List,50,DIRECT20
+16,Output Patch List,87,DIRECT57
+16,Output Patch List,124,INSIN30
+16,Output Patch List,161,CASMIX8
+16,Output Patch List,14,MIX14
+16,Output Patch List,51,DIRECT21
+16,Output Patch List,88,DIRECT58
+16,Output Patch List,125,INSIN31
+16,Output Patch List,162,CASMIX9
+16,Output Patch List,15,MIX15
+16,Output Patch List,52,DIRECT22
+16,Output Patch List,89,DIRECT59
+16,Output Patch List,126,INSIN32
+16,Output Patch List,163,CASMIX10
+16,Output Patch List,16,MIX16
+16,Output Patch List,53,DIRECT23
+16,Output Patch List,90,DIRECT60
+16,Output Patch List,127,INSMIX1
+16,Output Patch List,164,CASMIX11
+16,Output Patch List,17,MATRIX1
+16,Output Patch List,54,DIRECT24
+16,Output Patch List,91,DIRECT61
+16,Output Patch List,128,INSMIX2
+16,Output Patch List,165,CASMIX12
+16,Output Patch List,18,MATRIX2
+16,Output Patch List,55,DIRECT25
+16,Output Patch List,92,DIRECT62
+16,Output Patch List,129,INSMIX3
+16,Output Patch List,166,CASMIX13
+16,Output Patch List,19,MATRIX3
+16,Output Patch List,56,DIRECT26
+16,Output Patch List,93,DIRECT63
+16,Output Patch List,130,INSMIX4
+16,Output Patch List,167,CASMIX14
+16,Output Patch List,20,MATRIX4
+16,Output Patch List,57,DIRECT27
+16,Output Patch List,94,DIRECT64
+16,Output Patch List,131,INSMIX5
+16,Output Patch List,168,CASMIX15
+16,Output Patch List,21,MATRIX5
+16,Output Patch List,58,DIRECT28
+16,Output Patch List,95,INSIN1
+16,Output Patch List,132,INSMIX6
+16,Output Patch List,169,CASMIX16
+16,Output Patch List,22,MATRIX6
+16,Output Patch List,59,DIRECT29
+16,Output Patch List,96,INSIN2
+16,Output Patch List,133,INSMIX7
+16,Output Patch List,170,CASMTX1
+16,Output Patch List,23,MATRIX7
+16,Output Patch List,60,DIRECT30
+16,Output Patch List,97,INSIN3
+16,Output Patch List,134,INSMIX8
+16,Output Patch List,171,CASMTX2
+16,Output Patch List,24,MATRIX8
+16,Output Patch List,61,DIRECT31
+16,Output Patch List,98,INSIN4
+16,Output Patch List,135,INSMIX9
+16,Output Patch List,172,CASMTX3
+16,Output Patch List,25,STL
+16,Output Patch List,62,DIRECT32
+16,Output Patch List,99,INSIN5
+16,Output Patch List,136,INSMIX10
+16,Output Patch List,173,CASMTX4
+16,Output Patch List,26,STR
+16,Output Patch List,63,DIRECT33
+16,Output Patch List,100,INSIN6
+16,Output Patch List,137,INSMIX11
+16,Output Patch List,174,CASMTX5
+16,Output Patch List,27,STC
+16,Output Patch List,64,DIRECT34
+16,Output Patch List,101,INSIN7
+16,Output Patch List,138,INSMIX12
+16,Output Patch List,175,CASMTX6
+16,Output Patch List,28,MONL
+16,Output Patch List,65,DIRECT35
+16,Output Patch List,102,INSIN8
+16,Output Patch List,139,INSMIX13
+16,Output Patch List,176,CASMTX7
+16,Output Patch List,29,MONR
+16,Output Patch List,66,DIRECT36
+16,Output Patch List,103,INSIN9
+16,Output Patch List,140,INSMIX14
+16,Output Patch List,177,CASMTX8
+16,Output Patch List,30,MONC
+16,Output Patch List,67,DIRECT37
+16,Output Patch List,104,INSIN10
+16,Output Patch List,141,INSMIX15
+16,Output Patch List,178,CASSTL
+16,Output Patch List,31,DIRECT1
+16,Output Patch List,68,DIRECT38
+16,Output Patch List,105,INSIN11
+16,Output Patch List,142,INSMIX16
+16,Output Patch List,179,CASSTR
+16,Output Patch List,32,DIRECT2
+16,Output Patch List,69,DIRECT39
+16,Output Patch List,106,INSIN12
+16,Output Patch List,143,INSMTX1
+16,Output Patch List,180,CASSTC
+16,Output Patch List,33,DIRECT3
+16,Output Patch List,70,DIRECT40
+16,Output Patch List,107,INSIN13
+16,Output Patch List,144,INSMTX2
+16,Output Patch List,181,CASCUEL
+16,Output Patch List,34,DIRECT4
+16,Output Patch List,71,DIRECT41
+16,Output Patch List,108,INSIN14
+16,Output Patch List,145,INSMTX3
+16,Output Patch List,182,CASCUER
+16,Output Patch List,35,DIRECT5
+16,Output Patch List,72,DIRECT42
+16,Output Patch List,109,INSIN15
+16,Output Patch List,146,INSMTX4
+16,Output Patch List,183,STL+C
+16,Output Patch List,36,DIRECT6
+16,Output Patch List,73,DIRECT43
+16,Output Patch List,110,INSIN16
+16,Output Patch List,147,INSMTX5
+16,Output Patch List,184,STR+C
+17,Slot Output Patch List,0,NONE
+17,Slot Output Patch List,37,DIRECT9
+17,Slot Output Patch List,74,DIRECT46
+17,Slot Output Patch List,111,INSCH19
+17,Slot Output Patch List,148,INSCH56
+17,Slot Output Patch List,185,INSMONL
+17,Slot Output Patch List,1,MIX1
+17,Slot Output Patch List,38,DIRECT10
+17,Slot Output Patch List,75,DIRECT47
+17,Slot Output Patch List,112,INSCH20
+17,Slot Output Patch List,149,INSCH57
+17,Slot Output Patch List,186,INSMONR
+17,Slot Output Patch List,2,MIX2
+17,Slot Output Patch List,39,DIRECT11
+17,Slot Output Patch List,76,DIRECT48
+17,Slot Output Patch List,113,INSCH21
+17,Slot Output Patch List,150,INSCH58
+17,Slot Output Patch List,187,INSMONC
+17,Slot Output Patch List,3,MIX3
+17,Slot Output Patch List,40,DIRECT12
+17,Slot Output Patch List,77,DIRECT49
+17,Slot Output Patch List,114,INSCH22
+17,Slot Output Patch List,151,INSCH59
+17,Slot Output Patch List,188,MONITORL
+17,Slot Output Patch List,4,MIX4
+17,Slot Output Patch List,41,DIRECT13
+17,Slot Output Patch List,78,DIRECT50
+17,Slot Output Patch List,115,INSCH23
+17,Slot Output Patch List,152,INSCH60
+17,Slot Output Patch List,189,MONITORR
+17,Slot Output Patch List,5,MIX5
+17,Slot Output Patch List,42,DIRECT14
+17,Slot Output Patch List,79,DIRECT51
+17,Slot Output Patch List,116,INSCH24
+17,Slot Output Patch List,153,INSCH61
+17,Slot Output Patch List,190,MONITORC
+17,Slot Output Patch List,6,MIX6
+17,Slot Output Patch List,43,DIRECT15
+17,Slot Output Patch List,80,DIRECT52
+17,Slot Output Patch List,117,INSCH25
+17,Slot Output Patch List,154,INSCH62
+17,Slot Output Patch List,191,OSC
+17,Slot Output Patch List,7,MIX7
+17,Slot Output Patch List,44,DIRECT16
+17,Slot Output Patch List,81,DIRECT53
+17,Slot Output Patch List,118,INSCH26
+17,Slot Output Patch List,155,INSCH63
+17,Slot Output Patch List,192,TB
+17,Slot Output Patch List,8,MIX8
+17,Slot Output Patch List,45,DIRECT17
+17,Slot Output Patch List,82,DIRECT54
+17,Slot Output Patch List,119,INSCH27
+17,Slot Output Patch List,156,INSCH64
+17,Slot Output Patch List,9,MIX9
+17,Slot Output Patch List,46,DIRECT18
+17,Slot Output Patch List,83,DIRECT55
+17,Slot Output Patch List,120,INSCH28
+17,Slot Output Patch List,157,INSMIX1
+17,Slot Output Patch List,10,MIX10
+17,Slot Output Patch List,47,DIRECT19
+17,Slot Output Patch List,84,DIRECT56
+17,Slot Output Patch List,121,INSCH29
+17,Slot Output Patch List,158,INSMIX2
+17,Slot Output Patch List,11,MIX11
+17,Slot Output Patch List,48,DIRECT20
+17,Slot Output Patch List,85,DIRECT57
+17,Slot Output Patch List,122,INSCH30
+17,Slot Output Patch List,159,INSMIX3
+17,Slot Output Patch List,12,MIX12
+17,Slot Output Patch List,49,DIRECT21
+17,Slot Output Patch List,86,DIRECT58
+17,Slot Output Patch List,123,INSCH31
+17,Slot Output Patch List,160,INSMIX4
+17,Slot Output Patch List,13,MIX13
+17,Slot Output Patch List,50,DIRECT22
+17,Slot Output Patch List,87,DIRECT59
+17,Slot Output Patch List,124,INSCH32
+17,Slot Output Patch List,161,INSMIX5
+17,Slot Output Patch List,14,MIX14
+17,Slot Output Patch List,51,DIRECT23
+17,Slot Output Patch List,88,DIRECT60
+17,Slot Output Patch List,125,INSCH33
+17,Slot Output Patch List,162,INSMIX6
+17,Slot Output Patch List,15,MIX15
+17,Slot Output Patch List,52,DIRECT24
+17,Slot Output Patch List,89,DIRECT61
+17,Slot Output Patch List,126,INSCH34
+17,Slot Output Patch List,163,INSMIX7
+17,Slot Output Patch List,16,MIX16
+17,Slot Output Patch List,53,DIRECT25
+17,Slot Output Patch List,90,DIRECT62
+17,Slot Output Patch List,127,INSCH35
+17,Slot Output Patch List,164,INSMIX8
+17,Slot Output Patch List,17,MATRIX1
+17,Slot Output Patch List,54,DIRECT26
+17,Slot Output Patch List,91,DIRECT63
+17,Slot Output Patch List,128,INSCH36
+17,Slot Output Patch List,165,INSMIX9
+17,Slot Output Patch List,18,MATRIX2
+17,Slot Output Patch List,55,DIRECT27
+17,Slot Output Patch List,92,DIRECT64
+17,Slot Output Patch List,129,INSCH37
+17,Slot Output Patch List,166,INSMIX10
+17,Slot Output Patch List,19,MATRIX3
+17,Slot Output Patch List,56,DIRECT28
+17,Slot Output Patch List,93,INSCH1
+17,Slot Output Patch List,130,INSCH38
+17,Slot Output Patch List,167,INSMIX11
+17,Slot Output Patch List,20,MATRIX4
+17,Slot Output Patch List,57,DIRECT29
+17,Slot Output Patch List,94,INSCH2
+17,Slot Output Patch List,131,INSCH39
+17,Slot Output Patch List,168,INSMIX12
+17,Slot Output Patch List,21,MATRIX5
+17,Slot Output Patch List,58,DIRECT30
+17,Slot Output Patch List,95,INSCH3
+17,Slot Output Patch List,132,INSCH40
+17,Slot Output Patch List,169,INSMIX13
+17,Slot Output Patch List,22,MATRIX6
+17,Slot Output Patch List,59,DIRECT31
+17,Slot Output Patch List,96,INSCH4
+17,Slot Output Patch List,133,INSCH41
+17,Slot Output Patch List,170,INSMIX14
+17,Slot Output Patch List,23,MATRIX7
+17,Slot Output Patch List,60,DIRECT32
+17,Slot Output Patch List,97,INSCH5
+17,Slot Output Patch List,134,INSCH42
+17,Slot Output Patch List,171,INSMIX15
+17,Slot Output Patch List,24,MATRIX8
+17,Slot Output Patch List,61,DIRECT33
+17,Slot Output Patch List,98,INSCH6
+17,Slot Output Patch List,135,INSCH43
+17,Slot Output Patch List,172,INSMIX16
+17,Slot Output Patch List,25,STAL
+17,Slot Output Patch List,62,DIRECT34
+17,Slot Output Patch List,99,INSCH7
+17,Slot Output Patch List,136,INSCH44
+17,Slot Output Patch List,173,INSMTX1
+17,Slot Output Patch List,26,STAR
+17,Slot Output Patch List,63,DIRECT35
+17,Slot Output Patch List,100,INSCH8
+17,Slot Output Patch List,137,INSCH45
+17,Slot Output Patch List,174,INSMTX2
+17,Slot Output Patch List,27,STBL
+17,Slot Output Patch List,64,DIRECT36
+17,Slot Output Patch List,101,INSCH9
+17,Slot Output Patch List,138,INSCH46
+17,Slot Output Patch List,175,INSMTX3
+17,Slot Output Patch List,28,STBR
+17,Slot Output Patch List,65,DIRECT37
+17,Slot Output Patch List,102,INSCH10
+17,Slot Output Patch List,139,INSCH47
+17,Slot Output Patch List,176,INSMTX4
+17,Slot Output Patch List,29,DIRECT1
+17,Slot Output Patch List,66,DIRECT38
+17,Slot Output Patch List,103,INSCH11
+17,Slot Output Patch List,140,INSCH48
+17,Slot Output Patch List,177,INSMTX5
+17,Slot Output Patch List,30,DIRECT2
+17,Slot Output Patch List,67,DIRECT39
+17,Slot Output Patch List,104,INSCH12
+17,Slot Output Patch List,141,INSCH49
+17,Slot Output Patch List,178,INSMTX6
+17,Slot Output Patch List,31,DIRECT3
+17,Slot Output Patch List,68,DIRECT40
+17,Slot Output Patch List,105,INSCH13
+17,Slot Output Patch List,142,INSCH50
+17,Slot Output Patch List,179,INSMTX7
+17,Slot Output Patch List,32,DIRECT4
+17,Slot Output Patch List,69,DIRECT41
+17,Slot Output Patch List,106,INSCH14
+17,Slot Output Patch List,143,INSCH51
+17,Slot Output Patch List,180,INSMTX8
+17,Slot Output Patch List,33,DIRECT5
+17,Slot Output Patch List,70,DIRECT42
+17,Slot Output Patch List,107,INSCH15
+17,Slot Output Patch List,144,INSCH52
+17,Slot Output Patch List,181,INSSTAL
+17,Slot Output Patch List,34,DIRECT6
+17,Slot Output Patch List,71,DIRECT43
+17,Slot Output Patch List,108,INSCH16
+17,Slot Output Patch List,145,INSCH53
+17,Slot Output Patch List,182,INSSTAR
+17,Slot Output Patch List,35,DIRECT7
+17,Slot Output Patch List,72,DIRECT44
+17,Slot Output Patch List,109,INSCH17
+17,Slot Output Patch List,146,INSCH54
+17,Slot Output Patch List,183,INSSTBL
+17,Slot Output Patch List,36,DIRECT8
+17,Slot Output Patch List,73,DIRECT45
+17,Slot Output Patch List,110,INSCH18
+17,Slot Output Patch List,147,INSCH55
+17,Slot Output Patch List,184,INSSTBR
+18,GEQ Insert,0,NONE
+18,GEQ Insert,16,INSCH16
+18,GEQ Insert,32,INSCH32
+18,GEQ Insert,48,INSCH48
+18,GEQ Insert,64,INSCH64
+18,GEQ Insert,80,INSMIX16
+18,GEQ Insert,1,INSCH1
+18,GEQ Insert,17,INSCH17
+18,GEQ Insert,33,INSCH33
+18,GEQ Insert,49,INSCH49
+18,GEQ Insert,65,INSMIX1
+18,GEQ Insert,81,INSMTX1
+18,GEQ Insert,2,INSCH2
+18,GEQ Insert,18,INSCH18
+18,GEQ Insert,34,INSCH34
+18,GEQ Insert,50,INSCH50
+18,GEQ Insert,66,INSMIX2
+18,GEQ Insert,82,INSMTX2
+18,GEQ Insert,3,INSCH3
+18,GEQ Insert,19,INSCH19
+18,GEQ Insert,35,INSCH35
+18,GEQ Insert,51,INSCH51
+18,GEQ Insert,67,INSMIX3
+18,GEQ Insert,83,INSMTX3
+18,GEQ Insert,4,INSCH4
+18,GEQ Insert,20,INSCH20
+18,GEQ Insert,36,INSCH36
+18,GEQ Insert,52,INSCH52
+18,GEQ Insert,68,INSMIX4
+18,GEQ Insert,84,INSMTX4
+18,GEQ Insert,5,INSCH5
+18,GEQ Insert,21,INSCH21
+18,GEQ Insert,37,INSCH37
+18,GEQ Insert,53,INSCH53
+18,GEQ Insert,69,INSMIX5
+18,GEQ Insert,85,INSMTX5
+18,GEQ Insert,6,INSCH6
+18,GEQ Insert,22,INSCH22
+18,GEQ Insert,38,INSCH38
+18,GEQ Insert,54,INSCH54
+18,GEQ Insert,70,INSMIX6
+18,GEQ Insert,86,INSMTX6
+18,GEQ Insert,7,INSCH7
+18,GEQ Insert,23,INSCH23
+18,GEQ Insert,39,INSCH39
+18,GEQ Insert,55,INSCH55
+18,GEQ Insert,71,INSMIX7
+18,GEQ Insert,87,INSMTX7
+18,GEQ Insert,8,INSCH8
+18,GEQ Insert,24,INSCH24
+18,GEQ Insert,40,INSCH40
+18,GEQ Insert,56,INSCH56
+18,GEQ Insert,72,INSMIX8
+18,GEQ Insert,88,INSMTX8
+18,GEQ Insert,9,INSCH9
+18,GEQ Insert,25,INSCH25
+18,GEQ Insert,41,INSCH41
+18,GEQ Insert,57,INSCH57
+18,GEQ Insert,73,INSMIX9
+18,GEQ Insert,89,INSSTAL
+18,GEQ Insert,10,INSCH10
+18,GEQ Insert,26,INSCH26
+18,GEQ Insert,42,INSCH42
+18,GEQ Insert,58,INSCH58
+18,GEQ Insert,74,INSMIX10
+18,GEQ Insert,90,INSSTAR
+18,GEQ Insert,11,INSCH11
+18,GEQ Insert,27,INSCH27
+18,GEQ Insert,43,INSCH43
+18,GEQ Insert,59,INSCH59
+18,GEQ Insert,75,INSMIX11
+18,GEQ Insert,91,INSSTBL
+18,GEQ Insert,12,INSCH12
+18,GEQ Insert,28,INSCH28
+18,GEQ Insert,44,INSCH44
+18,GEQ Insert,60,INSCH60
+18,GEQ Insert,76,INSMIX12
+18,GEQ Insert,92,INSSTBR
+18,GEQ Insert,13,INSCH13
+18,GEQ Insert,29,INSCH29
+18,GEQ Insert,45,INSCH45
+18,GEQ Insert,61,INSCH61
+18,GEQ Insert,77,INSMIX13
+18,GEQ Insert,93,INSMONL
+18,GEQ Insert,14,INSCH14
+18,GEQ Insert,30,INSCH30
+18,GEQ Insert,46,INSCH46
+18,GEQ Insert,62,INSCH62
+18,GEQ Insert,78,INSMIX14
+18,GEQ Insert,94,INSMONR
+18,GEQ Insert,15,INSCH15
+18,GEQ Insert,31,INSCH31
+18,GEQ Insert,47,INSCH47
+18,GEQ Insert,63,INSCH63
+18,GEQ Insert,79,INSMIX15
+18,GEQ Insert,95,INSMONC
+19,Note,0,32th Note Triplets
+19,Note,1,Sixteenth Note Triplets
+19,Note,2,Sixteenth Note
+19,Note,3,Eighth Note Triplets
+19,Note,4,Dotted Sixteenth Note
+19,Note,5,Eighth Note
+19,Note,6,Quater Note Triplets
+19,Note,7,Dotted Eighth Note
+19,Note,8,Quater Note
+19,Note,9,Dotted Quater Note
+19,Note,10,Half Note
+19,Note,11,Dotted Half Note
+19,Note,12,Whole Note
+19,Note,13,Two Whole Note
+20,MIDI Data Format List,0,00
+20,MIDI Data Format List,44,2C
+20,MIDI Data Format List,88,58
+20,MIDI Data Format List,132,84
+20,MIDI Data Format List,176,B0
+20,MIDI Data Format List,220,DC
+20,MIDI Data Format List,1,01
+20,MIDI Data Format List,45,2D
+20,MIDI Data Format List,89,59
+20,MIDI Data Format List,133,85
+20,MIDI Data Format List,177,B1
+20,MIDI Data Format List,221,DD
+20,MIDI Data Format List,2,02
+20,MIDI Data Format List,46,2E
+20,MIDI Data Format List,90,5A
+20,MIDI Data Format List,134,86
+20,MIDI Data Format List,178,B2
+20,MIDI Data Format List,222,DE
+20,MIDI Data Format List,3,03
+20,MIDI Data Format List,47,2F
+20,MIDI Data Format List,91,5B
+20,MIDI Data Format List,135,87
+20,MIDI Data Format List,179,B3
+20,MIDI Data Format List,223,DF
+20,MIDI Data Format List,4,04
+20,MIDI Data Format List,48,30
+20,MIDI Data Format List,92,5C
+20,MIDI Data Format List,136,88
+20,MIDI Data Format List,180,B4
+20,MIDI Data Format List,224,E0
+20,MIDI Data Format List,5,05
+20,MIDI Data Format List,49,31
+20,MIDI Data Format List,93,5D
+20,MIDI Data Format List,137,89
+20,MIDI Data Format List,181,B5
+20,MIDI Data Format List,225,E1
+20,MIDI Data Format List,6,06
+20,MIDI Data Format List,50,32
+20,MIDI Data Format List,94,5E
+20,MIDI Data Format List,138,8A
+20,MIDI Data Format List,182,B6
+20,MIDI Data Format List,226,E2
+20,MIDI Data Format List,7,07
+20,MIDI Data Format List,51,33
+20,MIDI Data Format List,95,5F
+20,MIDI Data Format List,139,8B
+20,MIDI Data Format List,183,B7
+20,MIDI Data Format List,227,E3
+20,MIDI Data Format List,8,08
+20,MIDI Data Format List,52,34
+20,MIDI Data Format List,96,60
+20,MIDI Data Format List,140,8C
+20,MIDI Data Format List,184,B8
+20,MIDI Data Format List,228,E4
+20,MIDI Data Format List,9,09
+20,MIDI Data Format List,53,35
+20,MIDI Data Format List,97,61
+20,MIDI Data Format List,141,8D
+20,MIDI Data Format List,185,B9
+20,MIDI Data Format List,229,E5
+20,MIDI Data Format List,10,0A
+20,MIDI Data Format List,54,36
+20,MIDI Data Format List,98,62
+20,MIDI Data Format List,142,8E
+20,MIDI Data Format List,186,BA
+20,MIDI Data Format List,230,E6
+20,MIDI Data Format List,11,0B
+20,MIDI Data Format List,55,37
+20,MIDI Data Format List,99,63
+20,MIDI Data Format List,143,8F
+20,MIDI Data Format List,187,BB
+20,MIDI Data Format List,231,E7
+20,MIDI Data Format List,12,0C
+20,MIDI Data Format List,56,38
+20,MIDI Data Format List,100,64
+20,MIDI Data Format List,144,90
+20,MIDI Data Format List,188,BC
+20,MIDI Data Format List,232,E8
+20,MIDI Data Format List,13,0D
+20,MIDI Data Format List,57,39
+20,MIDI Data Format List,101,65
+20,MIDI Data Format List,145,91
+20,MIDI Data Format List,189,BD
+20,MIDI Data Format List,233,E9
+20,MIDI Data Format List,14,0E
+20,MIDI Data Format List,58,3A
+20,MIDI Data Format List,102,66
+20,MIDI Data Format List,146,92
+20,MIDI Data Format List,190,BE
+20,MIDI Data Format List,234,EA
+20,MIDI Data Format List,15,0F
+20,MIDI Data Format List,59,3B
+20,MIDI Data Format List,103,67
+20,MIDI Data Format List,147,93
+20,MIDI Data Format List,191,BF
+20,MIDI Data Format List,235,EB
+20,MIDI Data Format List,16,10
+20,MIDI Data Format List,60,3C
+20,MIDI Data Format List,104,68
+20,MIDI Data Format List,148,94
+20,MIDI Data Format List,192,C0
+20,MIDI Data Format List,236,EC
+20,MIDI Data Format List,17,11
+20,MIDI Data Format List,61,3D
+20,MIDI Data Format List,105,69
+20,MIDI Data Format List,149,95
+20,MIDI Data Format List,193,C1
+20,MIDI Data Format List,237,ED
+20,MIDI Data Format List,18,12
+20,MIDI Data Format List,62,3E
+20,MIDI Data Format List,106,6A
+20,MIDI Data Format List,150,96
+20,MIDI Data Format List,194,C2
+20,MIDI Data Format List,238,EE
+20,MIDI Data Format List,19,13
+20,MIDI Data Format List,63,3F
+20,MIDI Data Format List,107,6B
+20,MIDI Data Format List,151,97
+20,MIDI Data Format List,195,C3
+20,MIDI Data Format List,239,EF
+20,MIDI Data Format List,20,14
+20,MIDI Data Format List,64,40
+20,MIDI Data Format List,108,6C
+20,MIDI Data Format List,152,98
+20,MIDI Data Format List,196,C4
+20,MIDI Data Format List,240,F0
+20,MIDI Data Format List,21,15
+20,MIDI Data Format List,65,41
+20,MIDI Data Format List,109,6D
+20,MIDI Data Format List,153,99
+20,MIDI Data Format List,197,C5
+20,MIDI Data Format List,241,F1
+20,MIDI Data Format List,22,16
+20,MIDI Data Format List,66,42
+20,MIDI Data Format List,110,6E
+20,MIDI Data Format List,154,9A
+20,MIDI Data Format List,198,C6
+20,MIDI Data Format List,242,F2
+20,MIDI Data Format List,23,17
+20,MIDI Data Format List,67,43
+20,MIDI Data Format List,111,6F
+20,MIDI Data Format List,155,9B
+20,MIDI Data Format List,199,C7
+20,MIDI Data Format List,243,F3
+20,MIDI Data Format List,24,18
+20,MIDI Data Format List,68,44
+20,MIDI Data Format List,112,70
+20,MIDI Data Format List,156,9C
+20,MIDI Data Format List,200,C8
+20,MIDI Data Format List,244,F4
+20,MIDI Data Format List,25,19
+20,MIDI Data Format List,69,45
+20,MIDI Data Format List,113,71
+20,MIDI Data Format List,157,9D
+20,MIDI Data Format List,201,C9
+20,MIDI Data Format List,245,F5
+20,MIDI Data Format List,26,1A
+20,MIDI Data Format List,70,46
+20,MIDI Data Format List,114,72
+20,MIDI Data Format List,158,9E
+20,MIDI Data Format List,202,CA
+20,MIDI Data Format List,246,F6
+20,MIDI Data Format List,27,1B
+20,MIDI Data Format List,71,47
+20,MIDI Data Format List,115,73
+20,MIDI Data Format List,159,9F
+20,MIDI Data Format List,203,CB
+20,MIDI Data Format List,247,F7
+20,MIDI Data Format List,28,1C
+20,MIDI Data Format List,72,48
+20,MIDI Data Format List,116,74
+20,MIDI Data Format List,160,A0
+20,MIDI Data Format List,204,CC
+20,MIDI Data Format List,248,F8
+20,MIDI Data Format List,29,1D
+20,MIDI Data Format List,73,49
+20,MIDI Data Format List,117,75
+20,MIDI Data Format List,161,A1
+20,MIDI Data Format List,205,CD
+20,MIDI Data Format List,249,F9
+20,MIDI Data Format List,30,1E
+20,MIDI Data Format List,74,4A
+20,MIDI Data Format List,118,76
+20,MIDI Data Format List,162,A2
+20,MIDI Data Format List,206,CE
+20,MIDI Data Format List,250,FA
+20,MIDI Data Format List,31,1F
+20,MIDI Data Format List,75,4B
+20,MIDI Data Format List,119,77
+20,MIDI Data Format List,163,A3
+20,MIDI Data Format List,207,CF
+20,MIDI Data Format List,251,FB
+20,MIDI Data Format List,32,20
+20,MIDI Data Format List,76,4C
+20,MIDI Data Format List,120,78
+20,MIDI Data Format List,164,A4
+20,MIDI Data Format List,208,D0
+20,MIDI Data Format List,252,FC
+20,MIDI Data Format List,33,21
+20,MIDI Data Format List,77,4D
+20,MIDI Data Format List,121,79
+20,MIDI Data Format List,165,A5
+20,MIDI Data Format List,209,D1
+20,MIDI Data Format List,253,FD
+20,MIDI Data Format List,34,22
+20,MIDI Data Format List,78,4E
+20,MIDI Data Format List,122,7A
+20,MIDI Data Format List,166,A6
+20,MIDI Data Format List,210,D2
+20,MIDI Data Format List,254,FE
+20,MIDI Data Format List,35,23
+20,MIDI Data Format List,79,4F
+20,MIDI Data Format List,123,7B
+20,MIDI Data Format List,167,A7
+20,MIDI Data Format List,211,D3
+20,MIDI Data Format List,255,FF
+20,MIDI Data Format List,36,24
+20,MIDI Data Format List,80,50
+20,MIDI Data Format List,124,7C
+20,MIDI Data Format List,168,A8
+20,MIDI Data Format List,212,D4
+20,MIDI Data Format List,256,SW
+20,MIDI Data Format List,37,25
+20,MIDI Data Format List,81,51
+20,MIDI Data Format List,125,7D
+20,MIDI Data Format List,169,A9
+20,MIDI Data Format List,213,D5
+20,MIDI Data Format List,257,ENC/FAD
+20,MIDI Data Format List,38,26
+20,MIDI Data Format List,82,52
+20,MIDI Data Format List,126,7E
+20,MIDI Data Format List,170,AA
+20,MIDI Data Format List,214,D6
+20,MIDI Data Format List,258,NOP
+20,MIDI Data Format List,39,27
+20,MIDI Data Format List,83,53
+20,MIDI Data Format List,127,7F
+20,MIDI Data Format List,171,AB
+20,MIDI Data Format List,215,D7
+20,MIDI Data Format List,259,END
+20,MIDI Data Format List,40,28
+20,MIDI Data Format List,84,54
+20,MIDI Data Format List,128,80
+20,MIDI Data Format List,172,AC
+20,MIDI Data Format List,216,D8
+20,MIDI Data Format List,41,29
+20,MIDI Data Format List,85,55
+20,MIDI Data Format List,129,81
+20,MIDI Data Format List,173,AD
+20,MIDI Data Format List,217,D9
+20,MIDI Data Format List,42,2A
+20,MIDI Data Format List,86,56
+20,MIDI Data Format List,130,82
+20,MIDI Data Format List,174,AE
+20,MIDI Data Format List,218,DA
+20,MIDI Data Format List,43,2B
+20,MIDI Data Format List,87,57
+20,MIDI Data Format List,131,83
+20,MIDI Data Format List,175,AF
+20,MIDI Data Format List,219,DB
+21,Word Clock Master List,0,INT 44.1k
+21,Word Clock Master List,5,CAS.IN
+21,Word Clock Master List,10,SLOT1-3/4
+21,Word Clock Master List,15,SLOT1-13/14
+21,Word Clock Master List,20,SLOT2-7/8
+21,Word Clock Master List,1,INT 48k
+21,Word Clock Master List,6,2TRD1
+21,Word Clock Master List,11,SLOT1-5/6
+21,Word Clock Master List,16,SLOT1-15/16
+21,Word Clock Master List,21,SLOT2-9/10
+21,Word Clock Master List,2,INT 88.2k
+21,Word Clock Master List,7,2TRD2
+21,Word Clock Master List,12,SLOT1-7/8
+21,Word Clock Master List,17,SLOT2-1/2
+21,Word Clock Master List,22,SLOT2-11/12
+21,Word Clock Master List,3,INT 96k
+21,Word Clock Master List,8,2TRD3
+21,Word Clock Master List,13,SLOT1-9/10
+21,Word Clock Master List,18,SLOT2-3/4
+21,Word Clock Master List,23,SLOT2-13/14
+21,Word Clock Master List,4,WC IN
+21,Word Clock Master List,9,SLOT1-1/2
+21,Word Clock Master List,14,SLOT1-11/12
+21,Word Clock Master List,19,SLOT2-5/6
+21,Word Clock Master List,24,SLOT2-15/16
+22,Wave Form,0,SINE 1ch
+22,Wave Form,1,SINE 2ch
+22,Wave Form,2,PINK NOISE
+22,Wave Form,3,BURST NOISE
+23,Channel Select,0,INPUT 01
+23,Channel Select,63,INPUT 64
+23,Channel Select,64,ST INPUT 1L
+23,Channel Select,71,ST INPUT 4R
+23,Channel Select,72,MIX 01
+23,Channel Select,87,MIX 16
+23,Channel Select,88,MATRIX 1
+23,Channel Select,95,MATRIX 8
+23,Channel Select,96,STEREO L
+23,Channel Select,97,STEREO R
+23,Channel Select,98,MONO
+24,Out Patch List,0,NONE
+24,Out Patch List,7,S1-7
+24,Out Patch List,14,S1-14
+24,Out Patch List,21,S2-5
+24,Out Patch List,28,S2-12
+24,Out Patch List,1,S1-1
+24,Out Patch List,8,S1-8
+24,Out Patch List,15,S1-15
+24,Out Patch List,22,S2-6
+24,Out Patch List,29,S2-13
+24,Out Patch List,2,S1-2
+24,Out Patch List,9,S1-9
+24,Out Patch List,16,S1-16
+24,Out Patch List,23,S2-7
+24,Out Patch List,30,S2-14
+24,Out Patch List,3,S1-3
+24,Out Patch List,10,S1-10
+24,Out Patch List,17,S2-1
+24,Out Patch List,24,S2-8
+24,Out Patch List,31,S2-15
+24,Out Patch List,4,S1-4
+24,Out Patch List,11,S1-11
+24,Out Patch List,18,S2-2
+24,Out Patch List,25,S2-9
+24,Out Patch List,32,S2-16
+24,Out Patch List,5,S1-5
+24,Out Patch List,12,S1-12
+24,Out Patch List,19,S2-3
+24,Out Patch List,26,S2-10
+24,Out Patch List,33,2TD1L
+24,Out Patch List,6,S1-6
+24,Out Patch List,13,S1-13
+24,Out Patch List,20,S2-4
+24,Out Patch List,27,S2-11
+24,Out Patch List,34,2TD1R
+25,In Key In List,0,SELF PRE EQ
+25,In Key In List,0,SELF PRE EQ
+25,In Key In List,0,SELF PRE EQ
+25,In Key In List,0,SELF PRE EQ
+25,In Key In List,0,SELF PRE EQ
+25,In Key In List,0,SELF PRE EQ
+25,In Key In List,0,SELF PRE EQ
+25,In Key In List,0,SELF PRE EQ
+25,In Key In List,0,SELF PRE EQ
+25,In Key In List,1,SELF POST EQ
+25,In Key In List,1,SELF POST EQ
+25,In Key In List,1,SELF POST EQ
+25,In Key In List,1,SELF POST EQ
+25,In Key In List,1,SELF POST EQ
+25,In Key In List,1,SELF POST EQ
+25,In Key In List,1,SELF POST EQ
+25,In Key In List,1,SELF POST EQ
+25,In Key In List,1,SELF POST EQ
+25,In Key In List,2,MIX 13
+25,In Key In List,2,MIX 13
+25,In Key In List,2,MIX 13
+25,In Key In List,2,MIX 13
+25,In Key In List,2,MIX 13
+25,In Key In List,2,MIX 13
+25,In Key In List,2,MIX 13
+25,In Key In List,2,MIX 13
+25,In Key In List,2,MIX 13
+25,In Key In List,3,MIX 14
+25,In Key In List,3,MIX 14
+25,In Key In List,3,MIX 14
+25,In Key In List,3,MIX 14
+25,In Key In List,3,MIX 14
+25,In Key In List,3,MIX 14
+25,In Key In List,3,MIX 14
+25,In Key In List,3,MIX 14
+25,In Key In List,3,MIX 14
+25,In Key In List,4,MIX 15
+25,In Key In List,4,MIX 15
+25,In Key In List,4,MIX 15
+25,In Key In List,4,MIX 15
+25,In Key In List,4,MIX 15
+25,In Key In List,4,MIX 15
+25,In Key In List,4,MIX 15
+25,In Key In List,4,MIX 15
+25,In Key In List,4,MIX 15
+25,In Key In List,5,MIX 16
+25,In Key In List,5,MIX 16
+25,In Key In List,5,MIX 16
+25,In Key In List,5,MIX 16
+25,In Key In List,5,MIX 16
+25,In Key In List,5,MIX 16
+25,In Key In List,5,MIX 16
+25,In Key In List,5,MIX 16
+25,In Key In List,5,MIX 16
+25,In Key In List,6,CH 1
+25,In Key In List,6,CH 9
+25,In Key In List,6,CH 17
+25,In Key In List,6,CH 25
+25,In Key In List,6,CH 33
+25,In Key In List,6,CH 41
+25,In Key In List,6,CH 49
+25,In Key In List,6,CH 57
+25,In Key In List,6,ST IN 1L
+25,In Key In List,7,CH 2
+25,In Key In List,7,CH 10
+25,In Key In List,7,CH 18
+25,In Key In List,7,CH 26
+25,In Key In List,7,CH 34
+25,In Key In List,7,CH 42
+25,In Key In List,7,CH 50
+25,In Key In List,7,CH 58
+25,In Key In List,7,ST IN 1R
+25,In Key In List,8,CH 3
+25,In Key In List,8,CH 11
+25,In Key In List,8,CH 19
+25,In Key In List,8,CH 27
+25,In Key In List,8,CH 35
+25,In Key In List,8,CH 43
+25,In Key In List,8,CH 51
+25,In Key In List,8,CH 59
+25,In Key In List,8,ST IN 2L
+25,In Key In List,9,CH 4
+25,In Key In List,9,CH 12
+25,In Key In List,9,CH 20
+25,In Key In List,9,CH 28
+25,In Key In List,9,CH 36
+25,In Key In List,9,CH 44
+25,In Key In List,9,CH 52
+25,In Key In List,9,CH 60
+25,In Key In List,9,ST IN 2R
+25,In Key In List,10,CH 5
+25,In Key In List,10,CH 13
+25,In Key In List,10,CH 21
+25,In Key In List,10,CH 29
+25,In Key In List,10,CH 37
+25,In Key In List,10,CH 45
+25,In Key In List,10,CH 53
+25,In Key In List,10,CH 61
+25,In Key In List,10,ST IN 3L
+25,In Key In List,11,CH 6
+25,In Key In List,11,CH 14
+25,In Key In List,11,CH 22
+25,In Key In List,11,CH 30
+25,In Key In List,11,CH 38
+25,In Key In List,11,CH 46
+25,In Key In List,11,CH 54
+25,In Key In List,11,CH 62
+25,In Key In List,11,ST IN 3R
+25,In Key In List,12,CH 7
+25,In Key In List,12,CH 15
+25,In Key In List,12,CH 23
+25,In Key In List,12,CH 31
+25,In Key In List,12,CH 39
+25,In Key In List,12,CH 47
+25,In Key In List,12,CH 55
+25,In Key In List,12,CH 63
+25,In Key In List,12,ST IN 4L
+25,In Key In List,13,CH 8
+25,In Key In List,13,CH 16
+25,In Key In List,13,CH 24
+25,In Key In List,13,CH 32
+25,In Key In List,13,CH 40
+25,In Key In List,13,CH 48
+25,In Key In List,13,CH 56
+25,In Key In List,13,CH 64
+25,In Key In List,13,ST IN 4R
+26,Out Key In List,0,SELF PRE EQ
+26,Out Key In List,0,SELF PRE EQ
+26,Out Key In List,0,SELF PRE EQ
+26,Out Key In List,0,SELF PRE EQ
+26,Out Key In List,1,SELF POST EQ
+26,Out Key In List,1,SELF POST EQ
+26,Out Key In List,1,SELF POST EQ
+26,Out Key In List,1,SELF POST EQ
+26,Out Key In List,2,MIX 13
+26,Out Key In List,2,MIX 13
+26,Out Key In List,2,MIX 13
+26,Out Key In List,2,MIX 13
+26,Out Key In List,3,MIX 14
+26,Out Key In List,3,MIX 14
+26,Out Key In List,3,MIX 14
+26,Out Key In List,3,MIX 14
+26,Out Key In List,4,MIX 15
+26,Out Key In List,4,MIX 15
+26,Out Key In List,4,MIX 15
+26,Out Key In List,4,MIX 15
+26,Out Key In List,5,MIX 16
+26,Out Key In List,5,MIX 16
+26,Out Key In List,5,MIX 16
+26,Out Key In List,5,MIX 16
+26,Out Key In List,6,MIX 1
+26,Out Key In List,6,MIX 9
+26,Out Key In List,6,MTRX 1
+26,Out Key In List,6,MTRX 1
+26,Out Key In List,7,MIX 2
+26,Out Key In List,7,MIX 10
+26,Out Key In List,7,MTRX 2
+26,Out Key In List,7,MTRX 2
+26,Out Key In List,8,MIX 3
+26,Out Key In List,8,MIX 11
+26,Out Key In List,8,MTRX 3
+26,Out Key In List,8,MTRX 3
+26,Out Key In List,9,MIX 4
+26,Out Key In List,9,MIX 12
+26,Out Key In List,9,MTRX 4
+26,Out Key In List,9,MTRX 4
+26,Out Key In List,10,MIX 5
+26,Out Key In List,10,MIX 13
+26,Out Key In List,10,MTRX 5
+26,Out Key In List,10,MTRX 5
+26,Out Key In List,11,MIX 6
+26,Out Key In List,11,MIX 14
+26,Out Key In List,11,MTRX 6
+26,Out Key In List,11,MTRX 6
+26,Out Key In List,12,MIX 7
+26,Out Key In List,12,MIX 15
+26,Out Key In List,12,MTRX 7
+26,Out Key In List,12,MTRX 7
+26,Out Key In List,13,MIX 8
+26,Out Key In List,13,MIX 16
+26,Out Key In List,13,MTRX 8
+26,Out Key In List,13,MTRX 8
+26,Out Key In List,14,ST L
+26,Out Key In List,14,ST L
+26,Out Key In List,14,ST L
+26,Out Key In List,14,ST L
+26,Out Key In List,15,ST R
+26,Out Key In List,15,ST R
+26,Out Key In List,15,ST R
+26,Out Key In List,15,ST R
+26,Out Key In List,16,ST C
+26,Out Key In List,16,ST C
+26,Out Key In List,16,ST C
+26,Out Key In List,16,ST C
+27,GPI In List,0,No ASSIGN
+28,GPI Out List,0,No ASSIGN
+29,DCA Assign,0,No ASSIGN
+29,DCA Assign,1,CH 1 FADER
+29,DCA Assign,64,CH 64 FADER
+29,DCA Assign,65,ST IN 1 FADER L
+29,DCA Assign,72,ST IN 4 FADER R
+29,DCA Assign,73,MIX 1 FADER
+29,DCA Assign,88,MIX 16 FADER
+29,DCA Assign,89,MATRIX 1 FADER
+29,DCA Assign,96,MATRIX 8 FADER
+29,DCA Assign,97,DCA1
+29,DCA Assign,104,DCA8
+30,S Gain,0,-Inf
+30,S Gain,12,-45dB
+30,S Gain,24,-16dB
+30,S Gain,36,-1dB
+30,S Gain,1,-90dB
+30,S Gain,13,-42dB
+30,S Gain,25,-14dB
+30,S Gain,37,0dB
+30,S Gain,2,-85dB
+30,S Gain,14,-39dB
+30,S Gain,26,-12dB
+30,S Gain,38,1dB
+30,S Gain,3,-80dB
+30,S Gain,15,-36dB
+30,S Gain,27,-10dB
+30,S Gain,39,2dB
+30,S Gain,4,-75dB
+30,S Gain,16,-33dB
+30,S Gain,28,-9dB
+30,S Gain,40,3dB
+30,S Gain,5,-70dB
+30,S Gain,17,-30dB
+30,S Gain,29,-8dB
+30,S Gain,41,4dB
+30,S Gain,6,-65dB
+30,S Gain,18,-28dB
+30,S Gain,30,-7dB
+30,S Gain,42,5dB
+30,S Gain,7,-60dB
+30,S Gain,19,-26dB
+30,S Gain,31,-6dB
+30,S Gain,43,6dB
+30,S Gain,8,-57dB
+30,S Gain,20,-24dB
+30,S Gain,32,-5dB
+30,S Gain,44,7dB
+30,S Gain,9,-54dB
+30,S Gain,21,-22dB
+30,S Gain,33,-4dB
+30,S Gain,45,8dB
+30,S Gain,10,-51dB
+30,S Gain,22,-20dB
+30,S Gain,34,-3dB
+30,S Gain,46,9dB
+30,S Gain,11,-48dB
+30,S Gain,23,-18dB
+30,S Gain,35,-2dB
+30,S Gain,47,10dB
+31,LFE,0,-InfdB
+31,LFE,43,-30.00dB
+31,LFE,86,-18.65dB
+31,LFE,129,-11.84dB
+31,LFE,172,-5.97dB
+31,LFE,215,1.67dB
+31,LFE,1,-InfdB
+31,LFE,44,-29.72dB
+31,LFE,87,-18.46dB
+31,LFE,130,-11.71dB
+31,LFE,173,-5.83dB
+31,LFE,216,1.87dB
+31,LFE,2,-96.00dB
+31,LFE,45,-29.44dB
+31,LFE,88,-18.27dB
+31,LFE,131,-11.58dB
+31,LFE,174,-5.69dB
+31,LFE,217,2.08dB
+31,LFE,3,-90.00dB
+31,LFE,46,-29.17dB
+31,LFE,89,-18.08dB
+31,LFE,132,-11.45dB
+31,LFE,175,-5.56dB
+31,LFE,218,2.29dB
+31,LFE,4,-85.00dB
+31,LFE,47,-28.89dB
+31,LFE,90,-17.88dB
+31,LFE,133,-11.32dB
+31,LFE,176,-5.42dB
+31,LFE,219,2.50dB
+31,LFE,5,-80.00dB
+31,LFE,48,-28.61dB
+31,LFE,91,-17.69dB
+31,LFE,134,-11.18dB
+31,LFE,177,-5.28dB
+31,LFE,220,2.71dB
+31,LFE,6,-75.00dB
+31,LFE,49,-28.33dB
+31,LFE,92,-17.50dB
+31,LFE,135,-11.05dB
+31,LFE,178,-5.14dB
+31,LFE,221,2.92dB
+31,LFE,7,-70.00dB
+31,LFE,50,-28.06dB
+31,LFE,93,-17.31dB
+31,LFE,136,-10.92dB
+31,LFE,179,-5.00dB
+31,LFE,222,3.12dB
+31,LFE,8,-65.00dB
+31,LFE,51,-27.78dB
+31,LFE,94,-17.12dB
+31,LFE,137,-10.79dB
+31,LFE,180,-4.82dB
+31,LFE,223,3.33dB
+31,LFE,9,-60.00dB
+31,LFE,52,-27.50dB
+31,LFE,95,-16.92dB
+31,LFE,138,-10.66dB
+31,LFE,181,-4.64dB
+31,LFE,224,3.54dB
+31,LFE,10,-55.00dB
+31,LFE,53,-27.22dB
+31,LFE,96,-16.73dB
+31,LFE,139,-10.53dB
+31,LFE,182,-4.46dB
+31,LFE,225,3.75dB
+31,LFE,11,-50.00dB
+31,LFE,54,-26.94dB
+31,LFE,97,-16.54dB
+31,LFE,140,-10.39dB
+31,LFE,183,-4.29dB
+31,LFE,226,3.96dB
+31,LFE,12,-49.17dB
+31,LFE,55,-26.67dB
+31,LFE,98,-16.35dB
+31,LFE,141,-10.26dB
+31,LFE,184,-4.11dB
+31,LFE,227,4.17dB
+31,LFE,13,-48.33dB
+31,LFE,56,-26.39dB
+31,LFE,99,-16.15dB
+31,LFE,142,-10.13dB
+31,LFE,185,-3.93dB
+31,LFE,228,4.37dB
+31,LFE,14,-47.50dB
+31,LFE,57,-26.11dB
+31,LFE,100,-15.96dB
+31,LFE,143,-10.00dB
+31,LFE,186,-3.75dB
+31,LFE,229,4.58dB
+31,LFE,15,-46.67dB
+31,LFE,58,-25.83dB
+31,LFE,101,-15.77dB
+31,LFE,144,-9.86dB
+31,LFE,187,-3.57dB
+31,LFE,230,4.79dB
+31,LFE,16,-45.83dB
+31,LFE,59,-25.56dB
+31,LFE,102,-15.58dB
+31,LFE,145,-9.72dB
+31,LFE,188,-3.39dB
+31,LFE,231,5.00dB
+31,LFE,17,-45.00dB
+31,LFE,60,-25.28dB
+31,LFE,103,-15.38dB
+31,LFE,146,-9.58dB
+31,LFE,189,-3.21dB
+31,LFE,232,5.21dB
+31,LFE,18,-44.17dB
+31,LFE,61,-25.00dB
+31,LFE,104,-15.19dB
+31,LFE,147,-9.44dB
+31,LFE,190,-3.04dB
+31,LFE,233,5.42dB
+31,LFE,19,-43.33dB
+31,LFE,62,-24.72dB
+31,LFE,105,-15.00dB
+31,LFE,148,-9.31dB
+31,LFE,191,-2.86dB
+31,LFE,234,5.62dB
+31,LFE,20,-42.50dB
+31,LFE,63,-24.44dB
+31,LFE,106,-14.87dB
+31,LFE,149,-9.17dB
+31,LFE,192,-2.68dB
+31,LFE,235,5.83dB
+31,LFE,21,-41.67dB
+31,LFE,64,-24.17dB
+31,LFE,107,-14.74dB
+31,LFE,150,-9.03dB
+31,LFE,193,-2.50dB
+31,LFE,236,6.04dB
+31,LFE,22,-40.83dB
+31,LFE,65,-23.89dB
+31,LFE,108,-14.61dB
+31,LFE,151,-8.89dB
+31,LFE,194,-2.32dB
+31,LFE,237,6.25dB
+31,LFE,23,-40.00dB
+31,LFE,66,-23.61dB
+31,LFE,109,-14.47dB
+31,LFE,152,-8.75dB
+31,LFE,195,-2.14dB
+31,LFE,238,6.46dB
+31,LFE,24,-39.50dB
+31,LFE,67,-23.33dB
+31,LFE,110,-14.34dB
+31,LFE,153,-8.61dB
+31,LFE,196,-1.96dB
+31,LFE,239,6.67dB
+31,LFE,25,-39.00dB
+31,LFE,68,-23.06dB
+31,LFE,111,-14.21dB
+31,LFE,154,-8.47dB
+31,LFE,197,-1.79dB
+31,LFE,240,6.87dB
+31,LFE,26,-38.50dB
+31,LFE,69,-22.78dB
+31,LFE,112,-14.08dB
+31,LFE,155,-8.33dB
+31,LFE,198,-1.61dB
+31,LFE,241,7.08dB
+31,LFE,27,-38.00dB
+31,LFE,70,-22.50dB
+31,LFE,113,-13.95dB
+31,LFE,156,-8.19dB
+31,LFE,199,-1.43dB
+31,LFE,242,7.29dB
+31,LFE,28,-37.50dB
+31,LFE,71,-22.22dB
+31,LFE,114,-13.82dB
+31,LFE,157,-8.06dB
+31,LFE,200,-1.25dB
+31,LFE,243,7.50dB
+31,LFE,29,-37.00dB
+31,LFE,72,-21.94dB
+31,LFE,115,-13.68dB
+31,LFE,158,-7.92dB
+31,LFE,201,-1.07dB
+31,LFE,244,7.71dB
+31,LFE,30,-36.50dB
+31,LFE,73,-21.67dB
+31,LFE,116,-13.55dB
+31,LFE,159,-7.78dB
+31,LFE,202,-0.89dB
+31,LFE,245,7.92dB
+31,LFE,31,-36.00dB
+31,LFE,74,-21.39dB
+31,LFE,117,-13.42dB
+31,LFE,160,-7.64dB
+31,LFE,203,-0.71dB
+31,LFE,246,8.12dB
+31,LFE,32,-35.50dB
+31,LFE,75,-21.11dB
+31,LFE,118,-13.29dB
+31,LFE,161,-7.50dB
+31,LFE,204,-0.54dB
+31,LFE,247,8.33dB
+31,LFE,33,-35.00dB
+31,LFE,76,-20.83dB
+31,LFE,119,-13.16dB
+31,LFE,162,-7.36dB
+31,LFE,205,-0.36dB
+31,LFE,248,8.54dB
+31,LFE,34,-34.50dB
+31,LFE,77,-20.56dB
+31,LFE,120,-13.03dB
+31,LFE,163,-7.22dB
+31,LFE,206,-0.18dB
+31,LFE,249,8.75dB
+31,LFE,35,-34.00dB
+31,LFE,78,-20.28dB
+31,LFE,121,-12.89dB
+31,LFE,164,-7.08dB
+31,LFE,207,0.00dB
+31,LFE,250,8.96dB
+31,LFE,36,-33.50dB
+31,LFE,79,-20.00dB
+31,LFE,122,-12.76dB
+31,LFE,165,-6.94dB
+31,LFE,208,0.21dB
+31,LFE,251,9.17dB
+31,LFE,37,-33.00dB
+31,LFE,80,-19.81dB
+31,LFE,123,-12.63dB
+31,LFE,166,-6.81dB
+31,LFE,209,0.42dB
+31,LFE,252,9.37dB
+31,LFE,38,-32.50dB
+31,LFE,81,-19.62dB
+31,LFE,124,-12.50dB
+31,LFE,167,-6.67dB
+31,LFE,210,0.62dB
+31,LFE,253,9.58dB
+31,LFE,39,-32.00dB
+31,LFE,82,-19.42dB
+31,LFE,125,-12.37dB
+31,LFE,168,-6.53dB
+31,LFE,211,0.83dB
+31,LFE,254,9.79dB
+31,LFE,40,-31.50dB
+31,LFE,83,-19.23dB
+31,LFE,126,-12.24dB
+31,LFE,169,-6.39dB
+31,LFE,212,1.04dB
+31,LFE,255,10.00dB
+31,LFE,41,-31.00dB
+31,LFE,84,-19.04dB
+31,LFE,127,-12.11dB
+31,LFE,170,-6.25dB
+31,LFE,213,1.25dB
+31,LFE,42,-30.50dB
+31,LFE,85,-18.85dB
+31,LFE,128,-11.97dB
+31,LFE,171,-6.11dB
+31,LFE,214,1.46dB
+32,Card ID,0,(CARD_ADAT) [kCardOrgADAT]
+32,Card ID,10,CARD_AD2496 [kCardOrgAD2496]
+32,Card ID,20,[kCardOrgY96K]
+32,Card ID,1,CARD_TDIF [kCardOrgTDIF]
+32,Card ID,11,CARD_DA2496 [kCardOrgDA2496]
+32,Card ID,2,CARD_AES [kCardOrgAES]
+32,Card ID,12,CARD_AE96S [kCardOrgAE96S]
+32,Card ID,255,CARD_NONE [kCardOrgNONE]
+32,Card ID,3,CARD_DA [kCardOrgDA]
+32,Card ID,13,CARD_AE96 [kCardOrgAE96]
+32,Card ID,4,CARD_AD [kCardOrgAD]
+32,Card ID,14,CARD_AT16 [kCardOrgAT16]
+32,Card ID,5,CARD_ADAT2 [kCardOrgADAT2]
+32,Card ID,15,CARD_MLAN [kCardOrgMLAN]
+32,Card ID,6,CARD_AD4 [kCardOrgAD4]
+32,Card ID,16,CARD_TD16 [kCardOrgTD16]
+32,Card ID,7,CARD_AP8_AD [kCardOrgAP8_AD]
+32,Card ID,17,CARD_AE16 [kCardOrgAE16]
+32,Card ID,8,CARD_AP8_DA [kCardOrgAP8_DA]
+32,Card ID,18,CARD_MLAN2 [kCardOrgMLAN2]
+32,Card ID,9,CARD_WAVES [kCardOrgWAVES]
+32,Card ID,19,CARD_COBRA [kCardOrgCOBRA]
+33,Surround Level,0,-InfdB
+33,Surround Level,22,-50.00dB
+33,Surround Level,44,-34.67dB
+33,Surround Level,66,-22.86dB
+33,Surround Level,88,-14.62dB
+33,Surround Level,110,-6.67dB
+33,Surround Level,1,-InfdB
+33,Surround Level,23,-49.29dB
+33,Surround Level,45,-34.00dB
+33,Surround Level,67,-22.38dB
+33,Surround Level,89,-14.23dB
+33,Surround Level,111,-6.33dB
+33,Surround Level,2,-108.89dB
+33,Surround Level,24,-48.57dB
+33,Surround Level,46,-33.33dB
+33,Surround Level,68,-21.90dB
+33,Surround Level,90,-13.85dB
+33,Surround Level,112,-6.00dB
+33,Surround Level,3,-103.33dB
+33,Surround Level,25,-47.86dB
+33,Surround Level,47,-32.67dB
+33,Surround Level,69,-21.43dB
+33,Surround Level,91,-13.46dB
+33,Surround Level,113,-5.67dB
+33,Surround Level,4,-97.78dB
+33,Surround Level,26,-47.14dB
+33,Surround Level,48,-32.00dB
+33,Surround Level,70,-20.95dB
+33,Surround Level,92,-13.08dB
+33,Surround Level,114,-5.33dB
+33,Surround Level,5,-92.22dB
+33,Surround Level,27,-46.43dB
+33,Surround Level,49,-31.33dB
+33,Surround Level,71,-20.48dB
+33,Surround Level,93,-12.69dB
+33,Surround Level,115,-5.00dB
+33,Surround Level,6,-86.67dB
+33,Surround Level,28,-45.71dB
+33,Surround Level,50,-30.67dB
+33,Surround Level,72,-20.00dB
+33,Surround Level,94,-12.31dB
+33,Surround Level,116,-4.55dB
+33,Surround Level,7,-81.11dB
+33,Surround Level,29,-45.00dB
+33,Surround Level,51,-30.00dB
+33,Surround Level,73,-19.67dB
+33,Surround Level,95,-11.92dB
+33,Surround Level,117,-4.09dB
+33,Surround Level,8,-75.56dB
+33,Surround Level,30,-44.29dB
+33,Surround Level,52,-29.52dB
+33,Surround Level,74,-19.33dB
+33,Surround Level,96,-11.54dB
+33,Surround Level,118,-3.64dB
+33,Surround Level,9,-70.00dB
+33,Surround Level,31,-43.57dB
+33,Surround Level,53,-29.05dB
+33,Surround Level,75,-19.00dB
+33,Surround Level,97,-11.15dB
+33,Surround Level,119,-3.18dB
+33,Surround Level,10,-67.50dB
+33,Surround Level,32,-42.86dB
+33,Surround Level,54,-28.57dB
+33,Surround Level,76,-18.67dB
+33,Surround Level,98,-10.77dB
+33,Surround Level,120,-2.73dB
+33,Surround Level,11,-65.00dB
+33,Surround Level,33,-42.14dB
+33,Surround Level,55,-28.10dB
+33,Surround Level,77,-18.33dB
+33,Surround Level,99,-10.38dB
+33,Surround Level,121,-2.27dB
+33,Surround Level,12,-62.50dB
+33,Surround Level,34,-41.43dB
+33,Surround Level,56,-27.62dB
+33,Surround Level,78,-18.00dB
+33,Surround Level,100,-10.00dB
+33,Surround Level,122,-1.82dB
+33,Surround Level,13,-60.00dB
+33,Surround Level,35,-40.71dB
+33,Surround Level,57,-27.14dB
+33,Surround Level,79,-17.67dB
+33,Surround Level,101,-9.67dB
+33,Surround Level,123,-1.36dB
+33,Surround Level,14,-58.89dB
+33,Surround Level,36,-40.00dB
+33,Surround Level,58,-26.67dB
+33,Surround Level,80,-17.33dB
+33,Surround Level,102,-9.33dB
+33,Surround Level,124,-0.91dB
+33,Surround Level,15,-57.78dB
+33,Surround Level,37,-39.33dB
+33,Surround Level,59,-26.19dB
+33,Surround Level,81,-17.00dB
+33,Surround Level,103,-9.00dB
+33,Surround Level,125,-0.45dB
+33,Surround Level,16,-56.67dB
+33,Surround Level,38,-38.67dB
+33,Surround Level,60,-25.71dB
+33,Surround Level,82,-16.67dB
+33,Surround Level,104,-8.67dB
+33,Surround Level,126,0.00dB
+33,Surround Level,17,-55.56dB
+33,Surround Level,39,-38.00dB
+33,Surround Level,61,-25.24dB
+33,Surround Level,83,-16.33dB
+33,Surround Level,105,-8.33dB
+33,Surround Level,127,0.00dB
+33,Surround Level,18,-54.44dB
+33,Surround Level,40,-37.33dB
+33,Surround Level,62,-24.76dB
+33,Surround Level,84,-16.00dB
+33,Surround Level,106,-8.00dB
+33,Surround Level,19,-53.33dB
+33,Surround Level,41,-36.67dB
+33,Surround Level,63,-24.29dB
+33,Surround Level,85,-15.67dB
+33,Surround Level,107,-7.67dB
+33,Surround Level,20,-52.22dB
+33,Surround Level,42,-36.00dB
+33,Surround Level,64,-23.81dB
+33,Surround Level,86,-15.33dB
+33,Surround Level,108,-7.33dB
+33,Surround Level,21,-51.11dB
+33,Surround Level,43,-35.33dB
+33,Surround Level,65,-23.33dB
+33,Surround Level,87,-15.00dB
+33,Surround Level,109,-7.00dB
+34,GPI Function,0,NoAssign
+34,GPI Function,1,MONITOR[LATCH]
+34,GPI Function,2,MONITOR[UNLATCH]
+34,GPI Function,3,ON/OFF[LATCH]
+34,GPI Function,4,ON/OFF[UNLATCH]
+34,GPI Function,5,FADER
+34,GPI Function,6,SURROUND
+34,GPI Function,7,USER DEFINE
+34,GPI Function,8,USER DEFINE LED
+34,GPI Function,9,TAP TEMPO
+34,GPI Function,10,PEAK HOLD
+34,GPI Function,11,OSCILLATOR
+34,GPI Function,12,SOLO ON/OFF
+35,GPI Out etc.,0,NO ASSIGN
+35,GPI Out etc.,1,POWER ON
+35,GPI Out etc.,2,SOLO
+35,GPI Out etc.,3,GPI IN Function1
+35,GPI Out etc.,4,GPI IN Function2
+35,GPI Out etc.,5,GPI IN Function3
+35,GPI Out etc.,6,GPI IN Function4
+35,GPI Out etc.,7,Preview ON/OFF
+35,GPI Out etc.,8,CUE ON/OFF(INPUT)
+35,GPI Out etc.,9,CUE ON/OFF(DCA)
+35,GPI Out etc.,10,CUE ON/OFF(OUTPUT)
+35,GPI Out etc.,11,CUE ON/OFF
+36,UDEF Function,0,kUdefNoAssign
+36,UDEF Function,11,kUdefPageChange
+36,UDEF Function,1,kUdefScene
+36,UDEF Function,12,kUdefChSelect
+36,UDEF Function,2,kUdefTalkback
+36,UDEF Function,13,kUdefSendEncoderMode
+36,UDEF Function,3,kUdefOsc
+36,UDEF Function,14,kUdefSetBySel
+36,UDEF Function,4,kUdefCueClear
+36,UDEF Function,15,kUdefSetDefault
+36,UDEF Function,5,kUdefMonitor
+36,UDEF Function,16,kUdefSetNominal
+36,UDEF Function,6,kUdefEffectBypass
+36,UDEF Function,17,kUdefSendsOnFader
+36,UDEF Function,7,kUdefTapTempo
+36,UDEF Function,18,kUdefEditorControl
+36,UDEF Function,8,kUdefMuteMaster
+36,UDEF Function,19,kUdefHelp
+36,UDEF Function,9,kUdefMeter
+36,UDEF Function,20,kUdefRecorder
+36,UDEF Function,10,kUdefBrightness
+36,UDEF Function,21,kUdefGeq
+37,Effect Output Patch List,0,NONE
+37,Effect Output Patch List,28,CH28
+37,Effect Output Patch List,56,CH56
+37,Effect Output Patch List,84,INSCH12
+37,Effect Output Patch List,112,INSCH40
+37,Effect Output Patch List,140,INSMIX4
+37,Effect Output Patch List,1,CH1
+37,Effect Output Patch List,29,CH29
+37,Effect Output Patch List,57,CH57
+37,Effect Output Patch List,85,INSCH13
+37,Effect Output Patch List,113,INSCH41
+37,Effect Output Patch List,141,INSMIX5
+37,Effect Output Patch List,2,CH2
+37,Effect Output Patch List,30,CH30
+37,Effect Output Patch List,58,CH58
+37,Effect Output Patch List,86,INSCH14
+37,Effect Output Patch List,114,INSCH42
+37,Effect Output Patch List,142,INSMIX6
+37,Effect Output Patch List,3,CH3
+37,Effect Output Patch List,31,CH31
+37,Effect Output Patch List,59,CH59
+37,Effect Output Patch List,87,INSCH15
+37,Effect Output Patch List,115,INSCH43
+37,Effect Output Patch List,143,INSMIX7
+37,Effect Output Patch List,4,CH4
+37,Effect Output Patch List,32,CH32
+37,Effect Output Patch List,60,CH60
+37,Effect Output Patch List,88,INSCH16
+37,Effect Output Patch List,116,INSCH44
+37,Effect Output Patch List,144,INSMIX8
+37,Effect Output Patch List,5,CH5
+37,Effect Output Patch List,33,CH33
+37,Effect Output Patch List,61,CH61
+37,Effect Output Patch List,89,INSCH17
+37,Effect Output Patch List,117,INSCH45
+37,Effect Output Patch List,145,INSMIX9
+37,Effect Output Patch List,6,CH6
+37,Effect Output Patch List,34,CH34
+37,Effect Output Patch List,62,CH62
+37,Effect Output Patch List,90,INSCH18
+37,Effect Output Patch List,118,INSCH46
+37,Effect Output Patch List,146,INSMIX10
+37,Effect Output Patch List,7,CH7
+37,Effect Output Patch List,35,CH35
+37,Effect Output Patch List,63,CH63
+37,Effect Output Patch List,91,INSCH19
+37,Effect Output Patch List,119,INSCH47
+37,Effect Output Patch List,147,INSMIX11
+37,Effect Output Patch List,8,CH8
+37,Effect Output Patch List,36,CH36
+37,Effect Output Patch List,64,CH64
+37,Effect Output Patch List,92,INSCH20
+37,Effect Output Patch List,120,INSCH48
+37,Effect Output Patch List,148,INSMIX12
+37,Effect Output Patch List,9,CH9
+37,Effect Output Patch List,37,CH37
+37,Effect Output Patch List,65,STIN1L
+37,Effect Output Patch List,93,INSCH21
+37,Effect Output Patch List,121,INSCH49
+37,Effect Output Patch List,149,INSMIX13
+37,Effect Output Patch List,10,CH10
+37,Effect Output Patch List,38,CH38
+37,Effect Output Patch List,66,STIN1R
+37,Effect Output Patch List,94,INSCH22
+37,Effect Output Patch List,122,INSCH50
+37,Effect Output Patch List,150,INSMIX14
+37,Effect Output Patch List,11,CH11
+37,Effect Output Patch List,39,CH39
+37,Effect Output Patch List,67,STIN2L
+37,Effect Output Patch List,95,INSCH23
+37,Effect Output Patch List,123,INSCH51
+37,Effect Output Patch List,151,INSMIX15
+37,Effect Output Patch List,12,CH12
+37,Effect Output Patch List,40,CH40
+37,Effect Output Patch List,68,STIN2R
+37,Effect Output Patch List,96,INSCH24
+37,Effect Output Patch List,124,INSCH52
+37,Effect Output Patch List,152,INSMIX16
+37,Effect Output Patch List,13,CH13
+37,Effect Output Patch List,41,CH41
+37,Effect Output Patch List,69,STIN3L
+37,Effect Output Patch List,97,INSCH25
+37,Effect Output Patch List,125,INSCH53
+37,Effect Output Patch List,153,INSMTX1
+37,Effect Output Patch List,14,CH14
+37,Effect Output Patch List,42,CH42
+37,Effect Output Patch List,70,STIN3R
+37,Effect Output Patch List,98,INSCH26
+37,Effect Output Patch List,126,INSCH54
+37,Effect Output Patch List,154,INSMTX2
+37,Effect Output Patch List,15,CH15
+37,Effect Output Patch List,43,CH43
+37,Effect Output Patch List,71,STIN4L
+37,Effect Output Patch List,99,INSCH27
+37,Effect Output Patch List,127,INSCH55
+37,Effect Output Patch List,155,INSMTX3
+37,Effect Output Patch List,16,CH16
+37,Effect Output Patch List,44,CH44
+37,Effect Output Patch List,72,STIN4R
+37,Effect Output Patch List,100,INSCH28
+37,Effect Output Patch List,128,INSCH56
+37,Effect Output Patch List,156,INSMTX4
+37,Effect Output Patch List,17,CH17
+37,Effect Output Patch List,45,CH45
+37,Effect Output Patch List,73,INSCH1
+37,Effect Output Patch List,101,INSCH29
+37,Effect Output Patch List,129,INSCH57
+37,Effect Output Patch List,157,INSMTX5
+37,Effect Output Patch List,18,CH18
+37,Effect Output Patch List,46,CH46
+37,Effect Output Patch List,74,INSCH2
+37,Effect Output Patch List,102,INSCH30
+37,Effect Output Patch List,130,INSCH58
+37,Effect Output Patch List,158,INSMTX6
+37,Effect Output Patch List,19,CH19
+37,Effect Output Patch List,47,CH47
+37,Effect Output Patch List,75,INSCH3
+37,Effect Output Patch List,103,INSCH31
+37,Effect Output Patch List,131,INSCH59
+37,Effect Output Patch List,159,INSMTX7
+37,Effect Output Patch List,20,CH20
+37,Effect Output Patch List,48,CH48
+37,Effect Output Patch List,76,INSCH4
+37,Effect Output Patch List,104,INSCH32
+37,Effect Output Patch List,132,INSCH60
+37,Effect Output Patch List,160,INSMTX8
+37,Effect Output Patch List,21,CH21
+37,Effect Output Patch List,49,CH49
+37,Effect Output Patch List,77,INSCH5
+37,Effect Output Patch List,105,INSCH33
+37,Effect Output Patch List,133,INSCH61
+37,Effect Output Patch List,161,INSSTAL
+37,Effect Output Patch List,22,CH22
+37,Effect Output Patch List,50,CH50
+37,Effect Output Patch List,78,INSCH6
+37,Effect Output Patch List,106,INSCH34
+37,Effect Output Patch List,134,INSCH62
+37,Effect Output Patch List,162,INSSTAR
+37,Effect Output Patch List,23,CH23
+37,Effect Output Patch List,51,CH51
+37,Effect Output Patch List,79,INSCH7
+37,Effect Output Patch List,107,INSCH35
+37,Effect Output Patch List,135,INSCH63
+37,Effect Output Patch List,163,INSSTBL
+37,Effect Output Patch List,24,CH24
+37,Effect Output Patch List,52,CH52
+37,Effect Output Patch List,80,INSCH8
+37,Effect Output Patch List,108,INSCH36
+37,Effect Output Patch List,136,INSCH64
+37,Effect Output Patch List,164,INSSTBR
+37,Effect Output Patch List,25,CH25
+37,Effect Output Patch List,53,CH53
+37,Effect Output Patch List,81,INSCH9
+37,Effect Output Patch List,109,INSCH37
+37,Effect Output Patch List,137,INSMIX1
+37,Effect Output Patch List,165,MONITORL
+37,Effect Output Patch List,26,CH26
+37,Effect Output Patch List,54,CH54
+37,Effect Output Patch List,82,INSCH10
+37,Effect Output Patch List,110,INSCH38
+37,Effect Output Patch List,138,INSMIX2
+37,Effect Output Patch List,166,MONITORR
+37,Effect Output Patch List,27,CH27
+37,Effect Output Patch List,55,CH55
+37,Effect Output Patch List,83,INSCH11
+37,Effect Output Patch List,111,INSCH39
+37,Effect Output Patch List,139,INSMIX3
+37,Effect Output Patch List,167,MONITORC
+38,DME Monitor Port,0,none
+38,DME Monitor Port,1,SLOT1 1/2
+38,DME Monitor Port,8,SLOT1 15/16
+38,DME Monitor Port,9,SLOT2 1/2
+38,DME Monitor Port,16,SLOT2 15/16
+38,DME Monitor Port,17,CASCADE 1/2
+38,DME Monitor Port,48,CASCADE 63/64
+39,Navigation Key Selection,0,CH1-16 (CH1-32)
+39,Navigation Key Selection,1,CH17-32 (CH33-64)
+39,Navigation Key Selection,2,MASTER
+39,Navigation Key Selection,3,CUSTOM
+39,Navigation Key Selection,4,FADER
+40,Navigation Key Lock,-1,Unlock
+40,Navigation Key Lock,0,CH1-16 (CH1-32)
+40,Navigation Key Lock,1,CH17-32 (CH33-64)
+40,Navigation Key Lock,2,MASTER
+40,Navigation Key Lock,3,CUSTOM
+40,Navigation Key Lock,4,FADER
+41,Centra Channel Assign,-1,Unlock
+41,Centra Channel Assign,0,CH1
+41,Centra Channel Assign,47,CH48
+41,Centra Channel Assign,48,STIN1L
+41,Centra Channel Assign,55,STIN4R
+41,Centra Channel Assign,56,MIX1
+41,Centra Channel Assign,71,MIX16
+41,Centra Channel Assign,72,MATRIX1
+41,Centra Channel Assign,79,MATRIX8
+41,Centra Channel Assign,80,STEREO L
+41,Centra Channel Assign,81,STEREO R
+41,Centra Channel Assign,82,MONO
+41,Centra Channel Assign,83,DCA1
+41,Centra Channel Assign,90,DCA8
+42,Panel Sel Mode,0,none
+42,Panel Sel Mode,1,normal
+42,Panel Sel Mode,2,general single selection
+42,Panel Sel Mode,3,general multi selection
+42,Panel Sel Mode,4,Ch Link
+42,Panel Sel Mode,5,DCA Group Assign
+42,Panel Sel Mode,6,Mute Group Assign
+42,Panel Sel Mode,7,Recall Safe
+42,Panel Sel Mode,8,Mute Safe
+42,Panel Sel Mode,9,FadeTime Enable/Disable
+43,Overview Selected Row,-1,NoAssign
+43,Overview Selected Row,0,HA Gain Knob
+43,Overview Selected Row,1,Send1 Knob
+43,Overview Selected Row,16,Send16 Knob
+43,Overview Selected Row,17,Pan Knob
+44,Group Selector Mask,1,HA
+44,Group Selector Mask,2,Dyna1
+44,Group Selector Mask,4,Dyna2
+44,Group Selector Mask,8,EQ
+44,Group Selector Mask,16,On
+44,Group Selector Mask,32,Fader
+44,Group Selector Mask,64,Insert
+44,Group Selector Mask,128,Direct Out
+45,Monitor Select,0,no assign
+45,Monitor Select,1,Stereo LR
+45,Monitor Select,2,Mono (C)
+45,Monitor Select,3,LCR
+45,Monitor Select,4,"In31,32{15,16}"
+45,Monitor Select,5,2TRD
+45,Monitor Select,6,MP3
+45,Monitor Select,7,Define
+46,Monitor Out,0,no assign
+46,Monitor Out,1,OMNI1
+46,Monitor Out,16,OMNI16
+46,Monitor Out,17,Slot1-1
+46,Monitor Out,48,Slot2-16
+46,Monitor Out,49,2Tr Out Digital L
+46,Monitor Out,50,2Tr Out Digital R
+47,Recall Safe / Focus Recall Mode,1,All
+47,Recall Safe / Focus Recall Mode,2,EQ
+47,Recall Safe / Focus Recall Mode,4,Dyna1
+47,Recall Safe / Focus Recall Mode,8,Dyna2
+47,Recall Safe / Focus Recall Mode,16,Fader
+47,Recall Safe / Focus Recall Mode,32,On
+47,Recall Safe / Focus Recall Mode,64,Mix Send
+47,Recall Safe / Focus Recall Mode,128,Mix Send On
+47,Recall Safe / Focus Recall Mode,256,Matrix Send
+47,Recall Safe / Focus Recall Mode,512,Matrix Send On
+47,Recall Safe / Focus Recall Mode,1024,Send Source
+47,Recall Safe / Focus Recall Mode,2048,HA
+48,Group Selector Mask for Mix / Matrix,1,MixLevelSend
+48,Group Selector Mask for Mix / Matrix,16384,MixSend11
+48,Group Selector Mask for Mix / Matrix,2,MixLevelOn
+48,Group Selector Mask for Mix / Matrix,32768,MixSend12
+48,Group Selector Mask for Mix / Matrix,4,MatrixLevelSend
+48,Group Selector Mask for Mix / Matrix,65536,MixSend13
+48,Group Selector Mask for Mix / Matrix,8,MatrixLevelOn
+48,Group Selector Mask for Mix / Matrix,131072,MixSend14
+48,Group Selector Mask for Mix / Matrix,16,MixSend01
+48,Group Selector Mask for Mix / Matrix,262144,MixSend15
+48,Group Selector Mask for Mix / Matrix,32,MixSend02
+48,Group Selector Mask for Mix / Matrix,524288,MixSend16
+48,Group Selector Mask for Mix / Matrix,64,MixSend03
+48,Group Selector Mask for Mix / Matrix,1048576,MatrixSend01
+48,Group Selector Mask for Mix / Matrix,128,MixSend04
+48,Group Selector Mask for Mix / Matrix,2097152,MatrixSend02
+48,Group Selector Mask for Mix / Matrix,256,MixSend05
+48,Group Selector Mask for Mix / Matrix,4194304,MatrixSend03
+48,Group Selector Mask for Mix / Matrix,512,MixSend06
+48,Group Selector Mask for Mix / Matrix,8388608,MatrixSend04
+48,Group Selector Mask for Mix / Matrix,1024,MixSend07
+48,Group Selector Mask for Mix / Matrix,16777216,MatrixSend05
+48,Group Selector Mask for Mix / Matrix,2048,MixSend08
+48,Group Selector Mask for Mix / Matrix,33554432,MatrixSend06
+48,Group Selector Mask for Mix / Matrix,4096,MixSend09
+48,Group Selector Mask for Mix / Matrix,67108864,MatrixSend07
+48,Group Selector Mask for Mix / Matrix,8192,MixSend10
+48,Group Selector Mask for Mix / Matrix,134217728,MatrixSend08
+51,Custom Fader Assign,-1,NO ASSIGN
+51,Custom Fader Assign,0,INPUT1
+51,Custom Fader Assign,63,INPUT64
+51,Custom Fader Assign,64,ST INPUT 1L
+51,Custom Fader Assign,71,ST INPUT 4R
+51,Custom Fader Assign,72,MIX 1
+51,Custom Fader Assign,87,MIX 16
+51,Custom Fader Assign,88,MATRIX 1
+51,Custom Fader Assign,95,MATRIX 8
+51,Custom Fader Assign,96,STEREO L
+51,Custom Fader Assign,97,STEREO R
+51,Custom Fader Assign,98,MONO
+51,Custom Fader Assign,99,MONITOR

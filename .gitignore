@@ -1,0 +1,31 @@
+# Build output
+out/
+target/
+build/
+dist/
+*.class
+*.jar
+
+# Maven/Gradle local state
+.mvn/timing.properties
+.gradle/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Logs and local configuration
+*.log
+local.properties

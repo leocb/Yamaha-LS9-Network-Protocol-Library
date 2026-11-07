@@ -1,0 +1,1034 @@
+category,element,element_hex,index_name,index_hex,min,max,default,max_ch,comment,data_category,value_table,template
+Scene,kSceneComment,0x0001,kComment1,0x0000,0,'~~~~','Init',0,0 - '~~~~' default:'Init',1,0,F0 43 1n 3E 12 01 00 01 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneComment,0x0001,kComment2,0x0001,0,'~~~~','ial ',0,0 - '~~~~' default:'ial ',1,0,F0 43 1n 3E 12 01 00 01 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneComment,0x0001,kComment3,0x0002,0,'~~~~','Sett',0,0 - '~~~~' default:'Sett',1,0,F0 43 1n 3E 12 01 00 01 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneComment,0x0001,kComment4,0x0003,0,'~~~~','ing ',0,0 - '~~~~' default:'ing ',1,0,F0 43 1n 3E 12 01 00 01 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneComment,0x0001,kComment5,0x0004,0,'~~~~','Data',0,0 - '~~~~' default:'Data',1,0,F0 43 1n 3E 12 01 00 01 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneComment,0x0001,kComment6,0x0005,0,'~~~~','    ',0,0 - '~~~~' default:'    ',1,0,F0 43 1n 3E 12 01 00 01 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneComment,0x0001,kComment7,0x0006,0,'~~~~','    ',0,0 - '~~~~' default:'    ',1,0,F0 43 1n 3E 12 01 00 01 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneComment,0x0001,kComment8,0x0007,0,'~~~~','    ',0,0 - '~~~~' default:'    ',1,0,F0 43 1n 3E 12 01 00 01 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneDateTime,0x0002,kDateTime,0x0000,0,255,0,5,"ch0-5:2000-2255, 0-11, 0-30, 0-23, 0-59, 0-59",1,0,F0 43 1n 3E 12 01 00 02 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFadeTimeEnable,0x0003,kFadeLevelOn,0x0000,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 03 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFadeTimeEnable,0x0003,kFadePanOn,0x0001,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 03 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFadeTimeEnable,0x0003,kFadePanMode,0x0002,0,1,0,0,"Same as fading, All",1,0,F0 43 1n 3E 12 01 00 03 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFadeTimeEnable,0x0003,kFadeTimeMaster,0x0003,0,600,0,0,Fade Time Master,1,0,F0 43 1n 3E 12 01 00 03 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallMaster,0x0004,kFocusRecallOn,0x0000,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 04 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallMaster,0x0004,kFocusRecallMode,0x0001,0,127,0,0,"bit0-6: HA, InPatch, OutPatch, Rack, Input, Output, with Send",1,0,F0 43 1n 3E 12 01 00 04 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallHA,0x0005,kFocusRecallOn,0x0000,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 05 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallIn,0x0006,kFocusRecallOn,0x0000,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 06 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallIn,0x0006,kFocusRecallMode,0x0001,0,0x03FE,1,71,PRM TABLE #47,1,47,F0 43 1n 3E 12 01 00 06 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallMix,0x0007,kFocusRecallOn,0x0000,0,1,1,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 07 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallMix,0x0007,kFocusRecallMode,0x0001,0,0x0736,1,15,PRM TABLE #47,1,47,F0 43 1n 3E 12 01 00 07 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallMatrix,0x0008,kFocusRecallOn,0x0000,0,1,1,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 08 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallMatrix,0x0008,kFocusRecallMode,0x0001,0,0x04F6,1,7,PRM TABLE #47,1,47,F0 43 1n 3E 12 01 00 08 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallStereo,0x0009,kFocusRecallOn,0x0000,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 09 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallStereo,0x0009,kFocusRecallMode,0x0001,0,0x0336,1,2,PRM TABLE #47,1,47,F0 43 1n 3E 12 01 00 09 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallRack,0x000A,kFocusRecallOn,0x0000,0,1,1,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 0A 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallDCAAll,0x000C,kFocusRecallOn,0x0000,0,1,1,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 0C 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallMuteMaster,0x000D,kFocusRecallOn,0x0000,0,0,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 0D 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallInputName,0x000E,kFocusRecallOn,0x0000,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 0E 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallOutputName,0x000F,kFocusRecallOn,0x0000,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 0F 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallInputPatch,0x0010,kFocusRecallOn,0x0000,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 10 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFocusRecallOutputPatch,0x0011,kFocusRecallOn,0x0000,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 11 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kGroupSelectorMask,0x0012,kSelectorMask,0x0000,0,255,255,37,PRM TABLE #44,1,44,F0 43 1n 3E 12 01 00 12 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kGroupSelectorMask,0x0012,kMixMatrixSelectorMask,0x0001,0,0x0FFFFFFF,0x0FFFFFFF,37,PRM TABLE #48,1,48,F0 43 1n 3E 12 01 00 12 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kGroupIsRelative,0x0013,kIsRelative,0x0000,1,1,1,37,"0:Absolute, 1:Relative",1,0,F0 43 1n 3E 12 01 00 13 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneInPatchLink,0x0014,kLinkOn,0x0000,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 14 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneInPatchLink,0x0014,kLinkNo,0x0001,0,100,1,0,"0 (no assign), 1-100 (InPatch Number + 1)",1,0,F0 43 1n 3E 12 01 00 14 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneOutPatchLink,0x0015,kLinkOn,0x0000,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 15 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneOutPatchLink,0x0015,kLinkNo,0x0001,0,100,1,0,"0 (no assign), 1-100 (OutPatch Number + 1)",1,0,F0 43 1n 3E 12 01 00 15 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneHALink,0x0016,kLinkOn,0x0000,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 16 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneHALink,0x0016,kLinkNo,0x0001,0,200,1,0,"0 (no assign), 1-200 (HA Library Number + 1)",1,0,F0 43 1n 3E 12 01 00 16 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kScenePluginLink,0x0017,kLinkOn,0x0000,0,1,1,3,"Off, On",1,0,F0 43 1n 3E 12 01 00 17 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kScenePluginLink,0x0017,kLinkNo,0x0001,0,96,1,3,"0 (no assign), 1-96 (Plugin Number)",1,0,F0 43 1n 3E 12 01 00 17 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneMIDITx,0x0018,kMIDITxOn,0x0000,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 18 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneRemoteTransport,0x001B,kRemoteAssign,0x0000,0,2,0,0,"No Assign, MMC, Remote",1,0,F0 43 1n 3E 12 01 00 1B 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneRemoteTransport,0x001B,kRemoteTransport,0x0001,0,21,0,0,"Play, Stop, Play (Locate 1), - , Play (Locate20)",1,0,F0 43 1n 3E 12 01 00 1B 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFileLink,0x001C,kLinkOn,0x0000,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 1C 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFileLink,0x001C,kLinkDelay,0x0001,0,990,0,0,0 - 99.0sec (0.5sec precision),1,0,F0 43 1n 3E 12 01 00 1C 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFileLink,0x001C,kLinkFileName1,0x0002,0,0xFFFFFFFF,0,0,,1,0,F0 43 1n 3E 12 01 00 1C 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFileLink,0x001C,kLinkFileName2,0x0003,0,0xFFFFFFFF,0,0,,1,0,F0 43 1n 3E 12 01 00 1C 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFileLink,0x001C,kLinkFileName3,0x0004,0,0xFFFFFFFF,0,0,,1,0,F0 43 1n 3E 12 01 00 1C 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneFileLink,0x001C,kLinkFileHash,0x0005,0,0xFFFFFFFF,0,0,Hash value,1,0,F0 43 1n 3E 12 01 00 1C 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneCenterBusControl,0x001E,kCenterBusControl,0x0000,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 00 1E 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneInputLink,0x001F,kLinkEnableDyna,0x0000,0,255,255,0,"0-7bit:Link1-8, 1:Enable",1,0,F0 43 1n 3E 12 01 00 1F 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneInputLink,0x001F,kLinkEnableEQ,0x0001,0,255,255,0,"0-7bit:Link1-8, 1:Enable",1,0,F0 43 1n 3E 12 01 00 1F 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneOutputLink,0x0020,kLinkEnableDyna,0x0000,0,255,255,0,"0-7bit:Link1-8, 1:Enable",1,0,F0 43 1n 3E 12 01 00 20 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneOutputLink,0x0020,kLinkEnableEQ,0x0001,0,255,255,0,"0-7bit:Link1-8, 1:Enable",1,0,F0 43 1n 3E 12 01 00 20 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneOutputLink,0x0020,kLinkEnableGEQ,0x0002,0,255,255,0,"0-7bit:Link1-8, 1:Enable",1,0,F0 43 1n 3E 12 01 00 20 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneOutputLink,0x0020,kLinkEnableFader,0x0003,0,255,0,0,"0-7bit:Link1-8, 1:Enable",1,0,F0 43 1n 3E 12 01 00 20 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneMuteMaster,0x0021,kMuteMaster,0x0000,0,1,0,7,"Mute Off, Mute On",1,0,F0 43 1n 3E 12 01 00 21 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixPair,0x0022,kPair,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 22 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixPair,0x0022,kPairFS,0x0001,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 22 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMixBusType,0x0023,kBusType,0x0000,0,2,1,15,"Vari(Pre EQ), Vari(Pre Fader), Fixed",1,0,F0 43 1n 3E 12 01 00 23 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixFromInPanLink,0x0024,kVariPanLink,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 24 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixPair,0x0025,kPair,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 25 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixBusType,0x0026,kBusType,0x0000,0,2,1,7,"Vari(Pre EQ), Vari(Pre Fader), Fixed",1,0,F0 43 1n 3E 12 01 00 26 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixFromInPanLink,0x0027,kVariPanLink,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 27 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputPair,0x0028,kPair,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 28 00 00 cc cc dd dd dd dd dd F7 F0
+(see *1),kInputHA,0x002A,kHAPhantom,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 2A 00 00 cc cc dd dd dd dd dd F7 F0
+(see *1),kInputHA,0x002A,kHAGain,0x0001,0,72,0,71,"10 - -62dB, 1dB step",1,0,F0 43 1n 3E 12 01 00 2A 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputStMonoLCR,0x002B,kStMonoLCR,0x0000,0,1,0,71,"StMono, LCR",1,0,F0 43 1n 3E 12 01 00 2B 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputLCR,0x002C,kLCROn,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 2C 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputLCR,0x002C,kLCRControl,0x0001,0,100,50,71,0 - 100%,1,0,F0 43 1n 3E 12 01 00 2C 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputFadeTime,0x002D,kFadeLevelOn,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 2D 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputFadeTime,0x002D,kFadeStartOffset,0x0001,0,600,0,71,0 - 60.0sec,1,0,F0 43 1n 3E 12 01 00 2D 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputFadeTime,0x002D,kFadeTime,0x0002,0,600,0,71,0 - 60.0sec,1,0,F0 43 1n 3E 12 01 00 2D 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kInputInsert,0x002E,kInsertOn,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 2E 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputInsert,0x002E,kInsertLocation,0x0001,0,1,0,71,"Pre EQ, Pre Fader",1,0,F0 43 1n 3E 12 01 00 2E 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDirectOut,0x002F,kDirectOutOn,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 2F 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDirectOut,0x002F,kDirectOutLocation,0x0001,0,2,0,71,"Pre HPF, Pre Att,  Post Fader",1,0,F0 43 1n 3E 12 01 00 2F 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDirectOut,0x002F,kDirectOutLevel,0x0002,0,1023,823,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 2F 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kInputPhase,0x0030,kPhase,0x0000,0,1,0,71,"Normal, Invert",1,0,F0 43 1n 3E 12 01 00 30 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputOn,0x0031,kChannelOn,0x0000,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 31 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputPan,0x0032,kPanMode,0x0000,0,3,0,71,"Individual, Gang, Inverted Gang, Balance",1,0,F0 43 1n 3E 12 01 00 32 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputPan,0x0032,kChannelPan,0x0001,-63,63,0,71,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 32 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputFader,0x0033,kFader,0x0000,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 33 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputAttenuator,0x0034,kAttGang,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 34 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputAttenuator,0x0034,kAtt,0x0001,-960,240,0,71,-96.0dB - +24.0dB,1,0,F0 43 1n 3E 12 01 00 34 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDyna1Pair,0x0035,kPair,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 35 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDyna1Link,0x0036,kLink,0x0000,0,8,0,71,"0:none, 1-8:Group1-8",1,0,F0 43 1n 3E 12 01 00 36 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaOn,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 37 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaType,0x0001,0,6,0,71,"Gate, Ducking, Compressor, Expander",1,0,F0 43 1n 3E 12 01 00 37 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kAutoOn,0x0002,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 37 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kLeftSideChain,0x0003,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 37 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaKeyIn,0x0004,0,13,1,71,PRM TABLE #25,1,25,F0 43 1n 3E 12 01 00 37 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaFilterOn,0x0005,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 37 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaFilterType,0x0006,0,2,0,71,"HPF, LPF, BPF",1,0,F0 43 1n 3E 12 01 00 37 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaFilterFreq,0x0007,4,124,28,71,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 37 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaFilterQ,0x0008,0,40,23,71,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 37 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaAttack,0x0009,0,120,0,71,0 - 120msec,1,0,F0 43 1n 3E 12 01 00 37 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaRange,0x000A,-70,0,-56,71,"-inf, -69dB - 0dB",1,0,F0 43 1n 3E 12 01 00 37 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaHold,0x000B,0,215,60,71,PRM TABLE #04,1,4,F0 43 1n 3E 12 01 00 37 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaDecay,0x000C,0,159,44,71,PRM TABLE #05,1,5,F0 43 1n 3E 12 01 00 37 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaRatio,0x000D,0,15,0,71,PRM TABLE #06,1,6,F0 43 1n 3E 12 01 00 37 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaGain,0x000E,0,180,0,71,PRM TABLE #07,1,7,F0 43 1n 3E 12 01 00 37 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaKnee,0x000F,0,89,0,71,PRM TABLE #08,1,8,F0 43 1n 3E 12 01 00 37 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics1,0x0037,kDynaThreshold,0x0010,-540,0,-260,71,-54dB - 0dB,1,0,F0 43 1n 3E 12 01 00 37 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDyna2Pair,0x0038,kPair,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 38 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDyna2Link,0x0039,kLink,0x0000,0,8,0,71,"0:none, 1-8:Group1-8",1,0,F0 43 1n 3E 12 01 00 39 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaOn,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3A 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaType,0x0001,2,6,2,71,"Comp, (Expander), Compander H, Compander S, De-Essor",1,0,F0 43 1n 3E 12 01 00 3A 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kAutoOn,0x0002,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3A 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kLeftSideChain,0x0003,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3A 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaKeyIn,0x0004,0,13,1,71,PRM TABLE #25,1,25,F0 43 1n 3E 12 01 00 3A 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaFilterOn,0x0005,0,0,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3A 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaFilterType,0x0006,0,0,0,71,(not used),1,0,F0 43 1n 3E 12 01 00 3A 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaFilterFreq,0x0007,72,116,84,71,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 3A 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaFilterQ,0x0008,0,0,0,71,(not used),1,0,F0 43 1n 3E 12 01 00 3A 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaAttack,0x0009,0,120,30,71,0 - 120msec,1,0,F0 43 1n 3E 12 01 00 3A 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaRange,0x000A,0,0,0,71,(not used),1,0,F0 43 1n 3E 12 01 00 3A 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaHold,0x000B,0,0,0,71,(not used),1,0,F0 43 1n 3E 12 01 00 3A 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaRelease,0x000C,0,159,37,71,PRM TABLE #05,1,5,F0 43 1n 3E 12 01 00 3A 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaRatio,0x000D,0,15,6,71,PRM TABLE #06,1,6,F0 43 1n 3E 12 01 00 3A 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaGain,0x000E,0,180,0,71,PRM TABLE #07,1,7,F0 43 1n 3E 12 01 00 3A 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaKnee,0x000F,0,89,2,71,PRM TABLE #08,1,8,F0 43 1n 3E 12 01 00 3A 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kInputDynamics2,0x003A,kDynaThreshold,0x0010,-540,0,-80,71,-54dB - 0dB,1,0,F0 43 1n 3E 12 01 00 3A 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQLink,0x003B,kLink,0x0000,0,8,0,71,"0:none, 1-8:Group1-8",1,0,F0 43 1n 3E 12 01 00 3B 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputHPF,0x003C,kEQHPFOn,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3C 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputHPF,0x003C,kEQHPFFreq,0x0001,4,63,28,71,PRM TABLE #10  20-600Hz,1,10,F0 43 1n 3E 12 01 00 3C 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQFlat,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3D 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQType,0x0001,0,1,0,71,"Type1, Type2",1,0,F0 43 1n 3E 12 01 00 3D 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQOn,0x0002,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3D 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ1Type,0x0003,0,1,1,71,"Peaking, Shelving",1,0,F0 43 1n 3E 12 01 00 3D 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ4Type,0x0004,0,2,1,71,"Peaking, Shelving, LPF",1,0,F0 43 1n 3E 12 01 00 3D 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ1HPFOn,0x0005,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3D 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ4LPFOn,0x0006,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3D 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ1Bypass,0x0007,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3D 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ1Q,0x0008,0,40,23,71,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 3D 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ1F,0x0009,4,124,36,71,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 3D 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ1G,0x000A,-180,180,0,71,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 3D 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ2Bypass,0x000B,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3D 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ2Q,0x000C,0,40,23,71,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 3D 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ2F,0x000D,4,124,72,71,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 3D 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ2G,0x000E,-180,180,0,71,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 3D 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ3Bypass,0x000F,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3D 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ3Q,0x0010,0,40,23,71,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 3D 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ3F,0x0011,4,124,96,71,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 3D 00 11 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ3G,0x0012,-180,180,0,71,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 3D 00 12 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ4Bypass,0x0013,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3D 00 13 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ4Q,0x0014,0,40,23,71,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 3D 00 14 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ4F,0x0015,4,124,112,71,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 3D 00 15 cc cc dd dd dd dd dd F7 F0
+Scene,kInputEQ,0x003D,kEQ4G,0x0016,-180,180,0,71,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 3D 00 16 cc cc dd dd dd dd dd F7 F0
+Scene,kInputMute,0x003F,kMuteAssign1,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3F 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputMute,0x003F,kMuteAssign2,0x0001,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3F 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputMute,0x003F,kMuteAssign3,0x0002,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3F 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kInputMute,0x003F,kMuteAssign4,0x0003,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3F 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kInputMute,0x003F,kMuteAssign5,0x0004,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3F 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kInputMute,0x003F,kMuteAssign6,0x0005,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3F 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kInputMute,0x003F,kMuteAssign7,0x0006,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3F 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kInputMute,0x003F,kMuteAssign8,0x0007,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 3F 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToStereo,0x0041,kToStereoOn,0x0000,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 41 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMono,0x0042,kToMonoOn,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 42 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kInputToMixLoc,0x0000,0,1,0,71,"Pre Fader, Pre EQ",1,0,F0 43 1n 3E 12 01 00 43 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kFixedMixPan,0x0001,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kFollowPan,0x0002,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix1On,0x0003,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix1Pos,0x0004,0,1,1,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix1Level,0x0005,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix2On,0x0006,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix2Pos,0x0007,0,1,1,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix2Level,0x0008,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix3On,0x0009,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix3Pos,0x000A,0,1,1,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix3Level,0x000B,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix4On,0x000C,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix4Pos,0x000D,0,1,1,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix4Level,0x000E,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix5On,0x000F,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix5Pos,0x0010,0,1,1,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix5Level,0x0011,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 11 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix6On,0x0012,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 12 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix6Pos,0x0013,0,1,1,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 13 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix6Level,0x0014,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 14 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix7On,0x0015,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 15 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix7Pos,0x0016,0,1,1,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 16 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix7Level,0x0017,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 17 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix8On,0x0018,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 18 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix8Pos,0x0019,0,1,1,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 19 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix8Level,0x001A,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 1A cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix9On,0x001B,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 1B cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix9Pos,0x001C,0,1,1,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 1C cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix9Level,0x001D,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 1D cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix10On,0x001E,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 1E cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix10Pos,0x001F,0,1,1,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 1F cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix10Level,0x0020,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 20 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix11On,0x0021,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 21 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix11Pos,0x0022,0,1,1,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 22 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix11Level,0x0023,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 23 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix12On,0x0024,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 24 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix12Pos,0x0025,0,1,1,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 25 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix12Level,0x0026,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 26 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix13On,0x0027,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 27 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix13Pos,0x0028,0,1,0,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 28 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix13Level,0x0029,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 29 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix14On,0x002A,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 2A cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix14Pos,0x002B,0,1,0,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 2B cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix14Level,0x002C,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 2C cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix15On,0x002D,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 2D cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix15Pos,0x002E,0,1,0,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 2E cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix15Level,0x002F,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 2F cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix16On,0x0030,0,1,1,71,"Off, On",1,0,F0 43 1n 3E 12 01 00 43 00 30 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix16Pos,0x0031,0,1,0,71,"Post On, Pre",1,0,F0 43 1n 3E 12 01 00 43 00 31 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMix,0x0043,kMix16Level,0x0032,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 43 00 32 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMixPan,0x0044,kMix0102Pan,0x0000,-63,63,0,71,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 44 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMixPan,0x0044,kMix0304Pan,0x0001,-63,63,0,71,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 44 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMixPan,0x0044,kMix0506Pan,0x0002,-63,63,0,71,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 44 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMixPan,0x0044,kMix0708Pan,0x0003,-63,63,0,71,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 44 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMixPan,0x0044,kMix0910Pan,0x0004,-63,63,0,71,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 44 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMixPan,0x0044,kMix1112Pan,0x0005,-63,63,0,71,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 44 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMixPan,0x0044,kMix1314Pan,0x0006,-63,63,0,71,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 44 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kInputToMixPan,0x0044,kMix1516Pan,0x0007,-63,63,0,71,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 44 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kMixPostToStereo,0x0047,kPostToStereo,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 47 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixStMonoLCR,0x0048,kStMonoLCR,0x0000,0,1,0,15,"StMono, LCR",1,0,F0 43 1n 3E 12 01 00 48 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixLCR,0x0049,kLCROn,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 49 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixLCR,0x0049,kLCRControl,0x0001,0,100,50,15,0 - 100%,1,0,F0 43 1n 3E 12 01 00 49 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMixFadeTime,0x004A,kFadeLevelOn,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 4A 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixFadeTime,0x004A,kFadeStartOffset,0x0001,0,600,0,15,0 - 60.0sec,1,0,F0 43 1n 3E 12 01 00 4A 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMixFadeTime,0x004A,kFadeTime,0x0002,0,600,0,15,0 - 60.0sec,1,0,F0 43 1n 3E 12 01 00 4A 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kMixInsert,0x004B,kInsertOn,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 4B 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixInsert,0x004B,kInsertLocation,0x0001,0,1,1,15,"Pre EQ, Pre Fader",1,0,F0 43 1n 3E 12 01 00 4B 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMixOn,0x004C,kChannelOn,0x0000,0,1,1,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 4C 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixBalance,0x004D,kBalance,0x0000,-63,63,0,15,(reserved),1,0,F0 43 1n 3E 12 01 00 4D 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixFader,0x004E,kFader,0x0000,0,1023,823,15,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 4E 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixAttenuator,0x004F,kAttGang,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 4F 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixAttenuator,0x004F,kAtt,0x0001,-960,240,0,15,-96.0dB - +24.0dB,1,0,F0 43 1n 3E 12 01 00 4F 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynaPair,0x0050,kPair,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 50 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynaLink,0x0051,kLink,0x0000,0,8,0,15,"0:none, 1-8:Group1-8",1,0,F0 43 1n 3E 12 01 00 51 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaOn,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 52 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaType,0x0001,2,5,2,15,"Comp, Expander, Compander H, Compander S",1,0,F0 43 1n 3E 12 01 00 52 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kAutoOn,0x0002,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 52 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kLeftSideChain,0x0003,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 52 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaKeyIn,0x0004,0,13,0,15,PRM TABLE #26,1,26,F0 43 1n 3E 12 01 00 52 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaFilterOn,0x0005,0,0,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 52 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaFilterType,0x0006,0,0,0,15,(not used),1,0,F0 43 1n 3E 12 01 00 52 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaFilterFreq,0x0007,72,116,84,15,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 52 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaFilterQ,0x0008,0,0,0,15,(not used),1,0,F0 43 1n 3E 12 01 00 52 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaAttack,0x0009,0,120,30,15,0 - 120msec,1,0,F0 43 1n 3E 12 01 00 52 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaRange,0x000A,0,0,0,15,(not used),1,0,F0 43 1n 3E 12 01 00 52 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaHold,0x000B,0,0,0,15,(not used),1,0,F0 43 1n 3E 12 01 00 52 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaRelease,0x000C,0,159,37,15,PRM TABLE #05,1,5,F0 43 1n 3E 12 01 00 52 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaRatio,0x000D,0,15,6,15,PRM TABLE #06,1,6,F0 43 1n 3E 12 01 00 52 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaGain,0x000E,0,180,0,15,PRM TABLE #07,1,7,F0 43 1n 3E 12 01 00 52 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaKnee,0x000F,0,89,2,15,PRM TABLE #08,1,8,F0 43 1n 3E 12 01 00 52 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kMixDynamics,0x0052,kDynaThreshold,0x0010,-540,0,-80,15,-54dB - 0dB,1,0,F0 43 1n 3E 12 01 00 52 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQLink,0x0053,kLink,0x0000,0,8,0,15,"0:none, 1-8:Group1-8",1,0,F0 43 1n 3E 12 01 00 53 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQFlat,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 54 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQType,0x0001,0,1,0,15,"Type1, Type2",1,0,F0 43 1n 3E 12 01 00 54 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQOn,0x0002,0,1,1,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 54 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ1Type,0x0003,0,2,0,15,"Peaking, Shelving, HPF",1,0,F0 43 1n 3E 12 01 00 54 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ4Type,0x0004,0,2,0,15,"Peaking, Shelving, LPF",1,0,F0 43 1n 3E 12 01 00 54 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ1HPFOn,0x0005,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 54 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ4LPFOn,0x0006,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 54 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ1Bypass,0x0007,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 54 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ1Q,0x0008,0,40,23,15,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 54 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ1F,0x0009,4,124,36,15,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 54 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ1G,0x000A,-180,180,0,15,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 54 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ2Bypass,0x000B,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 54 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ2Q,0x000C,0,40,23,15,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 54 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ2F,0x000D,4,124,72,15,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 54 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ2G,0x000E,-180,180,0,15,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 54 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ3Bypass,0x000F,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 54 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ3Q,0x0010,0,40,23,15,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 54 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ3F,0x0011,4,124,96,15,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 54 00 11 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ3G,0x0012,-180,180,0,15,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 54 00 12 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ4Bypass,0x0013,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 54 00 13 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ4Q,0x0014,0,40,23,15,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 54 00 14 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ4F,0x0015,4,124,112,15,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 54 00 15 cc cc dd dd dd dd dd F7 F0
+Scene,kMixEQ,0x0054,kEQ4G,0x0016,-180,180,0,15,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 54 00 16 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kToMatrixLoc,0x0000,0,1,0,15,"Pre Fader, Post Fader",1,0,F0 43 1n 3E 12 01 00 55 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kFixedMatrixPan,0x0001,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 55 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kFollowPan,0x0002,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 55 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix1On,0x0003,0,1,1,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 55 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix1Pos,0x0004,0,1,0,15,"Post On, others",1,0,F0 43 1n 3E 12 01 00 55 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix1Level,0x0005,0,1023,0,15,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 55 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix2On,0x0006,0,1,1,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 55 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix2Pos,0x0007,0,1,0,15,"Post On, others",1,0,F0 43 1n 3E 12 01 00 55 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix2Level,0x0008,0,1023,0,15,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 55 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix3On,0x0009,0,1,1,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 55 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix3Pos,0x000A,0,1,0,15,"Post On, others",1,0,F0 43 1n 3E 12 01 00 55 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix3Level,0x000B,0,1023,0,15,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 55 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix4On,0x000C,0,1,1,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 55 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix4Pos,0x000D,0,1,0,15,"Post On, others",1,0,F0 43 1n 3E 12 01 00 55 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix4Level,0x000E,0,1023,0,15,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 55 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix5On,0x000F,0,1,1,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 55 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix5Pos,0x0010,0,1,0,15,"Post On, others",1,0,F0 43 1n 3E 12 01 00 55 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix5Level,0x0011,0,1023,0,15,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 55 00 11 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix6On,0x0012,0,1,1,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 55 00 12 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix6Pos,0x0013,0,1,0,15,"Post On, others",1,0,F0 43 1n 3E 12 01 00 55 00 13 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix6Level,0x0014,0,1023,0,15,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 55 00 14 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix7On,0x0015,0,1,1,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 55 00 15 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix7Pos,0x0016,0,1,0,15,"Post On, others",1,0,F0 43 1n 3E 12 01 00 55 00 16 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix7Level,0x0017,0,1023,0,15,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 55 00 17 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix8On,0x0018,0,1,1,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 55 00 18 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix8Pos,0x0019,0,1,0,15,"Post On, others",1,0,F0 43 1n 3E 12 01 00 55 00 19 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrix,0x0055,kMatrix8Level,0x001A,0,1023,0,15,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 55 00 1A cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrixPan,0x0056,kToMatrixPan0102,0x0000,-63,63,0,15,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 56 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrixPan,0x0056,kToMatrixPan0304,0x0001,-63,63,0,15,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 56 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrixPan,0x0056,kToMatrixPan0506,0x0002,-63,63,0,15,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 56 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMatrixPan,0x0056,kToMatrixPan0708,0x0003,-63,63,0,15,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 56 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToStereo,0x0057,kMixToStereoOn,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 57 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToStereo,0x0057,kMixToStereoPre,0x0001,0,1,0,15,"Post On, Pre On",1,0,F0 43 1n 3E 12 01 00 57 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToStereo,0x0057,kMixToStereoPan,0x0002,-63,63,0,15,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 57 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kMixToMono,0x0058,kMixToMonoOn,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 58 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixGroup,0x0059,kMuteAssign1,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 59 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMixGroup,0x0059,kMuteAssign2,0x0001,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 59 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMixGroup,0x0059,kMuteAssign3,0x0002,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 59 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kMixGroup,0x0059,kMuteAssign4,0x0003,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 59 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kMixGroup,0x0059,kMuteAssign5,0x0004,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 59 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kMixGroup,0x0059,kMuteAssign6,0x0005,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 59 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kMixGroup,0x0059,kMuteAssign7,0x0006,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 59 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kMixGroup,0x0059,kMuteAssign8,0x0007,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 00 59 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixFadeTime,0x005B,kFadeLevelOn,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 5B 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixFadeTime,0x005B,kFadeStartOffset,0x0001,0,600,0,7,0 - 60.0sec,1,0,F0 43 1n 3E 12 01 00 5B 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixFadeTime,0x005B,kFadeTime,0x0002,0,600,0,7,0 - 60.0sec,1,0,F0 43 1n 3E 12 01 00 5B 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixInsert,0x005C,kInsertOn,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 5C 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixInsert,0x005C,kInsertLocation,0x0001,0,1,1,7,"Pre EQ, Pre Fader",1,0,F0 43 1n 3E 12 01 00 5C 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixOn,0x005D,kChannelOn,0x0000,0,1,1,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 5D 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixBalance,0x005E,kBalance,0x0000,-63,63,0,7,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 5E 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixFader,0x005F,kFader,0x0000,0,1023,823,7,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 5F 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixAttenuator,0x0060,kAttGang,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 60 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixAttenuator,0x0060,kAtt,0x0001,-960,240,0,7,-96.0dB - +24.0dB,1,0,F0 43 1n 3E 12 01 00 60 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynaPair,0x0061,kPair,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 61 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynaLink,0x0062,kLink,0x0000,0,8,0,7,"0:none, 1-8:Group1-8",1,0,F0 43 1n 3E 12 01 00 62 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaOn,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 63 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaType,0x0001,2,5,2,7,"Comp, Expander, Compander H, Compander S",1,0,F0 43 1n 3E 12 01 00 63 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kAutoOn,0x0002,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 63 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kLeftSideChain,0x0003,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 63 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaKeyIn,0x0004,0,13,0,7,PRM TABLE #26,1,26,F0 43 1n 3E 12 01 00 63 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaFilterOn,0x0005,0,0,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 63 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaFilterType,0x0006,0,0,0,7,(not used),1,0,F0 43 1n 3E 12 01 00 63 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaFilterFreq,0x0007,72,116,84,7,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 63 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaFilterQ,0x0008,0,0,0,7,(not used),1,0,F0 43 1n 3E 12 01 00 63 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaAttack,0x0009,0,120,30,7,0 - 120msec,1,0,F0 43 1n 3E 12 01 00 63 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaRange,0x000A,0,0,0,7,(not used),1,0,F0 43 1n 3E 12 01 00 63 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaHold,0x000B,0,0,0,7,(not used),1,0,F0 43 1n 3E 12 01 00 63 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaRelease,0x000C,0,159,37,7,PRM TABLE #05,1,5,F0 43 1n 3E 12 01 00 63 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaRatio,0x000D,0,15,6,7,PRM TABLE #06,1,6,F0 43 1n 3E 12 01 00 63 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaGain,0x000E,0,180,0,7,PRM TABLE #07,1,7,F0 43 1n 3E 12 01 00 63 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaKnee,0x000F,0,89,2,7,PRM TABLE #08,1,8,F0 43 1n 3E 12 01 00 63 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixDynamics,0x0063,kDynaThreshold,0x0010,-540,0,-80,7,-54dB - 0dB,1,0,F0 43 1n 3E 12 01 00 63 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQLink,0x0064,kLink,0x0000,0,8,0,7,"0:none, 1-8:Group1-8",1,0,F0 43 1n 3E 12 01 00 64 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQFlat,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 65 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQType,0x0001,0,1,0,7,"Type1, Type2",1,0,F0 43 1n 3E 12 01 00 65 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQOn,0x0002,0,1,1,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 65 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ1Type,0x0003,0,2,0,7,"Peaking, Shelving, HPF",1,0,F0 43 1n 3E 12 01 00 65 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ4Type,0x0004,0,2,0,7,"Peaking, Shelving, LPF",1,0,F0 43 1n 3E 12 01 00 65 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ1HPFOn,0x0005,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 65 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ4LPFOn,0x0006,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 65 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ1Bypass,0x0007,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 65 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ1Q,0x0008,0,40,23,7,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 65 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ1F,0x0009,4,124,36,7,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 65 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ1G,0x000A,-180,180,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 65 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ2Bypass,0x000B,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 65 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ2Q,0x000C,0,40,23,7,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 65 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ2F,0x000D,4,124,72,7,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 65 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ2G,0x000E,-180,180,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 65 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ3Bypass,0x000F,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 65 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ3Q,0x0010,0,40,23,7,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 65 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ3F,0x0011,4,124,96,7,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 65 00 11 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ3G,0x0012,-180,180,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 65 00 12 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ4Bypass,0x0013,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 65 00 13 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ4Q,0x0014,0,40,23,7,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 65 00 14 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ4F,0x0015,4,124,112,7,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 65 00 15 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixEQ,0x0065,kEQ4G,0x0016,-180,180,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 65 00 16 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixGroup,0x0066,kMuteAssign1,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 66 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixGroup,0x0066,kMuteAssign2,0x0001,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 66 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixGroup,0x0066,kMuteAssign3,0x0002,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 66 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixGroup,0x0066,kMuteAssign4,0x0003,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 66 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixGroup,0x0066,kMuteAssign5,0x0004,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 66 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixGroup,0x0066,kMuteAssign6,0x0005,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 66 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixGroup,0x0066,kMuteAssign7,0x0006,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 66 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kMatrixGroup,0x0066,kMuteAssign8,0x0007,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 66 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoPair,0x0068,kPair,0x0000,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 68 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoFadeTime,0x0069,kFadeLevelOn,0x0000,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 69 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoFadeTime,0x0069,kFadeStartOffset,0x0001,0,600,0,2,0 - 60.0sec,1,0,F0 43 1n 3E 12 01 00 69 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoFadeTime,0x0069,kFadeTime,0x0002,0,600,0,2,0 - 60.0sec,1,0,F0 43 1n 3E 12 01 00 69 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoInsert,0x006A,kInsertOn,0x0000,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 6A 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoInsert,0x006A,kInsertLocation,0x0001,0,1,1,2,"Pre EQ, Pre Fader",1,0,F0 43 1n 3E 12 01 00 6A 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoOn,0x006B,kChannelOn,0x0000,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 6B 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoBalance,0x006C,kBalance,0x0000,-63,63,0,2,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 6C 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoFader,0x006D,kFader,0x0000,0,1023,0,2,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 6D 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoAttenuator,0x006E,kAttGang,0x0000,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 6E 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoAttenuator,0x006E,kAtt,0x0001,-960,240,0,2,-96.0dB - +24.0dB,1,0,F0 43 1n 3E 12 01 00 6E 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynaPair,0x006F,kPair,0x0000,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 6F 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynaLink,0x0070,kLink,0x0000,0,8,0,2,"0:none, 1-8:Group1-8",1,0,F0 43 1n 3E 12 01 00 70 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaOn,0x0000,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 71 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaType,0x0001,2,5,2,2,"Comp, Expander, Compander H, Compander S",1,0,F0 43 1n 3E 12 01 00 71 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kAutoOn,0x0002,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 71 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kLeftSideChain,0x0003,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 71 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaKeyIn,0x0004,0,8,0,2,PRM TABLE #26,1,26,F0 43 1n 3E 12 01 00 71 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaFilterOn,0x0005,0,0,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 71 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaFilterType,0x0006,0,0,0,2,(not used),1,0,F0 43 1n 3E 12 01 00 71 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaFilterFreq,0x0007,72,116,84,2,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 71 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaFilterQ,0x0008,0,0,0,2,(not used),1,0,F0 43 1n 3E 12 01 00 71 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaAttack,0x0009,0,120,30,2,0 - 120msec,1,0,F0 43 1n 3E 12 01 00 71 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaRange,0x000A,0,0,0,2,(not used),1,0,F0 43 1n 3E 12 01 00 71 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaHold,0x000B,0,0,0,2,(not used),1,0,F0 43 1n 3E 12 01 00 71 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaRelease,0x000C,0,159,37,2,PRM TABLE #05,1,5,F0 43 1n 3E 12 01 00 71 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaRatio,0x000D,0,15,6,2,PRM TABLE #06,1,6,F0 43 1n 3E 12 01 00 71 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaGain,0x000E,0,180,0,2,PRM TABLE #07,1,7,F0 43 1n 3E 12 01 00 71 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaKnee,0x000F,0,89,2,2,PRM TABLE #08,1,8,F0 43 1n 3E 12 01 00 71 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kStereoDynamics,0x0071,kDynaThreshold,0x0010,-540,0,-80,2,-54dB - 0dB,1,0,F0 43 1n 3E 12 01 00 71 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQLink,0x0072,kLink,0x0000,0,8,0,2,"0:none, 1-8:Group1-8",1,0,F0 43 1n 3E 12 01 00 72 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQFlat,0x0000,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 73 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQType,0x0001,0,1,0,2,"Type1, Type2",1,0,F0 43 1n 3E 12 01 00 73 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQOn,0x0002,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 73 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ1Type,0x0003,0,2,0,2,"Peaking, Shelving, HPF",1,0,F0 43 1n 3E 12 01 00 73 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ4Type,0x0004,0,2,0,2,"Peaking, Shelving, LPF",1,0,F0 43 1n 3E 12 01 00 73 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ1HPFOn,0x0005,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 73 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ4LPFOn,0x0006,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 73 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ1Bypass,0x0007,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 73 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ1Q,0x0008,0,40,23,2,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 73 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ1F,0x0009,4,124,36,2,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 73 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ1G,0x000A,-180,180,0,2,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 73 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ2Bypass,0x000B,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 73 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ2Q,0x000C,0,40,23,2,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 73 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ2F,0x000D,4,124,72,2,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 73 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ2G,0x000E,-180,180,0,2,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 73 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ3Bypass,0x000F,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 73 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ3Q,0x0010,0,40,23,2,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 73 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ3F,0x0011,4,124,96,2,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 73 00 11 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ3G,0x0012,-180,180,0,2,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 73 00 12 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ4Bypass,0x0013,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 73 00 13 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ4Q,0x0014,0,40,23,2,PRM TABLE #09,1,9,F0 43 1n 3E 12 01 00 73 00 14 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ4F,0x0015,4,124,112,2,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 00 73 00 15 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoEQ,0x0073,kEQ4G,0x0016,-180,180,0,2,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 73 00 16 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kToMatrixLoc,0x0000,0,1,0,2,"Pre Fader, Post Fader",1,0,F0 43 1n 3E 12 01 00 74 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kFixedMatrixPan,0x0001,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 74 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kFollowPan,0x0002,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 74 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix1On,0x0003,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 74 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix1Pos,0x0004,0,1,0,2,"Post On, others",1,0,F0 43 1n 3E 12 01 00 74 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix1Level,0x0005,0,1023,0,2,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 74 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix2On,0x0006,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 74 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix2Pos,0x0007,0,1,0,2,"Post On, others",1,0,F0 43 1n 3E 12 01 00 74 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix2Level,0x0008,0,1023,0,2,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 74 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix3On,0x0009,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 74 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix3Pos,0x000A,0,1,0,2,"Post On, others",1,0,F0 43 1n 3E 12 01 00 74 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix3Level,0x000B,0,1023,0,2,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 74 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix4On,0x000C,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 74 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix4Pos,0x000D,0,1,0,2,"Post On, others",1,0,F0 43 1n 3E 12 01 00 74 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix4Level,0x000E,0,1023,0,2,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 74 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix5On,0x000F,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 74 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix5Pos,0x0010,0,1,0,2,"Post On, others",1,0,F0 43 1n 3E 12 01 00 74 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix5Level,0x0011,0,1023,0,2,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 74 00 11 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix6On,0x0012,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 74 00 12 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix6Pos,0x0013,0,1,0,2,"Post On, others",1,0,F0 43 1n 3E 12 01 00 74 00 13 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix6Level,0x0014,0,1023,0,2,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 74 00 14 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix7On,0x0015,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 74 00 15 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix7Pos,0x0016,0,1,0,2,"Post On, others",1,0,F0 43 1n 3E 12 01 00 74 00 16 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix7Level,0x0017,0,1023,0,2,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 74 00 17 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix8On,0x0018,0,1,1,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 74 00 18 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix8Pos,0x0019,0,1,0,2,"Post On, others",1,0,F0 43 1n 3E 12 01 00 74 00 19 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrix,0x0074,kMatrix8Level,0x001A,0,1023,0,2,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 00 74 00 1A cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrixPan,0x0075,kToMatrixPan0102,0x0000,-63,63,0,2,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 75 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrixPan,0x0075,kToMatrixPan0304,0x0001,-63,63,0,2,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 75 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrixPan,0x0075,kToMatrixPan0506,0x0002,-63,63,0,2,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 75 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoToMatrixPan,0x0075,kToMatrixPan0708,0x0003,-63,63,0,2,PRM TABLE #02,1,2,F0 43 1n 3E 12 01 00 75 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoGroup,0x0076,kMuteAssign1,0x0000,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 76 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoGroup,0x0076,kMuteAssign2,0x0001,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 76 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoGroup,0x0076,kMuteAssign3,0x0002,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 76 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoGroup,0x0076,kMuteAssign4,0x0003,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 76 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoGroup,0x0076,kMuteAssign5,0x0004,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 76 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoGroup,0x0076,kMuteAssign6,0x0005,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 76 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoGroup,0x0076,kMuteAssign7,0x0006,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 76 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kStereoGroup,0x0076,kMuteAssign8,0x0007,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 00 76 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kRackMount,0x007E,kRackMountType,0x0000,0,3,0,7,"0:Unmount, 1:31GEQ, 2:Flex15GEQ, 3:Effect, (4:PEQ)",1,0,F0 43 1n 3E 12 01 00 7E 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQType,0x0000,0,1,0,7,"0:31GEQ, 1:Flex15GEQ",1,0,F0 43 1n 3E 12 01 00 7F 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQLink,0x0001,0,8,0,7,"0:none, 1:1->2, 2:2->1, -, 7:7->8, 8:8->7",1,0,F0 43 1n 3E 12 01 00 7F 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQLRLink,0x0002,0,2,0,7,"Off, On (copy L->R), On (copy L<-R)",1,0,F0 43 1n 3E 12 01 00 7F 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQOnL,0x0003,0,1,1,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 7F 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQOnR,0x0004,0,1,1,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 7F 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQFlatL,0x0005,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 7F 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQFlatR,0x0006,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 00 7F 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kAvailableBandsL,0x0007,0,15,15,7,"0, 1-15",1,0,F0 43 1n 3E 12 01 00 7F 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kAvailableBandsR,0x0008,0,15,15,7,"0, 1-15",1,0,F0 43 1n 3E 12 01 00 7F 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL1,0x0009,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL2,0x000A,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL3,0x000B,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL4,0x000C,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL5,0x000D,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL6,0x000E,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL7,0x000F,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL8,0x0010,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL9,0x0011,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 11 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL10,0x0012,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 12 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL11,0x0013,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 13 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL12,0x0014,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 14 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL13,0x0015,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 15 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL14,0x0016,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 16 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL15,0x0017,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 17 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL16,0x0018,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 18 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL17,0x0019,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 19 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL18,0x001A,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 1A cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL19,0x001B,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 1B cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL20,0x001C,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 1C cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL21,0x001D,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 1D cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL22,0x001E,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 1E cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL23,0x001F,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 1F cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL24,0x0020,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 20 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL25,0x0021,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 21 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL26,0x0022,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 22 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL27,0x0023,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 23 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL28,0x0024,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 24 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL29,0x0025,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 25 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL30,0x0026,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 26 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainL31,0x0027,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 27 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR1,0x0028,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 28 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR2,0x0029,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 29 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR3,0x002A,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 2A cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR4,0x002B,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 2B cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR5,0x002C,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 2C cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR6,0x002D,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 2D cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR7,0x002E,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 2E cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR8,0x002F,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 2F cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR9,0x0030,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 30 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR10,0x0031,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 31 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR11,0x0032,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 32 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR12,0x0033,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 33 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR13,0x0034,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 34 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR14,0x0035,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 35 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR15,0x0036,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 36 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR16,0x0037,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 37 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR17,0x0038,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 38 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR18,0x0039,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 39 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR19,0x003A,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 3A cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR20,0x003B,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 3B cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR21,0x003C,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 3C cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR22,0x003D,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 3D cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR23,0x003E,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 3E cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR24,0x003F,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 3F cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR25,0x0040,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 40 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR26,0x0041,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 41 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR27,0x0042,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 42 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR28,0x0043,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 43 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR29,0x0044,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 44 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR30,0x0045,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 45 cc cc dd dd dd dd dd F7 F0
+Scene,kGEQ,0x007F,kGEQGainR31,0x0046,-150,150,0,7,-15dB - +15dB,1,0,F0 43 1n 3E 12 01 00 7F 00 46 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kTitle1,0x0000,0,'~~~~','Reve',3,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 00 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kTitle2,0x0001,0,'~~~~','rb H',3,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 00 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kTitle3,0x0002,0,'~~~~','all ',3,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 00 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kTitle4,0x0003,0,'~~~~','    ',3,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 00 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectBPM,0x0004,25,300,120,3,25 - 300,1,0,F0 43 1n 3E 12 01 01 00 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectMode,0x0005,0,99,0,3,(reserved),1,0,F0 43 1n 3E 12 01 01 00 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectBypass,0x0006,0,1,0,3,"Off, On",1,0,F0 43 1n 3E 12 01 01 00 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectUtility,0x0007,0,99,1,3,(reserved),1,0,F0 43 1n 3E 12 01 01 00 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectReserved,0x0008,0,0,0,3,(reserved),1,0,F0 43 1n 3E 12 01 01 00 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectMix,0x0009,0,100,100,3,0% - 100%,1,0,F0 43 1n 3E 12 01 01 00 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectType,0x000A,0,67,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam1,0x000B,0,0x7FFFFFFF,360,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam2,0x000C,0,0x7FFFFFFF,29,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam3,0x000D,0,0x7FFFFFFF,2,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam4,0x000E,0,0x7FFFFFFF,13,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam5,0x000F,0,0x7FFFFFFF,8,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam6,0x0010,0,0x7FFFFFFF,100,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam7,0x0011,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 11 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam8,0x0012,0,0x7FFFFFFF,85,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 12 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam9,0x0013,0,0x7FFFFFFF,20,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 13 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam10,0x0014,0,0x7FFFFFFF,44,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 14 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam11,0x0015,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 15 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam12,0x0016,0,0x7FFFFFFF,4,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 16 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam13,0x0017,0,0x7FFFFFFF,172,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 17 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam14,0x0018,0,0x7FFFFFFF,12,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 18 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam15,0x0019,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 19 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam16,0x001A,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 1A cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam17,0x001B,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 1B cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam18,0x001C,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 1C cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam19,0x001D,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 1D cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam20,0x001E,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 1E cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam21,0x001F,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 1F cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam22,0x0020,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 20 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam23,0x0021,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 21 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam24,0x0022,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 22 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam25,0x0023,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 23 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam26,0x0024,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 24 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam27,0x0025,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 25 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam28,0x0026,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 26 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam29,0x0027,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 27 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam30,0x0028,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 28 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam31,0x0029,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 29 cc cc dd dd dd dd dd F7 F0
+Scene,kEffect,0x0100,kEffectParam32,0x002A,0,0x7FFFFFFF,0,3,(see effect specifications),1,0,F0 43 1n 3E 12 01 01 00 00 2A cc cc dd dd dd dd dd F7 F0
+Scene,kRP_Input_Fader,0x0102,kRP_Level,0x0000,0,1023,0,71,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 01 02 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kRP_Mix_Fader,0x0103,kRP_Level,0x0000,0,1023,823,15,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 01 03 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kRP_Matrix_Fader,0x0104,kRP_Level,0x0000,0,1023,823,7,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 01 04 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kRP_Stereo_Fader,0x0105,kRP_Level,0x0000,0,1023,0,2,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 01 05 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kGroupID_Input,0x0106,kGroupID,0x0000,0,38,0,71,"0:none, 1-38:A-Z,a-p",1,0,F0 43 1n 3E 12 01 01 06 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kGroupID_Mix,0x0107,kGroupID,0x0000,0,30,0,15,"0:none, 1-26:A-Z",1,0,F0 43 1n 3E 12 01 01 07 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kGroupID_Matrix,0x0108,kGroupID,0x0000,0,30,0,7,"0:none, 1-26:A-Z",1,0,F0 43 1n 3E 12 01 01 08 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kGroupID_Stereo,0x0109,kGroupID,0x0000,0,30,0,2,"0:none, 1-26:A-Z",1,0,F0 43 1n 3E 12 01 01 09 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kSceneReserved,0x010A,kSceneReservedData,0x0000,0,255,0,31,,1,0,F0 43 1n 3E 12 01 01 0A 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchInInput,0x010B,kPatchIn,0x0000,0,84,0,71,PRM TABLE #15,1,15,F0 43 1n 3E 12 01 01 0B 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchInInsertInput,0x010C,kPatchIn,0x0000,0,80,0,71,PRM TABLE #15,1,15,F0 43 1n 3E 12 01 01 0C 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchInInsertMix,0x010D,kPatchIn,0x0000,0,80,0,15,PRM TABLE #15,1,15,F0 43 1n 3E 12 01 01 0D 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchInInsertMatrix,0x010E,kPatchIn,0x0000,0,80,0,7,PRM TABLE #15,1,15,F0 43 1n 3E 12 01 01 0E 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchInInsertStereo,0x010F,kPatchIn,0x0000,0,80,0,2,PRM TABLE #15,1,15,F0 43 1n 3E 12 01 01 0F 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchInCascadeMix,0x0110,kPatchIn,0x0000,0,64,0,15,PRM TABLE #15,1,15,F0 43 1n 3E 12 01 01 10 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchInCascadeMatrix,0x0111,kPatchIn,0x0000,0,64,0,7,PRM TABLE #15,1,15,F0 43 1n 3E 12 01 01 11 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchInCascadeStereo,0x0112,kPatchIn,0x0000,0,64,0,2,PRM TABLE #15,1,15,F0 43 1n 3E 12 01 01 12 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchInCascadeCue,0x0113,kPatchIn,0x0000,0,64,0,1,PRM TABLE #15,1,15,F0 43 1n 3E 12 01 01 13 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kNameInputChannel,0x0114,kNameShort1,0x0000,0,'~~~~','    ',71,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 14 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kNameInputChannel,0x0114,kNameShort2,0x0001,0,'~~~~','    ',71,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 14 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kIconInputChannel,0x0115,kIconID,0x0000,0,39,22,71,"none,",1,0,F0 43 1n 3E 12 01 01 15 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kIconInputChannel,0x0115,kIconBgColor,0x0001,0,7,0,71,,1,0,F0 43 1n 3E 12 01 01 15 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutOmniOutSrc,0x0116,kOmniOut,0x0000,0,94,0,15,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 16 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut1,0x0000,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut2,0x0001,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut3,0x0002,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut4,0x0003,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut5,0x0004,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut6,0x0005,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut7,0x0006,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut8,0x0007,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut9,0x0008,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut10,0x0009,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut11,0x000A,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut12,0x000B,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut13,0x000C,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut14,0x000D,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut15,0x000E,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutSlotOutSrc,0x0117,kSlotOut16,0x000F,0,182,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 17 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutRackSrc,0x0118,kRackIn1,0x0000,0,153,0,7,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 18 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutRackSrc,0x0118,kRackIn2,0x0001,0,153,0,7,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 18 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutD2trSrc,0x0119,kD2trOut,0x0000,0,184,0,1,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 19 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutMp3Src,0x011A,kMp3Out1,0x0000,0,184,0,0,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 1A 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kPatchOutMp3Src,0x011A,kMp3Out2,0x0001,0,184,0,0,PRM TABLE #16,1,16,F0 43 1n 3E 12 01 01 1A 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kNameMixModule,0x011B,kNameShort1,0x0000,0,'~~~~','    ',15,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 1B 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kNameMixModule,0x011B,kNameShort2,0x0001,0,'~~~~','    ',15,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 1B 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kNameMatrixModule,0x011C,kNameShort1,0x0000,0,'~~~~','    ',7,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 1C 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kNameMatrixModule,0x011C,kNameShort2,0x0001,0,'~~~~','    ',7,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 1C 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kNameStereoOutModule,0x011D,kNameShort1,0x0000,0,'~~~~','    ',2,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 1D 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kNameStereoOutModule,0x011D,kNameShort2,0x0001,0,'~~~~','    ',2,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 1D 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kIconMixChannel,0x011E,kIconID,0x0000,0,39,39,15,"none,",1,0,F0 43 1n 3E 12 01 01 1E 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kIconMixChannel,0x011E,kIconBgColor,0x0001,0,7,1,15,,1,0,F0 43 1n 3E 12 01 01 1E 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kIconMatrixChannel,0x011F,kIconID,0x0000,0,39,39,7,"none,",1,0,F0 43 1n 3E 12 01 01 1F 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kIconMatrixChannel,0x011F,kIconBgColor,0x0001,0,7,1,7,,1,0,F0 43 1n 3E 12 01 01 1F 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kIconStereoChannel,0x0120,kIconID,0x0000,0,39,39,2,"none,",1,0,F0 43 1n 3E 12 01 01 20 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kIconStereoChannel,0x0120,kIconBgColor,0x0001,0,7,1,2,,1,0,F0 43 1n 3E 12 01 01 20 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824Host,0x0121,kAD824HostID,0x0000,0,1,1,0,"PM5D, PM5D-RH",1,0,F0 43 1n 3E 12 01 01 21 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824Setup,0x0122,kAD824Port,0x0000,0,6,0,3,PRM TABLE #14,1,14,F0 43 1n 3E 12 01 01 22 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824Setup,0x0122,kAD824PortValidity,0x0001,0,1,0,3,"Invarid, Varid",1,0,F0 43 1n 3E 12 01 01 22 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Type,0x0000,0,2,0,3,"none, AD8HR (and Resettable HA), AD824",1,0,F0 43 1n 3E 12 01 01 23 00 00 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824GainGang12,0x0001,0,1,0,3,"Off, On",1,0,F0 43 1n 3E 12 01 01 23 00 01 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824GainGang34,0x0002,0,1,0,3,"Off, On",1,0,F0 43 1n 3E 12 01 01 23 00 02 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824GainGang56,0x0003,0,1,0,3,"Off, On",1,0,F0 43 1n 3E 12 01 01 23 00 03 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824GainGang78,0x0004,0,1,0,3,"Off, On",1,0,F0 43 1n 3E 12 01 01 23 00 04 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Gain1,0x0005,0,72,0,3,"10 - -62dB [1dB step for AD8HR, 6dB step for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 05 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Gain2,0x0006,0,72,0,3,"10 - -62dB [1dB step for AD8HR, 6dB step for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 06 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Gain3,0x0007,0,72,0,3,"10 - -62dB [1dB step for AD8HR, 6dB step for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 07 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Gain4,0x0008,0,72,0,3,"10 - -62dB [1dB step for AD8HR, 6dB step for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 08 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Gain5,0x0009,0,72,0,3,"10 - -62dB [1dB step for AD8HR, 6dB step for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 09 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Gain6,0x000A,0,72,0,3,"10 - -62dB [1dB step for AD8HR, 6dB step for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 0A cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Gain7,0x000B,0,72,0,3,"10 - -62dB [1dB step for AD8HR, 6dB step for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 0B cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Gain8,0x000C,0,72,0,3,"10 - -62dB [1dB step for AD8HR, 6dB step for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 0C cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPF1,0x000D,0,1,0,3,"Off, On [Not available for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 0D cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPF2,0x000E,0,1,0,3,"Off, On [Not available for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 0E cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPF3,0x000F,0,1,0,3,"Off, On [Not available for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 0F cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPF4,0x0010,0,1,0,3,"Off, On [Not available for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 10 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPF5,0x0011,0,1,0,3,"Off, On [Not available for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 11 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPF6,0x0012,0,1,0,3,"Off, On [Not available for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 12 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPF7,0x0013,0,1,0,3,"Off, On [Not available for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 13 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPF8,0x0014,0,1,0,3,"Off, On [Not available for AD824]",1,0,F0 43 1n 3E 12 01 01 23 00 14 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPFFreq1,0x0015,4,63,28,3,20 - 600Hz [Not available for AD824],1,0,F0 43 1n 3E 12 01 01 23 00 15 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPFFreq2,0x0016,4,63,28,3,20 - 600Hz [Not available for AD824],1,0,F0 43 1n 3E 12 01 01 23 00 16 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPFFreq3,0x0017,4,63,28,3,20 - 600Hz [Not available for AD824],1,0,F0 43 1n 3E 12 01 01 23 00 17 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPFFreq4,0x0018,4,63,28,3,20 - 600Hz [Not available for AD824],1,0,F0 43 1n 3E 12 01 01 23 00 18 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPFFreq5,0x0019,4,63,28,3,20 - 600Hz [Not available for AD824],1,0,F0 43 1n 3E 12 01 01 23 00 19 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPFFreq6,0x001A,4,63,28,3,20 - 600Hz [Not available for AD824],1,0,F0 43 1n 3E 12 01 01 23 00 1A cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPFFreq7,0x001B,4,63,28,3,20 - 600Hz [Not available for AD824],1,0,F0 43 1n 3E 12 01 01 23 00 1B cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824HPFFreq8,0x001C,4,63,28,3,20 - 600Hz [Not available for AD824],1,0,F0 43 1n 3E 12 01 01 23 00 1C cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Phantom1,0x001D,0,1,0,3,"Off, On",1,0,F0 43 1n 3E 12 01 01 23 00 1D cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Phantom2,0x001E,0,1,0,3,"Off, On",1,0,F0 43 1n 3E 12 01 01 23 00 1E cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Phantom3,0x001F,0,1,0,3,"Off, On",1,0,F0 43 1n 3E 12 01 01 23 00 1F cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Phantom4,0x0020,0,1,0,3,"Off, On",1,0,F0 43 1n 3E 12 01 01 23 00 20 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Phantom5,0x0021,0,1,0,3,"Off, On",1,0,F0 43 1n 3E 12 01 01 23 00 21 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Phantom6,0x0022,0,1,0,3,"Off, On",1,0,F0 43 1n 3E 12 01 01 23 00 22 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Phantom7,0x0023,0,1,0,3,"Off, On",1,0,F0 43 1n 3E 12 01 01 23 00 23 cc cc dd dd dd dd dd F7 F0
+Scene,kAD824,0x0123,kAD824Phantom8,0x0024,0,1,0,3,"Off, On",1,0,F0 43 1n 3E 12 01 01 23 00 24 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPreference,0x0124,kPreference,0x0000,0,1,0,48,CH TABLE #36,1,0,F0 43 1n 3E 12 01 01 24 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPreferenceByte,0x0125,kPreference,0x0000,0,255,0,7,CH TABLE #37,1,0,F0 43 1n 3E 12 01 01 25 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDelayFunc,0x0130,kDelayFuncUnit,0x0000,0,3,3,0,"Meter, Feet, Sample, mSec",1,0,F0 43 1n 3E 12 01 01 30 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDelayFunc,0x0130,kDelayFuncNote,0x0001,0,13,8,0,PRM TABLE #19,1,19,F0 43 1n 3E 12 01 01 30 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDelayFunc,0x0130,kDelayFuncTempo,0x0002,20,300,120,0,20 - 300,1,0,F0 43 1n 3E 12 01 01 30 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupUserDefineBank,0x0136,kUserDefineBank,0x0000,0,0,0,0,(single bank only),1,0,F0 43 1n 3E 12 01 01 36 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupUserDefine,0x0137,kUdefFunc,0x0000,0,21,0,11,PRM TABLE #36,1,36,F0 43 1n 3E 12 01 01 37 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupUserDefine,0x0137,kUdefParam1,0x0001,0,23,0,11,,1,0,F0 43 1n 3E 12 01 01 37 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupUserDefine,0x0137,kUdefParam2,0x0002,0,0xFFFFFFFF,0,11,,1,0,F0 43 1n 3E 12 01 01 37 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupUserDefine,0x0137,kUdefParam3,0x0003,0,0xFFFFFFFF,0,11,,1,0,F0 43 1n 3E 12 01 01 37 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupUserDefineFile,0x0138,kUdefFileName1,0x0000,0,0xFFFFFFFF,0,11,,1,0,F0 43 1n 3E 12 01 01 38 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupUserDefineFile,0x0138,kUdefFileName2,0x0001,0,0xFFFFFFFF,0,11,,1,0,F0 43 1n 3E 12 01 01 38 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupUserDefineFile,0x0138,kUdefFileName3,0x0002,0,0xFFFFFFFF,0,11,,1,0,F0 43 1n 3E 12 01 01 38 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupUserDefineFile,0x0138,kUdefFileHash,0x0003,0,0xFFFFFFFF,0,11,Hash value,1,0,F0 43 1n 3E 12 01 01 38 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupAD824,0x0139,kAD824Port,0x0000,0,6,0,3,PRM TABLE #14,1,14,F0 43 1n 3E 12 01 01 39 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupAD824,0x0139,kAD824PortValidity,0x0001,0,1,0,3,"Invarid, Varid",1,0,F0 43 1n 3E 12 01 01 39 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupAD824Type,0x013A,kAD824Type,0x0000,0,2,0,3,"none, AD8HR (and Resettable HA), AD824",1,0,F0 43 1n 3E 12 01 01 3A 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupAD824CommPort,0x013B,kAD824CommPort,0x0000,0,2,0,0,"-, SLOT1, SLOT2",1,0,F0 43 1n 3E 12 01 01 3B 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupTalkback,0x013D,kTalkbackOn,0x0000,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 3D 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupTalkback,0x013D,kTalkbackADOn,0x0001,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 3D 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupTalkback,0x013D,kTalkbackADCh,0x0002,0,48,0,0,"No Assign, 1 - 48",1,0,F0 43 1n 3E 12 01 01 3D 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupTalkback,0x013D,kTalkbackNeverLatch,0x0003,0,1,0,0,,1,0,F0 43 1n 3E 12 01 01 3D 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupTalkback,0x013D,kTalkbackDimLevel,0x0004,-96,0,-20,0,-96dB - 0dB (1dB step),1,0,F0 43 1n 3E 12 01 01 3D 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupTalkback,0x013D,kTalkbackPhantom,0x0005,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 3D 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupTalkbackDimmer,0x013E,kTalkbackDimmerOn,0x0000,0,1,0,4,"Off, On",1,0,F0 43 1n 3E 12 01 01 3E 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupTBAssign,0x013F,kTBAssign,0x0000,0,1,0,26,"Off, On",1,0,F0 43 1n 3E 12 01 01 3F 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOscAssign,0x0140,kOscAssign,0x0000,0,1,0,26,"Off, On",1,0,F0 43 1n 3E 12 01 01 40 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMeterSetup,0x0141,kMeterSetupInpPoint,0x0000,0,2,0,0,"Pre HPF, Pre Fader, Post On",1,0,F0 43 1n 3E 12 01 01 41 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMeterSetup,0x0141,kMeterSetupOutPoint,0x0001,0,2,2,0,"Pre Att, Pre Fader, Post On",1,0,F0 43 1n 3E 12 01 01 41 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMeterSetup,0x0141,kMeterSetupCuePoint,0x0002,0,1,0,0,"Pre Delay, Post Delay",1,0,F0 43 1n 3E 12 01 01 41 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMeterSetup,0x0141,kMeterSetupFollowLayer,0x0003,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 41 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMeterSetup,0x0141,kMeterSetupPeakHold,0x0004,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 41 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMeterSetup,0x0141,kMeterSetupFastFall,0x0005,0,0,0,0,"Slow, Fast",1,0,F0 43 1n 3E 12 01 01 41 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMeterSetup,0x0141,kMeterSetupChPreAtt,0x0006,0,1,1,0,"(depends kMeterSetupInpPoint), always Pre Att",1,0,F0 43 1n 3E 12 01 01 41 00 06 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMeterSetup,0x0141,kMeterSetupStereo,0x0007,0,1,0,0,"Stereo, Mono",1,0,F0 43 1n 3E 12 01 01 41 00 07 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPortNameAD,0x014D,kNameShort1,0x0000,0,'~~~~','    ',71,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 4D 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPortNameAD,0x014D,kNameShort2,0x0001,0,'~~~~','    ',71,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 4D 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPortNameSlotIn,0x014E,kNameShort1,0x0000,0,'~~~~','    ',31,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 4E 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPortNameSlotIn,0x014E,kNameShort2,0x0001,0,'~~~~','    ',31,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 4E 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPortNameSlotOut,0x014F,kNameShort1,0x0000,0,'~~~~','    ',31,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 4F 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPortNameSlotOut,0x014F,kNameShort2,0x0001,0,'~~~~','    ',31,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 4F 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPortNameD2TrOut,0x0150,kNameShort1,0x0000,0,'~~~~','    ',1,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 50 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPortNameD2TrOut,0x0150,kNameShort2,0x0001,0,'~~~~','    ',1,0 - '~~~~',1,0,F0 43 1n 3E 12 01 01 50 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOParam,0x0151,kDIOWcMaster,0x0000,0,24,1,0,PRM TABLE #21,1,21,F0 43 1n 3E 12 01 01 51 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOParam,0x0151,kDIOSRC2TrD1Out,0x0001,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 51 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOParam,0x0151,kDIOFs2TrD1Out,0x0002,0,1,0,0,"44.1k, 48k",1,0,F0 43 1n 3E 12 01 01 51 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotHighFsFormIn,0x0000,0,2,1,1,"Double Speed, Double Channel, Single",1,0,F0 43 1n 3E 12 01 01 52 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotHighFsFormOut,0x0001,0,2,1,1,"Double Speed, Double Channel, Single",1,0,F0 43 1n 3E 12 01 01 52 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC0102Bt,0x0002,0,1,0,1,"Off, On (for 1,2ch)",1,0,F0 43 1n 3E 12 01 01 52 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC0304Bt,0x0003,0,1,0,1,"Off, On (for 3,4ch)",1,0,F0 43 1n 3E 12 01 01 52 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC0506Bt,0x0004,0,1,0,1,"Off, On (for 5,6ch)",1,0,F0 43 1n 3E 12 01 01 52 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC0708Bt,0x0005,0,1,0,1,"Off, On (for 7,8ch)",1,0,F0 43 1n 3E 12 01 01 52 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC0910Bt,0x0006,0,1,0,1,"Off, On (for 9,10ch)",1,0,F0 43 1n 3E 12 01 01 52 00 06 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC1112Bt,0x0007,0,1,0,1,"Off, On (for 11,12ch)",1,0,F0 43 1n 3E 12 01 01 52 00 07 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC1314Bt,0x0008,0,1,0,1,"Off, On (for 13,14ch)",1,0,F0 43 1n 3E 12 01 01 52 00 08 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC1516Bt,0x0009,0,1,0,1,"Off, On (for 15,16ch)",1,0,F0 43 1n 3E 12 01 01 52 00 09 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC0102Fs,0x000A,0,4,0,1,"UNLOCK,44.1KHz,48KHz,88.2KHz,96KHz (for 1,2ch)",1,0,F0 43 1n 3E 12 01 01 52 00 0A cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC0304Fs,0x000B,0,4,0,1,"UNLOCK,44.1KHz,48KHz,88.2KHz,96KHz (for 3,4ch)",1,0,F0 43 1n 3E 12 01 01 52 00 0B cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC0506Fs,0x000C,0,4,0,1,"UNLOCK,44.1KHz,48KHz,88.2KHz,96KHz (for 5,6ch)",1,0,F0 43 1n 3E 12 01 01 52 00 0C cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC0708Fs,0x000D,0,4,0,1,"UNLOCK,44.1KHz,48KHz,88.2KHz,96KHz (for 7,8ch)",1,0,F0 43 1n 3E 12 01 01 52 00 0D cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC0910Fs,0x000E,0,4,0,1,"UNLOCK,44.1KHz,48KHz,88.2KHz,96KHz (for 9,10ch)",1,0,F0 43 1n 3E 12 01 01 52 00 0E cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC1112Fs,0x000F,0,4,0,1,"UNLOCK,44.1KHz,48KHz,88.2KHz,96KHz (for 11,12ch)",1,0,F0 43 1n 3E 12 01 01 52 00 0F cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC1314Fs,0x0010,0,4,0,1,"UNLOCK,44.1KHz,48KHz,88.2KHz,96KHz (for 13,14ch)",1,0,F0 43 1n 3E 12 01 01 52 00 10 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotParam,0x0152,kSlotSRC1516Fs,0x0011,0,4,0,1,"UNLOCK,44.1KHz,48KHz,88.2KHz,96KHz (for 15,16ch)",1,0,F0 43 1n 3E 12 01 01 52 00 11 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIODitherSlot,0x0153,kDitherBit0102,0x0000,0,3,0,1,"Off, 16bit, 20bit, 24bit",1,0,F0 43 1n 3E 12 01 01 53 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIODitherSlot,0x0153,kDitherBit0304,0x0001,0,3,0,1,"Off, 16bit, 20bit, 24bit",1,0,F0 43 1n 3E 12 01 01 53 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIODitherSlot,0x0153,kDitherBit0506,0x0002,0,3,0,1,"Off, 16bit, 20bit, 24bit",1,0,F0 43 1n 3E 12 01 01 53 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIODitherSlot,0x0153,kDitherBit0708,0x0003,0,3,0,1,"Off, 16bit, 20bit, 24bit",1,0,F0 43 1n 3E 12 01 01 53 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIODitherSlot,0x0153,kDitherBit0910,0x0004,0,3,0,1,"Off, 16bit, 20bit, 24bit",1,0,F0 43 1n 3E 12 01 01 53 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIODitherSlot,0x0153,kDitherBit1112,0x0005,0,3,0,1,"Off, 16bit, 20bit, 24bit",1,0,F0 43 1n 3E 12 01 01 53 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIODitherSlot,0x0153,kDitherBit1314,0x0006,0,3,0,1,"Off, 16bit, 20bit, 24bit",1,0,F0 43 1n 3E 12 01 01 53 00 06 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIODitherSlot,0x0153,kDitherBit1516,0x0007,0,3,0,1,"Off, 16bit, 20bit, 24bit",1,0,F0 43 1n 3E 12 01 01 53 00 07 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIODitherD2Tr,0x0154,kDither2Tr1,0x0000,0,3,0,0,"Off, 16bit, 20bit, 24bit",1,0,F0 43 1n 3E 12 01 01 54 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkRecall,0x0000,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkStore,0x0001,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkSolo,0x0002,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkDimmer,0x0003,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkInMeterPoint,0x0004,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkOutMeterPoint,0x0005,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkPeakHold,0x0006,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 06 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkLCDPage,0x0007,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 07 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkBrightness,0x0008,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 08 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkEncoderMode,0x0009,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 09 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkFaderMode,0x000A,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 0A cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkMixSelect,0x000B,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 0B cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkDCA1,0x000C,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 0C cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkDCA2,0x000D,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 0D cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkDCA3,0x000E,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 0E cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkDCA4,0x000F,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 0F cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkDCA5,0x0010,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 10 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkDCA6,0x0011,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 11 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkDCA7,0x0012,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 12 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkDCA8,0x0013,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 13 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkMute1,0x0014,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 14 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkMute2,0x0015,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 15 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkMute3,0x0016,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 16 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkMute4,0x0017,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 17 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkMute5,0x0018,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 18 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkMute6,0x0019,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 19 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkMute7,0x001A,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 1A cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeLink,0x0155,kCascadeLinkMute8,0x001B,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 55 00 1B cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascade,0x0156,kDIOCascadeMode,0x0000,0,0,0,0,"Uni Direction, (Bi Direction)",1,0,F0 43 1n 3E 12 01 01 56 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascade,0x0156,kDIOCascadeMaster,0x0001,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 56 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascade,0x0156,kDIOCascadeFrom,0x0002,0,4,0,0,"not used, PM5D, DM2000 or 02R96, 32bus Mixer, 16bus Mixer",1,0,F0 43 1n 3E 12 01 01 56 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascade,0x0156,kDIOCascadeTo,0x0003,0,1,0,0,"not used, PM5D",1,0,F0 43 1n 3E 12 01 01 56 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascade,0x0156,kDIOCascadeInPortSel,0x0004,0,4,0,0,"Cascade In, Slot 4, Slot3/4, Slot1-4(ch1-8), Slot1-4(ch9-16)",1,0,F0 43 1n 3E 12 01 01 56 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascade,0x0156,kDIOCascadeOutSrcSel,0x0005,0,3,0,0,"Cascade Out, Slot3/4, Slot1-4(ch1-8), Slot1-4(ch9-16)",1,0,F0 43 1n 3E 12 01 01 56 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascade,0x0156,kDIOCascadeOn,0x0006,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 56 00 06 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeIO,0x0157,kDIOCascadeInOn,0x0000,0,1,1,28,"Off, On",1,0,F0 43 1n 3E 12 01 01 57 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeIO,0x0157,kDIOCascadeOutOn,0x0001,0,1,1,28,"Off, On",1,0,F0 43 1n 3E 12 01 01 57 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOCascadeIO,0x0157,kDIOCascadeInSource,0x0002,0,1,0,28,"Off, On",1,0,F0 43 1n 3E 12 01 01 57 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDIOTASCAM,0x0158,kDIOTASCAM,0x0000,0,4,4,3,"16bit, 18bit, 20bit, 22bit, 24bit",1,0,F0 43 1n 3E 12 01 01 58 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSoloSafeInput,0x0159,kSoloSafe,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 01 59 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSoloSafeMix,0x015A,kSoloSafe,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 01 5A 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSoloSafeMatrix,0x015B,kSoloSafe,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 01 5B 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSoloSafeStereo,0x015C,kSoloSafe,0x0000,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 01 5C 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kCueOutOn,0x0000,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 5D 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kSoloOn,0x0001,0,1,0,0,"Cue, Solo",1,0,F0 43 1n 3E 12 01 01 5D 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kCueLast,0x0002,0,1,0,0,"Mix Cue, Last Cue",1,0,F0 43 1n 3E 12 01 01 5D 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kCueDCAUnity,0x0003,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 5D 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kCueActive,0x0004,0,7,0,0,"None, Recorder, DME, Effect, Key In Cue, Input, DCA, Output",1,0,F0 43 1n 3E 12 01 01 5D 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kCueLocInput,0x0005,0,2,0,0,"PFL, AFL, Post Pan",1,0,F0 43 1n 3E 12 01 01 5D 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kCueLocDCA,0x0006,0,1,0,0,"Pre Pan, Post Pan",1,0,F0 43 1n 3E 12 01 01 5D 00 06 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kCueLocOutput,0x0007,0,1,0,0,"PFL, Post On",1,0,F0 43 1n 3E 12 01 01 5D 00 07 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kCueTrimInput,0x0008,0,30,20,0,"-20 - 10dB, 1dB step",1,0,F0 43 1n 3E 12 01 01 5D 00 08 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kCueTrimDCA,0x0009,0,30,20,0,"-20 - 10dB, 1dB step",1,0,F0 43 1n 3E 12 01 01 5D 00 09 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kCueTrimOutput,0x000A,0,30,20,0,"-20 - 10dB, 1dB step",1,0,F0 43 1n 3E 12 01 01 5D 00 0A cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kMixCueLink,0x000B,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 5D 00 0B cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kCueSelLink,0x000C,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 5D 00 0C cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kFaderCueRelease,0x000D,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 5D 00 0D cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCue,0x015D,kClearCue,0x000E,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 5D 00 0E cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueInput,0x015E,kCueOn,0x0000,0,1,0,75,"Off, On",1,0,F0 43 1n 3E 12 01 01 5E 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueMix,0x015F,kCueOn,0x0000,0,1,0,19,"Off, On",1,0,F0 43 1n 3E 12 01 01 5F 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueMatrix,0x0160,kCueOn,0x0000,0,1,0,11,"Off, On",1,0,F0 43 1n 3E 12 01 01 60 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueStereo,0x0161,kCueOn,0x0000,0,1,0,6,"Off, On",1,0,F0 43 1n 3E 12 01 01 61 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueKeyIn,0x0163,kCueOn,0x0000,0,1,0,75,"Off, On",1,0,F0 43 1n 3E 12 01 01 63 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueEffect,0x0164,kCueOn,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 01 64 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueExternal,0x0165,kCueOn,0x0000,0,1,0,4,"Off, On",1,0,F0 43 1n 3E 12 01 01 65 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueRecorder,0x0166,kCueOn,0x0000,0,1,0,5,"Off, On",1,0,F0 43 1n 3E 12 01 01 66 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueStack,0x0167,kCueStack,0x0000,0,7,0,5,"None, DME, Effect, Key In Cue, Input, DCA, Output",1,0,F0 43 1n 3E 12 01 01 67 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueStackInput,0x0168,kCueOn,0x0000,0,1,0,75,"Off, On",1,0,F0 43 1n 3E 12 01 01 68 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueStackMix,0x0169,kCueOn,0x0000,0,1,0,19,"Off, On",1,0,F0 43 1n 3E 12 01 01 69 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueStackMatrix,0x016A,kCueOn,0x0000,0,1,0,11,"Off, On",1,0,F0 43 1n 3E 12 01 01 6A 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueStackStereo,0x016B,kCueOn,0x0000,0,1,0,6,"Off, On",1,0,F0 43 1n 3E 12 01 01 6B 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kMuteSafeInput,0x0171,kMuteSafeOn,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 01 71 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kMuteSafeMix,0x0172,kMuteSafeOn,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 01 72 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kMuteSafeMatrix,0x0173,kMuteSafeOn,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 01 73 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kMuteSafeStereo,0x0174,kMuteSafeOn,0x0000,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 01 74 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNameAutoCopy,0x0175,kNameInputAutoCopy,0x0000,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 75 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNameAutoCopy,0x0175,kNameOutputAutoCopy,0x0001,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 75 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNameAutoCopy,0x0175,kChNameInputAutoCopy,0x0002,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 75 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNameAutoCopy,0x0175,kChNameOutputAutoCopy,0x0003,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 75 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIRx,0x0176,kMIDIRxTerminal,0x0000,0,3,1,0,"-, MIDI, Slot1, Slot2",1,0,F0 43 1n 3E 12 01 01 76 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIRx,0x0176,kMIDIRxPortNum,0x0001,0,7,0,0,1 - 8,1,0,F0 43 1n 3E 12 01 01 76 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIRx,0x0176,kMIDIRxMidiCh,0x0002,0,15,0,0,1 - 16,1,0,F0 43 1n 3E 12 01 01 76 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDITx,0x0177,kMIDITxTerminal,0x0000,0,3,1,0,"-, MIDI, Slot1, Slot2",1,0,F0 43 1n 3E 12 01 01 77 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDITx,0x0177,kMIDITxPortNum,0x0001,0,7,0,0,1 - 8,1,0,F0 43 1n 3E 12 01 01 77 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDITx,0x0177,kMIDITxMidiCh,0x0002,0,15,0,0,1 - 16,1,0,F0 43 1n 3E 12 01 01 77 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIThruPort,0x0178,kMIDIThruTerminal,0x0000,0,5,0,1,"-, MIDI, USB, Slot1, Slot2, Ether",1,0,F0 43 1n 3E 12 01 01 78 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIThruPort,0x0178,kMIDIThruPortNum,0x0001,0,7,0,1,1 - 8,1,0,F0 43 1n 3E 12 01 01 78 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupStudioMgrPort,0x0179,kMIDIStudioMgrTerminal,0x0000,0,5,0,0,"-, MIDI, REMOTE, Slot1, Slot2, Ether",1,0,F0 43 1n 3E 12 01 01 79 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupStudioMgrPort,0x0179,kMIDIStudioMgrPortNum,0x0001,0,7,0,0,1 - 8,1,0,F0 43 1n 3E 12 01 01 79 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupStudioMgrPort,0x0179,kMIDIStudioMgrID,0x0002,0,7,0,0,1 - 8,1,0,F0 43 1n 3E 12 01 01 79 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDITxEnable,0x017A,kTxEnablePgmChange,0x0000,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7A 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDITxEnable,0x017A,kTxEnableCtlChange,0x0001,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7A 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDITxEnable,0x017A,kTxEnablePrmChange,0x0002,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7A 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDITxEnable,0x017A,kTxEnableBulk,0x0003,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7A 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDITxEnable,0x017A,kTxEnableMTC,0x0004,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7A 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDITxEnable,0x017A,kTxEnableOthers,0x0005,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7A 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDITxEnable,0x017A,kTxBulkInterval,0x0006,0,6,0,0,,1,0,F0 43 1n 3E 12 01 01 7A 00 06 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIRxEnable,0x017B,kRxEnablePgmChange,0x0000,0,1,1,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7B 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIRxEnable,0x017B,kRxEnableCtlChange,0x0001,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7B 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIRxEnable,0x017B,kRxEnablePrmChange,0x0002,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7B 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIRxEnable,0x017B,kRxEnableBulk,0x0003,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7B 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIRxEnable,0x017B,kRxEnableMTC,0x0004,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7B 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIRxEnable,0x017B,kRxEnableOthers,0x0005,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7B 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIOmniEnable,0x017C,kOmniEnablePgmChange,0x0000,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7C 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIOmniEnable,0x017C,kOmniEnableCtlChange,0x0001,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7C 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIOmniEnable,0x017C,kOmniEnablePrmChange,0x0002,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7C 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIOmniEnable,0x017C,kOmniEnableBulk,0x0003,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7C 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIOmniEnable,0x017C,kOmniEnableMTC,0x0004,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7C 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIOmniEnable,0x017C,kOmniEnableOthers,0x0005,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7C 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIEchoEnable,0x017D,kEchoEnablePgmChange,0x0000,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7D 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIEchoEnable,0x017D,kEchoEnableCtlChange,0x0001,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7D 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIEchoEnable,0x017D,kEchoEnablePrmChange,0x0002,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7D 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIEchoEnable,0x017D,kEchoEnableBulk,0x0003,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7D 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIEchoEnable,0x017D,kEchoEnableMTC,0x0004,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7D 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIEchoEnable,0x017D,kEchoEnableOthers,0x0005,0,1,0,0,"Disable, Enable",1,0,F0 43 1n 3E 12 01 01 7D 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIProgram,0x017E,kMIDIPGMMulti,0x0000,0,1,0,0,"Single, Multi",1,0,F0 43 1n 3E 12 01 01 7E 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIProgram,0x017E,kMIDIPGMOmni,0x0001,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 01 7E 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIProgram,0x017E,kMIDIPGMBankOff,0x0002,0,1,0,0,"Bank On, Bank Off",1,0,F0 43 1n 3E 12 01 01 7E 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDIControl,0x017F,kMIDIControlMode,0x0000,0,1,0,0,"NRPN, Table",1,0,F0 43 1n 3E 12 01 01 7F 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTable0,0x0000,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTable1,0x0001,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTable2,0x0002,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTable3,0x0003,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTable4,0x0004,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTable5,0x0005,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTable6,0x0006,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 06 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTable7,0x0007,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 07 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTable8,0x0008,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 08 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTable9,0x0009,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 09 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTableA,0x000A,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 0A cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTableB,0x000B,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 0B cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTableC,0x000C,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 0C cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTableD,0x000D,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 0D cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTableE,0x000E,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 0E cc cc dd dd dd dd dd F7 F0
+Setup,kSetupPGMChangeTable,0x0200,kPGMChangeTableF,0x000F,0,2093,0,127,"No Assign, Scene 0 - 500, Effect1 1 - 199, ---, Effect8 1 - 199",1,0,F0 43 1n 3E 12 01 02 00 00 0F cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCntrlChangeTable,0x0201,kCntrlChangeTable0_1,0x0000,0,255,0,119,(see MIDI specification),1,0,F0 43 1n 3E 12 01 02 01 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCntrlChangeTable,0x0201,kCntrlChangeTable0_2,0x0001,0,255,0,119,(see MIDI specification),1,0,F0 43 1n 3E 12 01 02 01 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCntrlChangeTable,0x0201,kCntrlChangeTable0_3,0x0002,0,255,0,119,(see MIDI specification),1,0,F0 43 1n 3E 12 01 02 01 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOutPortAttLevel,0x0208,kOutPortLevel,0x0000,-960,240,0,65,-96.0 - 24.0dB,1,0,F0 43 1n 3E 12 01 02 08 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeIn,0x0209,kRecallSafeOn,0x0000,0,1,0,71,"Off, On",1,0,F0 43 1n 3E 12 01 02 09 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeIn,0x0209,kRecallSafeMode,0x0001,0,0x0BFF,1,71,PRM TABLE #47 (actual max is 0x0BFE),1,47,F0 43 1n 3E 12 01 02 09 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeMix,0x020A,kRecallSafeOn,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 02 0A 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeMix,0x020A,kRecallSafeMode,0x0001,0,0x0737,1,15,PRM TABLE #47 (actual max is 0x0736),1,47,F0 43 1n 3E 12 01 02 0A 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeMatrix,0x020B,kRecallSafeOn,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 02 0B 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeMatrix,0x020B,kRecallSafeMode,0x0001,0,0x04F7,1,7,PRM TABLE #47 (actual max is 0x04F6),1,47,F0 43 1n 3E 12 01 02 0B 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeStereo,0x020C,kRecallSafeOn,0x0000,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 02 0C 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeStereo,0x020C,kRecallSafeMode,0x0001,0,0x0337,1,2,PRM TABLE #47 (actual max is 0x0336),1,47,F0 43 1n 3E 12 01 02 0C 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeRack,0x020D,kRecallSafeOn,0x0000,0,1,0,7,"Off, On",1,0,F0 43 1n 3E 12 01 02 0D 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeMuteMaster,0x0210,kRecallSafeOn,0x0000,1,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 10 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeInputName,0x0211,kRecallSafeOn,0x0000,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 11 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeOutputName,0x0212,kRecallSafeOn,0x0000,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 12 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeInputPatch,0x0213,kRecallSafeOn,0x0000,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 13 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupRecallSafeOutputPatch,0x0214,kRecallSafeOn,0x0000,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 14 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOscSetting,0x021B,kOscSettingOn,0x0000,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 1B 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOscSetting,0x021B,kOscSettingForm,0x0001,0,3,0,0,PRM TABLE #22,1,22,F0 43 1n 3E 12 01 02 1B 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOscSetting,0x021B,kOscSettingLevel1,0x0002,-96,0,-14,0,-96dB - 0dB,1,0,F0 43 1n 3E 12 01 02 1B 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOscSetting,0x021B,kOscSettingLevel2,0x0003,-96,0,-14,0,-96dB - 0dB,1,0,F0 43 1n 3E 12 01 02 1B 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOscSetting,0x021B,kOscSettingFreq1,0x0004,4,124,72,0,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 02 1B 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOscSetting,0x021B,kOscSettingFreq2,0x0005,4,124,72,0,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 02 1B 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOscSetting,0x021B,kOscSettingHPFOn,0x0006,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 1B 00 06 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOscSetting,0x021B,kOscSettingHPFFreq,0x0007,4,124,28,0,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 02 1B 00 07 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOscSetting,0x021B,kOscSettingLPFOn,0x0008,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 1B 00 08 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOscSetting,0x021B,kOscSettingLPFFreq,0x0009,4,124,112,0,PRM TABLE #10,1,10,F0 43 1n 3E 12 01 02 1B 00 09 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOscSetting,0x021B,kOscSettingWidth,0x000A,1,100,1,0,0.1 - 10sec,1,0,F0 43 1n 3E 12 01 02 1B 00 0A cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOscSetting,0x021B,kOscSettingInterval,0x000B,1,30,1,0,1 - 30sec,1,0,F0 43 1n 3E 12 01 02 1B 00 0B cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorSelect,0x0000,0,7,1,0,PRM TABLE #45,1,45,F0 43 1n 3E 12 01 02 1C 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorStereoA,0x0001,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 1C 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorStereoB,0x0002,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 1C 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorStereoLCR,0x0003,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 1C 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorDefineAssignL,0x0004,0,16,0,0,"Off, Mix1, 3, 5 - 19, 21, 23, Matrix1, 3, 5, 7",1,0,F0 43 1n 3E 12 01 02 1C 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorDefineAssignR,0x0005,0,16,0,0,"Off, Mix2, 4, 6 - 20, 22, 24, Matrix2, 4, 6, 8",1,0,F0 43 1n 3E 12 01 02 1C 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorMono,0x0006,0,1,0,0,"Stereo, Mono",1,0,F0 43 1n 3E 12 01 02 1C 00 06 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorCueInterruption,0x0007,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 1C 00 07 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorOn,0x0008,0,1,1,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 1C 00 08 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorDim,0x0009,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 1C 00 09 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorDimLevel,0x000A,-96,0,-20,0,-96dB - 0dB (1dB step),1,0,F0 43 1n 3E 12 01 02 1C 00 0A cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorMeterPostDelay,0x000B,0,1,0,0,"Pre, Post",1,0,F0 43 1n 3E 12 01 02 1C 00 0B cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorSurrLevel,0x000C,0,127,0,0,PRM TABLE #33,1,33,F0 43 1n 3E 12 01 02 1C 00 0C cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorLevel,0x000D,0,1023,823,0,PRM TABLE #03,1,3,F0 43 1n 3E 12 01 02 1C 00 0D cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorMonoPlus,0x000E,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 1C 00 0E cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorOutL,0x000F,0,50,0,0,PRM TABLE #46,1,46,F0 43 1n 3E 12 01 02 1C 00 0F cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorOutR,0x0010,0,50,0,0,PRM TABLE #46,1,46,F0 43 1n 3E 12 01 02 1C 00 10 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorOutC,0x0011,0,50,0,0,PRM TABLE #46,1,46,F0 43 1n 3E 12 01 02 1C 00 11 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorLevelLink,0x0012,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 1C 00 12 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitor,0x021C,kMonitorOnMasterFader,0x0013,0,1,0,0,"Off, On",1,0,F0 43 1n 3E 12 01 02 1C 00 13 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitorDefineAssign,0x021D,kMonitorDefineAssign,0x0000,0,1,0,28,"Off, On",1,0,F0 43 1n 3E 12 01 02 1D 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotDelay,0x021E,kDelayOn,0x0000,0,1,0,31,"Off, On",1,0,F0 43 1n 3E 12 01 02 1E 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotDelay,0x021E,kDelayGang,0x0001,0,1,0,31,"Off, On",1,0,F0 43 1n 3E 12 01 02 1E 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotDelay,0x021E,kDelayTime,0x0002,0,60000,0,31,0 - 600.00mSec (0.02mSec Step),1,0,F0 43 1n 3E 12 01 02 1E 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOmniDelay,0x021F,kDelayOn,0x0000,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 02 1F 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOmniDelay,0x021F,kDelayGang,0x0001,0,1,0,15,"Off, On",1,0,F0 43 1n 3E 12 01 02 1F 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOmniDelay,0x021F,kDelayTime,0x0002,0,60000,0,15,0 - 600.00mSec (0.02mSec Step),1,0,F0 43 1n 3E 12 01 02 1F 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupD2TrOutDelay,0x0220,kDelayOn,0x0000,0,1,0,1,"Off, On",1,0,F0 43 1n 3E 12 01 02 20 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupD2TrOutDelay,0x0220,kDelayGang,0x0001,0,1,0,1,"Off, On",1,0,F0 43 1n 3E 12 01 02 20 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupD2TrOutDelay,0x0220,kDelayTime,0x0002,0,60000,0,1,0 - 600.00mSec (0.02mSec Step),1,0,F0 43 1n 3E 12 01 02 20 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitorDelay,0x0221,kDelayOn,0x0000,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 02 21 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitorDelay,0x0221,kDelayGang,0x0001,0,1,0,2,"Off, On",1,0,F0 43 1n 3E 12 01 02 21 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMonitorDelay,0x0221,kDelayTime,0x0002,0,60000,0,2,0 - 600.00mSec (0.02mSec Step),1,0,F0 43 1n 3E 12 01 02 21 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueDelay,0x0222,kDelayOn,0x0000,0,1,0,1,"Off, On",1,0,F0 43 1n 3E 12 01 02 22 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueDelay,0x0222,kDelayGang,0x0001,0,1,0,1,"Off, On",1,0,F0 43 1n 3E 12 01 02 22 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueDelay,0x0222,kDelayTime,0x0002,0,60000,0,1,0 - 600.00mSec (0.02mSec Step),1,0,F0 43 1n 3E 12 01 02 22 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCueDelay,0x0222,kDelayBypass,0x0003,0,1,0,1,"Through Delay, Bypass",1,0,F0 43 1n 3E 12 01 02 22 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupSlotOutPhase,0x0223,kPhase,0x0000,0,1,0,31,"Normal, Invert",1,0,F0 43 1n 3E 12 01 02 23 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupOmniOutPhase,0x0224,kPhase,0x0000,0,1,0,15,"Normal, Invert",1,0,F0 43 1n 3E 12 01 02 24 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupD2TrOutPhase,0x0225,kPhase,0x0000,0,1,0,1,"Normal, Invert",1,0,F0 43 1n 3E 12 01 02 25 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupBrightnessBank,0x0226,kBrightnessBank,0x0000,0,1,0,0,"BankA, BankB",1,0,F0 43 1n 3E 12 01 02 26 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupBrightness,0x0227,kLCDBrightness,0x0000,0,7,7,1,0:Dark - 15:Bright,1,0,F0 43 1n 3E 12 01 02 27 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupBrightness,0x0227,kPanelBrightness,0x0001,0,7,7,1,0:Dark - 7:Bright,1,0,F0 43 1n 3E 12 01 02 27 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupBrightness,0x0227,kLampBrightness,0x0002,0,100,100,1,0% - 100%,1,0,F0 43 1n 3E 12 01 02 27 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupBrightness,0x0227,kLCDContrast,0x0003,54,203,128,1,0:Low - 255:High,1,0,F0 43 1n 3E 12 01 02 27 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupBrightness,0x0227,kLCDContrastOffset,0x0004,75,180,128,1,,1,0,F0 43 1n 3E 12 01 02 27 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kIPAddressByte0,0x0000,1,223,192,0,,1,0,F0 43 1n 3E 12 01 02 28 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kIPAddressByte1,0x0001,0,255,168,0,,1,0,F0 43 1n 3E 12 01 02 28 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kIPAddressByte2,0x0002,0,255,0,0,,1,0,F0 43 1n 3E 12 01 02 28 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kIPAddressByte3,0x0003,0,255,128,0,,1,0,F0 43 1n 3E 12 01 02 28 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kSubnetMaskByte0,0x0004,0,255,255,0,,1,0,F0 43 1n 3E 12 01 02 28 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kSubnetMaskByte1,0x0005,0,255,255,0,,1,0,F0 43 1n 3E 12 01 02 28 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kSubnetMaskByte2,0x0006,0,255,255,0,,1,0,F0 43 1n 3E 12 01 02 28 00 06 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kSubnetMaskByte3,0x0007,0,255,0,0,,1,0,F0 43 1n 3E 12 01 02 28 00 07 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kGatewayAddressByte0,0x0008,1,223,192,0,,1,0,F0 43 1n 3E 12 01 02 28 00 08 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kGatewayAddressByte1,0x0009,0,255,168,0,,1,0,F0 43 1n 3E 12 01 02 28 00 09 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kGatewayAddressByte2,0x000A,0,255,0,0,,1,0,F0 43 1n 3E 12 01 02 28 00 0A cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kGatewayAddressByte3,0x000B,0,255,1,0,,1,0,F0 43 1n 3E 12 01 02 28 00 0B cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kLinkMode,0x000C,0,1,0,0,"100BASE-TX, 10BASE-T",1,0,F0 43 1n 3E 12 01 02 28 00 0C cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kMacAddressByte0,0x000D,0,255,0,0,,1,0,F0 43 1n 3E 12 01 02 28 00 0D cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kMacAddressByte1,0x000E,0,255,160,0,,1,0,F0 43 1n 3E 12 01 02 28 00 0E cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kMacAddressByte2,0x000F,0,255,222,0,,1,0,F0 43 1n 3E 12 01 02 28 00 0F cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kMacAddressByte3,0x0010,0,255,37,0,,1,0,F0 43 1n 3E 12 01 02 28 00 10 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kMacAddressByte4,0x0011,0,255,0,0,,1,0,F0 43 1n 3E 12 01 02 28 00 11 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupNetwork,0x0228,kMacAddressByte5,0x0012,0,255,0,0,,1,0,F0 43 1n 3E 12 01 02 28 00 12 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDateTimeFormat,0x0229,kDateFormat,0x0000,0,2,0,0,"0:MM/DD/YYYY, 1:DD/MM/YYYY, 2:YYYY/MM/DD",1,0,F0 43 1n 3E 12 01 02 29 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDateTimeFormat,0x0229,kTimeFormat,0x0001,0,1,0,0,"0:24Hour, 1:12Hour",1,0,F0 43 1n 3E 12 01 02 29 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupDateTime,0x022A,kDateTime,0x0000,0,255,0,5,"ch0-5:2000-2255, 0-11, 0-30, 0-23, 0-59, 0-59",1,0,F0 43 1n 3E 12 01 02 2A 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader1,0x0000,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader2,0x0001,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader3,0x0002,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader4,0x0003,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 03 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader5,0x0004,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 04 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader6,0x0005,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 05 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader7,0x0006,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 06 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader8,0x0007,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 07 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader9,0x0008,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 08 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader10,0x0009,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 09 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader11,0x000A,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 0A cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader12,0x000B,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 0B cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader13,0x000C,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 0C cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader14,0x000D,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 0D cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader15,0x000E,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 0E cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader16,0x000F,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 0F cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader17,0x0010,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 10 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader18,0x0011,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 11 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader19,0x0012,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 12 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader20,0x0013,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 13 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader21,0x0014,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 14 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader22,0x0015,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 15 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader23,0x0016,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 16 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader24,0x0017,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 17 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader25,0x0018,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 18 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader26,0x0019,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 19 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader27,0x001A,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 1A cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader28,0x001B,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 1B cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader29,0x001C,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 1C cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader30,0x001D,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 1D cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader31,0x001E,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 1E cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomFader32,0x001F,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 1F cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomStrip1,0x0020,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 20 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomStrip2,0x0021,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 21 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomStrip3,0x0022,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 22 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupCustomFader,0x022C,kCustomStrip4,0x0023,-1,99,-1,3,PRM TABLE #51,1,51,F0 43 1n 3E 12 01 02 2C 00 23 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDICasLink,0x022D,kMIDICasLinkTerminal,0x0000,0,3,0,0,"-, MIDI, Slot1, Slot2",1,0,F0 43 1n 3E 12 01 02 2D 00 00 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDICasLink,0x022D,kMIDICasLinkPort,0x0001,0,7,0,0,1 - 8,1,0,F0 43 1n 3E 12 01 02 2D 00 01 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupMIDICasLink,0x022D,kMIDICasLinkCommLink,0x0002,0,2,0,0,,1,0,F0 43 1n 3E 12 01 02 2D 00 02 cc cc dd dd dd dd dd F7 F0
+Setup,kSetupLanguageCode,0x022E,kLanguageCode,0x0000,0,1,0,0,"Non-Japanese, Japanese",1,0,F0 43 1n 3E 12 01 02 2E 00 00 cc cc dd dd dd dd dd F7 F0
+(see *1),kBackupInputHA,0x032D,kHAPhantom,0x0000,0.0,1.0,0.0,71.0,"Off, On",1,0,F0 43 1n 3E 12 01 03 2D 00 00 cc cc dd dd dd dd dd F7 F0
+(see *1),kBackupInputHA,0x032D,kHAGain,0x0001,0.0,72.0,0.0,71.0,"10 - -62dB, 1dB step",1,0,F0 43 1n 3E 12 01 03 2D 00 01 cc cc dd dd dd dd dd F7 F0
