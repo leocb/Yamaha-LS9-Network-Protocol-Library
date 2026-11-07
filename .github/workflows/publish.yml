@@ -4,14 +4,45 @@ on:
   push:
     tags:
       - "v*"
-  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
+  verify:
+    name: Verify version
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      - name: Check tag matches pom.xml
+        id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSION="$(mvn -B -q help:evaluate -Dexpression=project.version -DforceStdout)"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Project version: $VERSION"
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            EXPECTED="v$VERSION"
+            if [[ "${GITHUB_REF_NAME}" != "$EXPECTED" ]]; then
+              echo "Tag '${GITHUB_REF_NAME}' does not match pom.xml version '$VERSION' (expected '$EXPECTED')." >&2
+              exit 1
+            fi
+          fi
+
   central:
     name: Maven Central
+    needs: verify
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -61,3 +92,77 @@ jobs:
         env:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
         run: mvn -B -Pcentral deploy
+
+  jitpack:
+    name: JitPack
+    needs: verify
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger and verify JitPack build
+        shell: bash
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          REPO="com.github.leocb/Yamaha-LS9-Network-Protocol-Library"
+          BASE="https://jitpack.io/${REPO}/${TAG}"
+          API="https://jitpack.io/api/builds/${REPO}/${TAG}"
+
+          # The build.log request is what queues a build on JitPack.
+          curl -fsSL "${BASE}/build.log" -o /tmp/jitpack.log || true
+
+          for attempt in $(seq 1 60); do
+            STATUS="$(curl -fsSL "$API" 2>/dev/null | jq -r '.status // "pending"' || echo pending)"
+            echo "JitPack status (attempt ${attempt}): ${STATUS}"
+            case "$STATUS" in
+              ok)
+                curl -fsSL "${BASE}/build.log" | tail -n 40 || true
+                exit 0
+                ;;
+              error|failed)
+                curl -fsSL "${BASE}/build.log" | tail -n 120 || true
+                exit 1
+                ;;
+            esac
+            sleep 10
+          done
+
+          echo "JitPack build did not finish within 10 minutes" >&2
+          curl -fsSL "${BASE}/build.log" | tail -n 120 || true
+          exit 1
+
+  release:
+    name: GitHub Release
+    needs: [central, jitpack]
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      - name: Build release artifacts
+        run: mvn -B -DskipTests package
+
+      - name: Create or update GitHub release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" target/*.jar target/*.pom --clobber
+          else
+            gh release create "$TAG" target/*.jar target/*.pom \
+              --title "LS9 protocol $TAG" \
+              --notes "LS9 protocol library $TAG. Published to Maven Central and JitPack."
+          fi

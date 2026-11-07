@@ -379,15 +379,25 @@ See [`PROTOCOL.md`](PROTOCOL.md) for:
 
 ## Releasing
 
+Use the release script:
+
 ```bash
-mvn test
-git tag v0.1.0
-git push origin v0.1.0
+./scripts/release.sh 0.1.1
 ```
 
-Pushing the tag triggers GitHub Actions for Maven Central and makes the same
-tag available to JitPack. Manual Central deployment is also possible with a
-configured `~/.m2/settings.xml` (`central` server id) and GPG key:
+It verifies a clean tree and unique tag, updates `pom.xml`, builds, commits,
+creates `v0.1.1`, and pushes both the branch and tag.
+
+A tag push triggers:
+
+* **CI** — `./test.sh` and `mvn package`
+* **Maven Central** — signed deployment with sources/javadoc
+* **JitPack** — build triggered and verified by the workflow
+* **GitHub Release** — JAR/sources/javadoc attached to the tag
+
+Tag and `pom.xml` versions must match; the publish workflow rejects a mismatch.
+Manual Central deployment is also possible with a configured
+`~/.m2/settings.xml` (`central` server id) and GPG key:
 
 ```bash
 mvn -Pcentral deploy
