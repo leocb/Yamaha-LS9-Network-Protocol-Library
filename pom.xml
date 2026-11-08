@@ -6,7 +6,7 @@
 
     <groupId>io.github.leocb</groupId>
     <artifactId>ls9-java</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <packaging>jar</packaging>
 
     <name>ls9-java</name>
@@ -39,7 +39,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>17</maven.compiler.release>
-        <project.build.outputTimestamp>2026-11-07T00:00:00Z</project.build.outputTimestamp>
+        <project.build.outputTimestamp>2026-11-08T06:37:57Z</project.build.outputTimestamp>
     </properties>
 
     <build>
