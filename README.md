@@ -59,7 +59,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.leocb:Yamaha-LS9-Network-Protocol-Library:v0.1.0")
+    implementation("com.github.leocb:Yamaha-LS9-Network-Protocol-Library:v0.2.0")
 }
 ```
 
@@ -76,7 +76,7 @@ Maven:
 <dependency>
   <groupId>com.github.leocb</groupId>
   <artifactId>Yamaha-LS9-Network-Protocol-Library</artifactId>
-  <version>v0.1.0</version>
+  <version>v0.2.0</version>
 </dependency>
 ```
 
@@ -88,11 +88,11 @@ Central release coordinates:
 <dependency>
   <groupId>io.github.leocb</groupId>
   <artifactId>ls9-java</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
 </dependency>
 ```
 
-Version `0.1.0` is published to Maven Central. Future releases are automated by
+Version `0.2.0` is published to Maven Central. Future releases are automated by
 [`.github/workflows/publish.yml`](.github/workflows/publish.yml) when a `v*`
 tag is pushed. The workflow needs these repository secrets:
 
@@ -101,7 +101,7 @@ tag is pushed. The workflow needs these repository secrets:
 * `MAVEN_GPG_PRIVATE_KEY`
 * `MAVEN_GPG_PASSPHRASE`
 
-Both Maven Central and JitPack are available for `0.1.0`.
+Both Maven Central and JitPack are available for `0.2.0`.
 
 ## Console setup
 
