@@ -15,7 +15,7 @@ wire formats, model IDs, addresses or checksums without cited evidence.
 ## Build and test
 
 ```bash
-./test.sh                 # 466 checks; fake LS9 over TCP
+./test.sh                 # 603 checks; fake LS9 over TCP
 mvn -B package            # JAR + sources + javadoc
 ```
 
@@ -47,6 +47,11 @@ The library is consumed by Android and by the app's `ls9-core.jar`:
 - Generated parameter/fader/value/meter CSVs and `Ls9Parameters.java` are
   produced by `tools/generate_resources.py` and
   `tools/generate_java_parameters.py`; regenerate rather than hand-edit.
+- `src/main/resources/io/github/leocb/ls9/ls9-bulk-layouts.csv` is generated
+  by `tools/generate_bulk_layouts.py` from LS9 Editor's private descriptor
+  tables (`_gElementDesc`, `_gParamDesc`, `_gLibraryDesc`,
+  `_gCollectionDesc`). The editor binary is not shipped; the committed CSV is
+  the source used at runtime. Do not hand-edit it.
 - Add self-test coverage for protocol changes. `./test.sh` must stay green.
 
 ## Releases and publishing

@@ -14,6 +14,7 @@ that still needs confirmation on real hardware.
 | `Yamaha Network-MIDI Driver V2.0.0.pkg` | extracted from the DMG | `xar` + `gunzip` + `cpio` |
 | `YamahaNetworkMIDI.plugin` | `2e24642baff50b9d459dbd7c9527c3fa788a8ee1b950d03542ed2c48c4c73744` (universal, arm64 slice at 0x2C000) | REA `inspect_macho`, `llvm-objdump`, `otool -Iv` |
 | `ParamChangeList_LS9.xls` | official Yamaha download (`ls9_midiptcl101.zip`) | parsed with `xlrd`, converted to resources |
+| `com.yamaha.stagemix-ls9-32_6.0.7_und3fined.ipa` | StageMix 6.0.7 (arm64) | decrypted payload analysed with REA/Ghidra; bulk handlers, module table, scene/mixer/out-port templates |
 | `YamahaCA_AMX_ExampleV1.0_Programming.zip` | Yamaha AMX example programs | `Yamaha LS9 Comms.axs` text source used to confirm parameter, scene and meter framing |
 | `YamahaCA_Crestron_ExampleV1.0_Programming.zip` | Yamaha Crestron example programs | inspected for additional bulk/scene examples (none found) |
 
@@ -332,15 +333,26 @@ Request format, confirmed by a real LS9 example (scene 45):
 F0 43 20 3E 12 "SCENE___" 00 2D F7
 ```
 
-Data format:
+Data packet:
 
 ```
-F0 43 0n 3E  cc cc  12  "SCENE___"  dd dd  <encoded data>  ee  F7
+F0 43 0n 3E  cc cc  12  "SCENE___"  dd dd  ll ii  <encoded data>  ee  F7
 ```
 
 * `cc cc` = byte count, placed **before** the model ID.
-* The count covers the model byte, module name, number and encoded data.
+* The count covers the model byte, module name, number, packet bytes and
+  encoded data (`13 + encoded length`).
+* `ll` = zero-based index of the last packet in the block.
+* `ii` = zero-based index of this packet. A single-packet block uses `00 00`.
 * `ee` = `(-sum(bytes from the model byte through the last data byte)) & 0x7F`.
+
+The packet bytes are at offsets 17 and 18 and encoded data starts at offset 19.
+StageMix's `BulkDatStore::Configure` table (0x10048dc08) sets exactly these
+offsets for LS9 desk types 2..4, along with count offset 4, block-number offset
+15 and checksum start 6. `HandleBulkDumpPacket` (0x1003c8590) rejects packets
+that are not sequential, appends each chunk to `m_TempBulkData`, and only pads
+and 7-bit-decodes after `ii == ll`. `BulkDumpAssembler` implements the same
+reassembly (and tolerates out-of-order packets).
 * Encoded data converts seven 8-bit words to eight 7-bit words:
 
 ```
@@ -353,8 +365,160 @@ for i in 0..6:
 The inverse shifts `b[0]` left each iteration and tests bit 7. A final partial
 group of k raw bytes is encoded as 1+k bytes.
 
+The StageMix binary pads the encoded buffer to a multiple of eight bytes before
+decoding and asserts that the result is a multiple of seven bytes
+(`BulkDatStore.cpp` lines 217 and 250). Real console blocks therefore use
+complete eight-byte groups; `BulkDumpCodec` also accepts a final partial group
+so short synthetic blocks round-trip losslessly.
+
 `BulkDumpCodec` implements this and round-trips all lengths 0..100 in the test
 suite. Scene number 512 is current data; 768 is current data with recall safe.
+
+#### Bulk module table
+
+StageMix `GetBulkDataTypeFromSysex` (0x1003c80ac) indexes a table of ten module
+names by desk type. The LS9 rows (desk types 2..4, table at 0x100649668) are:
+
+```
+SCENE___   MIXERSET   INCHNNL_   OUTCHNNL   OUTCHNNL
+OUTCHNNL   GEQ_____   GEQ_____   EFFECT__   OUT_PORT
+```
+
+`OUTCHNNL` is repeated because the three output-channel library classes share
+the same payload layout. LS9 Editor also uses `INEQ____`, `OUTEQ___` and
+`DYNA____` for its own library windows; those names are kept in
+`BulkDumpCodec` but are not part of the StageMix bulk type table.
+`BulkDumpParser.typeOf` exposes the table classification.
+
+#### LS9 scene image header
+
+`SceneBulkHandlerBase::DecodeCurSceneData<TLS9_CurSceneBulkDump*>`
+(0x1003a3b24) reads the decoded image directly. The scene header occupies:
+
+| Offset | Size | Meaning | Parameter address |
+|---|---|---|---|
+| `0x00` | 16 | scene title, four four-character words | element `0x0193`, indices 0..3 |
+| `0x12` | 1 | undocumented scene byte | element `0x0195`, index 0 |
+| `0x38` | 32 | comment, eight four-character words | element `0x0001`, indices 0..7 |
+| `0x58` | 6 | year, month, day, hour, minute, second | element `0x0002`, channels 0..5 |
+
+The title is the 16-character scene name; the comment is the longer text shown
+in LS9 Editor. Both are four-character words, matching the `kComment1..8`
+parameter layout. LS9 Editor's embedded `_SceneDefault` image has the same
+layout: `"Initial Data    "` at 0x00, `"Initial Setting Data"` at 0x38 and a
+six-byte timestamp (`06 08 00 00 00 00`, i.e. 2006-09-01) at 0x58.
+
+Month and day are zero-based, matching `ParamChangeList_LS9.xls`
+(`ch0-5: 2000-2255, 0-11, 0-30, 0-23, 0-59, 0-59`). `BulkScene` exposes
+these fields and `Ls9SceneInfo.fromBulk` converts them to the existing scene
+metadata record.
+
+#### Bulk image layouts
+
+Every scene, library and current-data block carries the raw memory image of
+one entry. The layout is not published, but LS9 Editor reconstructs it from
+four private descriptor tables in its x86-64 binary:
+
+| Symbol | Address | Contents |
+|---|---|---|
+| `_gElementDesc` | `0x1003ed380` | element descriptors; payload entries are `(group << 16) | parameter index` |
+| `_gParamDesc` | `0x1003f7c90` | 20-byte parameter records: min, max, default, kind at `+0x0C`, flags at `+0x11` |
+| `_gLibraryDesc` | `0x1003f4a70` | 11 library records, each with 1..5 variants |
+| `_gCollectionDesc` | `0x1003df820` | 39 current-data area records |
+| version table | `0x100797080` | collection index → version → layout pointer |
+
+The walk is `CCollectionBase::calcDataSize` (0x1000ad2d0) and
+`CCollectionBase::getIndParamOffset` (0x1000b0aa0). A collection entry is
+12 bytes:
+
+| Offset | Field |
+|---|---|
+| `+0` | number of channels / repetitions |
+| `+2` | element descriptor index |
+| `+4` | last index |
+| `+6` | first index |
+| `+8` | flags |
+
+For each index in `first..last`, the parameter kind comes from
+`_gParamDesc[element.payload[index] & 0xFFFF]`: kind `0` is bit-packed (LSB
+first), `1`/`0x81` are u8/s8, `2`/`0x82` are big-endian u16/s16, and
+`4`/`0x84` are big-endian u32/s32. Each kind advances the offset by its width
+times the repetition count, with 2/4-byte alignment.
+
+`tools/generate_bulk_layouts.py` runs that walk against the LS9 Editor binary
+and writes `src/main/resources/io/github/leocb/ls9/ls9-bulk-layouts.csv`.
+`Ls9BulkLayout` loads the resource and `Ls9BulkEntry` performs the decode.
+
+Element numbers are converted from LS9 Editor's dense element indexes to the
+published wire numbers with:
+
+```
+wire = ((dense >> 7) << 8) | (dense & 0x7F)
+```
+
+This is the inverse of the editor's element encoding and matches Yamaha's
+parameter list: dense 128 = `kEffect` = `0x0100`, dense 163 = `kAD824` =
+`0x0123`, dense 256 = `kSetupPGMChangeTable` = `0x0200`. The resource therefore
+keys values by the same `ParameterAddress` element numbers as
+`ParamChangeList_LS9.xls`.
+
+Library numbers follow `_gLibraryDesc` and `CLibraryBase`:
+
+| Number | Area | Modules | Variants |
+|---|---|---|---|
+| 0 | scene | `SCENE___` | 1 |
+| 1 | input patch | editor file only | 1 |
+| 2 | output patch | editor file only | 1 |
+| 3 | input channel | `INCHNNL_` | 1 |
+| 4 | output channel | `OUTCHNNL` | 3 (mix / matrix / stereo) |
+| 5 | input EQ | `INEQ____` | 1 |
+| 6 | output EQ | `OUTEQ___` | 3 (mix / matrix / stereo) |
+| 7 | dynamics | `DYNA____` | 5 |
+| 8 | GEQ/PEQ | `GEQ_____` | 2 |
+| 9 | effect | `EFFECT__` | 1 |
+| 10 | head amp | editor file only | 1 |
+
+The output-channel and dynamics modules are one module name with several
+layouts; the variant byte selects the layout. Collection numbers 0..38 map to
+the current-data areas: 0 Setup, 1 UserDefine, 2 MIDI Remote, 3 Fader Mode,
+4 Program Change, 5 Control Change, 6 TC Event, 7 Input EQ, 8 Mix EQ, ...,
+16 GEQ, ..., 22 Mixer Setting (408 bytes), 23 Out Port (428 bytes),
+24 Monitor, 25 MIDI Setting, 28 Library Number, ..., matching
+`findLibInfo`/`findLibInfoForCurrentData` (0x100088cc0/0x100088d80).
+
+A library entry has this header (there is no comment or timestamp; those live
+in the editor's separate library metadata):
+
+| Offset | Size | Meaning | Read by |
+|---|---|---|---|
+| `0x00` | 16 | title, four four-character words | `getTitleCore` |
+| `0x10` | 2 | version, big-endian | `getVersionFromBuffer` (0x1000b1330) |
+| `0x12` | 1 | flag | collection entry for element 333 |
+| `0x13` | 1 | variant, 0..4 | `getVariantFromBuffer` (0x1000b1320) |
+| `0x14` | 4 | reserved value | collection entry for element 334 |
+| `0x18` | 4 | reserved value | collection entry for element 334 |
+| `0x1C` | ... | layout fields | `calcDataSize` walk |
+| end-4 | 4 | checksum, little-endian | `getCheckSum` (0x1000cfd40) |
+
+The checksum is `mem_CalcCheckSumLong` (0x1000d73a0): sum every 32-bit word
+except the last, byte-swapping each one, then complement and byte-swap.
+`Ls9BulkEntry.checksumValid()` implements this and is exercised by the
+self-test for scene, library and setup images.
+
+The scene layout generated from the descriptors reproduces the offsets used by
+StageMix's `DecodeCurSceneData<TLS9_CurSceneBulkDump*>`: link bytes at 0x146,
+link values at 0x16c, link switches at 0x204, mute master at 0x268, mix bus
+types at 0x269, input switches at 0x334, input phase at 0x33d, GEQ bands at
+0x3535 and effect parameters at 0x3918. This cross-check is why the descriptor
+model, not StageMix's internal element numbering, is authoritative for
+`ParameterAddress` values. For example StageMix writes the scene effect to its
+internal element `0x88`, while the published address is `0x100`; StageMix's
+three output-port attenuator ranges (`0x134`, `0x135`, `0x137`) are really
+channels 0..65 of the single published element `0x208`.
+
+`BulkModel` still selects LS9-16 or LS9-32 channel counts for callers that use
+the model; the descriptor walk itself is model-independent because the layout
+is the console image layout.
 
 ### 2.2 Level meters
 
@@ -480,10 +644,11 @@ packing in `Ls9Sysex.packName4`.
    the device's 12300. The library implements the client direction only.
    Server mode is intentionally excluded.
 5. **Bulk-block packing.** The complete block is transferred, checksummed,
-   7-bit decoded and stored losslessly, but the internal packing of the memory
-   image into individual parameters is not published. Live editing and
+   7-bit decoded and stored losslessly. The scene header (title, comment,
+   timestamp, scene attributes) is decoded by `BulkScene`; the rest of the
+   memory image into individual parameters is not published. Live editing and
    recall-edit-store cover the console-side workflows; offline field-level
-   editing of a stored block is the only remaining functional gap.
+   editing of the remaining mixer image is the only functional gap.
 6. **`.yse` files.** Yamaha's proprietary project file format is not
    implemented; `Ls9SnapshotIO` provides a portable lossless snapshot instead.
 
@@ -493,11 +658,27 @@ packing in `Ls9Sysex.packName4`.
   sequences above.
 * Bulk-dump encode/parse is round-tripped for every data length 0..100, and a
   real LS9 scene-45 request vector is checked byte-for-byte.
+* Multi-packet bulk blocks are split and reassembled, including out-of-order
+  packet acceptance, matching StageMix's `HandleBulkDumpPacket` behavior.
+* The descriptor walk is validated against the StageMix scene decoder at the
+  offsets listed above, and against LS9 Editor's `_SceneDefault` image. The
+  generated resource covers 11 library areas (20 variants) and 39 current-data
+  areas; every library variant size and every module-to-area mapping is
+  checked by the self-test.
+* Library, scene and setup payloads are decoded by `Ls9BulkEntry`; synthetic
+  images verify bit order, byte/word endianness, published element encoding,
+  variant selection, title/version/flag fields and the trailing checksum.
+* The StageMix bulk type table and scene-header offsets are checked against the
+  decompiled `GetBulkDataTypeFromSysex` and
+  `DecodeCurSceneData<TLS9_CurSceneBulkDump*>` routines. The same header offsets
+  are verified against the first 0x5E bytes of LS9 Editor's `_SceneDefault`
+  image (title `"Initial Data"`, comment `"Initial Setting Data"`, timestamp
+  `2006-09-01 00:00:00`).
 * Meter request/response and the generated parameter/value-table registries are
   checked.
 * A fake LS9 TCP server performs both the unauthenticated and authenticated
   handshakes, receives a fader change, answers a parameter request, serves a
-  bulk dump and verifies the exchange (`test.sh`, 466 checks).
+  bulk dump and verifies the exchange (`test.sh`, 603 checks).
 * The CRC is implemented from the driver's instruction sequence and checked
   against the same routine in the test server; this is self-consistent rather
   than independently validated on hardware.

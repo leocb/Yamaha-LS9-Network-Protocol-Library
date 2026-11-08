@@ -37,9 +37,64 @@ public final class BulkDumpTransfer {
         return console.requestBulkDump(BulkDumpCodec.SCENE, sceneNumber);
     }
 
+    /** Requests one scene memory (0..300) and decodes its scene header. */
+    public BulkScene sceneView(int sceneNumber) throws IOException {
+        return BulkScene.from(scene(sceneNumber));
+    }
+
+    /** Requests one scene memory (0..300) and reads title/date from the block. */
+    public io.github.leocb.ls9.Ls9SceneInfo sceneInfo(int sceneNumber) throws IOException {
+        return io.github.leocb.ls9.Ls9SceneInfo.fromBulk(scene(sceneNumber));
+    }
+
+    /** Requests one scene memory and decodes every parameter the block carries. */
+    public Ls9BulkData sceneData(int sceneNumber) throws IOException {
+        return Ls9BulkDecoder.decode(scene(sceneNumber));
+    }
+
+    /** Requests one scene memory and decodes it for an explicit model. */
+    public Ls9BulkData sceneData(int sceneNumber, BulkModel model) throws IOException {
+        return Ls9BulkDecoder.decode(scene(sceneNumber), model);
+    }
+
+    /** The complete current mixer state with every decodable parameter. */
+    public Ls9BulkData currentDataDecoded() throws IOException {
+        return Ls9BulkDecoder.decode(currentData());
+    }
+
+    /** The complete current mixer state decoded for an explicit model. */
+    public Ls9BulkData currentDataDecoded(BulkModel model) throws IOException {
+        return Ls9BulkDecoder.decode(currentData(), model);
+    }
+
+    /** The complete current mixer state with the current scene header decoded. */
+    public BulkScene currentSceneView() throws IOException {
+        return BulkScene.from(currentData());
+    }
+
     /** Requests one library entry. */
     public BulkDump library(String module, int number) throws IOException {
         return console.requestBulkDump(module, number);
+    }
+
+    /** Requests one block and decodes every field with a known layout. */
+    public Ls9BulkData data(String module, int number) throws IOException {
+        return Ls9BulkDecoder.decode(library(module, number));
+    }
+
+    /** Requests one block and decodes it for an explicit model. */
+    public Ls9BulkData data(String module, int number, BulkModel model) throws IOException {
+        return Ls9BulkDecoder.decode(library(module, number), model);
+    }
+
+    /** Requests one block and returns its descriptor view (header + values). */
+    public Ls9BulkEntry entry(String module, int number) throws IOException {
+        return Ls9BulkEntry.from(library(module, number));
+    }
+
+    /** Requests one library entry and decodes it. */
+    public Ls9BulkData libraryData(String module, int number) throws IOException {
+        return data(module, number);
     }
 
     /** Requests a setup block such as {@code MIXERSET} or {@code MIDI_SET}. */

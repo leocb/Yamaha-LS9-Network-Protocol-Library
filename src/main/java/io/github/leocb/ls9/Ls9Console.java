@@ -11,7 +11,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import io.github.leocb.ls9.bulk.BulkDump;
+import io.github.leocb.ls9.bulk.BulkDumpAssembler;
 import io.github.leocb.ls9.bulk.BulkDumpCodec;
+import io.github.leocb.ls9.bulk.BulkDumpPacket;
 import io.github.leocb.ls9.internal.Text;
 import io.github.leocb.ls9.meter.MeterCodec;
 import io.github.leocb.ls9.meter.MeterFrame;
@@ -53,6 +55,7 @@ public final class Ls9Console implements AutoCloseable {
     private final ConcurrentHashMap<ParameterAddress, CompletableFuture<Long>> pending = new ConcurrentHashMap<>();
     private final ConcurrentHashMap<String, CompletableFuture<BulkDump>> pendingBulk = new ConcurrentHashMap<>();
     private final ConcurrentHashMap<String, CompletableFuture<Ls9SysexMessage>> pendingFunction = new ConcurrentHashMap<>();
+    private final BulkDumpAssembler bulkAssembler = new BulkDumpAssembler();
     private final ConcurrentHashMap<ParameterAddress, Long> lastValues = new ConcurrentHashMap<>();
     private final CopyOnWriteArrayList<Ls9Listener> listeners = new CopyOnWriteArrayList<>();
     private final AtomicBoolean disconnectNotified = new AtomicBoolean();
@@ -250,6 +253,7 @@ public final class Ls9Console implements AutoCloseable {
         ensureOpen();
         String key = bulkKey(module, number);
         CompletableFuture<BulkDump> future = new CompletableFuture<>();
+        bulkAssembler.reset(module, number);
         pendingBulk.put(key, future);
         try {
             transport.sendSysex(BulkDumpCodec.request(deviceNumber, module, number));
@@ -271,13 +275,21 @@ public final class Ls9Console implements AutoCloseable {
     /** Sends a bulk-dump block built from logical 8-bit data. */
     public void sendBulkDump(String module, int number, byte[] data) throws IOException {
         ensureOpen();
-        transport.sendSysex(BulkDumpCodec.encode(deviceNumber, module, number, data));
+        for (byte[] packet : BulkDumpCodec.encodePackets(deviceNumber, module, number, data)) {
+            transport.sendSysex(packet);
+        }
     }
 
     /** Sends a previously received block back to the console. */
     public void sendBulkDump(BulkDump dump) throws IOException {
         ensureOpen();
-        transport.sendSysex(BulkDumpCodec.encode(deviceNumber, dump.module(), dump.number(), dump.data()));
+        byte[] encoded = dump.encodedData();
+        java.util.List<byte[]> packets = encoded.length == 0
+                ? BulkDumpCodec.encodePackets(deviceNumber, dump.module(), dump.number(), dump.data())
+                : BulkDumpCodec.encodeEncodedPackets(deviceNumber, dump.module(), dump.number(), encoded);
+        for (byte[] packet : packets) {
+            transport.sendSysex(packet);
+        }
     }
 
     private static String bulkKey(String module, int number) {
@@ -559,22 +571,26 @@ public final class Ls9Console implements AutoCloseable {
             return;
         }
 
-        BulkDump dump;
+        BulkDumpPacket packet;
         try {
-            dump = BulkDumpCodec.parse(message);
+            packet = BulkDumpCodec.parsePacket(message);
         } catch (RuntimeException e) {
-            dump = null;
+            packet = null;
         }
-        if (dump != null) {
-            CompletableFuture<BulkDump> future = pendingBulk.get(bulkKey(dump.module(), dump.number()));
-            if (future != null) {
-                future.complete(dump);
-            }
-            for (Ls9Listener l : listeners) {
-                try {
-                    l.onBulkDump(dump);
-                } catch (RuntimeException ignored) {
-                    // keep the reader thread alive
+        if (packet != null) {
+            BulkDump dump = bulkAssembler.add(packet);
+            if (dump != null) {
+                CompletableFuture<BulkDump> future =
+                        pendingBulk.get(bulkKey(dump.module(), dump.number()));
+                if (future != null) {
+                    future.complete(dump);
+                }
+                for (Ls9Listener l : listeners) {
+                    try {
+                        l.onBulkDump(dump);
+                    } catch (RuntimeException ignored) {
+                        // keep the reader thread alive
+                    }
                 }
             }
             return;

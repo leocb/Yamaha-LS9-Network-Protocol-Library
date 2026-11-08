@@ -10,12 +10,14 @@ import java.util.Arrays;
  * <pre>
  *   F0 43 2n 3E 12 "SCENE___" 00 2D F7
  * </pre>
- * Response:
+ * Data packet:
  * <pre>
- *   F0 43 0n 3E cc cc 12 "SCENE___" dd dd &lt;encoded data&gt; ee F7
+ *   F0 43 0n 3E cc cc 12 "SCENE___" dd dd  ll ii &lt;encoded data&gt; ee F7
  * </pre>
- * The two count bytes come before the model ID. The checksum is calculated
- * over the model byte through the last data byte.
+ * The two count bytes come before the model ID. {@code ll} is the zero-based
+ * last-packet index and {@code ii} is the zero-based packet index; both are 0
+ * for a single-packet block. The checksum is calculated over the model byte
+ * through the last data byte.
  */
 public final class BulkDumpCodec {
 
@@ -26,6 +28,17 @@ public final class BulkDumpCodec {
     public static final int SUB_DATA = 0x00;
     public static final int SUB_REQUEST = 0x20;
 
+    /** Offset of the encoded payload in an LS9 data packet. */
+    public static final int DATA_OFFSET = 19;
+    /** Offset of the zero-based last-packet index. */
+    public static final int LAST_PACKET_OFFSET = 17;
+    /** Offset of the zero-based packet index. */
+    public static final int PACKET_INDEX_OFFSET = 18;
+    /** Bytes covered by the byte count before encoded data: model..packet index. */
+    public static final int HEADER_DATA_BYTES = 13;
+    /** Largest encoded chunk that fits in the 14-bit count. */
+    public static final int MAX_ENCODED_CHUNK = ((0x3FFF - HEADER_DATA_BYTES) / 8) * 8;
+
     // Library modules
     public static final String SCENE = "SCENE___";
     public static final String INPUT_EQ = "INEQ____";
@@ -33,6 +46,10 @@ public final class BulkDumpCodec {
     public static final String DYNAMICS = "DYNA____";
     public static final String GEQ = "GEQ_____";
     public static final String EFFECT = "EFFECT__";
+
+    // Channel-library modules used by the LS9 bulk type table
+    public static final String INPUT_CHANNEL = "INCHNNL_";
+    public static final String OUTPUT_CHANNEL = "OUTCHNNL";
 
     // Setup / table modules
     public static final String MIXER_SETUP = "MIXERSET";
@@ -79,11 +96,25 @@ public final class BulkDumpCodec {
         return b;
     }
 
-    /** Builds a BULK DUMP DATA message from logical 8-bit bytes. */
+    /** Builds a single-packet BULK DUMP DATA message from logical 8-bit bytes. */
     public static byte[] encode(int device, String module, int number, byte[] data) {
+        return encodePacket(device, module, number, 0, 0, convert8to7(data));
+    }
+
+    /** Builds one BULK DUMP DATA packet from already 7-bit encoded bytes. */
+    public static byte[] encodePacket(int device, String module, int number,
+                                      int lastPacket, int packetIndex, byte[] encodedData) {
+        if (lastPacket < 0 || lastPacket > 0x7F
+                || packetIndex < 0 || packetIndex > lastPacket) {
+            throw new IllegalArgumentException("invalid packet " + packetIndex
+                    + " of last " + lastPacket);
+        }
         byte[] mod = fixedAscii(module, 8);
-        byte[] encoded = convert8to7(data);
-        int byteCount = 1 + 8 + 2 + encoded.length;
+        byte[] encoded = encodedData == null ? new byte[0] : encodedData;
+        int byteCount = HEADER_DATA_BYTES + encoded.length;
+        if (byteCount > 0x3FFF) {
+            throw new IllegalArgumentException("bulk packet too large: " + byteCount);
+        }
         byte[] b = new byte[6 + byteCount + 2];
         int i = 0;
         b[i++] = (byte) 0xF0;
@@ -97,6 +128,8 @@ public final class BulkDumpCodec {
         i += 8;
         b[i++] = (byte) ((number >>> 7) & 0x7F);
         b[i++] = (byte) (number & 0x7F);
+        b[i++] = (byte) (lastPacket & 0x7F);
+        b[i++] = (byte) (packetIndex & 0x7F);
         System.arraycopy(encoded, 0, b, i, encoded.length);
         i += encoded.length;
         int sum = 0;
@@ -108,9 +141,58 @@ public final class BulkDumpCodec {
         return b;
     }
 
-    /** Parses a bulk-dump SysEx message; returns {@code null} if it is not one. */
-    public static BulkDump parse(byte[] sysex) {
-        if (sysex == null || sysex.length < 8 + 11
+    /**
+     * Splits a logical image into padded 7-bit chunks and returns the complete
+     * packet list. Chunks are multiples of eight encoded bytes except possibly
+     * the final one.
+     */
+    public static java.util.List<byte[]> encodePackets(int device, String module,
+                                                       int number, byte[] data) {
+        byte[] logical = data == null ? new byte[0] : data;
+        int paddedLength = ((logical.length + 6) / 7) * 7;
+        if (paddedLength != logical.length) {
+            logical = Arrays.copyOf(logical, paddedLength);
+        }
+        return encodeEncodedPackets(device, module, number, convert8to7(logical));
+    }
+
+    /** Packetizes an existing encoded stream without re-encoding it. */
+    public static java.util.List<byte[]> encodeEncodedPackets(int device, String module,
+                                                              int number, byte[] encoded) {
+        byte[] stream = encoded == null ? new byte[0] : encoded;
+        int count = stream.length == 0 ? 1
+                : (stream.length + MAX_ENCODED_CHUNK - 1) / MAX_ENCODED_CHUNK;
+        java.util.List<byte[]> out = new java.util.ArrayList<>(count);
+        for (int packet = 0; packet < count; packet++) {
+            int from = packet * MAX_ENCODED_CHUNK;
+            int to = Math.min(stream.length, from + MAX_ENCODED_CHUNK);
+            byte[] chunk = Arrays.copyOfRange(stream, from, to);
+            out.add(encodePacket(device, module, number, count - 1, packet, chunk));
+        }
+        return out;
+    }
+
+    /**
+     * Builds a BULK DUMP DATA message using the console's padded grouping:
+     * the logical image is zero-padded to a multiple of seven bytes, so the
+     * encoded data is a multiple of eight bytes. StageMix asserts both
+     * properties in {@code BulkDatStore.cpp}.
+     */
+    public static byte[] encodePadded(int device, String module, int number, byte[] data) {
+        byte[] logical = data == null ? new byte[0] : data;
+        int paddedLength = ((logical.length + 6) / 7) * 7;
+        if (paddedLength != logical.length) {
+            logical = Arrays.copyOf(logical, paddedLength);
+        }
+        return encode(device, module, number, logical);
+    }
+
+    /**
+     * Parses one LS9 bulk data packet. Multi-packet blocks need
+     * {@link BulkDumpAssembler} because one message carries only one chunk.
+     */
+    public static BulkDumpPacket parsePacket(byte[] sysex) {
+        if (sysex == null || sysex.length < DATA_OFFSET + 2
                 || (sysex[0] & 0xFF) != 0xF0
                 || (sysex[1] & 0xFF) != YAMAHA_ID
                 || (sysex[3] & 0xFF) != GROUP_ID
@@ -127,19 +209,43 @@ public final class BulkDumpCodec {
         }
         String module = ascii(sysex, 7, 8);
         int number = ((sysex[15] & 0x7F) << 7) | (sysex[16] & 0x7F);
-        int encodedLength = byteCount - 11;
+        int lastPacket = sysex[LAST_PACKET_OFFSET] & 0x7F;
+        int packetIndex = sysex[PACKET_INDEX_OFFSET] & 0x7F;
+        if (packetIndex > lastPacket) {
+            return null;
+        }
+        int encodedLength = byteCount - HEADER_DATA_BYTES;
         if (encodedLength < 0) {
             return null;
         }
-        int checksumIndex = 17 + encodedLength;
+        int checksumIndex = DATA_OFFSET + encodedLength;
         int expected = (-sum(sysex, 6, checksumIndex - 6)) & 0x7F;
         int checksum = sysex[checksumIndex] & 0x7F;
         if (checksum != expected) {
             return null;
         }
-        byte[] encoded = Arrays.copyOfRange(sysex, 17, checksumIndex);
+        byte[] encoded = Arrays.copyOfRange(sysex, DATA_OFFSET, checksumIndex);
+        return new BulkDumpPacket(module, number, lastPacket, packetIndex,
+                encoded, checksum, sysex);
+    }
+
+    /**
+     * Parses a complete single-packet bulk-dump SysEx message. For a
+     * multi-packet block this returns {@code null}; use {@link #parsePacket}
+     * with {@link BulkDumpAssembler}.
+     */
+    public static BulkDump parse(byte[] sysex) {
+        BulkDumpPacket packet = parsePacket(sysex);
+        if (packet == null || !packet.isLast()) {
+            return null;
+        }
+        if (packet.packetIndex() != 0) {
+            return null;
+        }
+        byte[] encoded = packet.encodedData();
         byte[] data = convert7to8(encoded);
-        return new BulkDump(module, number, encoded, data, checksum, sysex);
+        return new BulkDump(packet.module(), packet.number(), encoded, data,
+                packet.checksum(), packet.raw());
     }
 
     /**

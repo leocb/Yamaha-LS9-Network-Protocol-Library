@@ -64,11 +64,8 @@ public final class Ls9SnapshotIO {
                 }
                 byte[] data = new byte[length];
                 in.readFully(data);
-                BulkDump dump = BulkDumpCodec.parse(
-                        BulkDumpCodec.encode(0, module, number, data));
-                if (dump == null) {
-                    throw new IOException("invalid block in snapshot");
-                }
+                BulkDump dump = new BulkDump(module, number,
+                        BulkDumpCodec.convert8to7(data), data, 0, new byte[0]);
                 classify(snapshot, dump);
             }
             return snapshot;

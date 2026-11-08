@@ -37,7 +37,7 @@ Requires JDK 17 or newer. No third-party runtime dependencies.
 
 ```bash
 ./build.sh
-./test.sh          # 466 protocol/parameter/meter checks, including a fake LS9 over TCP
+./test.sh          # 603 protocol/parameter/meter checks, including a fake LS9 over TCP
 
 # compile and run the example
 javac --release 17 -cp out -d out \
@@ -166,6 +166,11 @@ traffic with the direct implementation.
 | `Ls9Parameter` | Any generated parameter: `get/set`, `getRaw/setRaw`, `display`, `setDisplay`, `min`, `max`, `defaultValue` |
 | `Ls9Library` | `store`, `recall`, `unknownStore`, `unknownRecall`, undo, copy/paste/clear/cut/insert/editUndo, attributes, titles, `exists`, `edit`, `collectionStore`, `moduleTrigger`, `channelPair` |
 | `BulkDumpTransfer` | `currentData`, `scene`, `library`, `setup`, `downloadScenes`, `downloadLibrary`, `downloadSetup`, upload methods |
+| `BulkDumpAssembler` | Reassembles multi-packet bulk dumps |
+| `BulkScene` | Scene title/comment/date and header parameters from a bulk block |
+| `Ls9BulkDecoder` | Full scene/current, setup-area and library parameter decode |
+| `Ls9BulkEntry` | Decoded header, values and checksum for any scene/library/setup image |
+| `Ls9BulkLayout` | Descriptor-derived layouts for 11 libraries and 39 setup areas |
 | `Ls9Sync` | `snapshot`, `fullSnapshot`, `upload`, `scenes`, `library`, `sceneInfo` |
 | `Ls9MidiControl` | `programChange`, `controlChange`, `nrpn`, MMC stop/play/record/pause, reset, active sensing |
 | `Ls9SnapshotIO` | `save`/`load` of a portable snapshot file |
@@ -276,6 +281,13 @@ BulkDump current = ls9.bulk().currentData();
 BulkDump scene7  = ls9.bulk().scene(7);
 BulkDump eqLib   = ls9.bulk().library(BulkDumpCodec.INPUT_EQ, 42);
 byte[] payload   = current.data();          // decoded 8-bit block
+
+BulkScene scene = ls9.bulk().sceneView(7);
+System.out.println(scene.title() + " " + scene.dateTime());
+Ls9SceneInfo info = Ls9SceneInfo.fromBulk(scene7);
+
+Ls9BulkData decoded = ls9.bulk().currentDataDecoded();
+long input1Fader = decoded.getOrDefault(0x0033, 0x0000, 0, -1);
 ```
 
 ## Library management
@@ -327,7 +339,9 @@ All console-side Studio Manager operations are covered:
 | Scene store/recall/undo, titles, dates, protect, edit | `Ls9SceneControl`, `Ls9Library`, `Ls9Sync` |
 | Library store/recall/undo, copy/paste/clear/cut/insert, titles, exist ranges | `Ls9Library` |
 | Full synchronization / backup | `BulkDumpTransfer`, `Ls9Sync`, `Ls9SnapshotIO` |
-| Bulk dump / request for every module | `BulkDumpCodec` |
+| Bulk dump / request for every module | `BulkDumpCodec`, `BulkDumpParser` |
+| Scene title/comment/date from a bulk block | `BulkScene`, `Ls9SceneInfo.fromBulk` |
+| Full scene/current, setup-area and library parameters from a bulk block | `Ls9BulkDecoder`, `Ls9BulkData`, `Ls9BulkEntry` |
 | Level meters | `subscribeMeters`, `MeterFrame`, `MeterScale` |
 | Program Change, Control Change, NRPN, MMC, reset, active sensing | `Ls9MidiControl` |
 | Collection store, module/effect trigger, channel pair | `Ls9Library` |
@@ -335,13 +349,17 @@ All console-side Studio Manager operations are covered:
 
 Two deliberate boundaries:
 
-* **Bulk blocks are transferred losslessly but not semantically decoded.**
-  `BulkDump` gives you the complete raw block; `Ls9SnapshotIO` stores and
-  restores it. To edit a stored scene or library, use the console workflow
-  `scene().edit(n, ...)` / `library().edit(module, n, channel, ...)`
-  (recall → live edits → store). Decoding every field of the packed memory
-  image into individual parameters is not implemented; Yamaha has not
-  published that packing.
+* **Bulk blocks are transferred losslessly and decoded from the editor's descriptor model.**
+  `BulkDump` gives you the complete raw block, `BulkScene` reads the scene
+  header, and `Ls9BulkDecoder` expands scene/current data, every setup area
+  (`MIXERSET`, `OUT_PORT`, `MONITOR_`, MIDI, user levels/preferences) and every
+  library module (`INCHNNL_`, `OUTCHNNL`, `INEQ____`, `OUTEQ___`, `DYNA____`,
+  `GEQ_____`, `EFFECT__`) into published `ParameterAddress` values.
+  `Ls9BulkLayout` carries the descriptor-derived layouts and
+  `Ls9BulkEntry` exposes the title, version, variant, values and checksum.
+  `Ls9SnapshotIO` stores and restores the block. To edit a stored scene or
+  library, use the console workflow `scene().edit(n, ...)` /
+  `library().edit(module, n, channel, ...)` (recall → live edits → store).
 * **Yamaha’s proprietary `.yse` file format is not read or written.**
   `Ls9SnapshotIO` is a documented, portable replacement for backup/restore.
 
