@@ -160,9 +160,9 @@ jobs:
         run: |
           set -euo pipefail
           if gh release view "$TAG" >/dev/null 2>&1; then
-            gh release upload "$TAG" target/*.jar target/*.pom --clobber
+            gh release upload "$TAG" target/*.jar pom.xml --clobber
           else
-            gh release create "$TAG" target/*.jar target/*.pom \
+            gh release create "$TAG" target/*.jar pom.xml \
               --title "LS9 protocol $TAG" \
               --notes "LS9 protocol library $TAG. Published to Maven Central and JitPack."
           fi
