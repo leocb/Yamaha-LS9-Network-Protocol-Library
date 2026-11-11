@@ -687,27 +687,7 @@ The next step is a capture from a real LS9. A useful first capture is the
 16-byte `0x20` request and the console's `0x21` reply; that resolves the port
 index, the mode bitmap and whether the auth challenge is used.
 
-## 6. Android StageMix client notes
-
-The Android UI in `../ls9-stagemix-android` uses this library directly through
-a `@JavascriptInterface` bridge, so it exercises the same EtherMIDI and SysEx
-code paths described above. Two client-side behaviours are worth recording:
-
-* **Port retry.** `Ls9Bridge.connect()` first opens with `portIndex(0)`. If
-  that open fails, it retries once with `portIndex(1)`. This trades a little
-  connection latency for compatibility with firmware that labels the first
-  session "Port1" but expects the 1-based index in the handshake.
-* **No server mode.** The client only connects out to TCP 12300; it never
-  listens for a console-initiated session, matching the stated scope.
-
-Scene and library operations use the documented function calls. The app does
-not attempt to decode the packed bulk-dump image; scene/library editing follows
-recall → live parameter edits → store, and the current scene title is read with
-`currentTitle` / `LibAttrbt`. The current scene *number* is not exposed as a
-public parameter, so in real mode the UI shows `---` until a scene is recalled
-from the app.
-
-## 7. Official StageMix IPA analysis
+## 6. Official StageMix IPA analysis
 
 The decrypted iPad IPA (`com.yamaha.stagemix-ls9-32_6.0.7_und3fined.ipa`,
 arm64 Mach-O, SHA-256
@@ -728,9 +708,5 @@ was inspected statically. Relevant findings for this library:
 * The binary includes shared StageMix code for DCA, Surround, Recorder,
   Transport and Solo A/B used by other Yamaha consoles. The LS9 parameter
   list has no DCA fader, surround, recorder or transport parameters, and the
-  LS9 StageMix manual does not document those screens, so the Android client
-  does not expose them.
-
-The Android client ships no IPA code or bitmap assets. Effect icons, knobs and
-graphs are original SVG/CSS/canvas drawings derived from the published
-parameter behaviour.
+  LS9 StageMix manual does not document those screens, so they are out of
+  scope for this library.

@@ -3,10 +3,7 @@
 ## What this repository is
 
 A dependency-free Java 17 library for controlling **Yamaha LS9-16 / LS9-32**
-over Ethernet. The Android StageMix client lives in a separate repository:
-
-- Protocol: `https://github.com/leocb/Yamaha-LS9-Network-Protocol-Library`
-- Android app: `https://github.com/leocb/LS9-StageMix-Android`
+over Ethernet.
 
 Read `README.md` for usage and `PROTOCOL.md` for the reverse-engineering
 evidence. Treat `PROTOCOL.md` as the protocol source of truth; do not change
@@ -37,7 +34,7 @@ accurate fake console. Do not claim hardware validation.
 
 ## Java compatibility
 
-The library is consumed by Android and by the app's `ls9-core.jar`:
+The library must stay usable on Android:
 
 - Java 17 source/target.
 - No third-party runtime dependencies.
