@@ -96,11 +96,13 @@ public final class Ls9Console implements AutoCloseable {
         private int tcpPort = EtherMidiTransport.DEFAULT_TCP_PORT;
         private byte[] authData;
         private int portIndex = 0;
-        private int deviceId = 1;
-        private int modeBitmap = 0;
+        private int deviceId = 0;
+        private int modeBitmap = 3;
         private int deviceNumber = DEFAULT_DEVICE_NUMBER;
         private int timeoutMs = DEFAULT_TIMEOUT_MS;
         private int connectTimeoutMs = EtherMidiTransport.DEFAULT_CONNECT_TIMEOUT_MS;
+        private boolean reverseListen = true;
+        private int listenPort = EtherMidiTransport.DEFAULT_TCP_PORT;
         private MidiTransport transport;
 
         public Builder host(String host) {
@@ -130,7 +132,7 @@ public final class Ls9Console implements AutoCloseable {
             return this;
         }
 
-        /** EtherMIDI device/port number; an LS9 uses 1. */
+        /** EtherMIDI device/port number; StageMix opens an LS9 session with 0. */
         public Builder deviceId(int deviceId) {
             this.deviceId = deviceId;
             return this;
@@ -160,6 +162,20 @@ public final class Ls9Console implements AutoCloseable {
             return this;
         }
 
+        /**
+         * Listens on TCP 12300 for the console's reverse connection, which
+         * carries parameter-change replies and meter data. Enabled by default.
+         */
+        public Builder reverseListen(boolean reverseListen) {
+            this.reverseListen = reverseListen;
+            return this;
+        }
+
+        public Builder listenPort(int listenPort) {
+            this.listenPort = listenPort;
+            return this;
+        }
+
         /** Uses an already-configured transport instead of EtherMIDI. */
         public Builder transport(MidiTransport transport) {
             this.transport = Objects.requireNonNull(transport, "transport");
@@ -174,7 +190,9 @@ public final class Ls9Console implements AutoCloseable {
                         .deviceId(deviceId)
                         .modeBitmap(modeBitmap)
                         .authData(authData)
-                        .connectTimeoutMs(connectTimeoutMs);
+                        .connectTimeoutMs(connectTimeoutMs)
+                        .reverseListen(reverseListen)
+                        .listenPort(listenPort);
             }
             Ls9Console console = new Ls9Console(t, deviceNumber, timeoutMs);
             t.setReceiver(console::handleMidi);
@@ -220,15 +238,24 @@ public final class Ls9Console implements AutoCloseable {
      * @throws Ls9Exception if the console does not answer within the timeout
      */
     public long get(ParameterAddress address) throws IOException {
+        return get(address, timeoutMs);
+    }
+
+    /**
+     * Sends a PARAMETER REQUEST and waits at most {@code waitMs} for the
+     * matching PARAMETER CHANGE. Optional parameters that some firmware does
+     * not answer should use a short wait so a poll does not stall the session.
+     */
+    public long get(ParameterAddress address, int waitMs) throws IOException {
         ensureOpen();
         CompletableFuture<Long> future = new CompletableFuture<>();
         pending.put(address, future);
         try {
             transport.sendSysex(Ls9Sysex.parameterRequest(deviceNumber, address));
-            return future.get(timeoutMs, TimeUnit.MILLISECONDS);
+            return future.get(waitMs, TimeUnit.MILLISECONDS);
         } catch (TimeoutException e) {
             throw new Ls9Exception("no reply from console for parameter " + address.hex()
-                    + " within " + timeoutMs + " ms", e);
+                    + " within " + waitMs + " ms", e);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new Ls9Exception("interrupted while waiting for parameter " + address.hex(), e);
@@ -333,14 +360,17 @@ public final class Ls9Console implements AutoCloseable {
     // ------------------------------------------------------------------
 
     /**
-     * Subscribes to a meter range. The console then sends responses through
-     * {@link Ls9Listener#onMeter(MeterFrame)} roughly every 50 ms.
+     * Subscribes to a meter range. The console sends responses through
+     * {@link Ls9Listener#onMeter(MeterFrame)} at about ten frames a second,
+     * and stops after ten seconds unless the request is sent again. Apps
+     * should re-issue their subscriptions every few seconds.
      */
     public void subscribeMeters(MeterGroup group, int point, int start, int count) throws IOException {
         ensureOpen();
         transport.sendSysex(MeterCodec.request(deviceNumber, group, point, start, count));
     }
 
+    /** @see #subscribeMeters(MeterGroup, int, int, int) */
     public void subscribeMeters(int ul, int lu, int ll, int count) throws IOException {
         ensureOpen();
         transport.sendSysex(MeterCodec.request(deviceNumber, ul, lu, ll, count));
@@ -608,6 +638,7 @@ public final class Ls9Console implements AutoCloseable {
         if (parsed.isParameterChange()) {
             ParameterAddress address = parsed.address();
             long value = parsed.value() == null ? 0 : parsed.value();
+            value = signedValue(address, value);
             lastValues.put(address, value);
             CompletableFuture<Long> future = pending.get(address);
             if (future != null) {
@@ -641,6 +672,28 @@ public final class Ls9Console implements AutoCloseable {
                 }
             }
         }
+    }
+
+    /**
+     * PARAMETER CHANGE carries signed values as 35-bit two's complement, but
+     * the wire decoder is unsigned. The published parameter list says which
+     * addresses are signed (EQ gain, attenuator, pan, ...), so convert those.
+     */
+    private static long signedValue(ParameterAddress address, long value) {
+        if (value < (1L << 34)) {
+            return value;
+        }
+        try {
+            java.util.Optional<io.github.leocb.ls9.sysex.ParameterDefinition> definition =
+                    io.github.leocb.ls9.sysex.Ls9ParameterRegistry.get()
+                            .find(address.element(), address.index());
+            if (definition.isPresent() && definition.get().min() != null
+                    && definition.get().min().trim().startsWith("-")) {
+                return value - (1L << 35);
+            }
+        } catch (RuntimeException ignored) {
+        }
+        return value;
     }
 
     private void ensureOpen() throws IOException {

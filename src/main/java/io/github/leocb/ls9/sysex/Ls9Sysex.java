@@ -35,7 +35,7 @@ public final class Ls9Sysex {
     public static final String FN_LIBRARY_UNKNOWN_RECALL = "LibUnRcl";
     public static final String FN_LIBRARY_UNDO_STORE = "LibStrUd";
     public static final String FN_LIBRARY_UNDO_RECALL = "LibRclUd";
-    public static final String FN_LIBRARY_ATTRIBUTE = "LibAttrbt";
+    public static final String FN_LIBRARY_ATTRIBUTE = "LibAtrbt";
     public static final String FN_LIBRARY_COPY = "LibCpy__";
     public static final String FN_LIBRARY_PASTE = "LibPst__";
     public static final String FN_LIBRARY_CLEAR = "LibClr__";
@@ -209,7 +209,7 @@ public final class Ls9Sysex {
         return functionMessage(SUB_PARAMETER_CHANGE | device, function, module, parts);
     }
 
-    /** Builds a function-call request (no value), e.g. LibAttrbt/LibExist. */
+    /** Builds a function-call request (no value), e.g. LibAtrbt/LibExist. */
     public static byte[] functionRequest(int device, String function, String module, byte[]... parts) {
         return functionMessage(SUB_PARAMETER_REQUEST | device, function, module, parts);
     }

@@ -286,6 +286,44 @@ public final class Ls9BulkEntry {
         return values;
     }
 
+    /**
+     * Reads a text field (channel/bus/effect name) as raw ASCII from the
+     * decoded image. The console stores these names as plain bytes in the
+     * bulk image, while the same address is a packed value on PARAMETER
+     * CHANGE; using {@link io.github.leocb.ls9.sysex.Ls9Sysex#unpackName4}
+     * here would produce garbage.
+     */
+    public String text(int element, int index, int channel) {
+        for (Value value : values) {
+            ParameterAddress address = value.address();
+            if (address.element() != element || address.index() != index
+                    || address.channel() != channel) {
+                continue;
+            }
+            Ls9BulkLayout.Field field = value.field();
+            if (field == null) {
+                return null;
+            }
+            int size = field.kind().bytes();
+            int offset = field.offset();
+            if (size <= 0 || offset < 0 || offset + size > data.length) {
+                return null;
+            }
+            String text = new String(data, offset, size, StandardCharsets.US_ASCII);
+            int end = text.length();
+            while (end > 0) {
+                char c = text.charAt(end - 1);
+                if (c == 0 || c < 32 || c == ' ') {
+                    end--;
+                } else {
+                    break;
+                }
+            }
+            return text.substring(0, end);
+        }
+        return null;
+    }
+
     public Long get(int element, int index, int channel) {
         return parameters.get(ParameterAddress.of(element, index, channel));
     }

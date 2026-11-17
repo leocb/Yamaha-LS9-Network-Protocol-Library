@@ -14,8 +14,10 @@ over two transports:
 
 The library now covers the complete live Studio Manager surface: every
 published parameter, all library/scene functions, bulk-dump synchronization,
-level meters, MIDI/MMC and snapshot files. Server mode and hardware validation
-are intentionally out of scope.
+level meters, MIDI/MMC and snapshot files. It listens on TCP 12300 for the
+console's reverse reply connections, so the same process can read parameter
+changes, bulk data and meters. Server mode and hardware validation are
+intentionally out of scope.
 
 ```java
 try (Ls9Console ls9 = Ls9Console.connect("192.168.0.128")) {
@@ -37,7 +39,7 @@ Requires JDK 17 or newer. No third-party runtime dependencies.
 
 ```bash
 ./build.sh
-./test.sh          # 603 protocol/parameter/meter checks, including a fake LS9 over TCP
+./test.sh          # 608 protocol/parameter/meter checks, including a fake LS9 over TCP
 
 # compile and run the example
 javac --release 17 -cp out -d out \
@@ -126,19 +128,23 @@ Ls9Console ls9 = Ls9Console.builder()
         .host("192.168.0.128")
         .tcpPort(12300)      // Yamaha EtherMIDI
         .portIndex(0)        // "Port1" is 0
-        .deviceId(1)         // "Device Port No.": 1 for an LS9
+        .deviceId(0)         // StageMix opens with 0; the reply session fields are adopted
         .deviceNumber(0)     // SysEx device number: MIDI ch 1
         .authMac("00:1A:2B:3C:4D:5E") // only if the console challenges
+        .reverseListen(true) // listen on 12300 for the console's reply connections
         .open();
 ```
+
+The transport binds TCP **12300** for the console's reverse reply
+connections. Keep that port free; another LS9 client holding it will prevent
+the console from delivering replies.
 
 If the console asks for MAC authentication and you did not supply a MAC, the
 handshake fails with a clear message. You can copy the MAC from the console's
 network page or from the Network-MIDI Driver preferences.
 
-If the open handshake is not acknowledged, try `.portIndex(1)` and/or
-`.modeBitmap(1)`. Those are the only two handshake fields whose defaults could
-not be confirmed from the extracted driver (see `PROTOCOL.md`).
+If the open handshake is not acknowledged, try `.portIndex(1)`. The mode bitmap
+defaults to 3, which StageMix uses (see `PROTOCOL.md`).
 
 ### Installed Yamaha Network-MIDI Driver
 
@@ -255,7 +261,7 @@ ls9.scene().recallUndo();
 ```
 
 Scene titles are limited to 16 characters by the LS9. `store(scene, title)`
-sends `LibStr__` and then four `LibAttrbt` title elements. Scene library calls
+sends `LibStr__` and then four `LibAtrbt` title elements. Scene library calls
 use channel 512 (`04 00`), matching Yamaha’s own AMX example.
 
 ## Synchronization and backup

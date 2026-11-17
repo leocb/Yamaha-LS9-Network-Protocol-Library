@@ -99,6 +99,14 @@ public final class Ls9BulkData {
         return value == null ? defaultValue : value;
     }
 
+    /**
+     * Reads a raw ASCII text field from the decoded image (channel/bus/effect
+     * names). See {@link Ls9BulkEntry#text}.
+     */
+    public String text(int element, int index, int channel) {
+        return entry == null ? null : entry.text(element, index, channel);
+    }
+
     public int size() {
         return parameters.size();
     }

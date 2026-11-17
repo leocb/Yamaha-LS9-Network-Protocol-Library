@@ -48,10 +48,13 @@ public final class SelfTest {
         testSnapshotIo();
         testTransportAgainstFakeConsole(false);
         testTransportAgainstFakeConsole(true);
+        testReverseReplyConnection();
         System.out.println("OK: " + checks + " checks passed");
     }
 
     private static void testSysexVectors() {
+        eq("LibAtrbt", Ls9Sysex.FN_LIBRARY_ATTRIBUTE, "library attribute function name");
+        eq("LibExist", Ls9Sysex.FN_LIBRARY_EXISTS, "library exist function name");
         ParameterAddress fader56 = ParameterAddress.of(0x0033, 0x0000, 55);
         byte[] change = Ls9Sysex.parameterChange(0, fader56, 823);
         eq("F0 43 10 3E 12 01 00 33 00 00 00 37 00 00 00 06 37 F7",
@@ -580,14 +583,15 @@ public final class SelfTest {
                     byte[] open = readPacket(in);
                     eq(0x20, open[4] & 0xFF, "open command");
                     eq(0, open[6] & 0xFF, "port index");
-                    eq(1, open[7] & 0xFF, "device id");
-                    eq(0x20000000, EtherMidiPacket.getInt(open, 12), "open mode bitmap");
+                    eq(0, open[7] & 0xFF, "device id");
+                    eq(0x20000003, EtherMidiPacket.getInt(open, 12), "open mode bitmap");
 
                     byte[] ack = open.clone();
                     ack[4] = 0x21;
                     ack[8] = 1;
                     ack[9] = 0;
-                    ack[10] = 0x42; // challenge seed
+                    ack[10] = 0x42; // challenge seed, high byte
+                    ack[11] = (byte) 0x99; // challenge seed, low byte
                     EtherMidiPacket.putInt(ack, 12, authenticate ? 0x80000000 : 0);
                     out.write(ack);
                     out.flush();
@@ -595,7 +599,7 @@ public final class SelfTest {
                     if (authenticate) {
                         byte[] auth = readPacket(in);
                         eq(0x23, auth[4] & 0xFF, "auth command");
-                        int expected = YemAuth.checksum(0x42, mac);
+                        int expected = YemAuth.checksum(0x4299, mac);
                         eq(expected, ((auth[8] & 0xFF) << 8) | (auth[9] & 0xFF), "auth checksum");
                         byte[] authAck = new byte[16];
                         EtherMidiPacket.putInt(authAck, 0, 16);
@@ -650,6 +654,7 @@ public final class SelfTest {
                     .tcpPort(server.getLocalPort())
                     .authData(authenticate ? mac : null)
                     .timeoutMs(2000)
+                    .reverseListen(false)
                     .open()) {
                 console.input(1).setFaderDb(0.0);
                 eq(823, console.input(1).faderRaw(), "fader request round trip");
@@ -663,6 +668,71 @@ public final class SelfTest {
             serverThread.join(3000);
             if (failure.get() != null) {
                 throw new AssertionError("fake console failed", failure.get());
+            }
+        }
+    }
+
+    /**
+     * The console delivers replies on a reverse TCP connection to port 12300,
+     * not on the outbound session socket.
+     */
+    private static void testReverseReplyConnection() throws Exception {
+        int listenPort;
+        try (ServerSocket probe = new ServerSocket(0)) {
+            listenPort = probe.getLocalPort();
+        }
+        try (ServerSocket control = new ServerSocket(0)) {
+            AtomicReference<Throwable> failure = new AtomicReference<>();
+            Thread serverThread = new Thread(() -> {
+                try (Socket s = control.accept()) {
+                    DataInputStream in = new DataInputStream(s.getInputStream());
+                    OutputStream out = s.getOutputStream();
+
+                    byte[] open = readPacket(in);
+                    eq(0x20000003, EtherMidiPacket.getInt(open, 12), "reverse open mode");
+                    byte[] ack = open.clone();
+                    ack[4] = 0x21;
+                    ack[8] = 1;
+                    ack[9] = 0;
+                    EtherMidiPacket.putInt(ack, 12, 0);
+                    out.write(ack);
+                    out.flush();
+
+                    byte[] request = readPacket(in);
+                    eq(0x16, request[4] & 0xFF, "reverse request command");
+                    try (Socket reply = new Socket("127.0.0.1", listenPort)) {
+                        OutputStream replyOut = reply.getOutputStream();
+                        replyOut.write(EtherMidiPacket.sysex(0, 0, new byte[]{
+                                (byte) 0xF0, 0x43, 0x10, 0x3E, 0x12, 0x01, 0x00, 0x33,
+                                0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x37,
+                                (byte) 0xF7}));
+                        replyOut.flush();
+                        Thread.sleep(200);
+                    }
+                    try {
+                        readPacket(in);
+                    } catch (IOException ignored) {
+                        // expected close
+                    }
+                } catch (Throwable t) {
+                    failure.set(t);
+                }
+            }, "fake-ls9-reverse");
+            serverThread.start();
+
+            try (Ls9Console console = Ls9Console.builder()
+                    .host("127.0.0.1")
+                    .tcpPort(control.getLocalPort())
+                    .timeoutMs(2000)
+                    .reverseListen(true)
+                    .listenPort(listenPort)
+                    .open()) {
+                eq(823, console.input(1).faderRaw(), "reverse reply round trip");
+            }
+
+            serverThread.join(3000);
+            if (failure.get() != null) {
+                throw new AssertionError("reverse fake console failed", failure.get());
             }
         }
     }

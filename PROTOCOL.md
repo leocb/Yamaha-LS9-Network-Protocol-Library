@@ -165,40 +165,45 @@ The maximum SysEx length is therefore `5000 - 20 = 4980` bytes.
 header[0..3]  = 16
 header[4]     = 0x20
 header[6]     = port index (0 for Port1)
-header[7]     = rxdev (1 for LS9)
+header[7]     = rxdev (StageMix opens with 0)
 header[8..9]  = 01 00
 header[12..15]= modeBitmap | 0x20000000
 ```
 
 Then it sends 16 bytes and reads a 16-byte reply. It requires `reply[4] ==
-0x21`. It stores the big-endian 32-bit value from `reply[12..15]` as the
+0x21`. The LS9 acknowledges a mode bitmap with bit 0 set and replies `0x22`
+when the bitmap is 0. StageMix's `AuthorizationRequestPacket` initialises
+`0x20000003` (bits 0 and 1), so the library uses 3. StageMix's
+`PortStateMachine` reads `reply[6]` and `reply[7]` and uses them as the
+session port/rx for the auth request and every later packet. The library does
+the same. It stores the big-endian 32-bit value from `reply[12..15]` as the
 capability word. If bit 31 is set, it performs the MAC challenge:
 
 ```
-seed  = reply[10] & 0xFF
-crc   = YemAuth.checksum(seed, authdata)
+seedWord = (reply[10] << 8) | reply[11]
+crc      = YemAuth.checksum(seedWord, authdata)
 header[0..3]  = 16
 header[4]     = 0x23
-header[6]     = port
-header[7]     = rxdev
+header[6]     = session port (reply[6])
+header[7]     = session rx   (reply[7])
 header[8..9]  = crc, big-endian
 header[12..15]= 0
 ```
 
 and then requires the next reply to be `0x24` (or another `0x21` in the
-driver's code). The driver passes `reply[10]` as the first byte to the CRC
-routine at `0x0a8dc`.
+driver's code). The driver passes a pointer to `reply[10]`; the CRC routine at
+`0xa8dc` reads **two** seed bytes from that pointer.
 
 ### 1.7 MAC challenge CRC
 
-`0x0a8dc` is a standard MSB-first CRC-32 with polynomial `0x04C11DB7`
-(`table[1] == 0x04C11DB7` at file offset `0x12448`). It is initialised as:
+`0xa8dc` (arm64 `YamahaNetworkMIDI.plugin`) is a standard MSB-first CRC-32
+with polynomial `0x04C11DB7`. It initialises from the high seed byte:
 
 ```
-crc = table[(~seed) & 0xFF] ^ 0xFFFFFF00
+crc = table[(~seedWord >>> 8) & 0xFF] ^ 0xFFFFFF00
 ```
 
-then updated for each byte with:
+then feeds the low seed byte and every following byte with the same update:
 
 ```
 idx  = ((crc >>> 24) ^ byte) & 0xFF
@@ -206,7 +211,7 @@ last = table[idx]
 crc  = last ^ (crc << 8)
 ```
 
-The bytes fed are:
+The bytes fed after the low seed byte are:
 
 ```
 authdata[0..5]                 (6 bytes, the MAC)
@@ -243,6 +248,26 @@ The receive state machine (`0x0ae10`) runs a small state machine:
 * command `0x20`: reply with `0x21`, copying the request and masking the
   capability word with `0x03000020`.
 * commands `0x30`/`0x40`: session close/reset, no application response.
+
+### 1.10 Reverse reply connection
+
+The console does not send parameter-change replies, bulk-dump packets or
+meter frames on the outbound session socket. After the session is open, it
+connects **back** to the client's TCP port **12300**. Parameter-change and
+bulk replies use one EtherMIDI packet per connection: the client must close
+that reverse connection after reading the packet, and the console opens a
+fresh one for the next packet. LEVEL METER responses (SysEx category `0x21`)
+reuse one connection for many frames; the client reads until the console
+closes it or the connection idles. The Network-MIDI driver listens on 12300
+for these connections, and so does the library
+(`EtherMidiTransport.reverseListen`, enabled by default). Port 12300 therefore
+has to be free before connecting; another LS9 client holding it will prevent
+replies.
+
+Text fields (input/mix/matrix names and effect titles) are stored as plain
+ASCII bytes in the bulk image, even though the same addresses use 7-bit
+packed groups on PARAMETER CHANGE. `Ls9BulkEntry.text` reads the raw bytes;
+using `unpackName4` on the bulk value produces garbage.
 
 ## 2. LS9 System Exclusive protocol
 
@@ -297,14 +322,14 @@ Scene/library functions from the manual:
 | `LibUnRcl` | unknown-factor recall |
 | `LibStrUd` | store undo (scene only) |
 | `LibRclUd` | recall undo (scene only) |
-| `LibAttrbt` | library attribute/title |
+| `LibAtrbt` | library attribute/title |
 | `LibCpy__` / `LibPst__` / `LibClr__` / `LibCut__` / `LibIns__` / `LibEdtUd` | library edit |
 | `LibExist` | exist-library range |
 | `ColUnStr` | collection store |
 | `ModFxTrg` | module/effect trigger |
 | `ChlPirCp` (function) / `PAIRONCP` / `PAIRONRS` / `PAIROFF_` (modules) | channel pair operations |
 
-For `LibAttrbt`, the payload is:
+For `LibAtrbt`, the payload is:
 
 ```
 number (14-bit)
@@ -314,7 +339,7 @@ channel (14-bit)
 value (five 7-bit bytes)
 ```
 
-A `LibAttrbt` request uses sub-status `3n` and carries only number, element,
+A `LibAtrbt` request uses sub-status `3n` and carries only number, element,
 index and channel. `LibExist` requests use sub-status `3n` with module and
 requested number; the reply payload is:
 
@@ -401,6 +426,14 @@ the same payload layout. LS9 Editor also uses `INEQ____`, `OUTEQ___` and
 | `0x12` | 1 | undocumented scene byte | element `0x0195`, index 0 |
 | `0x38` | 32 | comment, eight four-character words | element `0x0001`, indices 0..7 |
 | `0x58` | 6 | year, month, day, hour, minute, second | element `0x0002`, channels 0..5 |
+
+The byte at `0x12` is the **current scene number** for the current-data image
+(and the stored scene number for a scene block). It is not present in
+`ParamChangeList_LS9.xls`; StageMix's `SceneNumberParameter` and
+`RequestBulkCurSceneData` expose it from this header. A PARAMETER REQUEST for
+`0x0195/0/0` answers on LS9 firmware but is treated as optional (use a short
+timeout) and the bulk image is the fallback. A recall made on the console also
+sends a PARAMETER CHANGE for this address.
 
 The title is the 16-character scene name; the comment is the longer text shown
 in LS9 Editor. Both are four-character words, matching the `kComment1..8`
@@ -539,6 +572,23 @@ F0 43 1n 3E 12 21  UL LU LL  data...  F7
 measurement point, `LL` is the first channel. `UL = 0x7F` stops all meter
 transmission. `MeterCodec` and `MeterFrame` implement this.
 
+Measured against an LS9-32:
+
+* Each group streams ten frames a second (100 ms apart), regardless of the
+  requested channel count. A subscription yields exactly 100 frames and then
+  the console stops; the client must re-send the request every few seconds to
+  keep the stream alive. StageMix does this with its `ModelController::
+  MeterRqTimer`; `Ls9Session` re-sends every two seconds.
+* Meter frames compete for a shared budget of about forty reverse
+  connections a second. One to four active groups each get the full ten
+  frames; six groups drop to roughly six frames a second each. Subscribe only
+  the groups whose meters are on screen, and do not expect more than ten
+  frames a second from a group.
+* StageMix also requests categories `0x0E` and `0x0F` for the rack meters.
+  `0x0E` with `LU = 0x7F` returns four bytes per rack slot and `0x0F` returns
+  eight gain-reduction bytes per slot; the LS9 ignores the `0x13`, `0x16`,
+  `0x17`, `0x18` and `0x1D` categories present in the shared StageMix build.
+
 ### 2.3 MIDI channel messages and MMC
 
 Program Change uses `Cn pp`; Control Change uses `Bn cc vv`; NRPN uses
@@ -547,6 +597,14 @@ CC 99/98 for the number and 6/38 for the value. MMC is
 strobe `06`, pause `09`. `Ls9MidiControl` implements these.
 
 ## 3. Parameter map and value conventions
+
+### 3.1 Signed parameter values
+
+PARAMETER CHANGE values are 7-bit groups decoded as unsigned, but parameters
+whose published minimum is negative (EQ gain `-180..180`, attenuator
+`-96..0`, pan `-63..63`, ...) carry 35-bit two's complement. `Ls9Console`
+checks the registry minimum and subtracts `2^35` when bit 34 is set, so
+`lastValue`, `get` and listener events expose the signed number.
 
 `ParamChangeList_LS9.xls` contains 1,033 parameter-change rows. The build
 script `tools/generate_resources.py` converts them to
@@ -634,15 +692,18 @@ packing in `Ls9Sysex.packName4`.
    port*8`). The UI calls the first port "Port1". The library therefore defaults
    to `portIndex = 0`. If the console ignores the session, try
    `portIndex(1)`.
-2. **`rxdev`.** The manual says "Device Port No. ... should be set to 1 for
-   LS9". The library defaults `deviceId = 1`.
+2. **`rxdev`.** The manual's "Device Port No. ... should be set to 1 for
+   LS9" is the Network-MIDI driver's port number, not the EtherMIDI
+   `header[7]` field. StageMix opens an LS9 session with `port=0, rx=0` and
+   then adopts `reply[6..7]`; the library does the same.
 3. **MAC authentication.** The challenge is understood and implemented, but
    whether a given LS9 firmware sets capability bit 31 is not known. If it
    does and the MAC is wrong, the `0x23` reply is rejected. The driver's
    prefpane treats the MAC as mandatory security data.
 4. **Connection direction.** The driver both listens on 12300 and connects to
-   the device's 12300. The library implements the client direction only.
-   Server mode is intentionally excluded.
+   the device's 12300. The library connects outbound and listens on 12300 for
+   the console's one-packet reverse reply connections. General server mode
+   (accepting control from another client) is intentionally excluded.
 5. **Bulk-block packing.** The complete block is transferred, checksummed,
    7-bit decoded and stored losslessly. The scene header (title, comment,
    timestamp, scene attributes) is decoded by `BulkScene`; the rest of the
@@ -678,7 +739,7 @@ packing in `Ls9Sysex.packName4`.
   checked.
 * A fake LS9 TCP server performs both the unauthenticated and authenticated
   handshakes, receives a fader change, answers a parameter request, serves a
-  bulk dump and verifies the exchange (`test.sh`, 603 checks).
+  bulk dump and verifies the exchange (`test.sh`, 608 checks).
 * The CRC is implemented from the driver's instruction sequence and checked
   against the same routine in the test server; this is self-consistent rather
   than independently validated on hardware.

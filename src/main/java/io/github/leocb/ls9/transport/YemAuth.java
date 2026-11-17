@@ -12,9 +12,10 @@ import java.nio.charset.StandardCharsets;
  * <pre>
  *   ~seed, authData[0..5], "COPYRIGHT (C) YAMAHA Corp."
  * </pre>
- * followed by the driver's 16-bit folding step. {@code seed} is byte 10 of the
- * {@code 0x21} acknowledgement and {@code authData} is the six-byte MAC
- * address configured for the console.
+ * followed by the driver's 16-bit folding step. {@code seed} is the 16-bit
+ * big-endian word from bytes 10..11 of the console's {@code 0x21}
+ * acknowledgement and {@code authData} is the six-byte MAC address configured
+ * for the console.
  */
 public final class YemAuth {
 
@@ -36,16 +37,21 @@ public final class YemAuth {
     }
 
     /**
-     * @param seed     byte 10 of the console's {@code 0x21} reply (0..255)
+     * @param seedWord big-endian 16-bit challenge word from bytes 10..11 of
+     *                 the console's {@code 0x21} reply
      * @param authData six-byte MAC address
      * @return 16-bit value for bytes 8..9 of the {@code 0x23} request
      */
-    public static int checksum(int seed, byte[] authData) {
+    public static int checksum(int seedWord, byte[] authData) {
         if (authData == null || authData.length != 6) {
             throw new IllegalArgumentException("authData must be exactly 6 bytes (a MAC address)");
         }
-        int crc = TABLE[(~seed) & 0xFF] ^ 0xFFFFFF00;
+        // The driver passes a pointer to reply[10]: the high seed byte
+        // initialises the CRC and the low seed byte is the first input byte.
+        int crc = TABLE[(~(seedWord >>> 8)) & 0xFF] ^ 0xFFFFFF00;
         int last = crc;
+        last = TABLE[((crc >>> 24) ^ (seedWord & 0xFF)) & 0xFF];
+        crc = last ^ (crc << 8);
         for (byte b : authData) {
             last = TABLE[((crc >>> 24) ^ (b & 0xFF)) & 0xFF];
             crc = last ^ (crc << 8);
