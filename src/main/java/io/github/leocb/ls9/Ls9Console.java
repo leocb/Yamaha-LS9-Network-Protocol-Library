@@ -301,6 +301,16 @@ public final class Ls9Console implements AutoCloseable {
         return Optional.ofNullable(lastValues.get(address));
     }
 
+    /**
+     * Records a value that came from another source, such as a bulk image
+     * decoded by the caller, so later cached reads and
+     * {@link #lastValue(ParameterAddress)} reflect it without sending a
+     * PARAMETER CHANGE to the console.
+     */
+    public void remember(ParameterAddress address, long value) {
+        lastValues.put(address, value);
+    }
+
     // ------------------------------------------------------------------
     // Bulk dump transfer
     // ------------------------------------------------------------------

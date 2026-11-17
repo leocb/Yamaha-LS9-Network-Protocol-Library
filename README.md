@@ -39,7 +39,7 @@ Requires JDK 17 or newer. No third-party runtime dependencies.
 
 ```bash
 ./build.sh
-./test.sh          # 608 protocol/parameter/meter checks, including a fake LS9 over TCP
+./test.sh          # 630 protocol/parameter/meter checks, including a fake LS9 over TCP
 
 # compile and run the example
 javac --release 17 -cp out -d out \
@@ -200,7 +200,12 @@ import io.github.leocb.ls9.sysex.ParameterAddress;
 ParameterAddress a = ParameterAddress.of(0x0033, 0x0000, 4);
 ls9.set(a, 823);          // 0 dB on the LS9 fader curve
 long raw = ls9.get(a);
+ls9.remember(a, 700);     // seed the last-value cache from a bulk image
 ```
+
+`lastValue(a)` returns the value from the latest change, request or
+`remember`, which lets an application combine a cached bulk image with live
+change messages without asking the console for every field.
 
 `Ls9ParameterRegistry` loads all 1,033 published entries:
 

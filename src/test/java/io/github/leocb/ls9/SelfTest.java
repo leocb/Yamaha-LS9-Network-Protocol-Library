@@ -667,6 +667,15 @@ public final class SelfTest {
                 console.input(1).setFaderDb(0.0);
                 eq(823, console.input(1).faderRaw(), "fader request round trip");
 
+                ParameterAddress remembered =
+                        ParameterAddress.of(0x0033, 0, 0);
+                console.remember(remembered, 900);
+                check(console.lastValue(remembered).orElse(-1L) == 900,
+                        "remember seeds the last-value cache without a round trip");
+                console.remember(remembered, 901);
+                check(console.lastValue(remembered).orElse(-1L) == 901,
+                        "remember replaces an earlier cached value");
+
                 BulkDump dump = console.requestBulkDump(BulkDumpCodec.SCENE, 7);
                 eq(7, dump.number(), "bulk dump number");
                 check(java.util.Arrays.equals(new byte[]{9, 8, 7, (byte) 0x80, 6}, dump.data()),
