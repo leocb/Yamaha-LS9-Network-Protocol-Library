@@ -76,7 +76,9 @@ public final class Ls9SceneControl {
 
     /**
      * Changes the stored title of a scene through LIBRARY ATTRIBUTE.
-     * The title is limited to 16 characters.
+     * The title is limited to 16 characters and uses element 0x0193, the
+     * same element as the scene bulk header (StageMix
+     * {@code storeSceneName:}).
      */
     public void setTitle(int sceneNumber, String title) throws IOException {
         checkScene(sceneNumber, 1);
@@ -86,7 +88,7 @@ public final class Ls9SceneControl {
         }
         for (int i = 0; i < 4; i++) {
             String part = i * 4 < text.length() ? text.substring(i * 4, Math.min(i * 4 + 4, text.length())) : "";
-            ParameterAddress address = ParameterAddress.of(Ls9Elements.SCENE_COMMENT, i, 0);
+            ParameterAddress address = ParameterAddress.of(Ls9Elements.SCENE_TITLE, i, 0);
             console.sendSysex(Ls9Sysex.libraryAttribute(console.deviceNumber(),
                     Ls9Sysex.MODULE_SCENE, sceneNumber, address, Ls9Sysex.packName4(part)));
         }
@@ -99,7 +101,7 @@ public final class Ls9SceneControl {
     public String currentTitle() throws IOException {
         StringBuilder sb = new StringBuilder(16);
         for (int i = 0; i < 4; i++) {
-            long value = console.get(ParameterAddress.of(Ls9Elements.SCENE_COMMENT, i, 0));
+            long value = console.get(ParameterAddress.of(Ls9Elements.SCENE_TITLE, i, 0));
             sb.append(Ls9Sysex.unpackName4(value));
         }
         return Text.trimTrailing(sb.toString());

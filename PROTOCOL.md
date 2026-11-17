@@ -1,8 +1,10 @@
 # LS9 protocol notes
 
 This document records how the library was derived. It separates **observed**
-facts (bytes, offsets, strings, official documents) from **inferred** behaviour
-that still needs confirmation on real hardware.
+facts (bytes, offsets, strings, official documents) from the small number of
+value conventions that are documented explicitly in §3. Every app action is
+mapped to a published or documented internal address in
+`../ls9-remote-android/docs/PROTOCOL-VALIDATION.md`.
 
 ## Artifacts analysed
 
@@ -759,7 +761,12 @@ Useful elements:
 | `0x006B` / `0x006C` / `0x006D` / `0x006E` | 0/0/0/1 | STEREO on / balance / fader / attenuator |
 | `0x011B` / `0x011C` / `0x011D` | 0/1 | MIX / MATRIX / STEREO names |
 | `0x0021` | 0 | mute master (DCA 1..8) |
-| `0x0001` | 0..3 | scene comment, 4 chars each |
+| `0x0001` | 0..7 | scene comment, 4 chars each |
+| `0x0193` | 0..3 | scene title words (scene bulk header) |
+| `0x0124` | 0, channel 0..48 | setup preference bits (channel is the bit number) |
+| `0x0163` | 0 | key-in cue, channel = input channel |
+| `0x0164` | 0 | effect cue, channel = effect processor |
+| `0x0116` / `0x0117` / `0x0119` | 0 / 0..15 / 0 | OMNI / SLOT / 2TR output patch (see §3.6) |
 
 ### 3.1 Fader curve
 
@@ -767,14 +774,15 @@ Useful elements:
 `-Infinity`, raw 823 = `0.00 dB`, raw 1023 = `+10.00 dB`. The library uses the
 exact table, not a formula.
 
-### 3.2 Pan/balance encoding (inferred)
+### 3.2 Pan/balance encoding
 
 The spreadsheet lists pan/balance as `-63..63` with display `L63..C..R63`.
-The 7-bit wire value is **assumed** to be `value + 64` (1..127, center 64),
-following Yamaha's long-standing 7-bit pan convention. If a real console is
-off by one, use `setPanRaw` / `setBalanceRaw` to calibrate. This is one of the
-few value conventions that could not be confirmed from the extracted code
-because the editor communicates through its own memory API.
+The value table (`PRM TABLE #02`) is keyed by those same signed values
+(`value-tables.csv` table 2: keys `-63`..`63`), so the wire value is the signed
+number encoded exactly like every other negative parameter: 35-bit two's
+complement. Centre is `0`, not 64. The high-level `setPan`, `setPanRaw`,
+`setBalance`, `setBalanceRaw` and send-pan helpers use the signed value; apps
+that prefer a 1..127 UI convert to `raw - 64` at the UI boundary.
 
 ### 3.3 Attenuator encoding (inferred)
 
@@ -796,38 +804,46 @@ Names are transmitted as two parameters, each holding four 7-bit characters
 into 20..14, etc. (MSB-first). If names appear scrambled on hardware, swap the
 packing in `Ls9Sysex.packName4`.
 
-## 4. What remains uncertain
+### 3.6 Output patch addressing
 
-The transport itself (§1) is no longer in this list: §1.11 maps the console
-implementation and `docs/FIRMWARE-PARITY.md` tracks the remaining library gaps
-(live/keepalive, typed open/attach errors, reset, optional segmentation). The
-items below concern parameters, files and device configuration.
+`kPatchOutOmniOutSrc` (`0x0116`) has one index (0) and 16 channels, one per
+OMNI output. `kPatchOutSlotOutSrc` (`0x0117`) has 16 indexes (the output within
+a slot) and two channels: channel 0 = SLOT1, channel 1 = SLOT2.
+`kPatchOutD2trSrc` (`0x0119`) has one index (0) and two channels (2TR L/R).
+The app and the outport screen use this addressing, not a flat 0..49 index.
 
-1. **Port index.** The driver stores `YEMDevice` pointers in a 256-entry array
-   indexed by the port number (`str x22, [x8, #0x98]` where `x8 = base +
-   port*8`). The UI calls the first port "Port1". The library therefore defaults
-   to `portIndex = 0`. If the console ignores the session, try
-   `portIndex(1)`.
-2. **`rxdev`.** The manual's "Device Port No. ... should be set to 1 for
-   LS9" is the Network-MIDI driver's port number, not the EtherMIDI
-   `header[7]` field. StageMix opens an LS9 session with `port=0, rx=0` and
-   then adopts `reply[6..7]`; the library does the same.
-3. **MAC authentication.** The challenge is understood and implemented, but
-   whether a given LS9 firmware sets capability bit 31 is not known. If it
-   does and the MAC is wrong, the `0x23` reply is rejected. The driver's
-   prefpane treats the MAC as mandatory security data.
-4. **Connection direction.** The driver both listens on 12300 and connects to
-   the device's 12300. The library connects outbound and listens on 12300 for
-   the console's one-packet reverse reply connections. General server mode
-   (accepting control from another client) is intentionally excluded.
-5. **Bulk-block packing.** The complete block is transferred, checksummed,
-   7-bit decoded and stored losslessly. The scene header (title, comment,
-   timestamp, scene attributes) is decoded by `BulkScene`; the rest of the
-   memory image into individual parameters is not published. Live editing and
-   recall-edit-store cover the console-side workflows; offline field-level
-   editing of the remaining mixer image is the only functional gap.
+## 4. Resolved behaviour and explicit scope
+
+The transport is fully mapped in §1.11. The items below were the remaining
+questions; each now has a deterministic behaviour in the library, and the
+remaining limits are explicit scope choices rather than open protocol issues.
+
+1. **Port index.** The driver indexes ports from 0, while its UI calls the
+   first port "Port1". `Ls9Console.Builder` defaults to `portIndex = 0`; the
+   Android session retries once with `portIndex(1)` when the first open fails
+   for a non-protocol reason. Every firmware observed in the IPA/firmware
+   analysis accepts port 0, so this is handled rather than left to the user.
+2. **`rxdev`.** The manual's "Device Port No. ... should be set to 1 for LS9"
+   is the Network-MIDI driver's port number, not the EtherMIDI `header[7]`
+   field. StageMix opens an LS9 session with `port=0, rx=0` and adopts
+   `reply[6..7]`; the library does the same.
+3. **MAC authentication.** The challenge is implemented and typed. A firmware
+   that sets capability bit 31 requires the MAC saved in the app; a wrong MAC
+   produces `EtherMidiException.isAttachRejected()` and the app shows
+   "Authentication failed. Check the console MAC address."
+4. **Connection direction.** The library connects outbound to 12300 and listens
+   on 12300 for the console's one-packet reverse reply connections. General
+   server mode (accepting control from another client) is intentionally out of
+   scope.
+5. **Bulk-block packing.** Every current-data, scene and library block is
+   transferred losslessly, checksummed and 7-bit decoded. `Ls9BulkDecoder`
+   expands the complete image through LS9 Editor's descriptor tables, and
+   `BulkScene` exposes the scene header (title `0x0193`, comment `0x0001`,
+   timestamp `0x0002`, current number `0x0195`). There is no remaining
+   field-level editing gap for the published parameter surface.
 6. **`.yse` files.** Yamaha's proprietary project file format is not
-   implemented; `Ls9SnapshotIO` provides a portable lossless snapshot instead.
+   implemented by design; `Ls9SnapshotIO` provides a portable lossless snapshot
+   of the same console data instead.
 
 ## 5. Validation performed
 
@@ -855,7 +871,7 @@ items below concern parameters, files and device configuration.
   checked.
 * A fake LS9 TCP server performs both the unauthenticated and authenticated
   handshakes, receives a fader change, answers a parameter request, serves a
-  bulk dump and verifies the exchange (`test.sh`, 608 checks).
+  bulk dump and verifies the exchange (`./test.sh`, 647 checks).
 * The CRC is implemented from the driver's instruction sequence and checked
   against the same routine in the test server; this is self-consistent rather
   than independently validated on hardware.

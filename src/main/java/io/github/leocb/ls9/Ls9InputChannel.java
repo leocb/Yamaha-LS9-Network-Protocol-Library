@@ -11,7 +11,7 @@ import io.github.leocb.ls9.sysex.ParameterAddress;
  * INPUT or ST IN channel.
  *
  * <p>Fader values use the official 0..1023 LS9 curve and are exposed in dB.
- * Pan is exposed both as raw 1..127 (64 = center) and as -1.0..+1.0.
+ * Pan is exposed as raw -63..63 (0 = center) and as -1.0..+1.0.
  */
 public final class Ls9InputChannel {
 
@@ -67,26 +67,26 @@ public final class Ls9InputChannel {
 
     // Pan --------------------------------------------------------------
 
-    /** Raw pan, 1..127; 64 is center. */
+    /** Raw pan, -63..63; 0 is center. */
     public int panRaw() throws IOException {
         return (int) console.get(address(Ls9Elements.INPUT_PAN, Ls9Elements.IDX_PAN));
     }
 
     public void setPanRaw(int raw) throws IOException {
-        if (raw < 1 || raw > 127) {
-            throw new IllegalArgumentException("pan raw must be 1..127: " + raw);
+        if (raw < -63 || raw > 63) {
+            throw new IllegalArgumentException("pan raw must be -63..63: " + raw);
         }
-        console.set(address(Ls9Elements.INPUT_PAN, Ls9Elements.IDX_PAN), raw);
+        console.setSigned(address(Ls9Elements.INPUT_PAN, Ls9Elements.IDX_PAN), raw);
     }
 
     /** Pan as -1.0 (left) .. +1.0 (right). */
     public double pan() throws IOException {
-        return (panRaw() - 64) / 63.0;
+        return panRaw() / 63.0;
     }
 
     public void setPan(double pan) throws IOException {
         double p = Math.max(-1.0, Math.min(1.0, pan));
-        setPanRaw((int) Math.round(p * 63.0) + 64);
+        setPanRaw((int) Math.round(p * 63.0));
     }
 
     // MIX sends --------------------------------------------------------
@@ -133,22 +133,22 @@ public final class Ls9InputChannel {
                 Ls9Elements.inputToMix(mix, Ls9Elements.MixSendField.PRE_POST)), pre ? 1 : 0);
     }
 
-    /** Pan of the send to a MIX bus, 1..127 (64 = center). */
+    /** Pan of the send to a MIX bus, -63..63 (0 = center). */
     public int mixSendPanRaw(int mix) throws IOException {
         return (int) console.get(address(Ls9Elements.INPUT_TO_MIX_PAN,
                 Ls9Elements.inputToMixPan(mix)));
     }
 
     public void setMixSendPanRaw(int mix, int raw) throws IOException {
-        if (raw < 1 || raw > 127) {
-            throw new IllegalArgumentException("pan raw must be 1..127: " + raw);
+        if (raw < -63 || raw > 63) {
+            throw new IllegalArgumentException("pan raw must be -63..63: " + raw);
         }
-        console.set(address(Ls9Elements.INPUT_TO_MIX_PAN, Ls9Elements.inputToMixPan(mix)), raw);
+        console.setSigned(address(Ls9Elements.INPUT_TO_MIX_PAN, Ls9Elements.inputToMixPan(mix)), raw);
     }
 
     public void setMixSendPan(int mix, double pan) throws IOException {
         double p = Math.max(-1.0, Math.min(1.0, pan));
-        setMixSendPanRaw(mix, (int) Math.round(p * 63.0) + 64);
+        setMixSendPanRaw(mix, (int) Math.round(p * 63.0));
     }
 
     // Stereo / mono assignment -----------------------------------------

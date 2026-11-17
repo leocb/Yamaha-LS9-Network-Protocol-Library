@@ -39,7 +39,7 @@ Requires JDK 17 or newer. No third-party runtime dependencies.
 
 ```bash
 ./build.sh
-./test.sh          # 630 protocol/parameter/meter checks, including a fake LS9 over TCP
+./test.sh          # 647 protocol/parameter/meter checks, including a fake LS9 over TCP
 
 # compile and run the example
 javac --release 17 -cp out -d out \
@@ -401,7 +401,7 @@ If step 3 works but step 4 times out, the console is not sending parameter
 changes: enable **PARAMETER CHANGE Tx** in MIDI SETUP.
 
 If faders move but pans are one step off, see the pan encoding note in
-`PROTOCOL.md`; use `setPanRaw` to calibrate.
+`PROTOCOL.md`; `setPanRaw` takes the signed -63..63 value used by the table.
 
 ## Protocol documentation
 

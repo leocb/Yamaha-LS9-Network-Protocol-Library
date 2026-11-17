@@ -79,26 +79,26 @@ public final class Ls9OutputChannel {
         console.set(ParameterAddress.of(onElement(), Ls9Elements.IDX_ON, channelIndex), on ? 1 : 0);
     }
 
-    /** Raw balance, 1..127; 64 is center. */
+    /** Raw balance, -63..63; 0 is center. */
     public int balanceRaw() throws IOException {
         return (int) console.get(ParameterAddress.of(balanceElement(), Ls9Elements.IDX_BALANCE, channelIndex));
     }
 
     public void setBalanceRaw(int raw) throws IOException {
-        if (raw < 1 || raw > 127) {
-            throw new IllegalArgumentException("balance raw must be 1..127: " + raw);
+        if (raw < -63 || raw > 63) {
+            throw new IllegalArgumentException("balance raw must be -63..63: " + raw);
         }
-        console.set(ParameterAddress.of(balanceElement(), Ls9Elements.IDX_BALANCE, channelIndex), raw);
+        console.setSigned(ParameterAddress.of(balanceElement(), Ls9Elements.IDX_BALANCE, channelIndex), raw);
     }
 
     /** Balance as -1.0 (left) .. +1.0 (right). */
     public double balance() throws IOException {
-        return (balanceRaw() - 64) / 63.0;
+        return balanceRaw() / 63.0;
     }
 
     public void setBalance(double balance) throws IOException {
         double b = Math.max(-1.0, Math.min(1.0, balance));
-        setBalanceRaw((int) Math.round(b * 63.0) + 64);
+        setBalanceRaw((int) Math.round(b * 63.0));
     }
 
     /** Raw attenuator value, 0..1200 (the library assumes 0 = -96 dB). */

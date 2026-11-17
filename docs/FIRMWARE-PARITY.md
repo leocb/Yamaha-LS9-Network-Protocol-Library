@@ -36,9 +36,9 @@ Legend:
 | Reverse connection on 12300 | yes | `reverseListen` | yes | one packet per connection, meters reused |
 | Console-initiated open (`0x20`) | yes | `autoReplyToOpen` | yes | replies `0x21`, masks capability |
 | Console-initiated live (`0x50`) on reverse path | yes | `replyToLive` | yes | always answered, regardless of keepalive setting |
-| Frame segmentation `NEXT`/`FIN` | yes | — | deferred | GAP-4, not needed for LS9 flows |
+| Frame segmentation `NEXT`/`FIN` | yes | — | closed | GAP-4, no LS9 flow uses it |
 | Receive priority classes (`GROUP`/`PC`) | yes | n/a | n/a | console-side scheduling |
-| Two ports 12300 / 12301 | yes | 12300 only | partial | GAP-5, informational |
+| Two ports 12300 / 12301 | yes | 12300 only | closed | GAP-5, 12301 unused by LS9 clients |
 | Port/device ids (`Port1=0`, `rxdev=1`) | yes | `portIndex`, `deviceId` | yes | |
 | Session keepalive / idle revalidation | yes | `keepaliveIntervalMs`, `liveTimeoutMs` | yes | idle-based; fires `onLiveLost` |
 | Connect timeout | yes | `connectTimeoutMs` | yes | default 5000 |
@@ -102,20 +102,26 @@ on the console's packet builder and parser hand-off). Details are in
 `EtherMidiPacket.reset(port, rxDevice)` and `EtherMidiTransport.reset()` send
 the 16-byte reset frame; inbound resets are still logged.
 
-### GAP-4 — multi-frame reassembly (`NEXT`/`FIN`) — deferred
+### GAP-4 — multi-frame reassembly (`NEXT`/`FIN`) — closed (not applicable)
 
-The console can carry one logical message over several EtherMIDI frames, but
-the LS9 bulk protocol splits blocks at the SysEx level already
-(`BulkDumpCodec.encodePackets` / `parsePacket`), one packet per frame, each well
-under 4980 bytes. No current flow exceeds a single frame. Revisit only if a
-future target sends a single logical frame larger than 4980; the read loop
-treats every frame independently.
+The console can carry a logical message over several EtherMIDI frames, but the
+LS9 application layer already splits bulk blocks at the SysEx level
+(`BulkDumpCodec.encodePackets` / `parsePacket`): one LS9 packet per frame, each
+well under 4980 bytes. No LS9 client flow (parameter change, parameter request,
+meter request/reply, bulk request, bulk packet, library call) produces a
+logical frame larger than one EtherMIDI packet. The read loop therefore treats
+every frame independently; an oversized frame is rejected by the decoder
+instead of being concatenated. There is no LS9 feature that requires `NEXT`
+segmentation, so this is closed rather than deferred.
 
-### GAP-5 — second port 12301 — deferred
+### GAP-5 — second port 12301 — closed (not applicable)
 
-The console descriptor pairs 12300 with 12301 and a 5688-byte bound. All
-observed client traffic uses 12300; 12301 is informational unless a feature is
-found that only answers there.
+The console descriptor pairs 12300 with 12301 and a 5688-byte bound. Static
+inspection of the firmware and of StageMix's connection code shows that every
+LS9 session, parameter, meter and bulk exchange uses **12300**; no client path
+selects 12301. The library resolves 12300 only, which matches all observed LS9
+flows. The 12301 constant is informational and is not an unimplemented app
+feature.
 
 ## Tests
 
@@ -141,5 +147,5 @@ the same test.
 | Live/keepalive | complete (GAP-2) |
 | Typed error results | complete (GAP-1) |
 | Reset | complete (GAP-3) |
-| Segmentation, second port | deferred (GAP-4, GAP-5) |
+| Segmentation, second port | closed (not used by LS9 flows) |
 | Console-side services (DHCP, zone, cascade, VCOM) | out of scope |

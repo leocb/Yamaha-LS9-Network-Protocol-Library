@@ -20,6 +20,7 @@ import io.github.leocb.ls9.bulk.Ls9BulkLayout;
 import io.github.leocb.ls9.meter.MeterCodec;
 import io.github.leocb.ls9.meter.MeterFrame;
 import io.github.leocb.ls9.meter.MeterGroup;
+import io.github.leocb.ls9.model.Ls9Elements;
 import io.github.leocb.ls9.model.Ls9FaderTable;
 import io.github.leocb.ls9.sysex.Ls9Sysex;
 import io.github.leocb.ls9.sysex.Ls9SysexMessage;
@@ -87,11 +88,54 @@ public final class SelfTest {
         eq("F0 43 10 3E 12 00 4D 6F 64 46 78 54 72 67 46 52 5A 50 4C 41 59 5F 00 01 F7",
                 Ls9Sysex.hex(Ls9Sysex.moduleTrigger(0, "FRZPLAY_", 0, true)), "module trigger");
 
+        // Scene attributes use the elements of the scene bulk header: title
+        // 0x0193 (indices 0..3), comment 0x0001 (indices 0..7). This matches
+        // StageMix storeSceneName:/storeSceneComment: and the current-data
+        // header mapping in BulkScene.
+        eq(0x0193, Ls9Elements.SCENE_TITLE, "scene title element");
+        eq(0x0001, Ls9Elements.SCENE_COMMENT, "scene comment element");
+        Ls9SysexMessage titleAttribute = Ls9Sysex.parse(Ls9Sysex.libraryAttribute(
+                0, Ls9Sysex.MODULE_SCENE, 12,
+                ParameterAddress.of(Ls9Elements.SCENE_TITLE, 1, 0),
+                Ls9Sysex.packName4("Name")));
+        check(titleAttribute != null, "parse scene title attribute");
+        eq(12, titleAttribute.number(), "scene title library number");
+        eq(0x0193, titleAttribute.address().element(), "scene title attribute element");
+        eq(1, titleAttribute.address().index(), "scene title attribute index");
+        eq(0, titleAttribute.address().channel(), "scene title attribute channel");
+        Ls9SysexMessage commentAttribute = Ls9Sysex.parse(Ls9Sysex.libraryAttribute(
+                0, Ls9Sysex.MODULE_SCENE, 12,
+                ParameterAddress.of(Ls9Elements.SCENE_COMMENT, 7, 0),
+                Ls9Sysex.packName4("end!")));
+        check(commentAttribute != null, "parse scene comment attribute");
+        eq(0x0001, commentAttribute.address().element(), "scene comment attribute element");
+        eq(7, commentAttribute.address().index(), "scene comment attribute index");
+
+        // LIBRARY ATTRIBUTE requests carry no value; the parser must still
+        // expose number/element/index/channel so a console or virtual console
+        // can answer them.
+        Ls9SysexMessage titleRequest = Ls9Sysex.parse(Ls9Sysex.libraryAttributeRequest(
+                0, Ls9Sysex.MODULE_SCENE, 12,
+                ParameterAddress.of(Ls9Elements.SCENE_TITLE, 2, 0)));
+        check(titleRequest != null, "parse scene title attribute request");
+        eq(12, titleRequest.number(), "scene title request number");
+        eq(0x0193, titleRequest.address().element(), "scene title request element");
+        eq(2, titleRequest.address().index(), "scene title request index");
+        check(titleRequest.value() == null, "scene title request has no value");
+
         Ls9SysexMessage parsed = Ls9Sysex.parse(change);
         check(parsed != null && parsed.isParameterChange(), "parse parameter change");
         eq("0033/0000/0037", String.format("%04X/%04X/%04X", parsed.address().element(),
                 parsed.address().index(), parsed.address().channel()), "parsed address");
         eq(823L, parsed.value(), "parsed value");
+
+        // Pan/balance are signed -63..63 and therefore use the same 35-bit
+        // two's-complement encoding as EQ gain and attenuator.
+        ParameterAddress pan = ParameterAddress.of(0x0032, 0x0001, 0);
+        eq("F0 43 10 3E 12 01 00 32 00 01 00 00 7F 7F 7F 7F 41 F7",
+                Ls9Sysex.hex(Ls9Sysex.parameterChange(0, pan, -63, true)), "pan -63 on the wire");
+        eq("F0 43 10 3E 12 01 00 32 00 01 00 00 00 00 00 00 3F F7",
+                Ls9Sysex.hex(Ls9Sysex.parameterChange(0, pan, 63, true)), "pan +63 on the wire");
 
         // 14-bit values split into 7-bit groups, big-endian.
         eq(823L, Ls9Sysex.decode7(Ls9Sysex.encode7(823, 5), 0, 5), "7-bit round trip");

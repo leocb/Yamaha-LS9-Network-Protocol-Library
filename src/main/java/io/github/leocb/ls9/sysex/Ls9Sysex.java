@@ -287,13 +287,15 @@ public final class Ls9Sysex {
             ParameterAddress address = null;
             Long value = null;
             if (message.length >= payloadOffset + 1) {
-                if (function.equals(FN_LIBRARY_ATTRIBUTE) && message.length >= payloadOffset + 10) {
+                if (function.equals(FN_LIBRARY_ATTRIBUTE) && message.length >= payloadOffset + 8) {
                     number = decode14(message, payloadOffset);
                     int element = decode14(message, payloadOffset + 2);
                     int index = decode14(message, payloadOffset + 4);
                     channel = decode14(message, payloadOffset + 6);
                     address = new ParameterAddress(DATA_OTHER, element, index, channel);
-                    value = decode7(message, payloadOffset + 8, VALUE_BYTES);
+                    if (message.length >= payloadOffset + 8 + VALUE_BYTES) {
+                        value = decode7(message, payloadOffset + 8, VALUE_BYTES);
+                    }
                 } else if (function.equals(FN_LIBRARY_EXISTS) && message.length >= payloadOffset + 7) {
                     // status, request number, top number, end number
                     number = decode14(message, payloadOffset + 1);

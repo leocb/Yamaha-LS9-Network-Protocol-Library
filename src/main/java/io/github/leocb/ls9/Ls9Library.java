@@ -100,8 +100,9 @@ public final class Ls9Library {
     }
 
     /**
-     * Sets one 4-character title element. The scene module uses element
-     * {@code 0x0001} with indexes 0..3.
+     * Sets one 4-character title element. Scene titles use element
+     * {@code 0x0193} with indexes 0..3; the scene comment uses
+     * {@code 0x0001} with indexes 0..7.
      */
     public void setAttribute(String module, int number, int element, int index,
                              int channel, String text) throws IOException {
@@ -110,7 +111,11 @@ public final class Ls9Library {
                 address, Ls9Sysex.packName4(text)));
     }
 
-    /** Sets a scene title (max 16 characters) through four attribute calls. */
+    /**
+     * Sets a scene title (max 16 characters) through four attribute calls.
+     * Scene titles use element {@code 0x0193}, the element of the scene bulk
+     * header; the comment uses {@code 0x0001} indices 0..7.
+     */
     public void setSceneTitle(int sceneNumber, String title) throws IOException {
         String text = title == null ? "" : title;
         if (text.length() > 16) {
@@ -119,7 +124,7 @@ public final class Ls9Library {
         for (int i = 0; i < 4; i++) {
             String part = i * 4 < text.length()
                     ? text.substring(i * 4, Math.min(i * 4 + 4, text.length())) : "";
-            setAttribute(Ls9Sysex.MODULE_SCENE, sceneNumber, 0x0001, i, 0, part);
+            setAttribute(Ls9Sysex.MODULE_SCENE, sceneNumber, 0x0193, i, 0, part);
         }
     }
 
@@ -139,9 +144,13 @@ public final class Ls9Library {
         return Ls9Sysex.unpackName4(getAttributeRaw(module, number, element, index, channel));
     }
 
-    /** Reads a scene title. */
+    /** Reads a scene title (element {@code 0x0193}, indices 0..3). */
     public String getSceneTitle(int sceneNumber) throws IOException {
-        return getLibraryTitle(Ls9Sysex.MODULE_SCENE, sceneNumber);
+        StringBuilder sb = new StringBuilder(16);
+        for (int i = 0; i < 4; i++) {
+            sb.append(getAttribute(Ls9Sysex.MODULE_SCENE, sceneNumber, 0x0193, i, 0));
+        }
+        return Text.trimTrailing(sb.toString());
     }
 
     /**

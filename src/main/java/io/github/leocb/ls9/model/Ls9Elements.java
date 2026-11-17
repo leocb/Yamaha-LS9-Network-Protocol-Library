@@ -14,7 +14,16 @@ public final class Ls9Elements {
 
     // Scene / global
     public static final int SCENE_MUTE_MASTER = 0x0021;
+    /** Current-scene comment words (indices 0..7). */
     public static final int SCENE_COMMENT = 0x0001;
+    /**
+     * Scene title words (indices 0..3). The title lives in the scene bulk
+     * header at 0x00; StageMix's {@code SceneTitleParameter} and its
+     * {@code DecodeCurSceneData} decoder expose it as element 0x0193.
+     */
+    public static final int SCENE_TITLE = 0x0193;
+    /** Current scene number (byte 0x12 of the current-data image). */
+    public static final int SCENE_NUMBER = 0x0195;
 
     // Setup
     public static final int SETUP_NETWORK = 0x0228;
