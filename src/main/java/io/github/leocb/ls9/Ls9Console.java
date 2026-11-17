@@ -103,6 +103,9 @@ public final class Ls9Console implements AutoCloseable {
         private int connectTimeoutMs = EtherMidiTransport.DEFAULT_CONNECT_TIMEOUT_MS;
         private boolean reverseListen = true;
         private int listenPort = EtherMidiTransport.DEFAULT_TCP_PORT;
+        private int keepaliveIntervalMs = 0;
+        private int liveTimeoutMs = 3000;
+        private Runnable onLiveLost;
         private MidiTransport transport;
 
         public Builder host(String host) {
@@ -176,6 +179,30 @@ public final class Ls9Console implements AutoCloseable {
             return this;
         }
 
+        /**
+         * Enables periodic liveness polling on the EtherMIDI session (see
+         * {@link EtherMidiTransport#keepaliveIntervalMs(int)}). Zero disables it;
+         * the transport always answers console-initiated polls.
+         */
+        public Builder keepaliveIntervalMs(int keepaliveIntervalMs) {
+            this.keepaliveIntervalMs = keepaliveIntervalMs;
+            return this;
+        }
+
+        public Builder liveTimeoutMs(int liveTimeoutMs) {
+            this.liveTimeoutMs = liveTimeoutMs;
+            return this;
+        }
+
+        /**
+         * Invoked when an enabled keepalive poll fails. The session is not torn
+         * down automatically; the socket's own disconnect handling still runs.
+         */
+        public Builder onLiveLost(Runnable onLiveLost) {
+            this.onLiveLost = onLiveLost;
+            return this;
+        }
+
         /** Uses an already-configured transport instead of EtherMIDI. */
         public Builder transport(MidiTransport transport) {
             this.transport = Objects.requireNonNull(transport, "transport");
@@ -192,7 +219,10 @@ public final class Ls9Console implements AutoCloseable {
                         .authData(authData)
                         .connectTimeoutMs(connectTimeoutMs)
                         .reverseListen(reverseListen)
-                        .listenPort(listenPort);
+                        .listenPort(listenPort)
+                        .keepaliveIntervalMs(keepaliveIntervalMs)
+                        .liveTimeoutMs(liveTimeoutMs)
+                        .onLiveLost(onLiveLost);
             }
             Ls9Console console = new Ls9Console(t, deviceNumber, timeoutMs);
             t.setReceiver(console::handleMidi);

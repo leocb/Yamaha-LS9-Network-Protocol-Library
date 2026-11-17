@@ -25,10 +25,20 @@ public final class EtherMidiPacket {
     public static final int CMD_SYSEX = 0x16;
     public static final int CMD_OPEN = 0x20;
     public static final int CMD_OPEN_ACK = 0x21;
+    /** Console refused the open request (for example mode bitmap without bit 0). */
+    public static final int CMD_OPEN_ERROR = 0x22;
     public static final int CMD_AUTH = 0x23;
     public static final int CMD_AUTH_ACK = 0x24;
+    /** Console rejected the MAC challenge. */
+    public static final int CMD_ATTACH_ERROR = 0x25;
     public static final int CMD_CLOSE = 0x30;
     public static final int CMD_RESET = 0x40;
+    /** Liveness poll; answered with {@link #CMD_LIVE_ACK} or {@link #CMD_LIVE_ERROR}. */
+    public static final int CMD_LIVE = 0x50;
+    public static final int CMD_LIVE_ACK = 0x51;
+    public static final int CMD_LIVE_ERROR = 0x52;
+    /** Fourth accepted live code; no distinct console name. */
+    public static final int CMD_LIVE_ALT = 0x53;
 
     private EtherMidiPacket() {
     }
@@ -126,6 +136,47 @@ public final class EtherMidiPacket {
         p[7] = (byte) rxDevice;
         putInt(p, 12, 0xFFFFFFFF);
         return p;
+    }
+
+    /** Builds the 16-byte reset notification (command {@code 0x40}). */
+    public static byte[] reset(int port, int rxDevice) {
+        byte[] p = new byte[HEADER_SIZE];
+        putInt(p, 0, HEADER_SIZE);
+        p[4] = (byte) CMD_RESET;
+        p[5] = 0;
+        p[6] = (byte) port;
+        p[7] = (byte) rxDevice;
+        putInt(p, 12, 0xFFFFFFFF);
+        return p;
+    }
+
+    /**
+     * Builds a 16-byte liveness poll (command {@code 0x50}). The console treats
+     * live frames as zero-payload control frames; the header fields are echoed
+     * back in the reply and carry no MIDI data.
+     */
+    public static byte[] live(int port, int rxDevice) {
+        byte[] p = new byte[HEADER_SIZE];
+        putInt(p, 0, HEADER_SIZE);
+        p[4] = (byte) CMD_LIVE;
+        p[5] = 0;
+        p[6] = (byte) port;
+        p[7] = (byte) rxDevice;
+        return p;
+    }
+
+    /** Builds the liveness acknowledgement ({@code 0x51}) by echoing a poll. */
+    public static byte[] liveReply(byte[] request) {
+        byte[] reply = Arrays.copyOf(request, Math.max(HEADER_SIZE, request.length));
+        reply[4] = (byte) CMD_LIVE_ACK;
+        return reply;
+    }
+
+    /** Builds the liveness failure reply ({@code 0x52}) by echoing a poll. */
+    public static byte[] liveError(byte[] request) {
+        byte[] reply = liveReply(request);
+        reply[4] = (byte) CMD_LIVE_ERROR;
+        return reply;
     }
 
     /** Decodes a packet whose first 4 bytes have already been validated. */

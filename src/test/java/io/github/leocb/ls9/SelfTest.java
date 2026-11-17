@@ -24,7 +24,9 @@ import io.github.leocb.ls9.model.Ls9FaderTable;
 import io.github.leocb.ls9.sysex.Ls9Sysex;
 import io.github.leocb.ls9.sysex.Ls9SysexMessage;
 import io.github.leocb.ls9.sysex.ParameterAddress;
+import io.github.leocb.ls9.transport.EtherMidiException;
 import io.github.leocb.ls9.transport.EtherMidiPacket;
+import io.github.leocb.ls9.transport.EtherMidiTransport;
 import io.github.leocb.ls9.transport.YemAuth;
 
 /**
@@ -49,6 +51,12 @@ public final class SelfTest {
         testTransportAgainstFakeConsole(false);
         testTransportAgainstFakeConsole(true);
         testReverseReplyConnection();
+        testOpenErrorTyped();
+        testOpenRetryWithBitZero();
+        testAttachErrorTyped();
+        testLiveReplyToConsolePoll();
+        testProbeLiveAndReset();
+        testProbeLiveTimeout();
         System.out.println("OK: " + checks + " checks passed");
     }
 
@@ -733,6 +741,257 @@ public final class SelfTest {
             serverThread.join(3000);
             if (failure.get() != null) {
                 throw new AssertionError("reverse fake console failed", failure.get());
+            }
+        }
+    }
+
+    private static byte[] openAck(byte[] open, int capabilities) {
+        byte[] ack = open.clone();
+        ack[4] = 0x21;
+        ack[8] = 1;
+        ack[9] = 0;
+        EtherMidiPacket.putInt(ack, 12, capabilities);
+        return ack;
+    }
+
+    private static void testOpenErrorTyped() throws Exception {
+        try (ServerSocket server = new ServerSocket(0)) {
+            AtomicReference<Throwable> failure = new AtomicReference<>();
+            Thread thread = new Thread(() -> {
+                try (Socket s = server.accept()) {
+                    DataInputStream in = new DataInputStream(s.getInputStream());
+                    OutputStream out = s.getOutputStream();
+                    byte[] open = readPacket(in);
+                    eq(0x20, open[4] & 0xFF, "open error: command");
+                    byte[] error = open.clone();
+                    error[4] = 0x22;
+                    out.write(error);
+                    out.flush();
+                } catch (Throwable t) {
+                    failure.set(t);
+                }
+            }, "fake-open-error");
+            thread.start();
+
+            EtherMidiTransport transport = new EtherMidiTransport("127.0.0.1", server.getLocalPort())
+                    .modeBitmap(3).connectTimeoutMs(2000).reverseListen(false);
+            try {
+                transport.open();
+                throw new AssertionError("expected the console to refuse the open request");
+            } catch (EtherMidiException e) {
+                check(e.isOpenRefused(), "open refusal is typed");
+                eq(0x22, e.command(), "open refusal command");
+            } finally {
+                transport.close();
+            }
+            thread.join(3000);
+            if (failure.get() != null) {
+                throw new AssertionError("fake open-error console failed", failure.get());
+            }
+        }
+    }
+
+    private static void testOpenRetryWithBitZero() throws Exception {
+        try (ServerSocket server = new ServerSocket(0)) {
+            AtomicReference<Throwable> failure = new AtomicReference<>();
+            Thread thread = new Thread(() -> {
+                try (Socket s = server.accept()) {
+                    DataInputStream in = new DataInputStream(s.getInputStream());
+                    OutputStream out = s.getOutputStream();
+                    byte[] first = readPacket(in);
+                    eq(0x20000002, EtherMidiPacket.getInt(first, 12), "retry: first bitmap");
+                    byte[] refused = first.clone();
+                    refused[4] = 0x22;
+                    out.write(refused);
+                    out.flush();
+
+                    byte[] second = readPacket(in);
+                    eq(0x20000003, EtherMidiPacket.getInt(second, 12), "retry: bitmap gets bit 0");
+                    out.write(openAck(second, 0));
+                    out.flush();
+                    try {
+                        readPacket(in);
+                    } catch (IOException ignored) {
+                        // expected close
+                    }
+                } catch (Throwable t) {
+                    failure.set(t);
+                }
+            }, "fake-open-retry");
+            thread.start();
+
+            try (EtherMidiTransport transport = new EtherMidiTransport("127.0.0.1", server.getLocalPort())
+                    .modeBitmap(2).connectTimeoutMs(2000).reverseListen(false)) {
+                transport.open();
+                check(transport.isOpen(), "open retried with bit 0");
+            }
+            thread.join(3000);
+            if (failure.get() != null) {
+                throw new AssertionError("fake open-retry console failed", failure.get());
+            }
+        }
+    }
+
+    private static void testAttachErrorTyped() throws Exception {
+        byte[] mac = YemAuth.parseMac("00:1A:2B:3C:4D:5E");
+        try (ServerSocket server = new ServerSocket(0)) {
+            AtomicReference<Throwable> failure = new AtomicReference<>();
+            Thread thread = new Thread(() -> {
+                try (Socket s = server.accept()) {
+                    DataInputStream in = new DataInputStream(s.getInputStream());
+                    OutputStream out = s.getOutputStream();
+                    byte[] open = readPacket(in);
+                    byte[] ack = openAck(open, 0x80000000);
+                    ack[10] = 0x42;
+                    ack[11] = (byte) 0x99;
+                    out.write(ack);
+                    out.flush();
+
+                    byte[] auth = readPacket(in);
+                    eq(0x23, auth[4] & 0xFF, "attach error: auth command");
+                    byte[] reject = new byte[16];
+                    EtherMidiPacket.putInt(reject, 0, 16);
+                    reject[4] = 0x25;
+                    out.write(reject);
+                    out.flush();
+                } catch (Throwable t) {
+                    failure.set(t);
+                }
+            }, "fake-attach-error");
+            thread.start();
+
+            EtherMidiTransport transport = new EtherMidiTransport("127.0.0.1", server.getLocalPort())
+                    .connectTimeoutMs(2000).reverseListen(false).authData(mac);
+            try {
+                transport.open();
+                throw new AssertionError("expected the console to reject the MAC challenge");
+            } catch (EtherMidiException e) {
+                check(e.isAttachRejected(), "attach rejection is typed");
+                eq(0x25, e.command(), "attach rejection command");
+            } finally {
+                transport.close();
+            }
+            thread.join(3000);
+            if (failure.get() != null) {
+                throw new AssertionError("fake attach-error console failed", failure.get());
+            }
+        }
+    }
+
+    private static void testLiveReplyToConsolePoll() throws Exception {
+        try (ServerSocket server = new ServerSocket(0)) {
+            AtomicReference<Throwable> failure = new AtomicReference<>();
+            Thread thread = new Thread(() -> {
+                try (Socket s = server.accept()) {
+                    DataInputStream in = new DataInputStream(s.getInputStream());
+                    OutputStream out = s.getOutputStream();
+                    byte[] open = readPacket(in);
+                    out.write(openAck(open, 0));
+                    out.flush();
+
+                    out.write(EtherMidiPacket.live(0, 0));
+                    out.flush();
+                    byte[] reply = readPacket(in);
+                    eq(0x51, reply[4] & 0xFF, "console poll is answered with RTNLIVE");
+                    eq(16, EtherMidiPacket.getInt(reply, 0), "live reply length");
+                    try {
+                        readPacket(in);
+                    } catch (IOException ignored) {
+                        // expected close
+                    }
+                } catch (Throwable t) {
+                    failure.set(t);
+                }
+            }, "fake-live-poll");
+            thread.start();
+
+            try (EtherMidiTransport transport = new EtherMidiTransport("127.0.0.1", server.getLocalPort())
+                    .connectTimeoutMs(2000).reverseListen(false)) {
+                transport.open();
+                Thread.sleep(200);
+            }
+            thread.join(3000);
+            if (failure.get() != null) {
+                throw new AssertionError("fake live-poll console failed", failure.get());
+            }
+        }
+    }
+
+    private static void testProbeLiveAndReset() throws Exception {
+        try (ServerSocket server = new ServerSocket(0)) {
+            AtomicReference<Throwable> failure = new AtomicReference<>();
+            Thread thread = new Thread(() -> {
+                try (Socket s = server.accept()) {
+                    DataInputStream in = new DataInputStream(s.getInputStream());
+                    OutputStream out = s.getOutputStream();
+                    byte[] open = readPacket(in);
+                    out.write(openAck(open, 0));
+                    out.flush();
+
+                    byte[] poll = readPacket(in);
+                    eq(0x50, poll[4] & 0xFF, "client liveness poll");
+                    out.write(EtherMidiPacket.liveReply(poll));
+                    out.flush();
+
+                    byte[] reset = readPacket(in);
+                    eq(0x40, reset[4] & 0xFF, "client reset");
+                    try {
+                        readPacket(in);
+                    } catch (IOException ignored) {
+                        // expected close
+                    }
+                } catch (Throwable t) {
+                    failure.set(t);
+                }
+            }, "fake-live-probe");
+            thread.start();
+
+            try (EtherMidiTransport transport = new EtherMidiTransport("127.0.0.1", server.getLocalPort())
+                    .connectTimeoutMs(2000).reverseListen(false)) {
+                transport.open();
+                check(transport.probeLive(2000), "probe returns true on RTNLIVE");
+                check(transport.isLive(), "transport stays live after a successful probe");
+                transport.reset();
+            }
+            thread.join(3000);
+            if (failure.get() != null) {
+                throw new AssertionError("fake live-probe console failed", failure.get());
+            }
+        }
+    }
+
+    private static void testProbeLiveTimeout() throws Exception {
+        try (ServerSocket server = new ServerSocket(0)) {
+            AtomicReference<Throwable> failure = new AtomicReference<>();
+            Thread thread = new Thread(() -> {
+                try (Socket s = server.accept()) {
+                    DataInputStream in = new DataInputStream(s.getInputStream());
+                    OutputStream out = s.getOutputStream();
+                    byte[] open = readPacket(in);
+                    out.write(openAck(open, 0));
+                    out.flush();
+                    byte[] poll = readPacket(in);
+                    eq(0x50, poll[4] & 0xFF, "timeout: client poll");
+                    try {
+                        readPacket(in);
+                    } catch (IOException ignored) {
+                        // expected close
+                    }
+                } catch (Throwable t) {
+                    failure.set(t);
+                }
+            }, "fake-live-timeout");
+            thread.start();
+
+            try (EtherMidiTransport transport = new EtherMidiTransport("127.0.0.1", server.getLocalPort())
+                    .connectTimeoutMs(2000).reverseListen(false)) {
+                transport.open();
+                check(!transport.probeLive(200), "probe returns false without a reply");
+                check(!transport.isLive(), "failed probe marks the session not live");
+            }
+            thread.join(3000);
+            if (failure.get() != null) {
+                throw new AssertionError("fake live-timeout console failed", failure.get());
             }
         }
     }

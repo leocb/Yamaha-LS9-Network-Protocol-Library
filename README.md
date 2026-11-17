@@ -132,12 +132,19 @@ Ls9Console ls9 = Ls9Console.builder()
         .deviceNumber(0)     // SysEx device number: MIDI ch 1
         .authMac("00:1A:2B:3C:4D:5E") // only if the console challenges
         .reverseListen(true) // listen on 12300 for the console's reply connections
+        .keepaliveIntervalMs(0) // >0 polls with 0x50/0x51 when idle
         .open();
 ```
 
 The transport binds TCP **12300** for the console's reverse reply
 connections. Keep that port free; another LS9 client holding it will prevent
 the console from delivering replies.
+
+The console's liveness ("live") frames are always answered, so its own
+`OPEN` → `LIVE` check succeeds on connections it initiates. Optionally enable
+idle keepalive with `keepaliveIntervalMs`; `onLiveLost` reports a failed poll.
+The low-level transport also exposes `probeLive()`, `reset()` and typed
+`EtherMidiException`s for open/attach refusals.
 
 If the console asks for MAC authentication and you did not supply a MAC, the
 handshake fails with a clear message. You can copy the MAC from the console's
@@ -400,6 +407,10 @@ See [`PROTOCOL.md`](PROTOCOL.md) for:
 * the MAC challenge CRC,
 * the LS9 SysEx format and function calls,
 * the assumptions that still need hardware confirmation.
+
+See [`docs/FIRMWARE-PARITY.md`](docs/FIRMWARE-PARITY.md) for the comparison
+between the console firmware and this library, including the live/keepalive
+group and the remaining implementation gaps.
 
 ## Releasing
 

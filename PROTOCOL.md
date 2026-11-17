@@ -17,6 +17,7 @@ that still needs confirmation on real hardware.
 | `com.yamaha.stagemix-ls9-32_6.0.7_und3fined.ipa` | StageMix 6.0.7 (arm64) | decrypted payload analysed with REA/Ghidra; bulk handlers, module table, scene/mixer/out-port templates |
 | `YamahaCA_AMX_ExampleV1.0_Programming.zip` | Yamaha AMX example programs | `Yamaha LS9 Comms.axs` text source used to confirm parameter, scene and meter framing |
 | `YamahaCA_Crestron_ExampleV1.0_Programming.zip` | Yamaha Crestron example programs | inspected for additional bulk/scene examples (none found) |
+| `LS9P1_35.PGM` | `418a36b4e4915b7ce976dfea5ee629f37741ac8919466d1a4b50adecc2339e1c` (LS9 firmware 1.350, main image at `0x0C000000`) | rizin/Ghidra static analysis; console-side transport, protocol, eMIDI and bulk maps (§1.11) |
 
 The driver's own build string is:
 
@@ -268,6 +269,69 @@ Text fields (input/mix/matrix names and effect titles) are stored as plain
 ASCII bytes in the bulk image, even though the same addresses use 7-bit
 packed groups on PARAMETER CHANGE. `Ls9BulkEntry.text` reads the raw bytes;
 using `unpackName4` on the bulk value produces garbage.
+
+### 1.11 Console-side implementation (firmware 1.350)
+
+The console implementation was mapped statically from `LS9P1_35.PGM`. The
+transport is a two-stage session: the wire commands observed from the driver
+(§1.3) are a subset of what the console accepts.
+
+**Command table** (decoder at image `0x0C09CE44`, `packet[4]` → format id):
+
+| code | fmt | direction | role |
+|---|---|---|---|
+| `0x11` `0x12` `0x13` | 8 9 10 | both | 1/2/3-byte short MIDI |
+| `0x16` | 11 | both | SysEx |
+| `0x20` | 1 | client → console | open request |
+| `0x21` | 2 | console → client | open acknowledgement |
+| `0x22` | 3 | console → client | **open error** |
+| `0x23` | 4 | client → console | attach / MAC challenge |
+| `0x24` | 5 | console → client | attach accepted |
+| `0x25` | 6 | console → client | **attach rejected** |
+| `0x30` | 7 | both | close session |
+| `0x40` | 12 | both | reset / NOP |
+| `0x50`–`0x53` | 13–16 | both | **live/keepalive group** |
+
+Codes `0x22`, `0x25` and `0x50`–`0x53` are not used by the Network-MIDI
+driver but are implemented by the console; `0x22` is the reply when the mode
+bitmap in `0x20` has bit 0 clear (§1.6).
+
+**Live group.** The console's active-init state machine has two stages, visible
+in its own log strings:
+
+```
+ePort:ACTIVE_INIT_OK(OPEN)     ePort:ACTIVE_INIT_FAIL(OPEN)
+ePort:ACTIVE_INIT_OK(LIVE)     ePort:ACTIVE_INIT_FAIL(LIVE)
+```
+
+`0x50` is a liveness poll, `0x51` (`PROT_RTNLIVE`) its success reply and
+`0x52` (`PROT_ERRLIVE`) its failure reply; `0x53` is an accepted fourth code
+with no distinct name. Live frames carry no MIDI payload, are answered from
+per-port state and are not queued to the MIDI path. They exist to confirm that
+a port can carry traffic after `OPEN`, to keep an idle session alive, and to
+revalidate after timeouts or an IP-conflict network restart. The console also
+runs live polls on connections it initiates (the reverse path, §1.10), so a
+client that ignores `0x50` can have its port marked not-live. The library
+always answers `0x50` with `0x51` and optionally polls when idle
+(`keepaliveIntervalMs`).
+
+**Ports and sizing.** The console port descriptor carries two ports,
+**12300** (`0x300C`) and **12301** (`0x300D`), plus a receive bound of **5688**
+(`0x1638`); 12300 remains the session port the driver and this library use.
+Frame maximum is 5000 bytes and maximum SysEx is 4980, matching §1.3.
+
+**Batch/flow control.** The console segments logical transfers across frames
+using an internal `NEXT`/`FIN` scheme, with two receive priority classes
+(`GROUP` for console/zone traffic, `PC` for controller traffic) and separate
+size accounting for device-group and MIDI data. The LS9 parameter and bulk
+protocols already split large blocks into multiple SysEx packets (each far
+below 4980 bytes), so a client does not need to drive EtherMIDI-level
+segmentation in practice.
+
+**Other console services.** Zone/cascade, virtual COM, DHCP/auto-IP and
+duplicate-IP recovery are console-side services; they do not change the session
+protocol above. See `docs/FIRMWARE-PARITY.md` for the feature-by-feature
+comparison with this library.
 
 ## 2. LS9 System Exclusive protocol
 
@@ -553,6 +617,53 @@ channels 0..65 of the single published element `0x208`.
 the model; the descriptor walk itself is model-independent because the layout
 is the console image layout.
 
+### 2.1.1 Firmware verification of the bulk packet coding
+
+The console side (`midi_blk.cpp`, image `0x0C15…`) was compared instruction by
+instruction with `BulkDumpCodec`:
+
+| Element | Firmware | Library | Result |
+|---|---|---|---|
+| Start / manufacturer | `F0 43` | `0xF0`, `0x43` | match |
+| Sub-command | `0x00|device` (data), `0x20|device` (request), device nibble checked | `SUB_DATA`, `SUB_REQUEST`, `device & 0x0F` | match |
+| Group | `0x3E` | `GROUP_ID` | match |
+| Model byte | at offset 6, compared with a runtime model (`0x12` for LS9) | `MODEL_ID` at offset 6 | match |
+| Byte count | 14-bit at offsets 4–5, `(b4 << 7) | b5` | same | match |
+| Length relation | `count + 8 == total` | `sysex.length == 8 + byteCount` | match |
+| Module name | 8 bytes at offsets 7–14 | same | match |
+| Checksum | sum of bytes `[6, 6+count)`, store `(-sum) & 0x7F` at `6+count` | same | **byte-exact** |
+| 8→7 packing | flag byte, mask starts `0x40` and shifts right per byte, data `& 0x7F`, groups of 7 | `1 << (6-i)` | **byte-exact** |
+| 7→8 unpacking | flag shifted left before each byte, test bit 7, groups of 8 → 7, partial group `n-1` | `((flags << (i+1)) & 0x80)` | **byte-exact** |
+| Partial group | remaining < 7 / < 8 handled separately, flags still start at `0x40` | same | match |
+| Request frame | `F0 43 2n 3E 12 "MODULE" nn nn F7` (no count) | `request()` | match |
+
+The four remaining data-header bytes (offsets 15–18) are now verified on the
+build side and on the parser hand-off, not inferred:
+
+* `fcn.0c158980` builds a data packet by calling the header builder
+  (`0x0C15801A`, which ends after the 8-byte module at offset 14), then
+  encodes the block number with `fcn.0c158002` (two bytes: `n >> 7` and
+  `n & 0x7F`, returning a pointer past them), then writes
+  `mov.w 0x0C(ctx)` as **one byte** (last-packet) and `mov.w 0x0E(ctx)` as the
+  next **one byte** (packet index). That fixes number at 15–16, last at 17,
+  index at 18, data at 19.
+* `fcn.0c1590fe` (data parser) starts at the model byte (offset 6), skips it,
+  copies the 8-byte module from offset 7, then hands the block handler a
+  pointer to **offset 15** with length `count - 9` — exactly the four tail
+  header bytes plus the encoded payload.
+* `fcn.0c159232` (request parser) checks the model at offset 4, copies the
+  module from offset 5, and reads the block number as `(b13 << 7) | b14`,
+  matching `request()` byte for byte.
+
+The receive state machine also enforces sequencing: it increments a counter and
+compares it with the "last" value (`0x0C159446`–`0x0C159452`), rejecting
+out-of-order packets, which is the same contract `parsePacket` /
+`BulkDumpAssembler` implement.
+
+Conclusion: the LS9 bulk packet coding in this library is equivalent to the
+console implementation for framing, header positions, checksum, packing and
+sequencing.
+
 ### 2.2 Level meters
 
 Request (sub-status `3n`, data category `21`):
@@ -686,6 +797,11 @@ into 20..14, etc. (MSB-first). If names appear scrambled on hardware, swap the
 packing in `Ls9Sysex.packName4`.
 
 ## 4. What remains uncertain
+
+The transport itself (§1) is no longer in this list: §1.11 maps the console
+implementation and `docs/FIRMWARE-PARITY.md` tracks the remaining library gaps
+(live/keepalive, typed open/attach errors, reset, optional segmentation). The
+items below concern parameters, files and device configuration.
 
 1. **Port index.** The driver stores `YEMDevice` pointers in a 256-entry array
    indexed by the port number (`str x22, [x8, #0x98]` where `x8 = base +

@@ -55,6 +55,15 @@ public final class EtherMidiTransport implements MidiTransport {
     private boolean autoReplyToOpen = true;
     private boolean reverseListen = true;
     private int listenPort = DEFAULT_TCP_PORT;
+    private int keepaliveIntervalMs = 0;   // 0 = no periodic liveness polling
+    private int liveTimeoutMs = 3000;
+    private volatile Runnable onLiveLost;
+    private volatile boolean live = true;
+    private final Object liveLock = new Object();
+    private boolean livePending;
+    private boolean liveResult;
+    private volatile long lastWriteNanos;
+    private volatile Thread keepaliveThread;
 
     private volatile Socket socket;
     private volatile InputStream input;
@@ -131,6 +140,41 @@ public final class EtherMidiTransport implements MidiTransport {
         }
         this.listenPort = listenPort;
         return this;
+    }
+
+    /**
+     * Enables periodic liveness polling: when the session has been idle for the
+     * interval, the transport sends a {@code 0x50} poll and expects a
+     * {@code 0x51} reply within {@link #liveTimeoutMs(int)}. Zero disables it.
+     * The transport always answers console-initiated polls, regardless of this
+     * setting.
+     */
+    public EtherMidiTransport keepaliveIntervalMs(int keepaliveIntervalMs) {
+        if (keepaliveIntervalMs < 0) {
+            throw new IllegalArgumentException("keepaliveIntervalMs must be >= 0");
+        }
+        this.keepaliveIntervalMs = keepaliveIntervalMs;
+        return this;
+    }
+
+    /** Timeout for a liveness poll before it is treated as failed. */
+    public EtherMidiTransport liveTimeoutMs(int liveTimeoutMs) {
+        if (liveTimeoutMs <= 0) {
+            throw new IllegalArgumentException("liveTimeoutMs must be > 0");
+        }
+        this.liveTimeoutMs = liveTimeoutMs;
+        return this;
+    }
+
+    /** Callback invoked when a liveness check fails (timeout or {@code 0x52}). */
+    public EtherMidiTransport onLiveLost(Runnable onLiveLost) {
+        this.onLiveLost = onLiveLost;
+        return this;
+    }
+
+    /** Last known liveness state; starts true and flips on a failed poll. */
+    public boolean isLive() {
+        return live;
     }
 
     public String host() {
@@ -217,6 +261,7 @@ public final class EtherMidiTransport implements MidiTransport {
             this.acceptThread = at;
             at.start();
         }
+        startKeepalive();
     }
 
     private void acceptLoop() {
@@ -299,17 +344,22 @@ public final class EtherMidiTransport implements MidiTransport {
     }
 
     private void handshake() throws IOException {
-        byte[] request = EtherMidiPacket.openRequest(portIndex, deviceId, modeBitmap);
-        writeFully(request);
-        byte[] reply = readPacket();
-        if (reply.length < EtherMidiPacket.HEADER_SIZE) {
-            throw new IOException("short open acknowledgement from console");
-        }
+        byte[] reply = exchangeOpen();
         int command = reply[4] & 0xFF;
+        if (command == EtherMidiPacket.CMD_OPEN_ERROR && (modeBitmap & 1) == 0) {
+            // The console requires mode bit 0; retry once with it set.
+            modeBitmap |= 1;
+            reply = exchangeOpen();
+            command = reply[4] & 0xFF;
+        }
+        if (command == EtherMidiPacket.CMD_OPEN_ERROR) {
+            throw new EtherMidiException(
+                    "console refused the EtherMIDI open request; the mode bitmap must have bit 0 set",
+                    command, reply);
+        }
         if (command != EtherMidiPacket.CMD_OPEN_ACK) {
-            throw new IOException(String.format(
-                    "unexpected handshake reply 0x%02X (expected 0x21): %s",
-                    command, EtherMidiPacket.hex(reply)));
+            throw new EtherMidiException(
+                    "unexpected open reply (expected 0x21)", command, reply);
         }
         int capabilities = EtherMidiPacket.getInt(reply, 12);
         // StageMix uses the port and rx fields echoed in the open reply for the
@@ -332,14 +382,27 @@ public final class EtherMidiTransport implements MidiTransport {
             writeFully(auth);
             byte[] authReply = readPacket();
             int authCommand = authReply[4] & 0xFF;
+            if (authCommand == EtherMidiPacket.CMD_ATTACH_ERROR) {
+                throw new EtherMidiException(
+                        "console rejected the MAC challenge; check the authData/MAC",
+                        authCommand, authReply);
+            }
             if (authCommand != EtherMidiPacket.CMD_AUTH_ACK
                     && authCommand != EtherMidiPacket.CMD_OPEN_ACK) {
-                throw new IOException(String.format(
-                        "authentication rejected, reply 0x%02X: %s",
-                        authCommand, EtherMidiPacket.hex(authReply)));
+                throw new EtherMidiException(
+                        "unexpected authentication reply", authCommand, authReply);
             }
             LOG.log(Level.FINE, "EtherMIDI authentication accepted");
         }
+    }
+
+    private byte[] exchangeOpen() throws IOException {
+        writeFully(EtherMidiPacket.openRequest(portIndex, deviceId, modeBitmap));
+        byte[] reply = readPacket();
+        if (reply.length < EtherMidiPacket.HEADER_SIZE) {
+            throw new IOException("short open reply from console");
+        }
+        return reply;
     }
 
     @Override
@@ -354,6 +417,89 @@ public final class EtherMidiTransport implements MidiTransport {
         writePacket(EtherMidiPacket.shortMidi(sessionPort, sessionRx, message));
     }
 
+    /**
+     * Sends a liveness poll ({@code 0x50}) and waits for the console's reply on
+     * either socket. Returns true on {@code 0x51}, false on {@code 0x52} or
+     * timeout. A failed poll updates {@link #isLive()} and invokes
+     * {@link #onLiveLost(Runnable)}.
+     */
+    public boolean probeLive(long timeoutMs) throws IOException {
+        ensureOpen();
+        synchronized (liveLock) {
+            livePending = true;
+            liveResult = false;
+        }
+        writePacket(EtherMidiPacket.live(sessionPort, sessionRx));
+        long deadline = System.nanoTime() + timeoutMs * 1_000_000L;
+        boolean completed;
+        synchronized (liveLock) {
+            while (livePending) {
+                long remaining = (deadline - System.nanoTime()) / 1_000_000L;
+                if (remaining <= 0) {
+                    break;
+                }
+                try {
+                    liveLock.wait(Math.max(1, remaining));
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+            }
+            completed = !livePending;
+        }
+        if (!completed) {
+            markLive(false);
+            return false;
+        }
+        return live;
+    }
+
+    /** Liveness poll using {@link #liveTimeoutMs(int)}. */
+    public boolean probeLive() throws IOException {
+        return probeLive(liveTimeoutMs);
+    }
+
+    /** Sends an EtherMIDI reset ({@code 0x40}) to the console. */
+    public void reset() throws IOException {
+        ensureOpen();
+        writePacket(EtherMidiPacket.reset(sessionPort, sessionRx));
+    }
+
+    private void startKeepalive() {
+        if (keepaliveIntervalMs <= 0) {
+            return;
+        }
+        Thread t = new Thread(this::keepaliveLoop, "ls9-ethermidi-live");
+        t.setDaemon(true);
+        keepaliveThread = t;
+        t.start();
+    }
+
+    private void keepaliveLoop() {
+        long intervalNanos = keepaliveIntervalMs * 1_000_000L;
+        while (running) {
+            try {
+                Thread.sleep(keepaliveIntervalMs);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                return;
+            }
+            if (!running) {
+                return;
+            }
+            if (System.nanoTime() - lastWriteNanos < intervalNanos) {
+                continue;
+            }
+            try {
+                probeLive(liveTimeoutMs);
+            } catch (IOException e) {
+                if (running) {
+                    LOG.log(Level.FINE, "EtherMIDI liveness poll failed", e);
+                }
+            }
+        }
+    }
+
     private void writePacket(byte[] packet) throws IOException {
         synchronized (writeLock) {
             OutputStream out = output;
@@ -362,6 +508,7 @@ public final class EtherMidiTransport implements MidiTransport {
             }
             out.write(packet);
             out.flush();
+            lastWriteNanos = System.nanoTime();
         }
     }
 
@@ -373,6 +520,7 @@ public final class EtherMidiTransport implements MidiTransport {
             }
             out.write(packet);
             out.flush();
+            lastWriteNanos = System.nanoTime();
         }
     }
 
@@ -397,6 +545,7 @@ public final class EtherMidiTransport implements MidiTransport {
             }
         } finally {
             running = false;
+            live = false;
             ServerSocket ls = listener;
             listener = null;
             closeQuietly(ls);
@@ -437,6 +586,9 @@ public final class EtherMidiTransport implements MidiTransport {
                     replyToOpen(packet, replyOut);
                 }
             }
+            case EtherMidiPacket.CMD_LIVE -> replyToLive(packet, replyOut);
+            case EtherMidiPacket.CMD_LIVE_ACK, EtherMidiPacket.CMD_LIVE_ALT -> markLive(true);
+            case EtherMidiPacket.CMD_LIVE_ERROR -> markLive(false);
             case EtherMidiPacket.CMD_CLOSE -> {
                 LOG.log(Level.FINE, "console closed the EtherMIDI session");
                 running = false;
@@ -444,8 +596,46 @@ public final class EtherMidiTransport implements MidiTransport {
                 closeReverseSockets();
             }
             case EtherMidiPacket.CMD_RESET -> LOG.log(Level.FINE, "console requested an EtherMIDI reset");
+            case EtherMidiPacket.CMD_OPEN_ERROR, EtherMidiPacket.CMD_ATTACH_ERROR ->
+                    LOG.log(Level.FINE, "console sent EtherMIDI error 0x{0}",
+                            String.format("%02X", frame.command()));
             default -> LOG.log(Level.FINE, "ignoring EtherMIDI command 0x{0}",
                     String.format("%02X", frame.command()));
+        }
+    }
+
+    private void replyToLive(byte[] request, OutputStream replyOut) {
+        try {
+            byte[] reply = EtherMidiPacket.liveReply(request);
+            if (replyOut != null) {
+                synchronized (replyOut) {
+                    replyOut.write(reply);
+                    replyOut.flush();
+                }
+            } else {
+                writePacket(reply);
+            }
+        } catch (IOException e) {
+            LOG.log(Level.FINE, "could not answer EtherMIDI liveness poll", e);
+        }
+    }
+
+    private void markLive(boolean ok) {
+        synchronized (liveLock) {
+            live = ok;
+            livePending = false;
+            liveResult = ok;
+            liveLock.notifyAll();
+        }
+        if (!ok) {
+            Runnable cb = onLiveLost;
+            if (cb != null) {
+                try {
+                    cb.run();
+                } catch (RuntimeException ignored) {
+                    // never let a callback kill a reader thread
+                }
+            }
         }
     }
 
@@ -547,6 +737,15 @@ public final class EtherMidiTransport implements MidiTransport {
         if (at != null && at != Thread.currentThread()) {
             try {
                 at.join(500);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        Thread kt = keepaliveThread;
+        if (kt != null && kt != Thread.currentThread()) {
+            kt.interrupt();
+            try {
+                kt.join(500);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
