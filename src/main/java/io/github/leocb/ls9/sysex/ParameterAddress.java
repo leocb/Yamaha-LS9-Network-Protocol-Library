@@ -65,6 +65,9 @@ public record ParameterAddress(int dataCategory, int element, int index, int cha
 
     @Override
     public int hashCode() {
-        return Objects.hash(dataCategory, element, index, channel);
+        int h = dataCategory;
+        h = 31 * h + element;
+        h = 31 * h + index;
+        return 31 * h + channel;
     }
 }

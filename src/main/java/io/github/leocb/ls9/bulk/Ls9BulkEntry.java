@@ -68,19 +68,42 @@ public final class Ls9BulkEntry {
     private final int area;
     private final Ls9BulkLayout.Layout layout;
     private final int declaredVariant;
-    private final Map<ParameterAddress, Long> parameters;
-    private final List<Value> values;
+    private volatile Map<ParameterAddress, Long> parameters;
+    private volatile List<Value> values;
 
-    private Ls9BulkEntry(BulkDump dump, Ls9BulkLayout.AreaKind areaKind,
+    Ls9BulkEntry(BulkDump dump, Ls9BulkLayout.AreaKind areaKind,
                             int area, Ls9BulkLayout.Layout layout) {
         this.dump = dump;
-        this.data = dump.data();
+        this.data = dump.dataUnsafe();
         this.areaKind = areaKind;
         this.area = area;
         this.layout = layout;
         this.declaredVariant = u8(VARIANT_OFFSET);
-        Map<ParameterAddress, Long> map = new LinkedHashMap<>();
-        List<Value> list = new ArrayList<>();
+    }
+
+    private Map<ParameterAddress, Long> buildParameters() {
+        Map<ParameterAddress, Long> map = new LinkedHashMap<>(layout.parameters().size() * 2);
+        for (Ls9BulkLayout.Field field : layout.parameters()) {
+            Long value = read(field);
+            if (value == null) {
+                continue;
+            }
+            map.put(ParameterAddress.of(field.element(), field.index(), field.channel()), value);
+        }
+        for (int i = 0; i < TITLE_WORDS; i++) {
+            if (data.length < TITLE_OFFSET + i * 4 + 4) {
+                break;
+            }
+            map.put(ParameterAddress.of(TITLE_ELEMENT, i, 0), titleWord(i));
+        }
+        if (isScene()) {
+            map.put(ParameterAddress.of(0x0195, 0, 0), (long) u8(FLAG_OFFSET));
+        }
+        return Collections.unmodifiableMap(map);
+    }
+
+    private List<Value> buildValues() {
+        List<Value> list = new ArrayList<>(layout.parameters().size());
         Ls9ParameterRegistry registry = Ls9ParameterRegistry.get();
         for (Ls9BulkLayout.Field field : layout.parameters()) {
             Long value = read(field);
@@ -89,34 +112,34 @@ public final class Ls9BulkEntry {
             }
             ParameterAddress address = ParameterAddress.of(
                     field.element(), field.index(), field.channel());
-            map.put(address, value);
             ParameterDefinition definition = registry.find(field.element(), field.index())
                     .orElse(null);
             list.add(new Value(address, value, field, definition));
         }
         for (int i = 0; i < TITLE_WORDS; i++) {
-            int offset = TITLE_OFFSET + i * 4;
-            if (data.length < offset + 4) {
+            if (data.length < TITLE_OFFSET + i * 4 + 4) {
                 break;
             }
-            long word = ((data[offset] & 0xFFL) << 24)
-                    | ((data[offset + 1] & 0xFFL) << 16)
-                    | ((data[offset + 2] & 0xFFL) << 8)
-                    | (data[offset + 3] & 0xFFL);
             ParameterAddress address = ParameterAddress.of(TITLE_ELEMENT, i, 0);
-            map.put(address, word);
+            long word = titleWord(i);
             ParameterDefinition definition = registry.find(TITLE_ELEMENT, i).orElse(null);
             list.add(new Value(address, word, null, definition));
         }
         if (isScene()) {
             ParameterAddress address = ParameterAddress.of(0x0195, 0, 0);
             long value = u8(FLAG_OFFSET);
-            map.put(address, value);
             ParameterDefinition definition = registry.find(0x0195, 0).orElse(null);
             list.add(new Value(address, value, null, definition));
         }
-        this.parameters = Collections.unmodifiableMap(map);
-        this.values = Collections.unmodifiableList(list);
+        return Collections.unmodifiableList(list);
+    }
+
+    private long titleWord(int index) {
+        int offset = TITLE_OFFSET + index * 4;
+        return ((data[offset] & 0xFFL) << 24)
+                | ((data[offset + 1] & 0xFFL) << 16)
+                | ((data[offset + 2] & 0xFFL) << 8)
+                | (data[offset + 3] & 0xFFL);
     }
 
     private boolean isScene() {
@@ -132,7 +155,7 @@ public final class Ls9BulkEntry {
             throw new IllegalArgumentException("dump must not be null");
         }
         Ls9BulkLayout.Selection selection = Ls9BulkLayout.get()
-                .select(dump.module(), dump.data())
+                .select(dump.module(), dump.dataUnsafe())
                 .orElseThrow(() -> new IllegalArgumentException(
                         "no layout for block: " + Text.trimTrailing(dump.module())));
         return new Ls9BulkEntry(dump, selection.areaKind(), selection.area(),
@@ -145,7 +168,7 @@ public final class Ls9BulkEntry {
             throw new IllegalArgumentException("dump must not be null");
         }
         Ls9BulkLayout layouts = Ls9BulkLayout.get();
-        int variant = dump.length() > VARIANT_OFFSET ? dump.data()[VARIANT_OFFSET] & 0xFF : 0;
+        int variant = dump.length() > VARIANT_OFFSET ? dump.dataUnsafe()[VARIANT_OFFSET] & 0xFF : 0;
         Ls9BulkLayout.Layout layout = layouts.find(
                 Ls9BulkLayout.AreaKind.LIBRARY, library, variant).orElseThrow(
                 () -> new IllegalArgumentException("no library layout for " + library
@@ -276,14 +299,60 @@ public final class Ls9BulkEntry {
         return stored == calcCheckSumLong(data, size);
     }
 
-    /** Every decoded parameter, including title words. */
+    /** Every decoded parameter, including title words. Built on first use. */
     public Map<ParameterAddress, Long> parameters() {
-        return parameters;
+        Map<ParameterAddress, Long> map = parameters;
+        if (map == null) {
+            synchronized (this) {
+                map = parameters;
+                if (map == null) {
+                    parameters = map = buildParameters();
+                }
+            }
+        }
+        return map;
     }
 
     /** Every decoded value with field metadata and the published definition. */
     public List<Value> values() {
-        return values;
+        List<Value> list = values;
+        if (list == null) {
+            synchronized (this) {
+                list = values;
+                if (list == null) {
+                    values = list = buildValues();
+                }
+            }
+        }
+        return list;
+    }
+
+    /**
+     * Iterates every decoded parameter without materialising the address/Long
+     * map. Used by the client for seeding and change detection.
+     */
+    public void forEachParameter(ParameterConsumer consumer) {
+        for (Ls9BulkLayout.Field field : layout.parameters()) {
+            Long value = read(field);
+            if (value != null) {
+                consumer.accept(field.element(), field.index(), field.channel(), value);
+            }
+        }
+        for (int i = 0; i < TITLE_WORDS; i++) {
+            if (data.length < TITLE_OFFSET + i * 4 + 4) {
+                break;
+            }
+            consumer.accept(TITLE_ELEMENT, i, 0, titleWord(i));
+        }
+        if (isScene()) {
+            consumer.accept(0x0195, 0, 0, u8(FLAG_OFFSET));
+        }
+    }
+
+    /** Primitive callback for {@link #forEachParameter(ParameterConsumer)}. */
+    @FunctionalInterface
+    public interface ParameterConsumer {
+        void accept(int element, int index, int channel, long value);
     }
 
     /**
@@ -294,49 +363,51 @@ public final class Ls9BulkEntry {
      * here would produce garbage.
      */
     public String text(int element, int index, int channel) {
-        for (Value value : values) {
-            ParameterAddress address = value.address();
-            if (address.element() != element || address.index() != index
-                    || address.channel() != channel) {
-                continue;
-            }
-            Ls9BulkLayout.Field field = value.field();
-            if (field == null) {
-                return null;
-            }
-            int size = field.kind().bytes();
-            int offset = field.offset();
-            if (size <= 0 || offset < 0 || offset + size > data.length) {
-                return null;
-            }
-            String text = new String(data, offset, size, StandardCharsets.US_ASCII);
-            int end = text.length();
-            while (end > 0) {
-                char c = text.charAt(end - 1);
-                if (c == 0 || c < 32 || c == ' ') {
-                    end--;
-                } else {
-                    break;
-                }
-            }
-            return text.substring(0, end);
+        Ls9BulkLayout.Field field = layout.fieldAt(element, index, channel);
+        if (field == null) {
+            return null;
         }
-        return null;
+        int size = field.kind().bytes();
+        int offset = field.offset();
+        if (size <= 0 || offset < 0 || offset + size > data.length) {
+            return null;
+        }
+        String text = new String(data, offset, size, StandardCharsets.US_ASCII);
+        int end = text.length();
+        while (end > 0) {
+            char c = text.charAt(end - 1);
+            if (c == 0 || c < 32 || c == ' ') {
+                end--;
+            } else {
+                break;
+            }
+        }
+        return text.substring(0, end);
     }
 
     public Long get(int element, int index, int channel) {
-        return parameters.get(ParameterAddress.of(element, index, channel));
+        if (element == TITLE_ELEMENT && channel == 0 && index >= 0 && index < TITLE_WORDS) {
+            if (data.length < TITLE_OFFSET + index * 4 + 4) {
+                return null;
+            }
+            return titleWord(index);
+        }
+        if (isScene() && element == 0x0195 && index == 0 && channel == 0) {
+            return (long) u8(FLAG_OFFSET);
+        }
+        Ls9BulkLayout.Field field = layout.fieldAt(element, index, channel);
+        return field == null ? null : read(field);
     }
 
     public long getOrDefault(int element, int index, int channel, long fallback) {
-        Long value = parameters.get(ParameterAddress.of(element, index, channel));
+        Long value = get(element, index, channel);
         return value == null ? fallback : value;
     }
 
     /** All values for one element, ordered as laid out in the image. */
     public List<Value> valuesForElement(int element) {
         List<Value> out = new ArrayList<>();
-        for (Value value : values) {
+        for (Value value : values()) {
             if (value.address().element() == element) {
                 out.add(value);
             }
@@ -367,6 +438,10 @@ public final class Ls9BulkEntry {
     }
 
     private Long read(Ls9BulkLayout.Field field) {
+        return read(data, field);
+    }
+
+    static Long read(byte[] data, Ls9BulkLayout.Field field) {
         int offset = field.offset();
         Ls9BulkLayout.Kind kind = field.kind();
         if (kind == Ls9BulkLayout.Kind.BIT) {

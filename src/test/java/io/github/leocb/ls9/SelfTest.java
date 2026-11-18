@@ -347,6 +347,19 @@ public final class SelfTest {
                 "scene descriptor entry");
         check(decoded.library() == null, "scene is not a library");
 
+        // Changed-field diff: exactly the touched fader switch is reported.
+        byte[] changedData = data.clone();
+        changedData[0x5f3] ^= 1;
+        BulkDump changedDump = new BulkDump(BulkDumpCodec.SCENE, 7,
+                BulkDumpCodec.convert8to7(changedData), changedData, 0, new byte[0]);
+        java.util.List<String> changes = new java.util.ArrayList<>();
+        check(Ls9BulkDecoder.diff(scene, changedDump,
+                        (element, index, channel, value) ->
+                                changes.add(element + ":" + index + ":" + channel + "=" + value)),
+                "bulk diff supported");
+        check(changes.contains("49:0:0=0") || changes.contains("49:0:0=1"),
+                "bulk diff reports the changed input switch " + changes);
+
         BulkDump mix = new BulkDump(BulkDumpCodec.MIXER_SETUP, 512,
                 BulkDumpCodec.convert8to7(data), data, 0, new byte[0]);
         Ls9BulkData mixData = Ls9BulkDecoder.decode(mix, BulkModel.LS9_32);

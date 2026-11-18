@@ -34,9 +34,8 @@ public final class Ls9SnapshotIO {
             for (BulkDump d : snapshot.allBlocks()) {
                 out.writeUTF(d.module());
                 out.writeInt(d.number());
-                byte[] data = d.data();
-                out.writeInt(data.length);
-                out.write(data);
+                out.writeInt(d.length());
+                d.writeDataTo(out);
             }
         }
     }

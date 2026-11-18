@@ -43,17 +43,25 @@ public final class Ls9FaderTable {
             if (in == null) {
                 throw new IllegalStateException("missing resource " + RESOURCE);
             }
-            List<List<String>> rows = Csv.parse(new String(Io.readAll(in), StandardCharsets.UTF_8));
             double[] values = new double[1024];
             boolean[] seen = new boolean[1024];
-            for (int i = 1; i < rows.size(); i++) {
-                List<String> r = rows.get(i);
-                if (r.size() < 2 || r.get(0).trim().isEmpty()) {
-                    continue;
+            try (java.io.BufferedReader reader = new java.io.BufferedReader(
+                    new java.io.InputStreamReader(in, StandardCharsets.UTF_8))) {
+                String line;
+                boolean header = true;
+                while ((line = reader.readLine()) != null) {
+                    if (header) {
+                        header = false;
+                        continue;
+                    }
+                    int comma = line.indexOf(',');
+                    if (comma <= 0) {
+                        continue;
+                    }
+                    int raw = (int) Double.parseDouble(line.substring(0, comma).trim());
+                    values[raw] = Double.parseDouble(line.substring(comma + 1).trim());
+                    seen[raw] = true;
                 }
-                int raw = (int) Double.parseDouble(r.get(0));
-                values[raw] = Double.parseDouble(r.get(1));
-                seen[raw] = true;
             }
             for (int i = 0; i < 1024; i++) {
                 if (!seen[i]) {

@@ -13,7 +13,13 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -76,6 +82,17 @@ public final class EtherMidiTransport implements MidiTransport {
     private volatile Thread acceptThread;
     private final java.util.List<Socket> reverseSockets =
             java.util.Collections.synchronizedList(new java.util.ArrayList<>());
+    /**
+     * The console opens a fresh reverse connection for every meter frame.
+     * Reusing a bounded pool avoids creating ~40 threads a second while still
+     * allowing one short-lived connection at a time.
+     */
+    private final ExecutorService reversePool = new ThreadPoolExecutor(
+            0, 32, 30, TimeUnit.SECONDS, new SynchronousQueue<>(), r -> {
+                Thread t = new Thread(r, "ls9-ethermidi-reverse");
+                t.setDaemon(true);
+                return t;
+            });
     private final Object writeLock = new Object();
 
     public EtherMidiTransport(String host) {
@@ -279,9 +296,13 @@ public final class EtherMidiTransport implements MidiTransport {
                 r.setTcpNoDelay(true);
                 r.setSoTimeout(0);
                 reverseSockets.add(r);
-                Thread rt = new Thread(() -> reverseReadLoop(r), "ls9-ethermidi-reverse");
-                rt.setDaemon(true);
-                rt.start();
+                try {
+                    reversePool.execute(() -> reverseReadLoop(r));
+                } catch (RejectedExecutionException e) {
+                    reverseSockets.remove(r);
+                    closeQuietly(r);
+                    continue;
+                }
                 LOG.log(Level.FINE, "accepted console reply connection from {0}", r.getInetAddress());
             } catch (IOException e) {
                 if (running) {
@@ -299,8 +320,11 @@ public final class EtherMidiTransport implements MidiTransport {
             // especially while meter streams are active. After the first
             // packet, use a short idle timeout to drain any burst and close.
             r.setSoTimeout(2500);
-            InputStream in = new BufferedInputStream(r.getInputStream());
-            OutputStream out = new BufferedOutputStream(r.getOutputStream());
+            // A reverse connection usually carries exactly one meter frame.
+            // Buffered 8 KB streams per connection cost more than they save,
+            // so read/write the socket directly.
+            InputStream in = r.getInputStream();
+            OutputStream out = r.getOutputStream();
             while (running) {
                 byte[] packet;
                 try {
@@ -308,12 +332,13 @@ public final class EtherMidiTransport implements MidiTransport {
                 } catch (SocketTimeoutException e) {
                     break;
                 }
-                handlePacket(packet, out);
+                EtherMidiPacket.Frame frame = EtherMidiPacket.decode(packet);
+                handleFrame(packet, frame, out);
                 // The console opens a reverse connection per meter frame and
                 // waits for the client to close it before sending the next
                 // frame. Waiting for an idle timeout here throttles meters to
                 // about two frames per second.
-                if (isMeterPacket(packet)) {
+                if (isMeterPayload(frame.payload())) {
                     break;
                 }
                 r.setSoTimeout(40);
@@ -331,16 +356,11 @@ public final class EtherMidiTransport implements MidiTransport {
     }
 
     /** LEVEL METER frames are SysEx category 0x21. */
-    private static boolean isMeterPacket(byte[] packet) {
-        try {
-            byte[] payload = EtherMidiPacket.decode(packet).payload();
-            return payload.length > 5
-                    && (payload[0] & 0xFF) == 0xF0
-                    && (payload[1] & 0xFF) == 0x43
-                    && (payload[5] & 0xFF) == 0x21;
-        } catch (RuntimeException e) {
-            return false;
-        }
+    private static boolean isMeterPayload(byte[] payload) {
+        return payload != null && payload.length > 5
+                && (payload[0] & 0xFF) == 0xF0
+                && (payload[1] & 0xFF) == 0x43
+                && (payload[5] & 0xFF) == 0x21;
     }
 
     private void handshake() throws IOException {
@@ -415,6 +435,25 @@ public final class EtherMidiTransport implements MidiTransport {
     public void sendShortMidi(byte[] message) throws IOException {
         ensureOpen();
         writePacket(EtherMidiPacket.shortMidi(sessionPort, sessionRx, message));
+    }
+
+    @Override
+    public void sendSysexBatch(List<byte[]> messages) throws IOException {
+        if (messages == null || messages.isEmpty()) {
+            return;
+        }
+        ensureOpen();
+        synchronized (writeLock) {
+            OutputStream out = output;
+            if (out == null) {
+                throw new IOException("transport is closed");
+            }
+            for (byte[] message : messages) {
+                out.write(EtherMidiPacket.sysex(sessionPort, sessionRx, message));
+            }
+            out.flush();
+            lastWriteNanos = System.nanoTime();
+        }
     }
 
     /**
@@ -573,6 +612,10 @@ public final class EtherMidiTransport implements MidiTransport {
             LOG.log(Level.WARNING, "discarding malformed EtherMIDI packet: " + EtherMidiPacket.hex(packet), e);
             return;
         }
+        handleFrame(packet, frame, replyOut);
+    }
+
+    private void handleFrame(byte[] packet, EtherMidiPacket.Frame frame, OutputStream replyOut) {
         switch (frame.command()) {
             case EtherMidiPacket.CMD_SYSEX, EtherMidiPacket.CMD_MIDI_1,
                     EtherMidiPacket.CMD_MIDI_2, EtherMidiPacket.CMD_MIDI_3 -> {
@@ -714,6 +757,7 @@ public final class EtherMidiTransport implements MidiTransport {
             }
         }
         closeReverseSockets();
+        reversePool.shutdownNow();
         Socket s = socket;
         if (s != null && !s.isClosed()) {
             if (wasRunning) {

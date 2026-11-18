@@ -39,7 +39,7 @@ Requires JDK 17 or newer. No third-party runtime dependencies.
 
 ```bash
 ./build.sh
-./test.sh          # 647 protocol/parameter/meter checks, including a fake LS9 over TCP
+./test.sh          # 649 protocol/parameter/meter checks, including a fake LS9 over TCP
 
 # compile and run the example
 javac --release 17 -cp out -d out \
@@ -78,7 +78,7 @@ Maven:
 <dependency>
   <groupId>com.github.leocb</groupId>
   <artifactId>Yamaha-LS9-Network-Protocol-Library</artifactId>
-  <version>v0.2.0</version>
+  <version>v0.5.0</version>
 </dependency>
 ```
 
@@ -90,11 +90,11 @@ Central release coordinates:
 <dependency>
   <groupId>io.github.leocb</groupId>
   <artifactId>ls9-java</artifactId>
-  <version>0.2.0</version>
+  <version>0.5.0</version>
 </dependency>
 ```
 
-Version `0.2.0` is published to Maven Central. Future releases are automated by
+Version `0.5.0` is published to Maven Central. Future releases are automated by
 [`.github/workflows/publish.yml`](.github/workflows/publish.yml) when a `v*`
 tag is pushed. The workflow needs these repository secrets:
 

@@ -32,6 +32,19 @@ public interface MidiTransport extends AutoCloseable {
     void sendSysex(byte[] message) throws IOException;
 
     /**
+     * Sends several complete SysEx messages in order. Transports that can
+     * coalesce the writes override this; the default preserves behaviour.
+     */
+    default void sendSysexBatch(java.util.List<byte[]> messages) throws IOException {
+        if (messages == null) {
+            return;
+        }
+        for (byte[] message : messages) {
+            sendSysex(message);
+        }
+    }
+
+    /**
      * Sends a short MIDI message (1..3 bytes, e.g. a Control Change). The Yamaha
      * EtherMIDI transport carries these in a smaller packet; the CoreMIDI
      * transport sends them as ordinary MIDI messages.

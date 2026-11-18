@@ -39,8 +39,33 @@ public record BulkDump(String module, int number, byte[] encodedData, byte[] dat
         return raw.clone();
     }
 
+    /**
+     * Internal read-only view used by the decoder. The caller must not mutate
+     * the returned array; the dump owns it and all public accessors clone.
+     */
+    byte[] dataUnsafe() {
+        return data;
+    }
+
+    /**
+     * True when both dumps carry the same module, number and logical image.
+     * Used by the change poll to skip a full decode when nothing changed.
+     * Compares the owned arrays directly so it does not allocate.
+     */
+    public boolean contentEquals(BulkDump other) {
+        return other != null
+                && number == other.number
+                && module.equals(other.module)
+                && Arrays.equals(data, other.data);
+    }
+
     public int length() {
         return data.length;
+    }
+
+    /** Writes the logical image without allocating a defensive copy. */
+    public void writeDataTo(java.io.OutputStream out) throws java.io.IOException {
+        out.write(data);
     }
 
     @Override

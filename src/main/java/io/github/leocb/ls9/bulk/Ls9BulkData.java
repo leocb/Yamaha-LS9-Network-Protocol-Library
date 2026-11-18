@@ -20,9 +20,10 @@ public final class Ls9BulkData {
     private final BulkDump dump;
     private final BulkModel model;
     private final BulkDumpParser.Type type;
-    private final Map<ParameterAddress, Long> parameters;
+    private final Map<ParameterAddress, Long> extraParameters;
     private final BulkScene scene;
     private final Ls9BulkEntry entry;
+    private volatile Map<ParameterAddress, Long> parameters;
 
     private Ls9BulkData(BulkDump dump, BulkModel model, BulkDumpParser.Type type,
                         Map<ParameterAddress, Long> parameters, BulkScene scene,
@@ -30,7 +31,7 @@ public final class Ls9BulkData {
         this.dump = dump;
         this.model = model;
         this.type = type;
-        this.parameters = parameters;
+        this.extraParameters = parameters;
         this.scene = scene;
         this.entry = entry;
     }
@@ -39,15 +40,12 @@ public final class Ls9BulkData {
                               BulkDumpParser.Type type, Map<ParameterAddress, Long> parameters) {
         BulkScene scene = type == BulkDumpParser.Type.SCENE ? BulkScene.from(dump) : null;
         Ls9BulkEntry entry = Ls9BulkLayout.get()
-                .select(dump.module(), dump.data())
-                .map(selection -> Ls9BulkEntry.from(dump))
+                .select(dump.module(), dump.dataUnsafe())
+                .map(selection -> new Ls9BulkEntry(dump, selection.areaKind(),
+                        selection.area(), selection.layout()))
                 .orElse(null);
-        Map<ParameterAddress, Long> all = new LinkedHashMap<>(parameters);
-        if (entry != null) {
-            all.putAll(entry.parameters());
-        }
         return new Ls9BulkData(dump, model, type,
-                Collections.unmodifiableMap(all), scene, entry);
+                parameters == null ? Map.of() : parameters, scene, entry);
     }
 
     /** The source block. */
@@ -87,15 +85,52 @@ public final class Ls9BulkData {
 
     /** Decoded parameter values keyed by element, index and channel. */
     public Map<ParameterAddress, Long> parameters() {
-        return parameters;
+        Map<ParameterAddress, Long> map = parameters;
+        if (map == null) {
+            synchronized (this) {
+                map = parameters;
+                if (map == null) {
+                    if (entry == null) {
+                        map = extraParameters;
+                    } else if (extraParameters.isEmpty()) {
+                        map = entry.parameters();
+                    } else {
+                        Map<ParameterAddress, Long> merged = new LinkedHashMap<>(entry.parameters());
+                        merged.putAll(extraParameters);
+                        map = Collections.unmodifiableMap(merged);
+                    }
+                    parameters = map;
+                }
+            }
+        }
+        return map;
+    }
+
+    /**
+     * Iterates every decoded parameter without materialising the map. The
+     * client uses this to seed its cache and to compare bulk images.
+     */
+    public void forEachParameter(Ls9BulkEntry.ParameterConsumer consumer) {
+        if (entry != null) {
+            entry.forEachParameter(consumer);
+        }
+        if (!extraParameters.isEmpty()) {
+            for (Map.Entry<ParameterAddress, Long> e : extraParameters.entrySet()) {
+                ParameterAddress a = e.getKey();
+                consumer.accept(a.element(), a.index(), a.channel(), e.getValue());
+            }
+        }
     }
 
     public Long get(int element, int index, int channel) {
-        return parameters.get(ParameterAddress.of(element, index, channel));
+        if (entry != null) {
+            return entry.get(element, index, channel);
+        }
+        return extraParameters.get(ParameterAddress.of(element, index, channel));
     }
 
     public long getOrDefault(int element, int index, int channel, long defaultValue) {
-        Long value = parameters.get(ParameterAddress.of(element, index, channel));
+        Long value = get(element, index, channel);
         return value == null ? defaultValue : value;
     }
 
@@ -108,12 +143,12 @@ public final class Ls9BulkData {
     }
 
     public int size() {
-        return parameters.size();
+        return parameters().size();
     }
 
     @Override
     public String toString() {
         return "Ls9BulkData{" + type + " " + dump.module().trim() + " #" + dump.number()
-                + ", " + parameters.size() + " parameters}";
+                + ", " + parameters().size() + " parameters}";
     }
 }

@@ -11,6 +11,21 @@ public final class Csv {
 
     public static List<List<String>> parse(String text) {
         List<List<String>> rows = new ArrayList<>();
+        forEachRow(text, rows::add);
+        return rows;
+    }
+
+    /** Receives one parsed CSV row. The row list is owned by the caller. */
+    @FunctionalInterface
+    public interface RowConsumer {
+        void accept(List<String> row);
+    }
+
+    /**
+     * Streaming variant: avoids retaining every row of a large generated
+     * resource just to iterate it once.
+     */
+    public static void forEachRow(String text, RowConsumer consumer) {
         List<String> row = new ArrayList<>();
         StringBuilder field = new StringBuilder();
         boolean quoted = false;
@@ -37,7 +52,7 @@ public final class Csv {
                     case '\n' -> {
                         row.add(field.toString());
                         field.setLength(0);
-                        rows.add(row);
+                        consumer.accept(row);
                         row = new ArrayList<>();
                     }
                     case '\r' -> {
@@ -49,8 +64,7 @@ public final class Csv {
         }
         if (field.length() > 0 || !row.isEmpty()) {
             row.add(field.toString());
-            rows.add(row);
+            consumer.accept(row);
         }
-        return rows;
     }
 }

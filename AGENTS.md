@@ -12,7 +12,7 @@ wire formats, model IDs, addresses or checksums without cited evidence.
 ## Build and test
 
 ```bash
-./test.sh                 # 630 checks; fake LS9 over TCP
+./test.sh                 # 649 checks; fake LS9 over TCP
 mvn -B package            # JAR + sources + javadoc
 ```
 

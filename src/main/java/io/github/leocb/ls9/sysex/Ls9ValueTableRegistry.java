@@ -43,19 +43,22 @@ public final class Ls9ValueTableRegistry {
             if (in == null) {
                 throw new IllegalStateException("missing resource " + RESOURCE);
             }
-            List<List<String>> rows = Csv.parse(new String(Io.readAll(in), StandardCharsets.UTF_8));
+            String text = new String(Io.readAll(in), StandardCharsets.UTF_8);
             Map<Integer, Map<Integer, String>> values = new LinkedHashMap<>();
             Map<Integer, String> names = new LinkedHashMap<>();
-            for (int i = 1; i < rows.size(); i++) {
-                List<String> r = rows.get(i);
+            int[] rowIndex = {0};
+            Csv.forEachRow(text, r -> {
+                if (rowIndex[0]++ == 0) {
+                    return;
+                }
                 if (r.size() < 4 || r.get(0).trim().isEmpty()) {
-                    continue;
+                    return;
                 }
                 int id = Integer.parseInt(r.get(0));
                 values.computeIfAbsent(id, k -> new LinkedHashMap<>())
                         .putIfAbsent(Integer.parseInt(r.get(2)), r.get(3));
                 names.putIfAbsent(id, r.get(1));
-            }
+            });
             Map<Integer, Ls9ValueTable> tables = new LinkedHashMap<>();
             for (Map.Entry<Integer, Map<Integer, String>> e : values.entrySet()) {
                 tables.put(e.getKey(), new Ls9ValueTable(e.getKey(),

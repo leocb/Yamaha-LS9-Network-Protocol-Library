@@ -50,7 +50,7 @@ public final class Ls9Console implements AutoCloseable {
     private final MidiTransport transport;
     private final int deviceNumber;
     private final int timeoutMs;
-    private final Ls9FaderTable faders = Ls9FaderTable.get();
+    private volatile Ls9FaderTable faders;
 
     private final ConcurrentHashMap<ParameterAddress, CompletableFuture<Long>> pending = new ConcurrentHashMap<>();
     private final ConcurrentHashMap<String, CompletableFuture<BulkDump>> pendingBulk = new ConcurrentHashMap<>();
@@ -317,6 +317,15 @@ public final class Ls9Console implements AutoCloseable {
 
     /** Requests one bulk-dump block and waits for the matching response. */
     public BulkDump requestBulkDump(String module, int number) throws IOException {
+        return requestBulkDump(module, number, Math.max(timeoutMs, 5000));
+    }
+
+    /**
+     * Requests one bulk-dump block with an explicit wait. Setup/global blocks
+     * that some firmware does not answer should use a shorter wait so a screen
+     * open does not stall for the scene-transfer timeout.
+     */
+    public BulkDump requestBulkDump(String module, int number, int waitMs) throws IOException {
         ensureOpen();
         String key = bulkKey(module, number);
         CompletableFuture<BulkDump> future = new CompletableFuture<>();
@@ -324,11 +333,11 @@ public final class Ls9Console implements AutoCloseable {
         pendingBulk.put(key, future);
         try {
             transport.sendSysex(BulkDumpCodec.request(deviceNumber, module, number));
-            int wait = Math.max(timeoutMs, 5000);
+            int wait = Math.max(500, waitMs);
             return future.get(wait, TimeUnit.MILLISECONDS);
         } catch (TimeoutException e) {
             throw new Ls9Exception("no bulk dump for " + Text.trimTrailing(module)
-                    + " #" + number + " within " + Math.max(timeoutMs, 5000) + " ms", e);
+                    + " #" + number + " within " + Math.max(500, waitMs) + " ms", e);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new Ls9Exception("interrupted while waiting for bulk dump", e);
@@ -342,9 +351,7 @@ public final class Ls9Console implements AutoCloseable {
     /** Sends a bulk-dump block built from logical 8-bit data. */
     public void sendBulkDump(String module, int number, byte[] data) throws IOException {
         ensureOpen();
-        for (byte[] packet : BulkDumpCodec.encodePackets(deviceNumber, module, number, data)) {
-            transport.sendSysex(packet);
-        }
+        transport.sendSysexBatch(BulkDumpCodec.encodePackets(deviceNumber, module, number, data));
     }
 
     /** Sends a previously received block back to the console. */
@@ -354,9 +361,7 @@ public final class Ls9Console implements AutoCloseable {
         java.util.List<byte[]> packets = encoded.length == 0
                 ? BulkDumpCodec.encodePackets(deviceNumber, dump.module(), dump.number(), dump.data())
                 : BulkDumpCodec.encodeEncodedPackets(deviceNumber, dump.module(), dump.number(), encoded);
-        for (byte[] packet : packets) {
-            transport.sendSysex(packet);
-        }
+        transport.sendSysexBatch(packets);
     }
 
     private static String bulkKey(String module, int number) {
@@ -423,7 +428,12 @@ public final class Ls9Console implements AutoCloseable {
     }
 
     public Ls9FaderTable faderTable() {
-        return faders;
+        Ls9FaderTable table = faders;
+        if (table == null) {
+            table = Ls9FaderTable.get();
+            faders = table;
+        }
+        return table;
     }
 
     public int deviceNumber() {

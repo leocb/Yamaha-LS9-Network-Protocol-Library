@@ -54,18 +54,39 @@ public final class Ls9ParameterRegistry {
         return local;
     }
 
+    /**
+     * Loads the registry in the background. The client's reader thread uses it
+     * only to classify signed parameter changes; doing that load on the first
+     * negative value would stall meter and parameter processing.
+     */
+    public static void warmUpAsync() {
+        if (instance != null) {
+            return;
+        }
+        Thread t = new Thread(() -> {
+            try {
+                get();
+            } catch (Throwable ignored) {
+            }
+        }, "ls9-parameter-registry");
+        t.setDaemon(true);
+        t.start();
+    }
+
     private static Ls9ParameterRegistry load() {
         try (InputStream in = Ls9ParameterRegistry.class.getResourceAsStream(RESOURCE)) {
             if (in == null) {
                 throw new IllegalStateException("missing resource " + RESOURCE);
             }
             String text = new String(Io.readAll(in), StandardCharsets.UTF_8);
-            List<List<String>> rows = Csv.parse(text);
-            List<ParameterDefinition> defs = new ArrayList<>(rows.size());
-            for (int i = 1; i < rows.size(); i++) {
-                List<String> r = rows.get(i);
+            List<ParameterDefinition> defs = new ArrayList<>(1100);
+            int[] rowIndex = {0};
+            Csv.forEachRow(text, r -> {
+                if (rowIndex[0]++ == 0) {
+                    return;
+                }
                 if (r.size() < 12 || r.get(0).trim().isEmpty()) {
-                    continue;
+                    return;
                 }
                 defs.add(new ParameterDefinition(
                         r.get(0),
@@ -80,7 +101,7 @@ public final class Ls9ParameterRegistry {
                         r.get(9),
                         parseIntOrZero(r.get(10)),
                         r.get(11)));
-            }
+            });
             return new Ls9ParameterRegistry(defs);
         } catch (IOException e) {
             throw new IllegalStateException("cannot load " + RESOURCE, e);

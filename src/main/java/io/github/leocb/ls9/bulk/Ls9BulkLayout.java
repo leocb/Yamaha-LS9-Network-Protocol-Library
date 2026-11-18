@@ -240,6 +240,38 @@ public final class Ls9BulkLayout {
             return parameters;
         }
 
+        private volatile java.util.Map<Long, Field> byAddress;
+
+        /**
+         * Finds the layout field for a published address. The index is built
+         * lazily once per layout and shared by every decode, so lookups do not
+         * scan the (up to 20k) field list.
+         */
+        public Field fieldAt(int element, int index, int channel) {
+            java.util.Map<Long, Field> map = byAddress;
+            if (map == null) {
+                synchronized (this) {
+                    map = byAddress;
+                    if (map == null) {
+                        java.util.HashMap<Long, Field> built = new java.util.HashMap<>(
+                                Math.max(16, parameters.size() * 2));
+                        for (Field field : parameters) {
+                            built.putIfAbsent(addressKey(field.element(), field.index(), field.channel()),
+                                    field);
+                        }
+                        byAddress = map = built;
+                    }
+                }
+            }
+            return map.get(addressKey(element, index, channel));
+        }
+
+        private static long addressKey(int element, int index, int channel) {
+            return ((long) (element & 0x3FFF) << 28)
+                    | ((long) (index & 0x3FFF) << 14)
+                    | (channel & 0x3FFF);
+        }
+
         @Override
         public String toString() {
             return "Layout{" + kind + " " + area + " variant " + variant
@@ -274,43 +306,77 @@ public final class Ls9BulkLayout {
         return local;
     }
 
+    /**
+     * Loads the generated descriptor tables in the background. The connect
+     * screen is a natural idle window; doing this here keeps the first decode
+     * from paying the 60 ms parse on the latency-critical connect path.
+     */
+    public static void warmUpAsync() {
+        if (instance != null) {
+            return;
+        }
+        Thread t = new Thread(() -> {
+            try {
+                get();
+            } catch (Throwable ignored) {
+            }
+        }, "ls9-bulk-layouts");
+        t.setDaemon(true);
+        t.start();
+    }
+
     private static Ls9BulkLayout load() {
         try (InputStream in = Ls9BulkLayout.class.getResourceAsStream(RESOURCE)) {
             if (in == null) {
                 throw new IllegalStateException("missing resource " + RESOURCE);
             }
-            String text = new String(Io.readAll(in), StandardCharsets.UTF_8);
-            List<List<String>> rows = Csv.parse(text);
+            // The generated layout file has no quoted fields, so parse each
+            // row directly instead of materialising 45k lists and ~850k
+            // temporary strings. This is on the connect critical path.
             Map<Integer, List<Field>> fields = new LinkedHashMap<>();
             Map<Integer, int[]> meta = new LinkedHashMap<>();
-            for (int i = 1; i < rows.size(); i++) {
-                List<String> row = rows.get(i);
-                if (row.size() < 18 || row.get(0).trim().isEmpty()) {
-                    continue;
+            try (java.io.BufferedReader reader = new java.io.BufferedReader(
+                    new java.io.InputStreamReader(in, StandardCharsets.UTF_8))) {
+                String line;
+                boolean header = true;
+                while ((line = reader.readLine()) != null) {
+                    if (header) {
+                        header = false;
+                        continue;
+                    }
+                    if (line.isEmpty()) {
+                        continue;
+                    }
+                    FieldCursor row = new FieldCursor(line);
+                    String kindToken = row.text();
+                    if (kindToken.isEmpty()) {
+                        continue;
+                    }
+                    AreaKind kind = AreaKind.valueOf(kindToken.toUpperCase(Locale.ROOT));
+                    int area = row.integer();
+                    int variant = row.integer();
+                    int dataSize = row.integer();
+                    int collection = row.integer();
+                    int version = row.integer();
+                    Region region = Region.valueOf(row.text().toUpperCase(Locale.ROOT));
+                    int offset = row.integer();
+                    int bit = row.integer();
+                    row.skip();
+                    Kind fieldKind = Kind.from(row.text());
+                    int element = row.integer();
+                    int index = row.integer();
+                    int channel = row.integer();
+                    long min = row.longValue();
+                    long max = row.longValue();
+                    long defaultValue = row.longValue();
+                    int paramDescriptor = row.integer();
+                    Field field = new Field(region, offset, bit, fieldKind, element,
+                            index, channel, min, max, defaultValue, paramDescriptor);
+                    int key = (kind.ordinal() * 1000000) + area * 100 + variant;
+                    fields.computeIfAbsent(key, k -> new ArrayList<>()).add(field);
+                    meta.putIfAbsent(key, new int[] {kind.ordinal(), area, variant,
+                            dataSize, collection, version});
                 }
-                AreaKind kind = AreaKind.valueOf(
-                        row.get(0).trim().toUpperCase(Locale.ROOT));
-                int area = Integer.parseInt(row.get(1).trim());
-                int variant = Integer.parseInt(row.get(2).trim());
-                int dataSize = Integer.parseInt(row.get(3).trim());
-                int collection = Integer.parseInt(row.get(4).trim());
-                int version = Integer.parseInt(row.get(5).trim());
-                Field field = new Field(
-                        Region.valueOf(row.get(6).trim().toUpperCase(Locale.ROOT)),
-                        Integer.parseInt(row.get(7).trim()),
-                        Integer.parseInt(row.get(8).trim()),
-                        Kind.from(row.get(10).trim()),
-                        Integer.parseInt(row.get(11).trim()),
-                        Integer.parseInt(row.get(12).trim()),
-                        Integer.parseInt(row.get(13).trim()),
-                        Long.parseLong(row.get(14).trim()),
-                        Long.parseLong(row.get(15).trim()),
-                        Long.parseLong(row.get(16).trim()),
-                        Integer.parseInt(row.get(17).trim()));
-                int key = (kind.ordinal() * 1000000) + area * 100 + variant;
-                fields.computeIfAbsent(key, k -> new ArrayList<>()).add(field);
-                meta.putIfAbsent(key, new int[] {kind.ordinal(), area, variant,
-                        dataSize, collection, version});
             }
             Map<AreaKind, Map<Integer, Map<Integer, Layout>>> byKind = new LinkedHashMap<>();
             for (Map.Entry<Integer, List<Field>> entry : fields.entrySet()) {
@@ -328,6 +394,70 @@ public final class Ls9BulkLayout {
             return new Ls9BulkLayout(byKind);
         } catch (IOException e) {
             throw new IllegalStateException("cannot load " + RESOURCE, e);
+        }
+    }
+
+    /** Zero-allocation numeric field cursor for the generated layout CSV. */
+    private static final class FieldCursor {
+        private final String line;
+        private int pos;
+
+        FieldCursor(String line) {
+            this.line = line;
+        }
+
+        private int end() {
+            int comma = line.indexOf(',', pos);
+            return comma < 0 ? line.length() : comma;
+        }
+
+        String text() {
+            int end = end();
+            String value = line.substring(pos, end);
+            pos = end + 1;
+            return value;
+        }
+
+        void skip() {
+            pos = end() + 1;
+        }
+
+        int integer() {
+            int end = end();
+            int i = pos;
+            boolean negative = false;
+            if (i < end && line.charAt(i) == '-') {
+                negative = true;
+                i++;
+            }
+            int value = 0;
+            for (; i < end; i++) {
+                char c = line.charAt(i);
+                if (c >= '0' && c <= '9') {
+                    value = value * 10 + (c - '0');
+                }
+            }
+            pos = end + 1;
+            return negative ? -value : value;
+        }
+
+        long longValue() {
+            int end = end();
+            int i = pos;
+            boolean negative = false;
+            if (i < end && line.charAt(i) == '-') {
+                negative = true;
+                i++;
+            }
+            long value = 0;
+            for (; i < end; i++) {
+                char c = line.charAt(i);
+                if (c >= '0' && c <= '9') {
+                    value = value * 10 + (c - '0');
+                }
+            }
+            pos = end + 1;
+            return negative ? -value : value;
         }
     }
 

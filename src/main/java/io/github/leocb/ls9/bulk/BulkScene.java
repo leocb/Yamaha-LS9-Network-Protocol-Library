@@ -48,7 +48,7 @@ public final class BulkScene {
 
     private BulkScene(BulkDump dump) {
         this.dump = dump;
-        this.data = dump.data();
+        this.data = dump.dataUnsafe();
     }
 
     /** Wraps a bulk dump. The module is not checked so current data (512/768) works too. */

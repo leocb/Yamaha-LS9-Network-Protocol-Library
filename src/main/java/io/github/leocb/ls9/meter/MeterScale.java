@@ -39,24 +39,32 @@ public final class MeterScale {
             if (in == null) {
                 throw new IllegalStateException("missing resource " + RESOURCE);
             }
-            List<List<String>> rows = Csv.parse(new String(Io.readAll(in), StandardCharsets.UTF_8));
             double[] values = new double[128];
             for (int i = 0; i < values.length; i++) {
                 values[i] = Double.NaN;
             }
-            for (int i = 1; i < rows.size(); i++) {
-                List<String> r = rows.get(i);
-                if (r.size() < 2 || r.get(0).trim().isEmpty()) {
-                    continue;
-                }
-                int index = Integer.parseInt(r.get(0));
-                if (index < 0 || index > 127) {
-                    continue;
-                }
-                try {
-                    values[index] = Double.parseDouble(r.get(1));
-                } catch (NumberFormatException e) {
-                    values[index] = Double.NaN;
+            try (java.io.BufferedReader reader = new java.io.BufferedReader(
+                    new java.io.InputStreamReader(in, StandardCharsets.UTF_8))) {
+                String line;
+                boolean header = true;
+                while ((line = reader.readLine()) != null) {
+                    if (header) {
+                        header = false;
+                        continue;
+                    }
+                    int comma = line.indexOf(',');
+                    if (comma <= 0) {
+                        continue;
+                    }
+                    try {
+                        int index = Integer.parseInt(line.substring(0, comma).trim());
+                        if (index < 0 || index > 127) {
+                            continue;
+                        }
+                        values[index] = Double.parseDouble(line.substring(comma + 1).trim());
+                    } catch (NumberFormatException ignored) {
+                        // holes are represented by an empty/NaN cell
+                    }
                 }
             }
             return new MeterScale(values);
