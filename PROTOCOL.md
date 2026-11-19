@@ -267,6 +267,16 @@ for these connections, and so does the library
 has to be free before connecting; another LS9 client holding it will prevent
 replies.
 
+Firmware 1.35 makes this mandatory: if the client leaves a reply connection
+open after the packet, a multi-packet bulk dump stalls after a few packets and
+the console can halt with `enet_ComCmd.c` on its LCD. Closing each connection
+immediately makes a 17 KB scene block complete in well under a second.
+
+**Do not send `0x50` liveness polls.** The console does not answer them and
+closes the EtherMIDI session instead (measured: parameter reads work, then one
+`0x50` leaves the socket closed). Use a parameter read, e.g. element `0x0157`,
+as a health check and keep the transport keepalive at 0 on hardware.
+
 Text fields (input/mix/matrix names and effect titles) are stored as plain
 ASCII bytes in the bulk image, even though the same addresses use 7-bit
 packed groups on PARAMETER CHANGE. `Ls9BulkEntry.text` reads the raw bytes;
@@ -493,13 +503,14 @@ the same payload layout. LS9 Editor also uses `INEQ____`, `OUTEQ___` and
 | `0x38` | 32 | comment, eight four-character words | element `0x0001`, indices 0..7 |
 | `0x58` | 6 | year, month, day, hour, minute, second | element `0x0002`, channels 0..5 |
 
-The byte at `0x12` is the **current scene number** for the current-data image
-(and the stored scene number for a scene block). It is not present in
-`ParamChangeList_LS9.xls`; StageMix's `SceneNumberParameter` and
-`RequestBulkCurSceneData` expose it from this header. A PARAMETER REQUEST for
-`0x0195/0/0` answers on LS9 firmware but is treated as optional (use a short
-timeout) and the bulk image is the fallback. A recall made on the console also
-sends a PARAMETER CHANGE for this address.
+The byte at `0x12` is mapped to element `0x0195` by StageMix's
+`SceneNumberParameter`. **Hardware check (firmware 1.35): this byte is 0 in
+every stored scene image and in the current-data image, and a PARAMETER
+REQUEST for `0x0195/0/0` answers a constant 1 — it is not the current scene
+number.** The live number is element `0x0157` index 0, which tracks recalls
+made from the console and from the client (verified by recalling scenes 124,
+5 and 123 and reading it after each). Use the bulk header for title/comment/
+timestamp only.
 
 The title is the 16-character scene name; the comment is the longer text shown
 in LS9 Editor. Both are four-character words, matching the `kComment1..8`
@@ -903,3 +914,33 @@ was inspected statically. Relevant findings for this library:
   list has no DCA fader, surround, recorder or transport parameters, and the
   LS9 StageMix manual does not document those screens, so they are out of
   scope for this library.
+
+## 1.13 Parameter-level gaps (firmware 1.35, measured)
+
+These elements are listed in `ParamChangeList_LS9.xls` and answer on the wire,
+but not with the documented value. The library works around all of them; a
+client should not read them directly.
+
+| element | index | documented | measured |
+|---|---|---|---|
+| `0x0114` input name | 0 | first 4 chars | always `1` (`\0\0\0\1`) |
+| `0x0114` input name | 1 | next 4 chars | **no reply** (times out) |
+| `0x0193` scene title | 0..3 | title words | `0` for all four |
+| `0x0195` scene number | 0 | current scene | constant `1` |
+
+The authoritative source for names, titles and the scene number is the bulk
+image (`0x0114`, `0x011E`..`0x0122` for module names, `0x0193` for the title,
+`0x0157` for the current scene). `Ls9Console.currentData()` adds a 1.5 s cache
+so a batch of name lookups costs one 17 KB transfer, and
+`Ls9InputChannel.name()`, `Ls9OutputChannel.name()`,
+`Ls9SceneControl.currentTitle()` and `Ls9Library.getSceneTitle()` go through it,
+falling back to the parameter words only when the image has nothing.
+
+Setup bulk blocks (`MIXERSET`, `OUT_PORT`, `MONITOR_`, `MIDI_SET`, `LIB_NUM_`,
+`PREF_CUR`, `UDEF_CUR`, `PRGMCHG_`, `CTRLCHG_`, `UKEY_CUR`, `CFAD_CUR`) must be
+requested with data number **512**, not 0. `INCHNNL_` and `OUTCHNNL` are LS9
+Editor block names: the console neither lists them in `LibExist` nor answers
+their bulk requests.
+
+For liveness use `Ls9Console.isAlive()` (a parameter read). The EtherMIDI
+`0x50` poll is not answered by this firmware and closes the session.

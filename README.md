@@ -78,7 +78,7 @@ Maven:
 <dependency>
   <groupId>com.github.leocb</groupId>
   <artifactId>Yamaha-LS9-Network-Protocol-Library</artifactId>
-  <version>v0.5.0</version>
+  <version>v0.6.0</version>
 </dependency>
 ```
 
@@ -90,11 +90,11 @@ Central release coordinates:
 <dependency>
   <groupId>io.github.leocb</groupId>
   <artifactId>ls9-java</artifactId>
-  <version>0.5.0</version>
+  <version>0.6.0</version>
 </dependency>
 ```
 
-Version `0.5.0` is published to Maven Central. Future releases are automated by
+Version `0.6.0` is published to Maven Central. Future releases are automated by
 [`.github/workflows/publish.yml`](.github/workflows/publish.yml) when a `v*`
 tag is pushed. The workflow needs these repository secrets:
 
@@ -172,7 +172,7 @@ traffic with the direct implementation.
 
 | Object | Methods |
 |---|---|
-| `Ls9Console` | `set`, `setSigned`, `get`, `sendSysex`, `sendShortMidi`, `addListener`, `input`, `stereoInput`, `mix`, `matrix`, `stereo`, `mono`, `scene`, `setMuteMaster` |
+| `Ls9Console` | `set`, `setSigned`, `get`, `sendSysex`, `sendShortMidi`, `addListener`, `input`, `stereoInput`, `mix`, `matrix`, `stereo`, `mono`, `scene`, `setMuteMaster`, `currentData` (cached bulk image), `isAlive` |
 | `Ls9InputChannel` | `faderRaw/setFaderRaw`, `faderDb/setFaderDb`, `on/setOn`, `panRaw/setPanRaw`, `pan/setPan`, `mixSendRaw/setMixSendRaw`, `mixSendDb/setMixSendDb`, `mixSendOn/setMixSendOn`, `mixSendPre/setMixSendPre`, `mixSendPanRaw/setMixSendPanRaw`, `setMixSendPan`, `toStereo`, `toMono`, `phantom`, `haGainDb`, `attenuatorDb`, `name/setName` |
 | `Ls9OutputChannel` | `faderRaw/setFaderRaw`, `faderDb/setFaderDb`, `on/setOn`, `balanceRaw/setBalanceRaw`, `balance/setBalance`, `attenuatorDb`, `name/setName` |
 | `Ls9SceneControl` | `recall`, `store`, `store(scene, title)`, `setTitle`, `storeUndo`, `recallUndo`, `currentTitle`, `edit(scene, Ls9Edit)` |
@@ -454,3 +454,20 @@ inspecting shipped software and published Yamaha protocol documents. No Yamaha
 code, firmware or confidential material is included. "Yamaha" and "LS9" are
 trademarks of Yamaha Corporation and we're not afiliated with them in any way.
 This is experimental software. Use at your own risk, especially on a live show.
+
+## Hardware compatibility (firmware 1.35)
+
+Measured on an LS9-32 running 1.35; see `PROTOCOL.md` §1.13 for the raw values.
+
+* **Names and titles come from the bulk image.** The name parameters
+  (`0x0114`, `0x011B`..) answer a placeholder or not at all, and scene title
+  words (`0x0193`) read as zero. `name()`, `currentTitle()` and `getSceneTitle()`
+  read `Ls9Console.currentData()` (1.5 s cache) and only fall back to the words
+  when the image is empty.
+* **The current scene number is element `0x0157`.** `0x0195` answers a constant
+  `1` and byte `0x12` of the image stays 0.
+* **Never use the `0x50` liveness poll.** The console closes the session instead
+  of answering; use `Ls9Console.isAlive()`, which reads a parameter.
+* **Setup blocks need data number 512**, and `INCHNNL_`/`OUTCHNNL` are not real
+  console modules — the console neither lists nor answers them.
+

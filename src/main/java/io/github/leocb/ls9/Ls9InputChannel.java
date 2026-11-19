@@ -15,6 +15,13 @@ import io.github.leocb.ls9.sysex.ParameterAddress;
  */
 public final class Ls9InputChannel {
 
+    /**
+     * Short wait for the name words. They answer in tens of milliseconds when
+     * the firmware supports them, and firmware 1.35 never answers the second
+     * word, so a long timeout would only delay the bulk fallback.
+     */
+    private static final int NAME_WAIT_MS = 400;
+
     private final Ls9Console console;
     private final int channelIndex;
     private final Ls9FaderTable faders;
@@ -235,9 +242,27 @@ public final class Ls9InputChannel {
     // Name -------------------------------------------------------------
 
     public String name() throws IOException {
-        long first = console.get(address(Ls9Elements.INPUT_NAME, Ls9Elements.IDX_NAME_1));
-        long second = console.get(address(Ls9Elements.INPUT_NAME, Ls9Elements.IDX_NAME_2));
-        return Text.trimTrailing(Ls9Sysex.unpackName4(first) + Ls9Sysex.unpackName4(second));
+        String words = null;
+        try {
+            long first = console.get(address(Ls9Elements.INPUT_NAME, Ls9Elements.IDX_NAME_1), NAME_WAIT_MS);
+            long second = console.get(address(Ls9Elements.INPUT_NAME, Ls9Elements.IDX_NAME_2), NAME_WAIT_MS);
+            words = Text.trimTrailing(Ls9Sysex.unpackName4(first) + Ls9Sysex.unpackName4(second));
+        } catch (IOException ignored) {
+            // Firmware 1.35 answers the first word with a placeholder and never
+            // answers the second; the name has to come from the bulk image.
+        }
+        if (words != null && !words.isEmpty() && Text.isPrintable(words)) {
+            return words;
+        }
+        return bulkName(Ls9Elements.INPUT_NAME);
+    }
+
+    /** Name from the current-scene image (the authoritative source on hardware). */
+    private String bulkName(int element) throws IOException {
+        io.github.leocb.ls9.bulk.Ls9BulkData data = console.currentData();
+        String first = data.text(element, 0, channelIndex);
+        String second = data.text(element, 1, channelIndex);
+        return Text.trimTrailing((first == null ? "" : first) + (second == null ? "" : second));
     }
 
     public void setName(String name) throws IOException {

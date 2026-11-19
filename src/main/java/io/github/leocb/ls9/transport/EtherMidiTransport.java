@@ -334,14 +334,15 @@ public final class EtherMidiTransport implements MidiTransport {
                 }
                 EtherMidiPacket.Frame frame = EtherMidiPacket.decode(packet);
                 handleFrame(packet, frame, out);
-                // The console opens a reverse connection per meter frame and
-                // waits for the client to close it before sending the next
-                // frame. Waiting for an idle timeout here throttles meters to
-                // about two frames per second.
-                if (isMeterPayload(frame.payload())) {
-                    break;
-                }
-                r.setSoTimeout(40);
+                // One reply per reverse connection. The console opens a fresh
+                // connection for every reply packet (meters, parameter reads
+                // and every bulk-dump packet) and continues only once the
+                // client releases the previous one. Leaving the socket open
+                // after the packet stalls multi-packet bulk transfers and can
+                // leave the console in an internal error state (firmware 1.35
+                // reports enet_ComCmd.c), so close it as soon as the packet
+                // has been handled.
+                break;
             }
         } catch (EOFException | SocketException e) {
             LOG.log(Level.FINE, "console reply connection closed: {0}", e.toString());
@@ -461,6 +462,12 @@ public final class EtherMidiTransport implements MidiTransport {
      * either socket. Returns true on {@code 0x51}, false on {@code 0x52} or
      * timeout. A failed poll updates {@link #isLive()} and invokes
      * {@link #onLiveLost(Runnable)}.
+     *
+     * <p><strong>Firmware 1.35 warning:</strong> the LS9 does not answer this
+     * poll and drops the EtherMIDI session in response, so a probe on a live
+     * connection is destructive. Prefer a harmless parameter read (for example
+     * element {@code 0x0157}) as a health check, and leave
+     * {@link #keepaliveIntervalMs(int)} at 0 on real hardware.
      */
     public boolean probeLive(long timeoutMs) throws IOException {
         ensureOpen();

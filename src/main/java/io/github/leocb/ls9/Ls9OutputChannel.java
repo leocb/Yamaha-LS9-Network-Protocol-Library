@@ -10,6 +10,9 @@ import io.github.leocb.ls9.sysex.ParameterAddress;
 /** MIX, MATRIX or STEREO/MONO output channel. */
 public final class Ls9OutputChannel {
 
+    /** Short wait for the name words; see {@link Ls9InputChannel}. */
+    private static final int NAME_WAIT_MS = 400;
+
     public enum Kind {
         MIX,
         MATRIX,
@@ -128,9 +131,22 @@ public final class Ls9OutputChannel {
     }
 
     public String name() throws IOException {
-        long first = console.get(ParameterAddress.of(nameElement(), Ls9Elements.IDX_NAME_1, channelIndex));
-        long second = console.get(ParameterAddress.of(nameElement(), Ls9Elements.IDX_NAME_2, channelIndex));
-        return Text.trimTrailing(Ls9Sysex.unpackName4(first) + Ls9Sysex.unpackName4(second));
+        String words = null;
+        try {
+            long first = console.get(ParameterAddress.of(nameElement(), Ls9Elements.IDX_NAME_1, channelIndex), NAME_WAIT_MS);
+            long second = console.get(ParameterAddress.of(nameElement(), Ls9Elements.IDX_NAME_2, channelIndex), NAME_WAIT_MS);
+            words = Text.trimTrailing(Ls9Sysex.unpackName4(first) + Ls9Sysex.unpackName4(second));
+        } catch (IOException ignored) {
+            // Firmware 1.35 does not answer the name words reliably; the bulk
+            // image carries the real text.
+        }
+        if (words != null && !words.isEmpty() && Text.isPrintable(words)) {
+            return words;
+        }
+        io.github.leocb.ls9.bulk.Ls9BulkData data = console.currentData();
+        String first = data.text(nameElement(), 0, channelIndex);
+        String second = data.text(nameElement(), 1, channelIndex);
+        return Text.trimTrailing((first == null ? "" : first) + (second == null ? "" : second));
     }
 
     public void setName(String name) throws IOException {

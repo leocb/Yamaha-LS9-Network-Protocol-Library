@@ -22,8 +22,15 @@ public final class Ls9Elements {
      * {@code DecodeCurSceneData} decoder expose it as element 0x0193.
      */
     public static final int SCENE_TITLE = 0x0193;
-    /** Current scene number (byte 0x12 of the current-data image). */
+    /** Current scene number as carried by the scene image (not populated on 1.35). */
     public static final int SCENE_NUMBER = 0x0195;
+
+    /**
+     * Live current scene number (0..300), element {@code 0x0157} index 0.
+     * Firmware 1.35 answers this and updates it on every recall; the image
+     * alias above stays 0 and a request for it answers a constant 1.
+     */
+    public static final int CURRENT_SCENE_NUMBER = 0x0157;
 
     // Setup
     public static final int SETUP_NETWORK = 0x0228;

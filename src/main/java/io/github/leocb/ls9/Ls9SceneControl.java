@@ -99,6 +99,17 @@ public final class Ls9SceneControl {
      * scene, request the scene library with a BULK DUMP REQUEST instead.
      */
     public String currentTitle() throws IOException {
+        // The bulk header carries the title; firmware 1.35 does not answer the
+        // individual title words as parameters (the last word times out).
+        try {
+            io.github.leocb.ls9.bulk.BulkScene scene = console.bulk().currentSceneView();
+            String title = Text.trimTrailing(scene == null ? "" : scene.title());
+            if (!title.isEmpty()) {
+                return title;
+            }
+        } catch (IOException ignored) {
+            // Fall back to the parameter words below.
+        }
         StringBuilder sb = new StringBuilder(16);
         for (int i = 0; i < 4; i++) {
             long value = console.get(ParameterAddress.of(Ls9Elements.SCENE_TITLE, i, 0));

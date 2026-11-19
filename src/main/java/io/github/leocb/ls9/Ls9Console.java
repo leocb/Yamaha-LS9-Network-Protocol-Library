@@ -14,6 +14,8 @@ import io.github.leocb.ls9.bulk.BulkDump;
 import io.github.leocb.ls9.bulk.BulkDumpAssembler;
 import io.github.leocb.ls9.bulk.BulkDumpCodec;
 import io.github.leocb.ls9.bulk.BulkDumpPacket;
+import io.github.leocb.ls9.bulk.Ls9BulkData;
+import io.github.leocb.ls9.bulk.Ls9BulkDecoder;
 import io.github.leocb.ls9.internal.Text;
 import io.github.leocb.ls9.meter.MeterCodec;
 import io.github.leocb.ls9.meter.MeterFrame;
@@ -434,6 +436,55 @@ public final class Ls9Console implements AutoCloseable {
             faders = table;
         }
         return table;
+    }
+
+    private volatile Ls9BulkData currentCache;
+    private volatile long currentCacheAt;
+    private final Object currentCacheLock = new Object();
+
+    /**
+     * Decoded current-scene image, cached for a moment. Names and titles are
+     * not readable as individual parameters on firmware 1.35, so they have to
+     * come from this image; the cache turns a batch of lookups into one 17 KB
+     * transfer instead of one per field.
+     */
+    public Ls9BulkData currentData() throws IOException {
+        return currentData(1500);
+    }
+
+    /** @see #currentData() */
+    public Ls9BulkData currentData(int maxAgeMs) throws IOException {
+        Ls9BulkData cached = currentCache;
+        long at = currentCacheAt;
+        if (cached != null && System.currentTimeMillis() - at <= maxAgeMs) {
+            return cached;
+        }
+        synchronized (currentCacheLock) {
+            cached = currentCache;
+            at = currentCacheAt;
+            if (cached != null && System.currentTimeMillis() - at <= maxAgeMs) {
+                return cached;
+            }
+            Ls9BulkData data = Ls9BulkDecoder.decode(bulk().currentData());
+            currentCache = data;
+            currentCacheAt = System.currentTimeMillis();
+            return data;
+        }
+    }
+
+    /**
+     * Health check that never disturbs the session: reads the current scene
+     * number and reports whether the console answered. Do <em>not</em> use the
+     * EtherMIDI {@code 0x50} liveness poll on firmware 1.35 — the console drops
+     * the session instead of answering.
+     */
+    public boolean isAlive() {
+        try {
+            get(ParameterAddress.of(Ls9Elements.CURRENT_SCENE_NUMBER, 0, 0), 1500);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public int deviceNumber() {

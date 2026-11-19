@@ -20,6 +20,7 @@ import io.github.leocb.ls9.bulk.Ls9BulkLayout;
 import io.github.leocb.ls9.meter.MeterCodec;
 import io.github.leocb.ls9.meter.MeterFrame;
 import io.github.leocb.ls9.meter.MeterGroup;
+import io.github.leocb.ls9.internal.Text;
 import io.github.leocb.ls9.model.Ls9Elements;
 import io.github.leocb.ls9.model.Ls9FaderTable;
 import io.github.leocb.ls9.sysex.Ls9Sysex;
@@ -586,6 +587,12 @@ public final class SelfTest {
     private static void testNames() {
         eq("Vocal 1 ", Ls9Sysex.unpackName4(Ls9Sysex.packName4("Voca"))
                 + Ls9Sysex.unpackName4(Ls9Sysex.packName4("l 1 ")), "name packing");
+        // Hardware returns a placeholder word for the name parameters, so a
+        // decoded name has to be rejected when it carries control bytes.
+        check(Text.isPrintable("Kick"), "printable name accepted");
+        check(!Text.isPrintable("\u0000\u0000\u0000\u0001"), "control bytes rejected");
+        check(!Text.isPrintable("K\u00efck"), "non-ASCII rejected");
+        check(Ls9Elements.CURRENT_SCENE_NUMBER == 0x0157, "current scene number element");
     }
 
     private static void testFaderTable() {

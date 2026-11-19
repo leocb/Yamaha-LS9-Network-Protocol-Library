@@ -146,6 +146,17 @@ public final class Ls9Library {
 
     /** Reads a scene title (element {@code 0x0193}, indices 0..3). */
     public String getSceneTitle(int sceneNumber) throws IOException {
+        // The scene bulk header is authoritative and firmware 1.35 answers its
+        // attribute reads with zeros.
+        try {
+            io.github.leocb.ls9.bulk.BulkScene scene = console.bulk().sceneView(sceneNumber);
+            String title = Text.trimTrailing(scene == null ? "" : scene.title());
+            if (!title.isEmpty()) {
+                return title;
+            }
+        } catch (IOException ignored) {
+            // Fall back to LIBRARY ATTRIBUTE reads.
+        }
         StringBuilder sb = new StringBuilder(16);
         for (int i = 0; i < 4; i++) {
             sb.append(getAttribute(Ls9Sysex.MODULE_SCENE, sceneNumber, 0x0193, i, 0));
